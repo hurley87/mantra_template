@@ -5,9 +5,11 @@ import Layout from './components/MainLayout.jsx';
 import InnerLayout from './components/InnerLayout.jsx';
 import ItemList from '../items/components/ItemList.jsx';
 import Homepage from '../marketing/components/homepage.jsx'
+import About from '../marketing/components/about.jsx'
 
 export default function(injectDeps, {FlowRouter}) {
   const MainLayoutCtx = injectDeps(Layout);
+  const InnerLayoutCtx = injectDeps(InnerLayout);
 
   FlowRouter.route('/', {
     name: 'marketing.homgepage',
