@@ -1,14 +1,14 @@
 import React from 'react';
 
-const Layout = ({content}) => (
+const InnerLayout = ({content}) => (
   <div>
     <header>
-      <h1>Impossible List</h1>
+      <h1>Inner</h1>
     </header>
     <div>
       {content()}
-    </div>a
+    </div>
   </div>
 )
 
-export default Layout;
+export default InnerLayout;
