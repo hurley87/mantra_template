@@ -77,7 +77,6 @@ const Homepage = ( { content = () => null }) => (
                 <h1 className="hero-text animated fadeIn">The best interfaces for your web and mobile apps.</h1>
                 <div className="cta animated fadeIn">
                   <a href="signup.html" className="button">Sign up free</a>
-                  <a href="#" data-toggle="modal" data-target="#demo" className="demo">Watch a demo</a>
                 </div>
                 <div className="screenshot animated fadeInUp">
                   <img src="images/ss2.png" className="img-responsive" alt="screenshot" />
