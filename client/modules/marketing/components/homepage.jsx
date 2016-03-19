@@ -1,11 +1,11 @@
 import React from 'react';
 import { Row, Col, Input, Grid } from 'react-bootstrap';
-import Tabs from './tabs.jsx'
-import Pricing from './pricing.jsx'
-import Benefits from './benefits.jsx'
-import Mobile from './mobile.jsx'
-import Features from './features.jsx'
-import Cta from './cta.jsx'
+import Tabs from './_tabs.jsx'
+import Pricing from './_pricing.jsx'
+import Benefits from './_benefits.jsx'
+import Mobile from './_mobile.jsx'
+import Features from './_features.jsx'
+import Cta from './_cta.jsx'
 import Footer from './footer.jsx'
 
 const Homepage = ( { content = () => null }) => (
