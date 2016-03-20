@@ -85,7 +85,7 @@ class Homepage extends React.Component {
                   <div className="container">
                     <h1 className="hero-text animated fadeIn">The best interfaces for your web and mobile apps.</h1>
                     <div className="cta animated fadeIn">
-                      <a href="signup.html" className="button">Sign up free</a>
+                      <a href="/register" className="button">Sign up free</a>
                     </div>
                     <div className="screenshot animated fadeInUp">
                       <img src="images/ss2.png" className="img-responsive" alt="screenshot" />

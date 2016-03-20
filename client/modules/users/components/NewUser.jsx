@@ -10,7 +10,7 @@ class NewUser extends React.Component {
           <Row className='header'>
             <Col md={12}>
               <h3 className="logo">
-                <a href="index.html">React</a>
+                <a href="/">React</a>
               </h3>
               <h4>Set up your new account today.</h4>
               <p>
