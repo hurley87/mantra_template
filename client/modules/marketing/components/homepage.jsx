@@ -10,7 +10,7 @@ import Footer from './footer.jsx'
 
 const Homepage = ( { content = () => null }) => (
   <div id='home3'>
-    <div className="st-container">
+    <div className="st-container nav-effect">
       <nav className="nav-menu">
         <h3>Menu</h3>
         <a href="index.html" className="item">
