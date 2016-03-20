@@ -4,8 +4,9 @@ import {mount} from 'react-mounter';
 import Layout from './components/MainLayout.jsx';
 import InnerLayout from './components/InnerLayout.jsx';
 import ItemList from '../items/components/ItemList.jsx';
-import Homepage from '../marketing/components/homepage.jsx'
+import Homepage from '../marketing/containers/Homepage.js'
 import About from '../marketing/components/about.jsx'
+import NewUser from '../users/containers/NewUser.js'
 
 export default function(injectDeps, {FlowRouter}) {
   const MainLayoutCtx = injectDeps(Layout);
@@ -18,7 +19,7 @@ export default function(injectDeps, {FlowRouter}) {
         content: () => (<Homepage />)
       })
     }
-  })
+  });
 
   FlowRouter.route('/about', {
     name: 'marketing.about',
@@ -27,5 +28,14 @@ export default function(injectDeps, {FlowRouter}) {
         content: () => (<About />)
       })
     }
-  })
+  });
+
+  FlowRouter.route('/register', {
+    name: 'users.new',
+    action() {
+      mount(MainLayoutCtx, {
+        content: () => (<NewUser />)
+      });
+    }
+  });
 }

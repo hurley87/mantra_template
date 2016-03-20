@@ -1,0 +1,26 @@
+*:focus {
+  outline: 0; }
+
+/* vendor */
+@media (min-width: 1200px) {
+  .container {
+    width: 970px; } }
+a {
+  color: #459CE7; }
+
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+  background-color: #5585B3;
+  border-color: #4477A3; }
+
+.pagination > li > a,
+.pagination > li > span {
+  -webkit-transition: all 0.25s linear;
+  -moz-transition: all 0.25s linear;
+  -ms-transition: all 0.25s linear;
+  -o-transition: all 0.25s linear;
+  transition: all 0.25s linear; }

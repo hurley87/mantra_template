@@ -4,9 +4,9 @@ import {Row, Col} from 'react-bootstrap';
 
 
 const Footer = ( { content = () => null }) => (
-
 <div>
     <div id="footer">
+
 		<div className="container">
 			<div className="row">
 				<div className="col-sm-3 copyright">
@@ -39,7 +39,6 @@ const Footer = ( { content = () => null }) => (
 			</div>
 		</div>
 	</div>
-  </div>
 );
 
 
