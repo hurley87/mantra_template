@@ -24,6 +24,7 @@ class NewUser extends React.Component {
                 <div className="formy">
                   <div className="row">
                     <div className="col-md-12">
+                      {this.props.error ? <p style={{color: 'red'}}>{this.props.error}</p> : null}
                       <form role="form">
                         <div className="form-group">
                             <label htmlFor="name">Your name</label>

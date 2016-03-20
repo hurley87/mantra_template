@@ -4,7 +4,6 @@ import {useDeps, composeWithTracker, composeAll} from 'mantra-core';
 export const composer = ({context}, onData) => {
  const {LocalState} = context();
  const toggle = LocalState.get('TOGGLE');
-
  onData(null, {toggle});
  
  // clearErrors when unmounting the component
