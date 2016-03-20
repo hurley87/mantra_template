@@ -1,4 +1,4 @@
-import Homepage from '../components/Homepage.jsx';
+import Homepage from '../components/homepage.jsx';
 import {useDeps, composeWithTracker, composeAll} from 'mantra-core';
 
 export const composer = ({context}, onData) => {
