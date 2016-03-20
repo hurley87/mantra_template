@@ -45,10 +45,8 @@ class NewUser extends React.Component {
                             </label>
                           </div>
                           <br/>
-                          <div class="submit">
-                            <a href="index.html" class="button-clear">
-                              <span>Create my account</span>
-                            </a>
+                          <div className="submit">
+                            <ButtonInput className='button' onClick={this.createUser.bind(this)} type="submit" value="Create my account"/>
                           </div>
                       </form>
                     </div>
