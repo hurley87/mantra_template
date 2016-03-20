@@ -1,4 +1,5 @@
 import React from 'react';
+import {Row, Col} from 'react-bootstrap';
 import Footer from '../../marketing/components/footer.jsx';
 import InnerNav from '../../marketing/components/innerNav.jsx';
 

@@ -1,10 +1,12 @@
 import React from 'react';
+import {Row, Col} from 'react-bootstrap';
 
 
 
 const Footer = ( { content = () => null }) => (
-  <div>
-    	<div id="footer">
+
+<div>
+    <div id="footer">
 		<div className="container">
 			<div className="row">
 				<div className="col-sm-3 copyright">
@@ -13,10 +15,10 @@ const Footer = ( { content = () => null }) => (
 				<div className="col-sm-6 menu">
 					<ul>
 	      				<li>
-	          				<a href="features.html">Features</a>
+	          				<a href="features.html">About</a>
 	        			</li>
 	        			<li>
-	        				<a href="services.html">Services</a>
+	        				<a href="services.html">Contact</a>
 	        			</li>
 	        			<li className="active">
 	          				<a href="pricing.html">Pricing</a>
@@ -30,6 +32,9 @@ const Footer = ( { content = () => null }) => (
 	      			</ul>
 				</div>
 				<div className="col-sm-3 social">
+					<img src="images/facebook.png" />
+					<img src="images/instagram.png" />
+					<img src="images/twitter.png" />
 				</div>
 			</div>
 		</div>
