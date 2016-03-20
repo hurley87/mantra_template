@@ -45,8 +45,10 @@ class NewUser extends React.Component {
                             </label>
                           </div>
                           <br/>
-                          <div className="submit">
-                            <ButtonInput className='button' onClick={this.createUser.bind(this)} type="submit" value="Create my account"/>
+                          <div class="submit">
+                            <a href="index.html" class="button-clear">
+                              <span>Create my account</span>
+                            </a>
                           </div>
                       </form>
                     </div>
@@ -65,7 +67,6 @@ class NewUser extends React.Component {
   }
   createUser(e) {
     e.preventDefault();
-    console.log(this)
     const {create} = this.props;
     const {email, password} = this.refs;
     create(email.getValue(), password.getValue());

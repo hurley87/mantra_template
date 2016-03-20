@@ -11,7 +11,6 @@ export const composer = ({context}, onData) => {
 };
 
 export const depsMapper = (context, actions) => ({
- toggleMenu: actions.homepage.toggleMenu,
  showMenu: actions.homepage.showMenu,
  context: () => context
 });
