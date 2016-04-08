@@ -16,7 +16,7 @@ export default function(injectDeps, {FlowRouter}) {
     name: 'marketing.homgepage',
     action() {
       mount(MainLayoutCtx, {
-        content: () => (<Homepage />)
+        content: () => (<NewUser />)
       })
     }
   });

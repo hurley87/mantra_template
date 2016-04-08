@@ -10,12 +10,9 @@ class NewUser extends React.Component {
           <Row className='header'>
             <Col md={12}>
               <h3 className="logo">
-                <a href="/">React</a>
+                <a href="/">Pi Academy</a>
               </h3>
               <h4>Set up your new account today.</h4>
-              <p>
-                30-day money-back guarantee that starts after your first payment.
-              </p>
             </Col>
           </Row>
           <Row>
