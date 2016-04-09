@@ -10,11 +10,12 @@ export default {
     // set errors to null if no error exists
     LocalState.set('CREATE_USER_ERROR', null);
 
+    
     // user Meteor Accounts package to create the user
     Accounts.createUser({email, password});
 
     //redirect back to home
-    FlowRouter.go('/');
+    FlowRouter.go('/dashboard');
   },
   clearErrors({LocalState}) {
     return LocalState.set('SAVING_ERROR', null)
