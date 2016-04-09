@@ -6,6 +6,8 @@ class Add1 extends React.Component {
     return (
       <div id='panel' className='Add1'>
         <h3>Add1</h3>
+
+        
       </div>
     )
   }
