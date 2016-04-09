@@ -13,6 +13,8 @@ import Upgrade from '../dashboard/components/upgrade.jsx'
 import Addition from '../arithmetic/containers/addition.js'
 import Subtraction from '../arithmetic/containers/subtraction.js'
 import Multiplication from '../arithmetic/containers/multiplication.js'
+import NewQuestion from '../questions/containers/new_question.js'
+
 
 export default function(injectDeps, {FlowRouter}) {
   const MainLayoutCtx = injectDeps(Layout);
@@ -91,11 +93,20 @@ export default function(injectDeps, {FlowRouter}) {
     }
   });
 
-    FlowRouter.route('/multiplication', {
+  FlowRouter.route('/multiplication', {
     name: 'arithmetic.multiplication',
     action() {
       mount(DashboardLayoutCtx, {
         content: () => (<Multiplication />)
+      })
+    }
+  });
+
+  FlowRouter.route('/test_questions', {
+    name: 'questions:new_question',
+    action() {
+      mount(DashboardLayoutCtx, {
+        content: () => (<NewQuestion operatorSign='+' min='6' max ='9' />)
       })
     }
   });
