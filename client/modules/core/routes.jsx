@@ -4,11 +4,15 @@ import {mount} from 'react-mounter';
 import Layout from './components/MainLayout.jsx';
 import InnerLayout from './components/InnerLayout.jsx';
 import DashboardLayout from './components/DashboardLayout.jsx'
-import ItemList from '../items/components/ItemList.jsx';
 import Homepage from '../marketing/containers/Homepage.js'
 import About from '../marketing/components/about.jsx'
 import NewUser from '../users/containers/NewUser.js'
 import Home from '../dashboard/components/home.jsx'
+import Settings from '../dashboard/containers/settings.js'
+import Upgrade from '../dashboard/components/upgrade.jsx'
+import Addition from '../arithmetic/containers/addition.js'
+import Subtraction from '../arithmetic/containers/subtraction.js'
+import Multiplication from '../arithmetic/containers/multiplication.js'
 
 export default function(injectDeps, {FlowRouter}) {
   const MainLayoutCtx = injectDeps(Layout);
@@ -20,15 +24,6 @@ export default function(injectDeps, {FlowRouter}) {
     action() {
       mount(MainLayoutCtx, {
         content: () => (<Homepage />)
-      })
-    }
-  });
-
-  FlowRouter.route('/dashboard', {
-    name: 'dashboard.home',
-    action() {
-      mount(DashboardLayoutCtx, {
-        content: () => (<Home />)
       })
     }
   });
@@ -48,6 +43,60 @@ export default function(injectDeps, {FlowRouter}) {
       mount(MainLayoutCtx, {
         content: () => (<NewUser />)
       });
+    }
+  });
+
+  FlowRouter.route('/home', {
+    name: 'dashboard.home',
+    action() {
+      mount(DashboardLayoutCtx, {
+        content: () => (<Home />)
+      })
+    }
+  });
+
+  FlowRouter.route('/settings', {
+    name: 'dashboard.settings',
+    action() {
+      mount(DashboardLayoutCtx, {
+        content: () => (<Settings />)
+      })
+    }
+  });
+
+  FlowRouter.route('/upgrade', {
+    name: 'dashboard.upgrade',
+    action() {
+      mount(DashboardLayoutCtx, {
+        content: () => (<Upgrade />)
+      })
+    }
+  });
+
+  FlowRouter.route('/addition', {
+    name: 'arithmetic.addition',
+    action() {
+      mount(DashboardLayoutCtx, {
+        content: () => (<Addition />)
+      })
+    }
+  });
+
+  FlowRouter.route('/subtraction', {
+    name: 'arithmetic.subtraction',
+    action() {
+      mount(DashboardLayoutCtx, {
+        content: () => (<Subtraction />)
+      })
+    }
+  });
+
+    FlowRouter.route('/multiplication', {
+    name: 'arithmetic.multiplication',
+    action() {
+      mount(DashboardLayoutCtx, {
+        content: () => (<Multiplication />)
+      })
     }
   });
 }

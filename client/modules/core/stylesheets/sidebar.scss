@@ -4,10 +4,10 @@
   background: $sidebarBg;
   left: 0;
   top: 0;
-  bottom: 0;
   position: fixed;
   width: 230px;
   z-index: 999;
+  min-height: 100%;
 
   @include transition(all .2s linear);
 

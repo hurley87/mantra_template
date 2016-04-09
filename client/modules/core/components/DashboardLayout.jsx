@@ -8,7 +8,6 @@ const Layout = ({content}) => (
         <a href="index.html" className="name">
           <span>
             John Smith
-
           </span>
         </a>
       </div>
@@ -16,70 +15,62 @@ const Layout = ({content}) => (
         <h3>General</h3>
         <ul>
           <li>
-            <a href="index.html" className='active'>
-              <i className="ion-android-earth"></i> 
-              <span>Dashboard</span>
+            <a href="/home" className={ location.pathname == '/home' ? 'active' : null }>
+              <i className="ion-home"></i> 
+              <span>Home</span>
             </a>
           </li>
           <li>
-            <a href="users.html" data-toggle="sidebar">
-              <i className="ion-person-stalker"></i> <span>Settings</span>
+            <a href="/settings" className={ location.pathname == '/settings' ? 'active' : null }>
+              <i className="ion-person"></i> <span>Settings</span>
   
             </a>
           </li>
           <li>
-            <a href="users.html" data-toggle="sidebar">
-              <i className="ion-stats-bars"></i> <span>Upgrade</span>
-            </a>
-          </li>
-          <li>
-            <a href="users.html" data-toggle="sidebar">
-              <i className="ion-pricetags"></i> <span>About</span>
-  
+            <a href="/upgrade" className={ location.pathname == '/upgrade' ? 'active' : null }>
+              <i className="ion-person-add"></i> <span>Upgrade</span>
             </a>
           </li>
         </ul>
       </div>
       <div className="menu-section">
-        <h3>Addition</h3>
+        <h3>Arithmetic</h3>
         <ul>
           <li>
-            <a href="account.html" data-toggle="sidebar">
-              <i className="ion-earth"></i> <span>Lesson 1</span>
-  
+            <a href="/addition" data-toggle="sidebar" className={ location.pathname == '/addition' ? 'active' : null }>
+              <i className="ion-plus-round"></i> <span>Addition</span>
             </a>
           </li>
           <li>
-            <a href="account.html" data-toggle="sidebar">
-              <i className="ion-card"></i> <span>Lesson 2</span>
-  
+            <a href="/subtraction" data-toggle="sidebar" className={ location.pathname == '/subtraction' ? 'active' : null }>
+              <i className="ion-minus-round"></i> <span>Subtraction</span>
             </a>
           </li>
           <li>
-            <a href="account.html" data-toggle="sidebar">
-              <i className="ion-flash"></i> <span>Lesson 3</span>
+            <a href="/multiplication" data-toggle="sidebar" className={ location.pathname == '/multiplication' ? 'active' : null }>
+              <i className="ion-close-round"></i> <span>Multiplication</span>
             </a>
           </li>
         </ul>
       </div>
       <div className="menu-section">
-        <h3>Subtraction</h3>
+        <h3>Learn More</h3>
         <ul>
           <li>
             <a href="account.html" data-toggle="sidebar">
-              <i className="ion-earth"></i> <span>Lesson 1</span>
+              <i className="ion-printer"></i> <span>Textbook</span>
   
             </a>
           </li>
           <li>
             <a href="account.html" data-toggle="sidebar">
-              <i className="ion-card"></i> <span>Lesson 2</span>
+              <i className="ion-lightbulb"></i> <span>Blog</span>
   
             </a>
           </li>
           <li>
             <a href="account.html" data-toggle="sidebar">
-              <i className="ion-flash"></i> <span>Lesson 3</span>
+              <i className="ion-calendar"></i> <span>Private Lesson</span>
             </a>
           </li>
         </ul>
@@ -94,7 +85,6 @@ const Layout = ({content}) => (
             </a>
             <ul className="menu">
               <li><a href="#">5 unread messages</a></li>
-              <li><a href="#">12 tasks completed</a></li>
             </ul>
           </li>
           <li><a href="signup.html"><i className="ion-log-out"></i></a></li>
