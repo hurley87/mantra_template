@@ -6,7 +6,7 @@ import Header from '../containers/header.js'
 class Upgrade extends React.Component {
   render() {
     return (
-      <div>
+      <div id='content'>
         <Header title='Upgrade'/>
         Upgrade
       </div>

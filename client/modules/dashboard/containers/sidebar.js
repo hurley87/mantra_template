@@ -1,6 +1,6 @@
 import {useDeps, composeAll, composeWithTracker, compose} from 'mantra-core';
 
-import Settings from '../components/settings.jsx';
+import Sidebar from '../components/sidebar.jsx';
 
 export const composer = ({context}, onData) => {
   const {LocalState} = context();
@@ -18,4 +18,4 @@ export const depsMapper = (context, actions) => ({
 export default composeAll(
   composeWithTracker(composer),
   useDeps(depsMapper)
-)(Settings);
+)(Sidebar);
