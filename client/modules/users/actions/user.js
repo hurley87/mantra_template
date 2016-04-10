@@ -15,7 +15,7 @@ export default {
     Accounts.createUser({email, password});
 
     //redirect back to home
-    FlowRouter.go('/dashboard');
+    FlowRouter.go('/home');
   },
   clearErrors({LocalState}) {
     return LocalState.set('SAVING_ERROR', null)
