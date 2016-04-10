@@ -7,6 +7,7 @@ import DashboardLayout from './components/DashboardLayout.jsx'
 import Homepage from '../marketing/containers/Homepage.js'
 import About from '../marketing/components/about.jsx'
 import NewUser from '../users/containers/NewUser.js'
+import LoginUser from '../users/components/LoginUser.jsx'
 import Home from '../dashboard/components/home.jsx'
 import Settings from '../dashboard/containers/settings.js'
 import Upgrade from '../dashboard/components/upgrade.jsx'
@@ -14,7 +15,6 @@ import Addition from '../arithmetic/containers/addition.js'
 import Subtraction from '../arithmetic/containers/subtraction.js'
 import Multiplication from '../arithmetic/containers/multiplication.js'
 import NewQuestion from '../questions/containers/new_question.js'
-import LoginUser from '../users/components/LoginUser.jsx'
 
 
 export default function(injectDeps, {FlowRouter}) {
@@ -49,7 +49,7 @@ export default function(injectDeps, {FlowRouter}) {
     }
   });
 
-    FlowRouter.route('/sign_in', {
+    FlowRouter.route('/login', {
     name: 'users.new',
     action() {
       mount(MainLayoutCtx, {
