@@ -43,12 +43,11 @@ function questionHandler(LocalState) {
   const isSubmitted = submitAttempt(guess, answer);
   const isRight = checkAnswer(guess, answer);
   if(isSubmitted) {
-    // Meteor.call('createQuestion', question, (err) => {
-    //    if (err) {
-    //      console.log(err)
-    //    }
-    // });
-    console.log(question)
+    Meteor.call('createQuestion', question, (err) => {
+       if (err) {
+         console.log(err)
+       }
+    });
     if(isRight) {
       resetQuestion(LocalState);
     }
