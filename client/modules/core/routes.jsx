@@ -14,6 +14,7 @@ import Addition from '../arithmetic/containers/addition.js'
 import Subtraction from '../arithmetic/containers/subtraction.js'
 import Multiplication from '../arithmetic/containers/multiplication.js'
 import NewQuestion from '../questions/containers/new_question.js'
+import LoginUser from '../users/components/LoginUser.jsx'
 
 
 export default function(injectDeps, {FlowRouter}) {
@@ -44,6 +45,15 @@ export default function(injectDeps, {FlowRouter}) {
     action() {
       mount(MainLayoutCtx, {
         content: () => (<NewUser />)
+      });
+    }
+  });
+
+    FlowRouter.route('/sign_in', {
+    name: 'users.new',
+    action() {
+      mount(MainLayoutCtx, {
+        content: () => (<LoginUser />)
       });
     }
   });
