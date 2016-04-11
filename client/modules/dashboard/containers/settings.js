@@ -12,6 +12,7 @@ export const composer = ({context}, onData) => {
 export const depsMapper = (context, actions) => ({
   showView: actions.settings.showView,
   getView: actions.settings.getView,
+  createProfile: actions.settings.createProfile,
   context: () => context
 });
 

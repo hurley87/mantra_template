@@ -15,14 +15,10 @@ export default {
       if(Meteor.userId()){
         FlowRouter.go("/home")
       }else{
-        alert("No user found")
+        alert("Incorrect user details")
       }
   });
 
-  },
-
-  check(){
-    console.log("sports")
   },
 
   clearErrors({LocalState}) {
