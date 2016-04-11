@@ -1,20 +1,18 @@
 export default {
-  create({Meteor, LocalState }, email, password ) {
+  login({Meteor, LocalState }, email, password ) {
     // handle errors if they exist
     if(!email) {
-      return LocalState.set('CREATE_USER', 'Email is required.');
+      return LocalState.set('LOGIN_USER', 'Email is required.');
     }
     if(!password) {
-      return LocalState.set('CREATE_USER', 'Password is required.');
+      return LocalState.set('LOGIN_USER', 'Password is required.');
     }
     // set errors to null if no error exists
-    LocalState.set('CREATE_USER', null);
+    LocalState.set('LOGIN_USER', null);
 
     
     // user Meteor Accounts package to create the user
-    Accounts.createUser({
-      email: email, 
-      password: password});
+    Meteor.loginWithPassword({email, password});
 
     // //redirect back to home
     // FlowRouter.go('/home');

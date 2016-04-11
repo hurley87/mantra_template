@@ -32,11 +32,11 @@ class LoginUser extends React.Component {
                             <label htmlFor="password">Password</label>
                             <Input ref="password" type="password" className="form-control" id="password" />
                           </div>
-
                           <br/>
                           <div className="submit">
-                            <ButtonInput className='button' onClick={this.createUser.bind(this)} type="submit" value="Login"/>
+                            <ButtonInput className='button' onClick={this.loginUser.bind(this)} type="submit" value="Login"/>
                           </div>
+                      
                       </form>
                     </div>
                   </div>            
@@ -51,11 +51,11 @@ class LoginUser extends React.Component {
       </div>
     )
   }
-  createUser(e) {
+  loginUser(e) {
     e.preventDefault();
-    const {create} = this.props;
+    const {login} = this.props;
     const {email, password} = this.refs;
-    create(email.getValue(), password.getValue());
+    login(email.getValue(), password.getValue());
     email.getInputDOMNode().value = '';
     password.getInputDOMNode().value = '';
   }
