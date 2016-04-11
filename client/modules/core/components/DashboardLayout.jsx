@@ -35,7 +35,7 @@ const Layout = ({content}) => (
           </ul>
         </div>
         <div className="menu-section">
-          <h3>Arithmetic</h3>
+          <h3>Exercises</h3>
           <ul>
             <li>
               <a href="/addition" data-toggle="sidebar" className={ location.pathname == '/addition' ? 'active' : null }>

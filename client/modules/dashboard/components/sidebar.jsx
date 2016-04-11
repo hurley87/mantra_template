@@ -4,8 +4,7 @@ import { Row, Col, Input, Grid } from 'react-bootstrap';
 class Sidebar extends React.Component {
   render() {
     return (
-      <div id="sidebar" className={ this.props.toggle ? 'show-menu' : 'hide-menu' }>
-        {console.log(this.props.toggle)}
+      <div id="sidebar">
         <div className="sidebar-toggler visible-xs">
           <i className="ion-navicon"></i>
         </div>

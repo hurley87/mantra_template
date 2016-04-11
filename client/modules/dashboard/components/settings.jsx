@@ -11,16 +11,14 @@ import Sidebar from '../containers/sidebar.js';
 class Settings extends React.Component {
   render() {
     return (
-      <div>
+      <div className={ this.props.toggle ? 'show-menu' : 'hide-menu' }>
         <Header title='Settings'/>
         <div id='content'>
           <Sidebar />
-          <div className={ this.props.toggle ? 'show-menu' : 'hide-menu' }>
             { this.props.getView() == 'profile' ? <Profile /> : null } 
             { this.props.getView() == 'billing' ? <Billing /> : null } 
             { this.props.getView() == 'notifications' ? <Notifications /> : null } 
             { this.props.getView() == 'support' ? <Support /> : null } 
-          </div>
         </div>
       </div>
     )

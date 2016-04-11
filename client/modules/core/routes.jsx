@@ -9,7 +9,7 @@ import About from '../marketing/components/about.jsx'
 import NewUser from '../users/containers/NewUser.js'
 import Home from '../dashboard/containers/home.js'
 import Settings from '../dashboard/containers/settings.js'
-import Upgrade from '../dashboard/components/upgrade.jsx'
+import Upgrade from '../dashboard/containers/upgrade.js'
 import Addition from '../arithmetic/containers/addition.js'
 import Subtraction from '../arithmetic/containers/subtraction.js'
 import Multiplication from '../arithmetic/containers/multiplication.js'
@@ -102,7 +102,7 @@ export default function(injectDeps, {FlowRouter}) {
     }
   });
 
-  FlowRouter.route('/test_questions', {
+  FlowRouter.route('/test_question', {
     name: 'questions:new_question',
     action() {
       mount(DashboardLayoutCtx, {
