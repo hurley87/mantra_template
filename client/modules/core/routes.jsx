@@ -7,7 +7,7 @@ import DashboardLayout from './containers/dashboardlayout.js';
 import Homepage from '../marketing/containers/Homepage.js'
 import About from '../marketing/components/about.jsx'
 import NewUser from '../users/containers/NewUser.js'
-import LoginUser from '../users/components/LoginUser.jsx'
+import LoginUser from '../users/containers/Login.js'
 import Home from '../dashboard/containers/home.js'
 import Settings from '../dashboard/containers/settings.js'
 import Upgrade from '../dashboard/containers/upgrade.js'

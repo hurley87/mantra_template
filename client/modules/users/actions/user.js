@@ -14,10 +14,11 @@ export default {
     // user Meteor Accounts package to create the user
     Accounts.createUser({
       email: email, 
-      password: password});
+      password: password
+    });
 
-    // //redirect back to home
-    // FlowRouter.go('/home');
+    //redirect back to home
+    FlowRouter.go('/home');
   },
   
   clearErrors({LocalState}) {
