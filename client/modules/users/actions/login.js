@@ -10,17 +10,21 @@ export default {
     // set errors to null if no error exists
     LocalState.set('LOGIN_USER', null);
 
-
-    console.log(email)
-    console.log(password)
-    
     // user Meteor Accounts package to create the user
-    Meteor.loginWithPassword(email, password);
+    Meteor.loginWithPassword(email, password, function(){
+      if(Meteor.userId()){
+        FlowRouter.go("/home")
+      }else{
+        alert("No user found")
+      }
+  });
 
-    //redirect back to home
-    FlowRouter.go('/home');
   },
-  
+
+  check(){
+    console.log("sports")
+  },
+
   clearErrors({LocalState}) {
     return LocalState.set('SAVING_ERROR', null)
   }
