@@ -8,8 +8,6 @@
   position: relative;
   min-height: 700px;
 
-  @include transition(all .3s ease-out);
-
   @media (max-width: $maxMedium) {
     margin-left: 80px;
   }
@@ -19,6 +17,9 @@
     z-index: 9999;
     padding-left: 20px;
     padding-right: 20px;
+    padding-bottom: 0;
+    padding-top: 0px;
+    min-height: 0px;
   }
 
   .menubar {
@@ -142,13 +143,13 @@
 }
 
 .show-menu {
-  position: relative;
-  transition: 1s all ease;
+  @include transition(all .3s ease-out);
   left: 230px;
+  position:relative;
 }
 
 .hide-menu {
-  position: relative;
-  transition: 1s all ease;
+  @include transition(all .3s ease-out);
   left: 0px;
+  position:relative;
 }

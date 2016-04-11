@@ -6,7 +6,7 @@ import DatePicker from 'react-bootstrap-date-picker';
 class Header extends React.Component {
   render() {
     return (
-      <div id="header" className={ this.props.toggle ? 'show-menu' : 'hide-menu' }>
+      <div id="header">
         <div className="menubar">
           <div className="sidebar-toggler visible-xs">
             <i className="ion-navicon" onClick={this.props.showMenu}></i>
