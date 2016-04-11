@@ -9,7 +9,7 @@ import Multi3 from './multi3.jsx'
 class Multiplication extends React.Component {
   render() {
     return (
-      <div>
+      <div className={ this.props.toggle ? 'show-menu' : 'hide-menu' }>
         <Header title='Multiplication'/>
         <div id='content'>
           <div id="sidebar">

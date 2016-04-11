@@ -8,7 +8,7 @@ import Add3 from './add3.jsx'
 class Addition extends React.Component {
   render() {
     return (
-      <div>
+      <div className={ this.props.toggle ? 'show-menu' : 'hide-menu' }>
         <Header title='Addition'/>
         <div id='content'>
           <div id="sidebar">

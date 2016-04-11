@@ -145,9 +145,11 @@
 .show-menu {
   @include transition(all .3s ease-out);
   left: 230px;
+  position:relative;
 }
 
 .hide-menu {
   @include transition(all .3s ease-out);
   left: 0px;
+  position:relative;
 }

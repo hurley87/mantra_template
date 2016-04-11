@@ -6,7 +6,7 @@ import Header from '../containers/header.js'
 class Home extends React.Component {
   render() {
     return (
-      <div>
+      <div className={ this.props.toggle ? 'show-menu' : 'hide-menu' }>
         <Header title='Home'/>
         howdy
       </div>

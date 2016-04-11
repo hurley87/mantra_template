@@ -9,7 +9,7 @@ import Sub3 from './sub3.jsx'
 class Subtraction extends React.Component {
   render() {
     return (
-      <div>
+      <div className={ this.props.toggle ? 'show-menu' : 'hide-menu' }>
         <Header title='Subtraction'/>
         <div id='content'>
           <div id="sidebar">

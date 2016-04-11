@@ -19,10 +19,9 @@
     }
 
     @media (max-width: $maxSmall) {
-      position: absolute;
+      position: relative;
       width: 100%;
       z-index: 999;
-      height: 305px;
       left: 0px;
       border-right: 1px solid #fff;
     }
