@@ -3,7 +3,7 @@ import {mount} from 'react-mounter';
 
 import Layout from './components/MainLayout.jsx';
 import InnerLayout from './components/InnerLayout.jsx';
-import DashboardLayout from './components/DashboardLayout.jsx'
+import DashboardLayout from './containers/dashboardlayout.js';
 import Homepage from '../marketing/containers/Homepage.js'
 import About from '../marketing/components/about.jsx'
 import NewUser from '../users/containers/NewUser.js'

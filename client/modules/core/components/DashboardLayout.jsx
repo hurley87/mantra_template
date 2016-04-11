@@ -1,12 +1,12 @@
 import React from 'react';
 import{ Grid, Row, Col, PageHeader } from 'react-bootstrap';
 
-const Layout = ({content}) => (
+const DashboardLayout = ({content, LocalState}) => (
   <div id='account'>
     <div id='wrapper'>
       <div id="sidebar-dark" className="main-sidebar">
         <div className="current-user">
-          <a href="index.html" className="name">
+          <a href="/home" className="name">
             <span>
               John Smith
             </span>
@@ -15,19 +15,19 @@ const Layout = ({content}) => (
         <div className="menu-section">
           <h3>General</h3>
           <ul>
-            <li>
+            <li onClick={LocalState.set('TOGGLE', false)}>
               <a href="/home" className={ location.pathname == '/home' ? 'active' : null }>
                 <i className="ion-home"></i> 
                 <span>Home</span>
               </a>
             </li>
-            <li>
+            <li onClick={LocalState.set('TOGGLE', false)}>
               <a href="/settings" className={ location.pathname == '/settings' ? 'active' : null }>
                 <i className="ion-person"></i> <span>Settings</span>
     
               </a>
             </li>
-            <li>
+            <li onClick={LocalState.set('TOGGLE', false)}>
               <a href="/upgrade" className={ location.pathname == '/upgrade' ? 'active' : null }>
                 <i className="ion-person-add"></i> <span>Upgrade</span>
               </a>
@@ -37,18 +37,18 @@ const Layout = ({content}) => (
         <div className="menu-section">
           <h3>Exercises</h3>
           <ul>
-            <li>
-              <a href="/addition" data-toggle="sidebar" className={ location.pathname == '/addition' ? 'active' : null }>
+            <li onClick={LocalState.set('TOGGLE', false)}>
+              <a href="/addition" className={ location.pathname == '/addition' ? 'active' : null }>
                 <i className="ion-plus-round"></i> <span>Addition</span>
               </a>
             </li>
-            <li>
-              <a href="/subtraction" data-toggle="sidebar" className={ location.pathname == '/subtraction' ? 'active' : null }>
+            <li onClick={LocalState.set('TOGGLE', false)}>
+              <a href="/subtraction" className={ location.pathname == '/subtraction' ? 'active' : null }>
                 <i className="ion-minus-round"></i> <span>Subtraction</span>
               </a>
             </li>
-            <li>
-              <a href="/multiplication" data-toggle="sidebar" className={ location.pathname == '/multiplication' ? 'active' : null }>
+            <li onClick={LocalState.set('TOGGLE', false)}>
+              <a href="/multiplication" className={ location.pathname == '/multiplication' ? 'active' : null }>
                 <i className="ion-close-round"></i> <span>Multiplication</span>
               </a>
             </li>
@@ -58,19 +58,19 @@ const Layout = ({content}) => (
           <h3>Learn More</h3>
           <ul>
             <li>
-              <a href="account.html" data-toggle="sidebar">
+              <a href="account.html">
                 <i className="ion-printer"></i> <span>Textbook</span>
     
               </a>
             </li>
             <li>
-              <a href="account.html" data-toggle="sidebar">
+              <a href="account.html">
                 <i className="ion-lightbulb"></i> <span>Blog</span>
     
               </a>
             </li>
             <li>
-              <a href="account.html" data-toggle="sidebar">
+              <a href="account.html">
                 <i className="ion-calendar"></i> <span>Private Lesson</span>
               </a>
             </li>
@@ -100,4 +100,4 @@ const Layout = ({content}) => (
 
 );
 
-export default Layout;
+export default DashboardLayout;
