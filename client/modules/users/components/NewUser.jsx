@@ -23,6 +23,7 @@ class NewUser extends React.Component {
                     <div className="col-md-12">
                       {this.props.error ? <p style={{color: 'red'}}>{this.props.error}</p> : null}
                       <form role="form">
+                      
                         <div className="form-group">
                             <label htmlFor="name">Your name</label>
                             <Input type="text" className="form-control" id="name" />
@@ -45,6 +46,7 @@ class NewUser extends React.Component {
                           <div className="submit">
                             <ButtonInput className='button' onClick={this.createUser.bind(this)} type="submit" value="Create my account"/>
                           </div>
+
                       </form>
                     </div>
                   </div>            

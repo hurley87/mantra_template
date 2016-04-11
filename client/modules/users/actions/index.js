@@ -1,7 +1,7 @@
 import users from './user';
+import logins from './login';
 
-const actions = {
- users
-};
-
-export default actions;
+export default{
+	users,
+	logins
+}

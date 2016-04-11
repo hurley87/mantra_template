@@ -1,16 +1,16 @@
-import NewUser from '../components/NewUser.jsx';
+import LoginUser from '../components/LoginUser.jsx';
 import {useDeps, composeWithTracker, composeAll} from 'mantra-core';
 
 export const composer = ({context, clearErrors}, onData) => {
  const {LocalState} = context();
- const error = LocalState.get('CREATE_USER');
+ const error = LocalState.get('LOGIN_USER');
  onData(null, {error});
  
  return clearErrors;
 };
 
 export const depsMapper = (context, actions) => ({
- create: actions.users.create,
+ login: actions.logins.login,
  clearErrors: actions.users.clearErrors,
  context: () => context
 });
@@ -18,4 +18,4 @@ export const depsMapper = (context, actions) => ({
 export default composeAll(
  composeWithTracker(composer),
  useDeps(depsMapper)
-)(NewUser);
+)(LoginUser);
