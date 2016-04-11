@@ -6,8 +6,9 @@ export default function () {
   Meteor.methods({
     'create.profile'(name, age){
     	check(name, String);
-      check(age, String);
-    	const profile = {name, age};
+      	check(age, String);
+      	user = Meteor.userId();
+    	const profile = {user, name, age};
     	Profiles.insert(profile);
     }
   });
