@@ -5,11 +5,12 @@ export const composer = ({context}, onData) => {
   const {LocalState, Meteor, Collections} = context();
   const view = LocalState.get('SETTINGSVIEW');
   const toggle = LocalState.get('TOGGLE');
+  const user = Meteor.userId();
+  
+  const profile = Meteor.subscribe('profiles.single', user)
+    
+  onData(null, {view, toggle, profile})
 
-  if(Meteor.subscribe('profiles.list').ready()){
-  const profiles = Collections.Profiles.find().fetch();
-  onData(null, {view, toggle, profiles});
-  }
 };
 
 export const depsMapper = (context, actions) => ({
