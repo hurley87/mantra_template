@@ -15,7 +15,7 @@ export default {
       if(Meteor.userId()){
         FlowRouter.go("/home")
       }else{
-        alert("Incorrect user details")
+        return LocalState.set('LOGIN_USER', 'Incorrect Login')
       }
   });
 

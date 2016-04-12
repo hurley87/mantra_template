@@ -12,11 +12,14 @@ export default {
 
     
     // user Meteor Accounts package to create the user
-    Accounts.createUser({
-      email: email, 
-      password: password
-    });
-
+    if(Meteor.userId()){
+      Accounts.createUser({
+        email: email, 
+        password: password
+      });
+    } else {
+      return LocalState.set('CREATE_USER', 'Incorrect login details');
+    }
     //redirect back to home
     FlowRouter.go('/home');
   },
