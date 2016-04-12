@@ -17,6 +17,14 @@ export default {
         console.log(err)
       }
     });
+  },
+
+  updateProfile({Metoer, LocalState}, id, user_name, user_age){
+      Meteor.call('update.profile', id, user_name, user_age, (err) => {
+        if(err){
+          console.log(err)
+        }
+      });
   }
 
 }

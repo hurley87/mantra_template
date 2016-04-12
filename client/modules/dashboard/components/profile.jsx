@@ -45,9 +45,10 @@ class Profile extends React.Component {
   }
   changeProfile(event){
     event.preventDefault();
-    const {createProfile} = this.props;
+    const {updateProfile} = this.props;
     const {name, age} = this.refs;
-    createProfile(name.getValue(), age.getValue());
+    const id = this.props.user_id;
+    updateProfile(id, name.getValue(), age.getValue());
   }
 }
 

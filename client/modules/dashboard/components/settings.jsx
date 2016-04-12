@@ -15,10 +15,11 @@ class Settings extends React.Component {
         <Header title='Settings'/>
         <div id='content'>
           <Sidebar />
-            { this.props.getView() == 'profile' ? <Profile createProfile={this.props.createProfile}/> : null } 
+            { this.props.getView() == 'profile' ? <Profile user_id={this.props.profile._id} createProfile={this.props.createProfile} updateProfile={this.props.updateProfile} /> : null } 
             { this.props.getView() == 'billing' ? <Billing /> : null } 
             { this.props.getView() == 'notifications' ? <Notifications /> : null } 
             { this.props.getView() == 'support' ? <Support /> : null } 
+          }
         </div>
       </div>
     )
