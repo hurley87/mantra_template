@@ -37,20 +37,21 @@ class Profile extends React.Component {
 
         <form>
           <div className="form-group">
-            <label>New password</label>
-            <input type="password" ref="password_1" className="form-control" />
+            <label>Old password</label>
+            <Input type="password" ref="old_password" className="form-control" />
           </div>
           <div className="form-group">
-            <label>Confirm new password</label>
-            <input type="password" ref="password_2" className="form-control" />
+            <label>New password</label>
+            <Input type="password" ref="new_password" className="form-control" />
           </div>
           <div className="form-group action">
-            <input type="submit" className="btn btn-success" value="Save password" />
+            <Input type="submit" className="btn btn-success" value="Change password" onClick={this.changePassword.bind(this)} />
           </div>
         </form>
       </div>
     )
   }
+  
   changeProfile(event){
     event.preventDefault();
     const {updateProfile} = this.props;
@@ -58,6 +59,14 @@ class Profile extends React.Component {
     const id = this.props.profile._id;
     updateProfile(id, name.getValue(), email.getValue(), profession.getValue(), age.getValue());
   }
+
+  changePassword(event){
+  event.preventDefault();
+  const {updatePassword} = this.props;
+  const {old_password, new_password} = this.refs;
+  updatePassword(old_password.getValue(), new_password.getValue());
+  }
+
 }
 
 export default Profile;
