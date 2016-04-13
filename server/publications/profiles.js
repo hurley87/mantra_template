@@ -7,9 +7,9 @@ export default function () {
 		return Profiles.find();
 	});
 
-	Meteor.publish('profiles.single', function (token) {
-		check (token, String);
-		const selector = {user: token};
+	Meteor.publish('profiles.single', function (user_id) {
+		check (user_id, String);
+		const selector = {user: user_id};
 		return Profiles.find(selector);
 	});
 }

@@ -7,6 +7,7 @@ export const composer = ({context}, onData) => {
   const toggle = LocalState.get('TOGGLE');  
   
   const user = Meteor.userId();
+  
   if(Meteor.subscribe('profiles.single', user).ready()){
     const profile = Collections.Profiles.findOne({user});
     onData(null, {view, toggle, profile})
@@ -19,6 +20,7 @@ export const depsMapper = (context, actions) => ({
   getView: actions.settings.getView,
   createProfile: actions.settings.createProfile,
   updateProfile: actions.settings.updateProfile,
+  updatePassword: actions.settings.updatePassword,
   context: () => context
 });
 

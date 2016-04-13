@@ -24,10 +24,6 @@ class NewUser extends React.Component {
                       {this.props.error ? <p style={{color: 'red'}}>{this.props.error}</p> : null}
                       <form role="form">
                       
-                        <div className="form-group">
-                            <label htmlFor="name">Your name</label>
-                            <Input type="text" className="form-control" id="name" />
-                          </div>
                           <div className="form-group">
                             <label htmlFor="email">Email address</label>
                             <Input ref="email" type="email" className="form-control" id="email" />
@@ -65,10 +61,10 @@ class NewUser extends React.Component {
   createUser(e) {
     e.preventDefault();
     const {create} = this.props;
+    const {createProfile} = this.props;
     const {email, password} = this.refs;
     create(email.getValue(), password.getValue());
-    email.getInputDOMNode().value = '';
-    password.getInputDOMNode().value = '';
+    createProfile("default", "default", "default", "default");
   }
 }
 
