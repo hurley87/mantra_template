@@ -8,31 +8,9 @@ const DashboardLayout = ({content, LocalState}) => (
         <div className="current-user">
           <a href="/home" className="name">
             <span>
-              John Smith
+              Pttrns
             </span>
           </a>
-        </div>
-        <div className="menu-section">
-          <h3>General</h3>
-          <ul>
-            <li onClick={LocalState.set('TOGGLE', false)}>
-              <a href="/home" className={ location.pathname == '/home' ? 'active' : null }>
-                <i className="ion-home"></i> 
-                <span>Home</span>
-              </a>
-            </li>
-            <li onClick={LocalState.set('TOGGLE', false)}>
-              <a href="/settings" className={ location.pathname == '/settings' ? 'active' : null }>
-                <i className="ion-person"></i> <span>Settings</span>
-    
-              </a>
-            </li>
-            <li onClick={LocalState.set('TOGGLE', false)}>
-              <a href="/upgrade" className={ location.pathname == '/upgrade' ? 'active' : null }>
-                <i className="ion-person-add"></i> <span>Upgrade</span>
-              </a>
-            </li>
-          </ul>
         </div>
         <div className="menu-section">
           <h3>Exercises</h3>
@@ -59,7 +37,7 @@ const DashboardLayout = ({content, LocalState}) => (
           <ul>
             <li>
               <a href="account.html">
-                <i className="ion-printer"></i> <span>Textbook</span>
+                <i className="ion-archive"></i> <span>Textbook</span>
     
               </a>
             </li>
@@ -74,21 +52,6 @@ const DashboardLayout = ({content, LocalState}) => (
                 <i className="ion-calendar"></i> <span>Private Lesson</span>
               </a>
             </li>
-          </ul>
-        </div>
-        <div className="bottom-menu hidden-sm">
-          <ul>
-            <li><a href="#"><i className="ion-help"></i></a></li>
-            <li>
-              <a href="#">
-                <i className="ion-archive"></i>
-                <span className="flag"></span>
-              </a>
-              <ul className="menu">
-                <li><a href="#">5 unread messages</a></li>
-              </ul>
-            </li>
-            <li><a href="signup.html"><i className="ion-log-out"></i></a></li>
           </ul>
         </div>
       </div>
