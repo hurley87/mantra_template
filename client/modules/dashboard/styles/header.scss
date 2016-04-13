@@ -97,6 +97,34 @@
       font-weight: bold;
       letter-spacing: .3px;
     }
+
+    .options {
+      a {
+        margin-left: 25px;
+        color: #96AEC4;
+        text-decoration: none;
+        font-size: 17px;
+
+        @include transition(all .2s linear);
+
+        @media (max-width: $maxSmall) {
+          position: relative;
+          top: 4px;
+        }
+
+        &:hover {
+          color: #344D63;
+        }
+
+        i {
+          margin-right: 3px;
+
+          @media (max-width: $maxSmall) {
+            display: none;
+          }
+        }
+      }
+    }
   }
 
   .content-wrapper {

@@ -67,7 +67,7 @@ export default function(injectDeps, {FlowRouter}) {
     }
   });
 
-  FlowRouter.route('/settings', {
+  FlowRouter.route('/profile', {
     name: 'dashboard.settings',
     action() {
       mount(DashboardLayoutCtx, {
