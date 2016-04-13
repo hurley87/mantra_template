@@ -4,14 +4,19 @@ import {check} from 'meteor/check';
 
 export default function () {
   Meteor.methods({
-    
     'create.profile'(name, email, profession, age){
         check(name, String);
         check(email, String);
         check(profession, String);
         check(age, String);
         user = Meteor.userId();
-        const profile = {user, name, email, profession, age};
+        const profile = {
+            user: user, 
+            name: name, 
+            email: email, 
+            profession: profession, 
+            age: age
+        };
         Profiles.insert(profile);
     }
   });

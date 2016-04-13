@@ -6,7 +6,7 @@ const DashboardLayout = ({content, LocalState}) => (
     <div id='wrapper'>
       <div id="sidebar-dark" className="main-sidebar">
         <div className="current-user">
-          <a href="/home" className="name">
+          <a href="/" className="name">
             <span>
               Pttrns
             </span>

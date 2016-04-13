@@ -15,7 +15,7 @@ class Header extends React.Component {
             {this.props.title}
           </div>
           <div className="options pull-right">
-            <a href="#"><i className="ion-person"></i> Profile</a>
+            <a href="/profile"><i className="ion-person"></i> Profile</a>
           </div>
         </div>
       </div>

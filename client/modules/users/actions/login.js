@@ -13,7 +13,7 @@ export default {
     // user Meteor Accounts package to create the user
     Meteor.loginWithPassword(email, password, function(){
       if(Meteor.userId()){
-        FlowRouter.go("/home")
+        FlowRouter.go("/profile")
       }else{
         return LocalState.set('LOGIN_USER', 'Incorrect Login')
       }

@@ -7,9 +7,10 @@ export const composer = ({context}, onData) => {
   const toggle = LocalState.get('TOGGLE');  
   
   const user = Meteor.userId();
-  
-  if(Meteor.subscribe('profiles.single', user).ready()){
+
+  if(user && Meteor.subscribe('profiles.single', user).ready()){
     const profile = Collections.Profiles.findOne({user});
+    console.log(profile)
     onData(null, {view, toggle, profile})
   }
 

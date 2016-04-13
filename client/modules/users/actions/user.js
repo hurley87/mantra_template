@@ -1,5 +1,5 @@
 export default {
-  create({Meteor, LocalState }, email, password ) {
+  create({Meteor, LocalState }, email, password, profession, age) {
     // handle errors if they exist
     if(!email) {
       return LocalState.set('CREATE_USER', 'Email is required.');
@@ -10,30 +10,20 @@ export default {
     // set errors to null if no error exists
     LocalState.set('CREATE_USER', null);
 
-    
     // user Meteor Accounts package to create the user
       Accounts.createUser({
         email: email, 
         password: password
+      }, function(err) {
+        Meteor.call('create.profile', name, email, profession, age, (err) => {
+          if(err){
+            console.log(err)
+          }
+          FlowRouter.go('/profile')
+        });
       });
-    //redirect back to home
-    // FlowRouter.go('/home');
-  },
-
-  createProfile({Meteor, LocalState}, name, email, profession, age){
-    Meteor.call('create.profile', name, email, profession, age, (err) => {
-      if(err){
-        console.log(err)
-      }
-
-      FlowRouter.go('/home')
-      
-    });
   },
   
-
-
-
   clearErrors({LocalState}) {
     return LocalState.set('SAVING_ERROR', null)
   }
