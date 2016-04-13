@@ -16,9 +16,8 @@ export default {
         email: email, 
         password: password
       });
-
     //redirect back to home
-    FlowRouter.go('/home');
+    // FlowRouter.go('/home');
   },
 
   createProfile({Meteor, LocalState}, name, email, profession, age){
@@ -26,9 +25,15 @@ export default {
       if(err){
         console.log(err)
       }
+
+      FlowRouter.go('/home')
+      
     });
   },
   
+
+
+
   clearErrors({LocalState}) {
     return LocalState.set('SAVING_ERROR', null)
   }

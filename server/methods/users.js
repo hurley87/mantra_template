@@ -5,13 +5,13 @@ import {check} from 'meteor/check';
 export default function () {
   Meteor.methods({
     
-    'create.profile'(name, age, email, profession){
+    'create.profile'(name, email, profession, age){
         check(name, String);
-        check(age, String);
         check(email, String);
         check(profession, String);
+        check(age, String);
         user = Meteor.userId();
-        const profile = {user, name, age, email, profession};
+        const profile = {user, name, email, profession, age};
         Profiles.insert(profile);
     }
   });
