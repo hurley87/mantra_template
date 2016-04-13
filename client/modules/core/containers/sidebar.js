@@ -1,5 +1,5 @@
 import {useDeps, composeAll, composeWithTracker, compose} from 'mantra-core';
-import DashboardLayout from '../components/DashboardLayout.jsx';
+import SidebarNav from '../components/sidebar.jsx';
 
 export const composer = ({context}, onData) => {
   const {LocalState, Meteor} = context();
@@ -14,4 +14,4 @@ export const depsMapper = (context, actions) => ({
 export default composeAll(
   composeWithTracker(composer),
   useDeps(depsMapper)
-)(DashboardLayout);
+)(SidebarNav);
