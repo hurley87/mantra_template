@@ -69,9 +69,8 @@ class NewUser extends React.Component {
   createUser(e) {
     e.preventDefault();
     const {create} = this.props;
-    const {createProfile} = this.props;
     const {name, email, password, profession} = this.refs;
-    create(name.getValue(), email.getValue(), password.getValue(), profession.getValue(), '18');
+    create(name.getValue(), email.getValue(), password.getValue(), profession.getValue(), '');
   }
 }
 
