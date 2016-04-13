@@ -1,5 +1,5 @@
 export default {
-  create({Meteor, LocalState }, name, email, password, profession, age) {
+  create({Meteor, LocalState },name, email, password, profession, age) {
     // handle errors if they exist
     if(!email) {
       return LocalState.set('CREATE_USER', 'Email is required.');

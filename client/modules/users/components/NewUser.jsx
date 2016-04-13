@@ -33,6 +33,10 @@ class NewUser extends React.Component {
                             <Input ref="email" type="email" className="form-control" id="email" />
                           </div>
                           <div className="form-group">
+                            <label htmlFor="email">Profession</label>
+                            <Input ref="profession" type="text" className="form-control" id="profession" />
+                          </div>
+                          <div className="form-group">
                             <label htmlFor="password">Password</label>
                             <Input ref="password" type="password" className="form-control" id="password" />
                           </div>
@@ -66,8 +70,8 @@ class NewUser extends React.Component {
     e.preventDefault();
     const {create} = this.props;
     const {createProfile} = this.props;
-    const {name, email, password} = this.refs;
-    create(email.getValue(), password.getValue(), 'student', '25');
+    const {name, email, password, profession} = this.refs;
+    create(name.getValue(), email.getValue(), password.getValue(), profession.getValue(), '18');
   }
 }
 

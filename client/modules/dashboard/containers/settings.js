@@ -10,7 +10,6 @@ export const composer = ({context}, onData) => {
 
   if(user && Meteor.subscribe('profiles.single', user).ready()){
     const profile = Collections.Profiles.findOne({user});
-    console.log(profile)
     onData(null, {view, toggle, profile})
   }
 
