@@ -6,11 +6,10 @@ import InnerLayout from './components/InnerLayout.jsx';
 import DashboardLayout from './containers/dashboardlayout.js';
 import Homepage from '../marketing/containers/Homepage.js'
 import About from '../marketing/components/about.jsx'
+import NotFound from '../marketing/components/notfound.jsx'
 import NewUser from '../users/containers/NewUser.js'
 import LoginUser from '../users/containers/Login.js'
-import Home from '../dashboard/containers/home.js'
 import Settings from '../dashboard/containers/settings.js'
-import Upgrade from '../dashboard/containers/upgrade.js'
 import Addition from '../arithmetic/containers/addition.js'
 import Subtraction from '../arithmetic/containers/subtraction.js'
 import Multiplication from '../arithmetic/containers/multiplication.js'
@@ -58,29 +57,11 @@ export default function(injectDeps, {FlowRouter}) {
     }
   });
 
-  FlowRouter.route('/home', {
-    name: 'dashboard.home',
-    action() {
-      mount(DashboardLayoutCtx, {
-        content: () => (<Home />)
-      })
-    }
-  });
-
   FlowRouter.route('/profile', {
     name: 'dashboard.settings',
     action() {
       mount(DashboardLayoutCtx, {
         content: () => (<Settings />)
-      })
-    }
-  });
-
-  FlowRouter.route('/upgrade', {
-    name: 'dashboard.upgrade',
-    action() {
-      mount(DashboardLayoutCtx, {
-        content: () => (<Upgrade />)
       })
     }
   });
@@ -120,4 +101,12 @@ export default function(injectDeps, {FlowRouter}) {
       })
     }
   });
+
+  FlowRouter.notFound = {
+    action() {
+      mount(MainLayoutCtx, {
+        content: () => (<NotFound />)
+      });
+    }
+  };
 }

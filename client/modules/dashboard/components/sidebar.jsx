@@ -13,7 +13,7 @@ class Sidebar extends React.Component {
           <li onClick={ this.props.showView.bind(this, 'profile') }>
             <a className={ this.props.getView() == 'profile' ? 'active' : null}>
               <i className="ion-ios7-person-outline"></i>
-              Profile
+              Settings
             </a>
           </li>
           <li onClick={ this.props.showView.bind(this, 'billing') }>

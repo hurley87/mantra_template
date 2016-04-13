@@ -6,7 +6,7 @@ class Profile extends React.Component {
     return (
       <div id='panel' className='profile'>
         <h3>
-          Profile settings
+          Settings
         </h3>
 
         <p className="intro">

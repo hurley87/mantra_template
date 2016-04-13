@@ -12,7 +12,7 @@ class Settings extends React.Component {
   render() {
     return (
       <div className={ this.props.toggle ? 'show-menu' : 'hide-menu' }>
-        <Header title='Settings'/>
+        <Header title='Profile'/>
         <div id='content'>
           <Sidebar />
             { this.props.getView() == 'profile' ? <Profile profile={this.props.profile} updateProfile={this.props.updateProfile} updatePassword={this.props.updatePassword} /> : null } 
