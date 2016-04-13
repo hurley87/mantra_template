@@ -36,6 +36,9 @@ class LoginUser extends React.Component {
                           <div className="submit">
                             <ButtonInput className='button' onClick={this.loginUser.bind(this)} type="submit" value="Login"/>
                           </div>
+                          <div className="submit">
+                            <ButtonInput className='button' onClick={this.forgotPassword.bind(this)} type="submit" value="Forgot Password"/>
+                          </div>
                       
                       </form>
                     </div>
@@ -58,6 +61,13 @@ class LoginUser extends React.Component {
     login(email.getValue(), password.getValue());
     email.getInputDOMNode().value = '';
     password.getInputDOMNode().value = '';
+  }
+
+  forgotPassword(event){
+    event.preventDefault();
+    const {forgot} = this.props;
+    const {email} = this.refs;
+    forgot(email.getValue());
   }
 }
 

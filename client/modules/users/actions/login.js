@@ -21,6 +21,19 @@ export default {
 
   },
 
+  forgot({Meteor, LocalState}, user_email){
+    var options = {};
+    options.email = user_email;
+    
+    Accounts.forgotPassword(options, function(error){  
+      if (error) { 
+        console.log(error);
+      }else{
+        alert('Check your mailbox!');
+    } 
+  });
+  },
+
   clearErrors({LocalState}) {
     return LocalState.set('SAVING_ERROR', null)
   }
