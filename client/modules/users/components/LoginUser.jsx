@@ -46,7 +46,7 @@ class LoginUser extends React.Component {
                 </div>
               </div>
               <div className="already-account">
-                Copyright Pi Academy
+                Don't have an account? <a href="/register">Sign up here</a>
               </div>
             </Col>
           </Row>
