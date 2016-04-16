@@ -27,6 +27,17 @@ class NewUser extends React.Component {
                           // submit attempts 
                           onValidSubmit={this._handleValidSubmit.bind(this)}
                           onInvalidSubmit={this._handleInvalidSubmit.bind(this)}>
+
+                          <ValidatedInput
+                              type='text'
+                              label='Full Name'
+                              name='name'
+                              validate='required,isLength:4:30'
+                              errorHelp={{
+                                  required: 'Please enter your email',
+                                  isLength: 'Username must be at least 4 characters'
+                              }}
+                          />
            
                           <ValidatedInput
                               type='text'
@@ -43,7 +54,7 @@ class NewUser extends React.Component {
                               type='password'
                               name='password'
                               label='Password'
-                              validate='required,isLength:6:60'
+                              validate='required,isLength:6:30'
                               errorHelp={{
                                   required: 'Please specify a password',
                                   isLength: 'Password must be at least 6 characters'
@@ -58,29 +69,31 @@ class NewUser extends React.Component {
                               errorHelp='Passwords do not match'
                           />
            
-                          <RadioGroup name='radio'
-                                      label='Which one is better?'
-                                      labelClassName='col-xs-12'
-                                      wrapperClassName='row'>
+                          <RadioGroup name='type'
+                                      label='Are you a student, parent or teacher?'
+                                      validate='required'
+                                      errorHelp={{
+                                          required: 'Please specify what type of user you are'
+                                      }}
+                                      labelClassName=''
+                                      wrapperClassName=''>
                               <Radio value='student' label='student' checked='checked'/>
                               <Radio value='teacher' label='teacher' />
                               <Radio value='parent' label='parent' />
                           </RadioGroup>
            
-                          <ValidatedInput
-                              type='checkbox'
-                              name='agree'
-                              label='I agree to the terms and conditions'
-                              validate='isChecked'
-                              className='terms'
-                          />
+                          <div className="checkbox">
+                            <label>
+                                <Input type="checkbox" checked='checked' /> You have read & agree to the <a href="#">Terms of service</a>.
+                            </label>
+                          </div>
            
                           <ButtonInput
                               type='submit'
                               bsSize='large'
                               bsStyle='primary'
                               value='Register'
-                              className='button'
+                              className='button text-center'
                           />
                       </Form>
                     </div>
@@ -96,22 +109,11 @@ class NewUser extends React.Component {
       </div>
     )
   }
-  createUser(e) {
-    e.preventDefault();
-    const {create} = this.props;
-    const {name, email, password, profession} = this.refs;
-    create(name.getValue(), email.getValue(), password.getValue(), profession.getValue(), '');
-  }
   _handleValidSubmit(values) {
-      // Values is an object containing all values 
-      // from the inputs 
-      console.log(values)
+    this.props.create(values.name, values.email, values.password, values.type, '' )
   }
-
   _handleInvalidSubmit(errors, values) {
-      // Errors is an array containing input names 
-      // that failed to validate 
-      console.log(errors, values)
+    console.log(errors)
   }
 }
 
