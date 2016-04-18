@@ -20,7 +20,7 @@ class Addition extends React.Component {
               <li onClick={ this.props.setView.bind(this, 'add1')}>
                 <a className={this.props.getView() == 'add1' ? 'active' : null}>
                   <i className="ion-checkmark-circled"></i>
-                  Lesson 1
+                  0 - 5  
                 </a>
               </li>
               <li onClick={ this.props.setView.bind(this, 'add2')}>
@@ -37,10 +37,12 @@ class Addition extends React.Component {
               </li>
             </ul>
           </div>
+          <div className='question-wrapper'>
+            { this.props.getView() == 'add1' ? <Add1 /> : null }
+            { this.props.getView() == 'add2' ? <Add2 /> : null }
+            { this.props.getView() == 'add3' ? <Add3 /> : null }
+          </div>
         </div>
-        { this.props.getView() == 'add1' ? <Add1 /> : null }
-        { this.props.getView() == 'add2' ? <Add2 /> : null }
-        { this.props.getView() == 'add3' ? <Add3 /> : null }
       </div>
     )
   }

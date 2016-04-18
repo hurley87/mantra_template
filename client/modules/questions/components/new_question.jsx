@@ -4,9 +4,8 @@ import { Col, Panel, Input, ButtonInput, Glyphicon } from 'react-bootstrap';
 class NewQuestion extends React.Component { 
   render() {
     return (
-      <Col xs={12} sm={6} smOffset={3}>
+      <Col xs={12} sm={6} smOffset={6}>
         <Panel>
-          <h1>New Question</h1>
           <h3>
             {this.props.question().num1} {this.props.operatorSign} {this.props.question().num2} 
           </h3>

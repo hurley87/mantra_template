@@ -34,7 +34,7 @@ class NewUser extends React.Component {
                               name='name'
                               validate='required,isLength:4:30'
                               errorHelp={{
-                                  required: 'Please enter your email',
+                                  required: 'Please enter a username',
                                   isLength: 'Username must be at least 4 characters'
                               }}
                           />
@@ -89,11 +89,11 @@ class NewUser extends React.Component {
                           </div>
            
                           <ButtonInput
-                              type='submit'
-                              bsSize='large'
-                              bsStyle='primary'
-                              value='Register'
-                              className='button text-center'
+                            type='submit'
+                            bsSize='large'
+                            bsStyle='primary'
+                            value='Register'
+                            className='button text-center'
                           />
                       </Form>
                     </div>

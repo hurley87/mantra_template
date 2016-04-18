@@ -19,7 +19,6 @@ class Settings extends React.Component {
             { this.props.getView() == 'billing' ? <Billing /> : null } 
             { this.props.getView() == 'notifications' ? <Notifications /> : null } 
             { this.props.getView() == 'support' ? <Support /> : null } 
-          }
         </div>
       </div>
     )

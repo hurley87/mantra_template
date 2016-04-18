@@ -1,15 +1,16 @@
 import {useDeps, composeAll, composeWithTracker, compose} from 'mantra-core';
 
 import NewQuestion from '../components/new_question.jsx';
+import { _ } from 'lodash';
 
-export const composer = ({context, operatorSign}, onData) => {
+export const composer = ({context, operatorSign, min, max}, onData) => {
   const {LocalState} = context();
   LocalState.set('OPERATOR', operatorSign);
   LocalState.set('GUESS', '');
   LocalState.set('START', new Date());
   LocalState.set('QUESTION', {
-    num1: Math.floor((Math.random() * 10) + 1),
-    num2: Math.floor((Math.random() * 10) + 1)
+    num1: _.random(parseInt(min), parseInt(max)),
+    num2: _.random(parseInt(min), parseInt(max))
   });
   nums = LocalState.get('QUESTION');
   onData(null, {nums});
@@ -28,3 +29,4 @@ export default composeAll(
   composeWithTracker(composer),
   useDeps(depsMapper)
 )(NewQuestion);
+

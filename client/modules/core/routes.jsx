@@ -1,15 +1,23 @@
 import React from 'react';
 import {mount} from 'react-mounter';
 
+// Layouts
 import Layout from './components/MainLayout.jsx';
 import InnerLayout from './components/InnerLayout.jsx';
 import DashboardLayout from './containers/dashboardlayout.js';
+import QuestionLayout from './containers/QuestionLayout.js';
+
+// marketing
 import Homepage from '../marketing/containers/Homepage.js'
 import About from '../marketing/components/about.jsx'
 import NotFound from '../marketing/components/notfound.jsx'
+
+// registration
 import NewUser from '../users/containers/NewUser.js'
 import LoginUser from '../users/containers/Login.js'
 import Settings from '../dashboard/containers/settings.js'
+
+// questions
 import Addition from '../arithmetic/containers/addition.js'
 import Subtraction from '../arithmetic/containers/subtraction.js'
 import Multiplication from '../arithmetic/containers/multiplication.js'
@@ -20,6 +28,7 @@ export default function(injectDeps, {FlowRouter}) {
   const MainLayoutCtx = injectDeps(Layout);
   const InnerLayoutCtx = injectDeps(InnerLayout);
   const DashboardLayoutCtx = injectDeps(DashboardLayout);
+  const QuestionLayoutCtx = injectDeps(QuestionLayout);
 
   FlowRouter.route('/', {
     name: 'marketing.homgepage',
@@ -97,6 +106,15 @@ export default function(injectDeps, {FlowRouter}) {
     name: 'questions:new_question',
     action() {
       mount(DashboardLayoutCtx, {
+        content: () => (<NewQuestion operatorSign='+' min='6' max ='9' />)
+      })
+    }
+  });
+
+  FlowRouter.route('/test_addition', {
+    name: 'questions:new_question',
+    action() {
+      mount(QuestionLayoutCtx, {
         content: () => (<NewQuestion operatorSign='+' min='6' max ='9' />)
       })
     }
