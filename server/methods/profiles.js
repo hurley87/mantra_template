@@ -4,7 +4,6 @@ import {check} from 'meteor/check';
 
 export default function () {
   Meteor.methods({
-
     'update.profile'(id, user_name, user_email, user_profession, user_age){
         check(id, String);
         check(user_name, String);

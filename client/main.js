@@ -8,6 +8,7 @@ import usersModule from './modules/users';
 import questionModule from './modules/questions';
 import dashboardModule from './modules/dashboard';
 import arithmeticModule from './modules/arithmetic';
+import additionsModule from './modules/additions';
 
 // initilize context
 const context = initContext();
@@ -20,4 +21,5 @@ app.loadModule(usersModule);
 app.loadModule(questionModule);
 app.loadModule(dashboardModule);
 app.loadModule(arithmeticModule);
+app.loadModule(additionsModule);
 app.init();

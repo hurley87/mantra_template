@@ -18,6 +18,7 @@ import LoginUser from '../users/containers/Login.js'
 import Settings from '../dashboard/containers/settings.js'
 
 // questions
+import AddIndex from '../additions/containers/add_index.js'
 import Addition from '../arithmetic/containers/addition.js'
 import Subtraction from '../arithmetic/containers/subtraction.js'
 import Multiplication from '../arithmetic/containers/multiplication.js'
@@ -107,6 +108,15 @@ export default function(injectDeps, {FlowRouter}) {
     action() {
       mount(DashboardLayoutCtx, {
         content: () => (<NewQuestion operatorSign='+' min='6' max ='9' />)
+      })
+    }
+  });
+
+  FlowRouter.route('/add_index', {
+    name: 'questions:add_index',
+    action() {
+      mount(QuestionLayoutCtx, {
+        content: () => (<AddIndex />)
       })
     }
   });
