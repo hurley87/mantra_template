@@ -3,4 +3,5 @@ import additions from './additions';
 
 export default function() {
 	profiles();
+  additions();
 }

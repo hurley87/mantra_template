@@ -1,70 +1,39 @@
 import React from 'react';
 
-const AddIndex = () => (
+const AddIndex = ({additions}) => (
   <div className="content-wrapper">
     <div className="sidebar-toggler visible-xs">
       <i className="ion-navicon"></i>
     </div>
-    
     <div className="header">
-      Addition
+      Addition Exercises
     </div>
-
     <div className="steps">
       <div className="step done">
         <div className="info">
           <span className="number">
             <i className="ion-checkmark-circled"></i>
           </span> 
-          Connect your Stripe account or create a new one to start receiving payments 
+          This is an example of a module that has been completed
         </div>
-
         <a href="#" className="disabled button">
-          <span>Connect Stripe</span>
+          <span>Start</span>
         </a>
       </div>
-      <div className="step done">
-        <div className="info">
-          <span className="number">
-            <i className="ion-checkmark-circled"></i>
-          </span> 
-          Setup your email notification preferences for new payments
-        </div>
+      {
+        additions.map((item, index) => (
+          <div key={item._id} className="step">
+            <div className="info">
+              <span className="number">{index + 1}</span> 
+              {item.title}
+            </div>
 
-        <a href="#" className="disabled button">
-          <span>Setup notifications</span>
-        </a>
-      </div>
-      <div className="step">
-        <div className="info">
-          <span className="number">3</span> 
-          Invite your teammates to collaborate with you
-        </div>
-
-        <a href="#" className="button">
-          <span>Invite teammates</span>
-        </a>
-      </div>
-      <div className="step">
-        <div className="info">
-          <span className="number">4</span> 
-          Add some products to sell to your customers
-        </div>
-
-        <a href="#" className="button">
-          <span>Create products</span>
-        </a>
-      </div>
-      <div className="step">
-        <div className="info">
-          <span className="number">5</span> 
-          Activate your account live into production mode 
-        </div>
-
-        <a href="#" className="button">
-          <span>Go live!</span>
-        </a>
-      </div>
+            <a href={`/addition/${item._id}`} className="button">
+              <span>Start</span>
+            </a>
+          </div>
+        ))
+      }
     </div>
   </div>
 );

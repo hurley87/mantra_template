@@ -4,10 +4,8 @@ import AddIndex from '../components/add_index.jsx';
 export const composer = ({context}, onData) => {
   const {Meteor, Collections} = context();
   if(Meteor.subscribe('additions.index').ready()){
-    const additions = Collections.Additions.find({});
+    const additions = Collections.Additions.find().fetch();
     onData(null, {additions})
-  } else {
-    onData(null, {});
   }
 };
 

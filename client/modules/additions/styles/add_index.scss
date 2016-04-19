@@ -54,7 +54,7 @@
       background-color: #fff;
       position: relative;
       z-index: 9999;
-      height: 120px;
+      height: 112px;
 
       @media (max-width: $maxMedium) {
         text-align: center;
@@ -147,8 +147,8 @@
         span {
           display: block;
           font-size: 14px;
-          padding-left: 15px;
-          padding-right: 15px;
+          padding-left: 30px;
+          padding-right: 30px;
           height: 31px;
           line-height: 31px;
           border-radius: 4px;
