@@ -4,8 +4,8 @@ import { Row, Col, Input, Grid } from 'react-bootstrap';
 class IndexLayout extends React.Component {
   render() {
     return (
-      <div className="content-wrapper">
-        <div className="sidebar-toggler visible-xs">
+      <div className={ this.props.toggle ? 'show-menu content-wrapper' : 'hide-menu content-wrapper' }>
+        <div className="sidebar-toggler visible-xs" onClick={this.props.showMenu}>
           <i className="ion-navicon"></i>
         </div>
         <div className="header">

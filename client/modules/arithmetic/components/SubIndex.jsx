@@ -1,5 +1,5 @@
 import React from 'react';
-import IndexLayout from './IndexLayout.jsx'
+import IndexLayout from '../containers/IndexLayout.js';
 
 const SubIndex = ({subtractions}) => (
   <IndexLayout questions={subtractions} title='Subtraction Exercises'/>
