@@ -7,14 +7,14 @@ class LoginUser extends React.Component {
     return (
       <div id='signup'>
         <Grid>
-          <Row className='header'>
+          <div className='header'>
             <Col md={12}>
               <h3 className="logo">
                 <a href="/">Pi Academy</a>
               </h3>
               <h4>Continue learning</h4>
             </Col>
-          </Row>
+          </div>
           <Row>
             <Col md={12}>
               <div className="wrapper clearfix">

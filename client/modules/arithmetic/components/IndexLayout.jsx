@@ -31,7 +31,7 @@ class IndexLayout extends React.Component {
                   {question.title}
                 </div>
 
-                <a href={`/addition/${question._id}`} className="button">
+                <a href={`/question/${question._id}`} className="button">
                   <span>Start</span>
                 </a>
               </div>

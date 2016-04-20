@@ -1,10 +1,12 @@
 import {useDeps, composeAll, composeWithTracker, compose} from 'mantra-core';
-import Dashboard from '../components/Dashboard.jsx';
+import AddIndex from '../components/MultiIndex.jsx';
 
 export const composer = ({context}, onData) => {
-  const {LocalState, Meteor} = context();
-  const user_id = Meteor.userId();
-  onData(null, {LocalState, user_id});
+  const {Meteor, Collections} = context();
+  if(Meteor.subscribe('multiplication_questions.index').ready()){
+    const multiplications = Collections.ArithmeticQuestions.find().fetch();
+    onData(null, {multiplications})
+  }
 };
 
 export const depsMapper = (context, actions) => ({
@@ -14,4 +16,4 @@ export const depsMapper = (context, actions) => ({
 export default composeAll(
   composeWithTracker(composer),
   useDeps(depsMapper)
-)(Dashboard);
+)(AddIndex);

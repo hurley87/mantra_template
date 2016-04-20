@@ -17,8 +17,10 @@ import NewUser from '../users/containers/NewUser.js';
 import LoginUser from '../users/containers/Login.js';
 import Settings from '../dashboard/containers/settings.js';
 
-// questions
-import AddIndex from '../arithmetic/containers/add_index.js';
+// exercises
+import AddIndex from '../arithmetic/containers/AddIndex.js';
+import SubIndex from '../arithmetic/containers/SubIndex.js';
+import MultiIndex from '../arithmetic/containers/MultiIndex.js';
 
 
 export default function(injectDeps, {FlowRouter}) {
@@ -74,7 +76,7 @@ export default function(injectDeps, {FlowRouter}) {
 
 
   FlowRouter.route('/addition', {
-    name: 'questions:add_index',
+    name: 'questions:AddIndex',
     action() {
       mount(QuestionLayoutCtx, {
         content: () => (<AddIndex />)
@@ -82,11 +84,20 @@ export default function(injectDeps, {FlowRouter}) {
     }
   });
 
-  FlowRouter.route('/test_addition', {
-    name: 'questions:new_question',
+  FlowRouter.route('/subtraction', {
+    name: 'questions:SubIndex',
     action() {
       mount(QuestionLayoutCtx, {
-        content: () => (<NewQuestion operatorSign='+' min='6' max ='9' />)
+        content: () => (<SubIndex />)
+      })
+    }
+  });
+
+  FlowRouter.route('/multiplication', {
+    name: 'questions:MultiIndex',
+    action() {
+      mount(QuestionLayoutCtx, {
+        content: () => (<MultiIndex />)
       })
     }
   });

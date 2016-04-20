@@ -38,9 +38,6 @@
       }
 
       span {
-        position: relative;
-        top: 4px;
-
         @media (min-width: $minMedium) and (max-width: $maxMedium) {
           display: none;
         }

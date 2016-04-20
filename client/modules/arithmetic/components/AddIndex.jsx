@@ -1,5 +1,5 @@
 import React from 'react';
-import IndexLayout from './index_layout.jsx'
+import IndexLayout from './IndexLayout.jsx'
 
 const AddIndex = ({additions}) => (
   <IndexLayout questions={additions} title='Addition Exercises'/>

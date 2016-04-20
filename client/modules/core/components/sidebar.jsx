@@ -5,9 +5,9 @@ const Sidebar = ({LocalState}) => (
   <div>
     <div id="sidebar-dark" className="main-sidebar">
       <div className="current-user">
-        <a href="/" className="name">
+        <a href="/profile" className="name active">
           <span>
-            Pttrns
+            <i className='ion-person'></i> Username
           </span>
         </a>
       </div>
