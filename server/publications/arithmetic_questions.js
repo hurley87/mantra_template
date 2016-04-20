@@ -15,4 +15,8 @@ export default function () {
   Meteor.publish('division_questions.index', function () {
     return ArithmeticQuestions.find({ 'operator': '/'});
   });
+  Meteor.publish('question.show', function (question_id) {
+    check (question_id, String);
+    return ArithmeticQuestions.find({ _id: question_id });
+  });
 }
