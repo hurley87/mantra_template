@@ -31,6 +31,7 @@ export default function(injectDeps, {FlowRouter}) {
   const DashboardLayoutCtx = injectDeps(DashboardLayout);
   const QuestionLayoutCtx = injectDeps(QuestionLayout);
 
+  // marketing
   FlowRouter.route('/', {
     name: 'marketing.homgepage',
     action() {
@@ -67,6 +68,16 @@ export default function(injectDeps, {FlowRouter}) {
     }
   });
 
+  FlowRouter.notFound = {
+    action() {
+      mount(MainLayoutCtx, {
+        content: () => (<NotFound />)
+      });
+    }
+  };
+
+
+  // profile
   FlowRouter.route('/profile', {
     name: 'dashboard.settings',
     action() {
@@ -77,11 +88,21 @@ export default function(injectDeps, {FlowRouter}) {
   });
 
 
+  // exercises
   FlowRouter.route('/addition', {
     name: 'questions:AddIndex',
     action() {
       mount(QuestionLayoutCtx, {
         content: () => (<AddIndex />)
+      })
+    }
+  });
+
+  FlowRouter.route('/addition/:questionId', {
+    name: 'questions:new_question',
+    action({questionId}) {
+      mount(MainLayoutCtx, {
+        content: () => (<NewQuestion questionId={questionId} />)
       })
     }
   });
@@ -95,11 +116,29 @@ export default function(injectDeps, {FlowRouter}) {
     }
   });
 
+  FlowRouter.route('/subtraction/:questionId', {
+    name: 'questions:new_question',
+    action({questionId}) {
+      mount(MainLayoutCtx, {
+        content: () => (<NewQuestion questionId={questionId}/>)
+      })
+    }
+  });
+
   FlowRouter.route('/multiplication', {
     name: 'questions:MultiIndex',
     action() {
       mount(QuestionLayoutCtx, {
         content: () => (<MultiIndex />)
+      })
+    }
+  });
+
+  FlowRouter.route('/multiplication/:questionId', {
+    name: 'questions:new_question',
+    action({questionId}) {
+      mount(MainLayoutCtx, {
+        content: () => (<NewQuestion questionId={questionId}/>)
       })
     }
   });
@@ -113,20 +152,12 @@ export default function(injectDeps, {FlowRouter}) {
     }
   });
 
-  FlowRouter.route('/question/:questionId', {
+  FlowRouter.route('/division/:questionId', {
     name: 'questions:new_question',
     action({questionId}) {
-      mount(QuestionLayoutCtx, {
-        content: () => (<NewQuestion questionId={questionId} operatorSign='+' min='6' max ='9' />)
+      mount(MainLayoutCtx, {
+        content: () => (<NewQuestion questionId={questionId}/>)
       })
     }
   });
-
-  FlowRouter.notFound = {
-    action() {
-      mount(MainLayoutCtx, {
-        content: () => (<NotFound />)
-      });
-    }
-  };
 }
