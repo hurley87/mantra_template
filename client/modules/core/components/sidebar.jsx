@@ -29,6 +29,11 @@ const Sidebar = ({LocalState}) => (
               <i className="ion-close-round"></i> <span>Multiplication</span>
             </a>
           </li>
+          <li onClick={LocalState.set('TOGGLE', false)}>
+            <a href="/division" className={ location.pathname == '/division' ? 'active' : null }>
+              <i className="ion-more"></i> <span>Division</span>
+            </a>
+          </li>
         </ul>
       </div>
       <div className="menu-section">

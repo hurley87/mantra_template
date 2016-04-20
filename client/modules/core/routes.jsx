@@ -21,6 +21,7 @@ import Settings from '../dashboard/containers/settings.js';
 import AddIndex from '../arithmetic/containers/AddIndex.js';
 import SubIndex from '../arithmetic/containers/SubIndex.js';
 import MultiIndex from '../arithmetic/containers/MultiIndex.js';
+import DivIndex from '../arithmetic/containers/DivIndex.js';
 import NewQuestion from '../questions/containers/new_question.js';
 
 
@@ -99,6 +100,15 @@ export default function(injectDeps, {FlowRouter}) {
     action() {
       mount(QuestionLayoutCtx, {
         content: () => (<MultiIndex />)
+      })
+    }
+  });
+
+  FlowRouter.route('/division', {
+    name: 'questions:DivIndex',
+    action() {
+      mount(QuestionLayoutCtx, {
+        content: () => (<DivIndex />)
       })
     }
   });
