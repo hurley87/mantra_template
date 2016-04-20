@@ -3,8 +3,8 @@ import AddIndex from '../components/add_index.jsx';
 
 export const composer = ({context}, onData) => {
   const {Meteor, Collections} = context();
-  if(Meteor.subscribe('additions.index').ready()){
-    const additions = Collections.Additions.find().fetch();
+  if(Meteor.subscribe('addition_questions.index').ready()){
+    const additions = Collections.ArithmeticQuestions.find().fetch();
     onData(null, {additions})
   }
 };

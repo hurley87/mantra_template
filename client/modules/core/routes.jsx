@@ -8,21 +8,17 @@ import DashboardLayout from './containers/dashboardlayout.js';
 import QuestionLayout from './containers/QuestionLayout.js';
 
 // marketing
-import Homepage from '../marketing/containers/Homepage.js'
-import About from '../marketing/components/about.jsx'
-import NotFound from '../marketing/components/notfound.jsx'
+import Homepage from '../marketing/containers/Homepage.js';
+import About from '../marketing/components/about.jsx';
+import NotFound from '../marketing/components/notfound.jsx';
 
 // registration
-import NewUser from '../users/containers/NewUser.js'
-import LoginUser from '../users/containers/Login.js'
-import Settings from '../dashboard/containers/settings.js'
+import NewUser from '../users/containers/NewUser.js';
+import LoginUser from '../users/containers/Login.js';
+import Settings from '../dashboard/containers/settings.js';
 
 // questions
-import AddIndex from '../additions/containers/add_index.js'
-import Addition from '../arithmetic/containers/addition.js'
-import Subtraction from '../arithmetic/containers/subtraction.js'
-import Multiplication from '../arithmetic/containers/multiplication.js'
-import NewQuestion from '../questions/containers/new_question.js'
+import AddIndex from '../arithmetic/containers/add_index.js';
 
 
 export default function(injectDeps, {FlowRouter}) {
@@ -76,43 +72,8 @@ export default function(injectDeps, {FlowRouter}) {
     }
   });
 
+
   FlowRouter.route('/addition', {
-    name: 'arithmetic.addition',
-    action() {
-      mount(DashboardLayoutCtx, {
-        content: () => (<Addition />)
-      })
-    }
-  });
-
-  FlowRouter.route('/subtraction', {
-    name: 'arithmetic.subtraction',
-    action() {
-      mount(DashboardLayoutCtx, {
-        content: () => (<Subtraction />)
-      })
-    }
-  });
-
-  FlowRouter.route('/multiplication', {
-    name: 'arithmetic.multiplication',
-    action() {
-      mount(DashboardLayoutCtx, {
-        content: () => (<Multiplication />)
-      })
-    }
-  });
-
-  FlowRouter.route('/test_question', {
-    name: 'questions:new_question',
-    action() {
-      mount(DashboardLayoutCtx, {
-        content: () => (<NewQuestion operatorSign='+' min='6' max ='9' />)
-      })
-    }
-  });
-
-  FlowRouter.route('/add_index', {
     name: 'questions:add_index',
     action() {
       mount(QuestionLayoutCtx, {

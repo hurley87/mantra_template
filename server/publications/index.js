@@ -1,7 +1,7 @@
 import profiles from './profiles';
-import additions from './additions';
+import arithmetic_questions from './arithmetic_questions';
 
 export default function() {
 	profiles();
-  additions();
+  arithmetic_questions();
 }
