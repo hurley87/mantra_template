@@ -7,7 +7,6 @@ export const composer = ({context, questionId}, onData) => {
   const {LocalState, Collections} = context();
   if(Meteor.subscribe('question.show', questionId).ready()){
     const question = Collections.ArithmeticQuestions.find().fetch()[0];
-    console.log(question)
     LocalState.set('OPERATOR', question.operator);
     LocalState.set('GUESS', '');
     LocalState.set('START', new Date());
@@ -16,7 +15,8 @@ export const composer = ({context, questionId}, onData) => {
       num2: _.random(parseInt(question.min), parseInt(question.max))
     });
     nums = LocalState.get('QUESTION');
-    onData(null, {nums});
+    operator = LocalState.get('OPERATOR');
+    onData(null, {nums, operator});
   }
 };
 
