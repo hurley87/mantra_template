@@ -1,4 +1,5 @@
 export default {
+
   login({Meteor, LocalState }, email, password ) {
     // handle errors if they exist
     if(!email) {
@@ -25,13 +26,13 @@ export default {
     var options = {};
     options.email = user_email;
     
-    Accounts.forgotPassword(options, function(error){  
-      if (error) { 
-        console.log(error);
+    Accounts.forgotPassword(options, function(err){  
+      if (err) { 
+        console.log(err);
       }else{
         alert('Check your mailbox!');
-    } 
-  });
+      } 
+    });
   },
 
   clearErrors({LocalState}) {

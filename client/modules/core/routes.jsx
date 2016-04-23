@@ -24,7 +24,6 @@ import MultiIndex from '../arithmetic/containers/MultiIndex.js';
 import DivIndex from '../arithmetic/containers/DivIndex.js';
 import NewQuestion from '../questions/containers/new_question.js';
 
-
 export default function(injectDeps, {FlowRouter}) {
   const MainLayoutCtx = injectDeps(Layout);
   const InnerLayoutCtx = injectDeps(InnerLayout);
@@ -68,7 +67,17 @@ export default function(injectDeps, {FlowRouter}) {
     }
   });
 
-  FlowRouter.notFound = {
+  FlowRouter.route('/reset', {
+    name: 'users.new',
+    action() {
+      mount(MainLayoutCtx, {
+        content: () => (<ResetPassword />)
+      });
+    }
+  });
+
+  FlowRouter.route('/home', {
+    name: 'dashboard.home',
     action() {
       mount(MainLayoutCtx, {
         content: () => (<NotFound />)
