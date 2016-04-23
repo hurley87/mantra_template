@@ -31,7 +31,7 @@ class Profile extends React.Component {
             <Input type="text" ref="age" className="form-control" placeholder="Enter age" defaultValue={this.props.profile.age}  />
           </div>
           <div className="form-group action">
-            <input type="submit" className="btn btn-success" value="Save profile" onClick={this.changeProfile.bind(this)} />
+            <Input type="submit" className="btn btn-success" value="Save profile" onClick={this.changeProfile.bind(this)} />
           </div>
         </form>
 

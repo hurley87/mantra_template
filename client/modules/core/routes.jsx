@@ -25,7 +25,6 @@ import DivIndex from '../arithmetic/containers/DivIndex.js';
 import NewQuestion from '../questions/containers/new_question.js';
 import ComingSoon from '../arithmetic/components/ComingSoon.jsx';
 
-
 export default function(injectDeps, {FlowRouter}) {
   const MainLayoutCtx = injectDeps(Layout);
   const InnerLayoutCtx = injectDeps(InnerLayout);
@@ -69,14 +68,14 @@ export default function(injectDeps, {FlowRouter}) {
     }
   });
 
-  FlowRouter.notFound = {
+  FlowRouter.route('/reset', {
+    name: 'reset',
     action() {
       mount(MainLayoutCtx, {
-        content: () => (<NotFound />)
+        content: () => (<ResetPassword />)
       });
     }
-  };
-
+  });
 
   // profile
   FlowRouter.route('/profile', {

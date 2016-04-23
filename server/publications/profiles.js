@@ -3,6 +3,7 @@ import {Meteor} from 'meteor/meteor';
 import {check} from 'meteor/check';
 
 export default function () { 
+
 	Meteor.publish('profiles.list', function () {
 		return Profiles.find();
 	});
