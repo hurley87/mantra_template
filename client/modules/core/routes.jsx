@@ -68,23 +68,13 @@ export default function(injectDeps, {FlowRouter}) {
   });
 
   FlowRouter.route('/reset', {
-    name: 'users.new',
+    name: 'reset',
     action() {
       mount(MainLayoutCtx, {
         content: () => (<ResetPassword />)
       });
     }
   });
-
-  FlowRouter.route('/home', {
-    name: 'dashboard.home',
-    action() {
-      mount(MainLayoutCtx, {
-        content: () => (<NotFound />)
-      });
-    }
-  };
-
 
   // profile
   FlowRouter.route('/profile', {
