@@ -24,6 +24,7 @@ import SubIndex from '../arithmetic/containers/SubIndex.js';
 import MultiIndex from '../arithmetic/containers/MultiIndex.js';
 import DivIndex from '../arithmetic/containers/DivIndex.js';
 import NewQuestion from '../questions/containers/new_question.js';
+import ComingSoon from '../arithmetic/components/ComingSoon.jsx';
 
 
 export default function(injectDeps, {FlowRouter}) {
@@ -130,7 +131,7 @@ export default function(injectDeps, {FlowRouter}) {
     name: 'questions:MultiIndex',
     action() {
       mount(QuestionLayoutCtx, {
-        content: () => (<MultiIndex />)
+        content: () => (<ComingSoon />)
       })
     }
   });
@@ -148,7 +149,7 @@ export default function(injectDeps, {FlowRouter}) {
     name: 'questions:DivIndex',
     action() {
       mount(QuestionLayoutCtx, {
-        content: () => (<DivIndex />)
+        content: () => (<ComingSoon />)
       })
     }
   });
