@@ -83,7 +83,7 @@ class Homepage extends React.Component {
               <div id="hero">
                 <div id="cover-image" className="animated fadeIn">
                   <div className="container">
-                    <h1 className="hero-text animated fadeIn">The best interfaces for your web and mobile apps.</h1>
+                    <h1 className="hero-text animated fadeIn">Learn single digit arithmetic.</h1>
                     <div className="cta animated fadeIn">
                       <a href="/register" className="button">Sign up free</a>
                     </div>

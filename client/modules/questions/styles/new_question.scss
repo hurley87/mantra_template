@@ -38,6 +38,7 @@ ol {
       
     &:active {
       background: #1A2331;
+      color: #66ccff;
       @include transform(scale(1.2));
     }
   }
