@@ -16,6 +16,7 @@ import NotFound from '../marketing/components/notfound.jsx';
 import NewUser from '../users/containers/NewUser.js';
 import LoginUser from '../users/containers/Login.js';
 import Settings from '../dashboard/containers/settings.js';
+import ResetPassword from '../users/containers/ResetPassword.js';
 
 // exercises
 import AddIndex from '../arithmetic/containers/AddIndex.js';
@@ -23,6 +24,7 @@ import SubIndex from '../arithmetic/containers/SubIndex.js';
 import MultiIndex from '../arithmetic/containers/MultiIndex.js';
 import DivIndex from '../arithmetic/containers/DivIndex.js';
 import NewQuestion from '../questions/containers/new_question.js';
+
 
 export default function(injectDeps, {FlowRouter}) {
   const MainLayoutCtx = injectDeps(Layout);
