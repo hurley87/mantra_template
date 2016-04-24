@@ -15,8 +15,7 @@ export default function () {
             name: user_name,
             email: user_email,
             profession: user_profession,
-            age: user_age,
-            score: 0
+            age: user_age
           }
       });
     }

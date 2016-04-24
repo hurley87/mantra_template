@@ -27,7 +27,7 @@ class NewQuestion extends React.Component {
     return list_items;
   }
   listInput(num) {
-    return <li key={num} onClick={this.props.clickNumber.bind(this, num, this.props.operator)}> {num }</li>
+    return <li key={num} onClick={this.props.clickNumber.bind(this, num, this.props.operator, this.props.questionId)}> {num }</li>
   }
 }
 

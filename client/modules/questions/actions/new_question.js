@@ -15,10 +15,10 @@ export default {
   guess({LocalState}) {
     return LocalState.get('GUESS');
   },
-  clickNumber({LocalState}, guess, operator) {
+  clickNumber({LocalState}, guess, operator, questionId) {
     const guessValue = LocalState.get('GUESS');
     LocalState.set('GUESS', guessValue + guess);
-    questionHandler(LocalState);
+    questionHandler(LocalState, questionId);
   }, 
   clearInput({LocalState}) {
     LocalState.set('GUESS', '');
@@ -44,7 +44,7 @@ function submitAttempt(guess, answer) {
 function checkAnswer(guess, answer) {
   return guess == answer;
 }
-function questionHandler(LocalState) {
+function questionHandler(LocalState, questionId) {
   const num1 = LocalState.get('QUESTION').num1;
   const num2 = LocalState.get('QUESTION').num2;
   guess = parseInt(LocalState.get('GUESS'));
@@ -55,6 +55,8 @@ function questionHandler(LocalState) {
     var answer = subtract(num1, num2);
   }
   const question = {
+    questionId: questionId,
+    userId: Meteor.userId(),
     guess: guess,
     answer: answer,
     num1: num1,
@@ -63,7 +65,6 @@ function questionHandler(LocalState) {
     start_time: LocalState.get('START'),
     end_time: new Date()
   }
-  console.log(question)
   const isSubmitted = submitAttempt(guess, answer);
   if(isSubmitted) {
     Meteor.call('createQuestion', question, (err) => {
