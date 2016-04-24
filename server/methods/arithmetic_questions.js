@@ -11,7 +11,8 @@ export default function () {
       title: 'This is the first addition module.',
       operator: '+',
       lowerLimit: 0,
-      upperLimit: 10
+      upperLimit: 10,
+      difficulty: 1
     });
     ArithmeticQuestions.insert({
       min: '2',
@@ -19,7 +20,8 @@ export default function () {
       title: 'This is the second addition module.',
       operator: '+',
       lowerLimit: 11,
-      upperLimit: 25
+      upperLimit: 25,
+      difficulty: 2
     });
     ArithmeticQuestions.insert({
       min: '3',
@@ -27,7 +29,8 @@ export default function () {
       title: 'This is the third addition module.',
       operator: '+',
       lowerLimit: 26,
-      upperLimit: 50
+      upperLimit: 50,
+      difficulty: 3
     });
     ArithmeticQuestions.insert({
       min: '4',
@@ -35,7 +38,8 @@ export default function () {
       title: 'This is the fourth addition module.',
       operator: '+',
       lowerLimit: 51,
-      upperLimit: 75
+      upperLimit: 75,
+      difficulty: 4
     });
     ArithmeticQuestions.insert({
       min: '5',
@@ -43,7 +47,8 @@ export default function () {
       title: 'This is the fifth addition module.',
       operator: '+',
       lowerLimit: 78,
-      upperLimit: 125
+      upperLimit: 125,
+      difficulty: 5
     });
     ArithmeticQuestions.insert({
       min: '6',
@@ -51,7 +56,8 @@ export default function () {
       title: 'This is the sixth addition module.',
       operator: '+',
       lowerLimit: 126,
-      upperLimit: 200
+      upperLimit: 200,
+      difficulty: 6
     });
     ArithmeticQuestions.insert({
       min: '7',
@@ -59,7 +65,8 @@ export default function () {
       title: 'This is the sixth addition module.',
       operator: '+',
       lowerLimit: 201,
-      upperLimit: 300
+      upperLimit: 300,
+      difficulty: 7
     });
     ArithmeticQuestions.insert({
       min: '0',
@@ -67,7 +74,8 @@ export default function () {
       title: 'This is the first subtraction module.',
       operator: '-',
       lowerLimit: 301,
-      upperLimit: 325
+      upperLimit: 325,
+      difficulty: 8
     });
     ArithmeticQuestions.insert({
       min: '2',
@@ -75,7 +83,8 @@ export default function () {
       title: 'This is the second subtraction module.',
       operator: '-',
       lowerLimit: 326,
-      upperLimit: 350
+      upperLimit: 350,
+      difficulty: 9
     });
     ArithmeticQuestions.insert({
       min: '3',
@@ -83,7 +92,8 @@ export default function () {
       title: 'This is the third subtraction module.',
       operator: '-',
       lowerLimit: 351,
-      upperLimit: 375
+      upperLimit: 375,
+      difficulty: 10
     });
     ArithmeticQuestions.insert({
       min: '4',
@@ -91,7 +101,8 @@ export default function () {
       title: 'This is the fourth subtraction module.',
       operator: '-',
       lowerLimit: 376,
-      upperLimit: 400
+      upperLimit: 400,
+      difficulty: 11
     });
     ArithmeticQuestions.insert({
       min: '5',
@@ -99,7 +110,8 @@ export default function () {
       title: 'This is the fifth subtraction module.',
       operator: '-',
       lowerLimit: 401,
-      upperLimit: 450
+      upperLimit: 450,
+      difficulty: 12
     });
     ArithmeticQuestions.insert({
       min: '6',
@@ -107,7 +119,8 @@ export default function () {
       title: 'This is the sixth subtraction module.',
       operator: '-',
       lowerLimit: 451,
-      upperLimit: 500
+      upperLimit: 500,
+      difficulty: 13
     });
     ArithmeticQuestions.insert({
       min: '7',
@@ -115,7 +128,8 @@ export default function () {
       title: 'This is the sixth subtraction module.',
       operator: '-',
       lowerLimit: 501,
-      upperLimit: 600
+      upperLimit: 600,
+      difficulty: 14
     });
     ArithmeticQuestions.insert({
       min: '0',

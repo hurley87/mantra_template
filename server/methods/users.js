@@ -15,7 +15,10 @@ export default function () {
             name: name, 
             email: email, 
             profession: profession, 
-            age: age
+            age: age,
+            points: 0,
+            wrong: 0,
+            right: 0
         };
         Profiles.insert(profile);
     }
