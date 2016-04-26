@@ -30,10 +30,10 @@ class IndexLayout extends React.Component {
     )
   }
   levelLocked(lowerLimit) {
-    return this.props.profile.points <= lowerLimit;
+    return this.props.profile.points < lowerLimit;
   }
   levelFinished(upperLimit) {
-    return this.props.profile.points > upperLimit;
+    return this.props.profile.points >= upperLimit;
   }
   startLevelBtn(type, question) {
     return (
