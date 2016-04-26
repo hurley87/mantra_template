@@ -9,7 +9,7 @@ class IndexLayout extends React.Component {
           <i className="ion-navicon"></i>
         </div>
         <div className="header">
-          {this.props.title}
+          {this.props.title} <span className='pull-right'>{this.props.profile.points} <i className="fa fa-heart"></i></span>
         </div>
         <div className="steps">
           {
@@ -21,7 +21,7 @@ class IndexLayout extends React.Component {
                   </span> 
                   {question.title}
                 </div>
-                { this.levelLocked(question.lowerLimit) ? <span>Locked</span>  : this.startLevelBtn(this.props.type, question)}
+                { this.levelLocked(question.lowerLimit) ? <i className="fa fa-lock"></i>  : this.startLevelBtn(this.props.type, question)}
               </div>
             ))
           }
@@ -30,7 +30,7 @@ class IndexLayout extends React.Component {
     )
   }
   levelLocked(lowerLimit) {
-    return this.props.profile.points < lowerLimit;
+    return this.props.profile.points <= lowerLimit;
   }
   levelFinished(upperLimit) {
     return this.props.profile.points > upperLimit;

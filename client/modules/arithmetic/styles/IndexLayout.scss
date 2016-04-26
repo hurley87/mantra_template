@@ -35,14 +35,19 @@
   .header {
     position: relative;
     z-index: 9999;
-    padding: 18px;
-    background: #5A6474;
+    padding: 19px 75px;
+    background: #3C424C;
+    box-shadow: inset 0px 1px #414852;
     -webkit-font-smoothing: antialiased;
     font-family: $helvetica;
     color: #fff;
-    text-align: center;
     font-size: 19px;
     letter-spacing: 1px;
+    border-bottom: 1px solid #1A2331;
+
+    @media (max-width: $maxMedium) {
+      text-align: center;
+    }
 
     @media (max-width: $maxSmall) {
       font-size: 16px;

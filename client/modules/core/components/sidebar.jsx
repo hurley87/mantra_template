@@ -39,20 +39,20 @@ const Sidebar = ({LocalState}) => (
       <div className="menu-section">
         <h3>Learn More</h3>
         <ul>
-          <li>
-            <a href="account.html">
+          <li onClick={LocalState.set('TOGGLE', false)}>
+            <a href="/textbook" className={ location.pathname == '/textbook' ? 'active' : null }>
               <i className="ion-archive"></i> <span>Textbook</span>
 
             </a>
           </li>
-          <li>
-            <a href="account.html">
+          <li onClick={LocalState.set('TOGGLE', false)}>
+            <a href="/blog" className={ location.pathname == '/blog' ? 'active' : null }>
               <i className="ion-lightbulb"></i> <span>Blog</span>
 
             </a>
           </li>
-          <li>
-            <a href="account.html">
+          <li onClick={LocalState.set('TOGGLE', false)}>
+            <a href="/lessons" className={ location.pathname == '/lessons' ? 'active' : null }>
               <i className="ion-calendar"></i> <span>Private Lesson</span>
             </a>
           </li>
