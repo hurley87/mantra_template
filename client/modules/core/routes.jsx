@@ -160,4 +160,31 @@ export default function(injectDeps, {FlowRouter}) {
       })
     }
   });
+
+  FlowRouter.route('/textbook', {
+    name: 'marketing:textbook',
+    action() {
+      mount(QuestionLayoutCtx, {
+        content: () => (<ComingSoon />)
+      })
+    }
+  });
+
+  FlowRouter.route('/blog', {
+    name: 'marketing:blog',
+    action() {
+      mount(QuestionLayoutCtx, {
+        content: () => (<ComingSoon />)
+      })
+    }
+  });
+
+  FlowRouter.route('/lessons', {
+    name: 'marketing:lessons',
+    action() {
+      mount(QuestionLayoutCtx, {
+        content: () => (<ComingSoon />)
+      })
+    }
+  });
 }
