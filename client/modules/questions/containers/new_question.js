@@ -16,7 +16,18 @@ export const composer = ({context, questionId}, onData) => {
     });
     nums = LocalState.get('QUESTION');
     operator = LocalState.get('OPERATOR');
-    onData(null, {nums, operator});
+    const userId = Meteor.userId();
+
+    if(userId && Meteor.subscribe('profiles.single', userId).ready()){
+      const profile = Collections.Profiles.find({"user": userId}).fetch()[0];
+      const lowerLimit = question.lowerLimit;
+      const upperLimit = question.upperLimit;
+      const points = profile.points;
+      const percentageCalc = (points - lowerLimit) / upperLimit * 100
+      const percentage = percentageCalc.toString();
+      console.log(percentage)
+      onData(null, {nums, operator, profile, percentage});
+    }
   }
 };
 

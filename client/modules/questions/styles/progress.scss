@@ -1,0 +1,11 @@
+.progress {
+  border: 1px solid #4589E3;
+  width: 100%;
+  border-radius: 0px;
+  height: 20px;
+  .bar {
+    height: 100%;
+    background-color: #4589E3;
+    transition: 1s all ease;
+  }
+}
