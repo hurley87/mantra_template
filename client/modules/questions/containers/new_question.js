@@ -4,7 +4,7 @@ import NewQuestion from '../components/new_question.jsx';
 import { _ } from 'lodash';
 
 export const composer = ({context, questionId}, onData) => {
-  const {LocalState, Collections} = context();
+  const {LocalState, Collections, FlowRouter} = context();
   if(Meteor.subscribe('question.show', questionId).ready()){
     const question = Collections.ArithmeticQuestions.find().fetch()[0];
     LocalState.set('OPERATOR', question.operator);
@@ -26,7 +26,12 @@ export const composer = ({context, questionId}, onData) => {
       const percentageCalc = (points - lowerLimit) / upperLimit * 100
       const percentage = percentageCalc.toString();
       console.log(percentage)
-      onData(null, {nums, operator, profile, percentage});
+      if(percentage < 100 && percentage > 0) {
+        onData(null, {nums, operator, profile, percentage});
+      } else {
+        console.log('hey')
+        FlowRouter.go('/addition')
+      }
     }
   }
 };
