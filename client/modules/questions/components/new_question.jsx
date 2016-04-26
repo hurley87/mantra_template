@@ -4,7 +4,17 @@ import { Col, Panel, Input, ButtonInput, Glyphicon, Grid, Row } from 'react-boot
 class NewQuestion extends React.Component { 
   render() {
     return (
-      <Grid>
+      <div>
+        <div id='steps'>
+          <div className="header">
+            <a href='/addition'><i className="fa fa-caret-left"></i> Addition</a>
+            <span className='pull-right'>{this.props.profile.points} <i className="fa fa-heart"></i></span>
+          </div>
+          <div className='progress'>
+            <div className='bar' style={{"width": this.props.percentage + '%'}}>
+            </div>
+          </div>
+        </div>
         <Row>
           <Col xs={12} sm={6} smOffset={3}>
               <h3 className='text-center numbers'>
@@ -16,7 +26,7 @@ class NewQuestion extends React.Component {
               </ol>
           </Col>
         </Row>
-      </Grid>
+      </div>
     )
   }
   list() {
