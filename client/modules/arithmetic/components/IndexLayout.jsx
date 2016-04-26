@@ -21,7 +21,7 @@ class IndexLayout extends React.Component {
                   </span> 
                   {question.title}
                 </div>
-                {this.startLevelBtn(this.props.type, question)}
+                { this.levelLocked(question.lowerLimit) ? <span>Locked</span>  : this.startLevelBtn(this.props.type, question)}
               </div>
             ))
           }
@@ -29,11 +29,13 @@ class IndexLayout extends React.Component {
       </div>
     )
   }
+  levelLocked(lowerLimit) {
+    return this.props.profile.points < lowerLimit;
+  }
   levelFinished(upperLimit) {
     return this.props.profile.points > upperLimit;
   }
   startLevelBtn(type, question) {
-    // TODO: Lock levels depending on how many points a user has 
     return (
       <a href={`/${type}/${question._id}`} className="button">
         { this.levelFinished(question.upperLimit) ? <span>Replay</span> : <span>Start</span> }
