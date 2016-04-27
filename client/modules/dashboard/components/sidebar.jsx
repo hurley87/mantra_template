@@ -13,19 +13,19 @@ class Sidebar extends React.Component {
           <li onClick={ this.props.showView.bind(this, 'profile') }>
             <a className={ this.props.getView() == 'profile' ? 'active' : null}>
               <i className="ion-ios7-person-outline"></i>
-              Settings
+              About Me
+            </a>
+          </li>
+          <li onClick={ this.props.showView.bind(this, 'password') }>
+            <a className={ this.props.getView() == 'password' ? 'active' : null}>
+              <i className="ion-ios7-email-outline"></i>
+              Password
             </a>
           </li>
           <li onClick={ this.props.showView.bind(this, 'billing') }>
             <a className={ this.props.getView() == 'billing' ? 'active' : null}>
               <i className="ion-card"></i>
               Billing
-            </a>
-          </li>
-          <li onClick={ this.props.showView.bind(this, 'notifications') }>
-            <a className={ this.props.getView() == 'notifications' ? 'active' : null}>
-              <i className="ion-ios7-email-outline"></i>
-              Notifications
             </a>
           </li>
           <li onClick={ this.props.showView.bind(this, 'support') }>
@@ -36,6 +36,7 @@ class Sidebar extends React.Component {
           </li>
         </ul>
       </div>
+
     )
   }
 }

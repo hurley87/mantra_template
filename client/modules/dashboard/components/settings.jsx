@@ -4,7 +4,7 @@ import Header from '../containers/header.js';
 import Profile from './profile.jsx';
 import Billing from './billing.jsx';
 import Support from './support.jsx';
-import Notifications from './notifications.jsx';
+import Password from './password.jsx';
 import Sidebar from '../containers/sidebar.js';
 
 
@@ -17,7 +17,7 @@ class Settings extends React.Component {
           <Sidebar />
             { this.props.getView() == 'profile' ? <Profile profile={this.props.profile} updateProfile={this.props.updateProfile} updatePassword={this.props.updatePassword} /> : null } 
             { this.props.getView() == 'billing' ? <Billing /> : null } 
-            { this.props.getView() == 'notifications' ? <Notifications /> : null } 
+            { this.props.getView() == 'password' ? <Password updatePassword={this.props.updatePassword}/> : null } 
             { this.props.getView() == 'support' ? <Support /> : null } 
         </div>
       </div>
