@@ -11,6 +11,8 @@ import QuestionLayout from './containers/QuestionLayout.js';
 import Homepage from '../marketing/containers/Homepage.js';
 import About from '../marketing/components/about.jsx';
 import NotFound from '../marketing/components/notfound.jsx';
+import Contact from '../marketing/components/contact.jsx';
+import Features from '../marketing/components/features.jsx';
 
 // registration
 import NewUser from '../users/containers/NewUser.js';
@@ -50,6 +52,24 @@ export default function(injectDeps, {FlowRouter}) {
     }
   });
 
+  FlowRouter.route('/features', {
+    name: 'marketing.features',
+    action() {
+      mount(InnerLayoutCtx, {
+        content: () => (<Features />)
+      })
+    }
+  });
+
+  FlowRouter.route('/contact', {
+    name: 'marketing.contact',
+    action() {
+      mount(InnerLayoutCtx, {
+        content: () => (<Contact />)
+      })
+    }
+  });
+
   FlowRouter.route('/register', {
     name: 'users.new',
     action() {
@@ -59,7 +79,7 @@ export default function(injectDeps, {FlowRouter}) {
     }
   });
 
-    FlowRouter.route('/login', {
+  FlowRouter.route('/login', {
     name: 'users.new',
     action() {
       mount(MainLayoutCtx, {
