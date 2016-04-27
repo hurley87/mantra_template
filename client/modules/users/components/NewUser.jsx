@@ -109,6 +109,7 @@ class NewUser extends React.Component {
       </div>
     )
   }
+  
   _handleValidSubmit(values) {
     this.props.create(values.name, values.email, values.password, values.type, '' )
   }

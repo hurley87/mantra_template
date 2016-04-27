@@ -6,11 +6,11 @@ class Profile extends React.Component {
     return (
       <div id='panel' className='profile'>
         <h3>
-          Settings
+          My Settings
         </h3>
 
         <p className="intro">
-          Change your account information, avatar, login credentials, etc.
+          Change your account information.
         </p>
 
         <form>
@@ -35,19 +35,6 @@ class Profile extends React.Component {
           </div>
         </form>
 
-        <form>
-          <div className="form-group">
-            <label>Old password</label>
-            <Input type="password" ref="old_password" className="form-control" />
-          </div>
-          <div className="form-group">
-            <label>New password</label>
-            <Input type="password" ref="new_password" className="form-control" />
-          </div>
-          <div className="form-group action">
-            <Input type="submit" className="btn btn-success" value="Change password" onClick={this.changePassword.bind(this)} />
-          </div>
-        </form>
       </div>
     )
   }
@@ -58,13 +45,6 @@ class Profile extends React.Component {
     const {name, email, profession, age} = this.refs;
     const id = this.props.profile._id;
     updateProfile(id, name.getValue(), email.getValue(), profession.getValue(), age.getValue());
-  }
-
-  changePassword(event){
-  event.preventDefault();
-  const {updatePassword} = this.props;
-  const {old_password, new_password} = this.refs;
-  updatePassword(old_password.getValue(), new_password.getValue());
   }
 
 }
