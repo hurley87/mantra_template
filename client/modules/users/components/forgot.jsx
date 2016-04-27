@@ -62,7 +62,7 @@ class Forgot extends React.Component {
   }
   
   _handleValidSubmit(values) {
-    
+    this.props.forgot(values.email)
   }
   _handleInvalidSubmit(errors, values) {
     console.log(errors)
