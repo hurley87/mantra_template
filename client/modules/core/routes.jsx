@@ -19,6 +19,7 @@ import NewUser from '../users/containers/NewUser.js';
 import LoginUser from '../users/containers/Login.js';
 import Settings from '../dashboard/containers/settings.js';
 import ResetPassword from '../users/containers/ResetPassword.js';
+import Forgot from '../users/containers/forgot.js';
 
 // exercises
 import AddIndex from '../arithmetic/containers/AddIndex.js';
@@ -96,6 +97,15 @@ export default function(injectDeps, {FlowRouter}) {
       mount(MainLayoutCtx, {
         content: () => (<ResetPassword />)
       });
+    }
+  });
+
+    FlowRouter.route('/forgot', {
+    name: 'forgot',
+    action() {
+      mount(MainLayoutCtx, {
+        content: () => (<Forgot/>)
+      })
     }
   });
 

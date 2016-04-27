@@ -10,7 +10,7 @@ class LoginUser extends React.Component {
           <div className='header'>
             <Col md={12}>
               <h3 className="logo">
-                <a href="/">Pi Academy</a>
+                <a href="/">Pttrns</a>
               </h3>
               <h4>Continue learning</h4>
             </Col>
@@ -46,7 +46,10 @@ class LoginUser extends React.Component {
                 </div>
               </div>
               <div className="already-account">
-                Don't have an account? <a href="/register">Sign up here</a>
+                Don't have an account? <a href="/register">Sign up</a>
+              </div>
+              <div className="already-account">
+                Forgot your password? <a href="/forgot">Reset password</a>
               </div>
             </Col>
           </Row>
