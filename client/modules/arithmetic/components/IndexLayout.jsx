@@ -12,22 +12,26 @@ class IndexLayout extends React.Component {
           {this.props.title} <span className='pull-right'>{this.props.profile.points} <i className="fa fa-heart"></i></span>
         </div>
         <div className="steps">
-          {
-            this.props.questions.map((question, index) => (
-              <div key={question._id} className={ this.levelFinished(question.upperLimit) ? "step done" : "step"} >
-                <div className="info">
-                  <span className="number">
-                  { this.levelFinished(question.upperLimit) ? <i className="ion-checkmark-circled"></i> : index + 1 }
-                  </span> 
-                  {question.title}
-                </div>
-                { this.levelLocked(question.lowerLimit) ? <i className="fa fa-lock"></i>  : this.startLevelBtn(this.props.type, question)}
-              </div>
-            ))
-          }
+          { this.props.complete ? this.levelLayout(this.props.complete) : null }
+          { this.props.incomplete ? this.levelLayout(this.props.incomplete) : null }
         </div>
       </div>
     )
+  }
+  levelLayout(questions) {
+    return (
+      questions.map((question) => (
+        <div key={question._id} className={ this.levelFinished(question.upperLimit) ? "step done" : "step"} >
+          <div className="info">
+            <span className="number">
+            { this.levelFinished(question.upperLimit) ? <i className="ion-checkmark-circled"></i> : question.difficulty }
+            </span> 
+            {question.title}
+          </div>
+          { this.levelLocked(question.lowerLimit) ? <i className="fa fa-lock"></i>  : this.startLevelBtn(this.props.type, question)}
+        </div>
+      ))
+    );
   }
   levelLocked(lowerLimit) {
     return this.props.profile.points < lowerLimit;

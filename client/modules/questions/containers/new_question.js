@@ -24,7 +24,6 @@ export const composer = ({context, questionId}, onData) => {
       const points = profile.points;
       const percentageCalc = (points - lowerLimit) / upperLimit * 100
       const percentage = percentageCalc.toString();
-      console.log(percentage)
       if(percentage <= 100 && percentage >= 0) {
         onData(null, {nums, operator, profile, percentage});
       } else {
