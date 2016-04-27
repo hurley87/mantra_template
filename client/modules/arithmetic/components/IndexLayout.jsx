@@ -13,7 +13,8 @@ class IndexLayout extends React.Component {
         </div>
         <div className="steps">
           { this.props.complete ? this.levelLayout(this.props.complete) : null }
-          { this.props.incomplete ? this.levelLayout(this.props.incomplete) : null }
+          { this.props.current ? this.levelLayout(this.props.current) : null }
+          { this.props.locked ? this.levelLayout(this.props.locked) : null }
         </div>
       </div>
     )

@@ -8,8 +8,9 @@ export const composer = ({context}, onData) => {
     const profile = Collections.Profiles.find({"user": userId}).fetch()[0];
     const points = profile.points;
     const complete = Collections.ArithmeticQuestions.find({'upperLimit': { $lt: points }}).fetch();
-    const incomplete = Collections.ArithmeticQuestions.find({'upperLimit': { $gt: points }}).fetch();
-    onData(null, {complete, incomplete})
+    const locked = Collections.ArithmeticQuestions.find({'lowerLimit': { $gt: points }}).fetch();
+    const current = Collections.ArithmeticQuestions.find({ 'lowerLimit': { $gt: points}, 'upperLimit': { $lt: points}}).fetch();
+    onData(null, {complete, current, locked})
   }
 };
 
