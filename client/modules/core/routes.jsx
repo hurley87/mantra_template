@@ -30,6 +30,9 @@ import NewQuestion from '../questions/containers/new_question.js';
 import ComingSoon from '../arithmetic/components/ComingSoon.jsx';
 
 
+// store
+import StoreFront from '../store/containers/storefront.js';
+
 export default function(injectDeps, {FlowRouter}) {
   const MainLayoutCtx = injectDeps(Layout);
   const InnerLayoutCtx = injectDeps(InnerLayout);
@@ -193,11 +196,11 @@ export default function(injectDeps, {FlowRouter}) {
     }
   });
 
-  FlowRouter.route('/textbook', {
-    name: 'marketing:textbook',
+  FlowRouter.route('/store', {
+    name: 'store.front',
     action() {
-      mount(QuestionLayoutCtx, {
-        content: () => (<ComingSoon />)
+      mount(DashboardLayoutCtx, {
+        content: () => (<StoreFront />)
       })
     }
   });
