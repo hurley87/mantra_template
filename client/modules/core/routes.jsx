@@ -134,7 +134,7 @@ export default function(injectDeps, {FlowRouter}) {
     name: 'questions:new_question',
     action({questionId}) {
       mount(MainLayoutCtx, {
-        content: () => (<NewQuestion questionId={questionId} />)
+        content: () => (<NewQuestion back='/addition' header='Addition Exercises' questionId={questionId} />)
       })
     }
   });
