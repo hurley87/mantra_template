@@ -40,8 +40,8 @@ const Sidebar = ({LocalState}) => (
         <h3>Learn More</h3>
         <ul>
           <li onClick={LocalState.set('TOGGLE', false)}>
-            <a href="/textbook" className={ location.pathname == '/textbook' ? 'active' : null }>
-              <i className="ion-archive"></i> <span>Textbook</span>
+            <a href="/store" className={ location.pathname == '/store' ? 'active' : null }>
+              <i className="ion-archive"></i> <span>Store</span>
 
             </a>
           </li>
