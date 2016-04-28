@@ -12,6 +12,7 @@
     background: #fcfcfc;
     border-right: 1px solid #E8ECF1;
     padding-top: 15px;
+    min-height: 100vh;
 
     @media (max-width: $maxMedium) {
       width: 200px;
@@ -24,6 +25,7 @@
       z-index: 999;
       left: 0px;
       border-right: 1px solid #fff;
+      min-height: 100px;
     }
 
     .sidebar-toggler {
