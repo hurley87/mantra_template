@@ -13,6 +13,9 @@ import About from '../marketing/components/about.jsx';
 import NotFound from '../marketing/components/notfound.jsx';
 import Contact from '../marketing/components/contact.jsx';
 import Features from '../marketing/components/features.jsx';
+import Header from '../marketing/components/header.jsx';
+import Support from '../marketing/components/support.jsx';
+import Portfolio from '../marketing/components/portfolio.jsx';
 
 // registration
 import NewUser from '../users/containers/NewUser.js';
@@ -48,6 +51,33 @@ export default function(injectDeps, {FlowRouter}) {
     action() {
       mount(InnerLayoutCtx, {
         content: () => (<About />)
+      })
+    }
+  });
+
+    FlowRouter.route('/support', {
+    name: 'marketing.support',
+    action() {
+      mount(InnerLayoutCtx, {
+        content: () => (<Support />)
+      })
+    }
+  });
+
+        FlowRouter.route('/portfolio', {
+    name: 'marketing.portfolio',
+    action() {
+      mount(InnerLayoutCtx, {
+        content: () => (<Portfolio />)
+      })
+    }
+  });
+
+    FlowRouter.route('/header', {
+    name: 'marketing.header',
+    action() {
+      mount(InnerLayoutCtx, {
+        content: () => (<Header />)
       })
     }
   });
