@@ -1,12 +1,12 @@
 import React from 'react';
 import {Row, Col} from 'react-bootstrap';
 import Footer from '../../marketing/components/footer.jsx';
-import InnerNav from '../../marketing/components/innerNav.jsx';
+import Header from '../../marketing/components/header.jsx';
 
 const InnerLayout = ({content}) => (
   <div>
     <header>
-      <InnerNav />
+      <Header />
     </header>
     
     <div>
