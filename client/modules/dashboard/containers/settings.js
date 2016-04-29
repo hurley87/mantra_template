@@ -21,7 +21,7 @@ export const depsMapper = (context, actions) => ({
   createProfile: actions.settings.createProfile,
   updateProfile: actions.settings.updateProfile,
   updatePassword: actions.settings.updatePassword,
-  myToken: actions.settings.myToken,
+  getToken: actions.settings.getToken,
   context: () => context
 });
 

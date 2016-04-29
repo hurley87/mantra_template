@@ -97,17 +97,15 @@ class Billing extends React.Component {
     )
 }
 
-getStripeToken(event){
-	event.preventDefault();
-	const {myToken} = this.props;
-	const {updatePassword} = this.props;
-  	const {name, street, city, postal, country, province, card, month, year, cvc} = this.refs;
-  	myToken(card.getValue(), cvc.getValue(), month.getValue(), year.getValue());
+	getStripeToken(event){
+		event.preventDefault();
+		Stripe.setPublishableKey(Meteor.settings.public.stripe.testPublishableKey);
+		const {getToken} = this.props;
+		const {updatePassword} = this.props;
+  		const {name, street, city, postal, country, province, card, month, year, cvc} = this.refs;
+  		getToken(card.getValue(), cvc.getValue(), month.getValue(), year.getValue());
+	}
+
 }
-
-
-}
-
-
 
 export default Billing;

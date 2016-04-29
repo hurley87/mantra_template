@@ -24,8 +24,20 @@ export default {
     Accounts.changePassword(first, second);
   },
 
-  myToken({Meteor, LocalState}, card, cvc, month, year){
-    console.log(card)
+  getToken({Meteor, LocalState}, card, cvc, month, year){
+    var cardDetails = {
+      "number": card,
+      "cvc": cvc,
+      "exp_month": month,
+      "exp_year": year
+    }
+    Stripe.createToken(cardDetails, function(status, response){
+      if(response.error){
+        alert(response.error)
+      }else{
+        console.log(response)
+      }
+    })
   }
   
 }
