@@ -31,52 +31,58 @@ class Billing extends React.Component {
 							  	<div className="form-group">
 								    <label className="col-sm-3 control-label">Name on Card</label>
 								    <div className="col-sm-9">
-								      <input type="text" className="form-control" placeholder="Your full name" name="customer[first_name]" />
+								      <Input type="text" className="form-control" placeholder="Your full name" name="customer[first_name]" ref="name" />
 								    </div>
 							  	</div>
 							  	<div className="address">
 							  		<div className="form-group">
 									    <label className="col-sm-3 control-label">Address</label>
 									    <div className="col-sm-9">
-									      	<input type="text" className="form-control" placeholder="Address" name="customer[address]" />
+									      	<Input type="text" className="form-control" placeholder="Address" name="customer[address]" ref="street" />
 									    </div>
 									</div>
 									<div className="form-group">
 									    <div className="col-sm-5 col-sm-offset-3">
-									      	<input type="text" className="form-control mobile-margin-bottom" placeholder="City" name="customer[city]" />
+									      	<Input type="text" className="form-control mobile-margin-bottom" placeholder="City" name="customer[city]" ref="city" />
 									    </div>
 									    <div className="col-sm-4">
-									      	<input type="text" className="form-control" placeholder="Zip/Postal" name="customer[state]" />
+									      	<Input type="text" className="form-control" placeholder="Zip/Postal" name="customer[state]" ref="postal" />
 									    </div>
 								  	</div>
 								  	<div className="form-group">
 									    <div className="col-sm-5 col-sm-offset-3">
-									      	<input type="text" className="form-control mobile-margin-bottom" placeholder="Country" name="customer[city]" />
+									      	<Input type="text" className="form-control mobile-margin-bottom" placeholder="Country" name="customer[city]" ref="country" />
 									    </div>
 									    <div className="col-sm-4">
-									      	<input type="text" className="form-control" placeholder="State" name="customer[state]" />
+									      	<Input type="text" className="form-control" placeholder="State" name="customer[state]" ref="province" />
 									    </div>
 								  	</div>
 							  	</div>
 							  	<div className="form-group">
 								    <label className="col-sm-3 control-label">Card Number</label>
 								    <div className="col-sm-9">
-								      <input type="text" className="form-control" placeholder="••••  ••••  ••••  ••••" name="customer[first_name]" />
+								      <Input type="text" className="form-control" placeholder="••••  ••••  ••••  ••••" name="customer[first_name]" ref="card" />
 								    </div>
 							  	</div>
 							  	<div className="form-group">
-							  		<label className="col-sm-3 control-label">Expiration & CVC</label>
+							  		<label className="col-sm-3 control-label">Expiration</label>
 								    <div className="col-sm-5">
-								      	<input type="text" className="form-control mobile-margin-bottom" placeholder="MM/YYY" name="customer[city]" />
+								      	<Input type="text" className="form-control mobile-margin-bottom" placeholder="YYYY" name="customer[city]" ref="year" />
 								    </div>
 								    <div className="col-sm-4">
-								      	<input type="text" className="form-control" placeholder="CVC" name="customer[state]" />
+								      	<Input type="text" className="form-control" placeholder="MM" name="customer[state]" ref="month"  />
+								    </div>
+							  	</div>
+							  	<div className="form-group">
+							  		<label className="col-sm-3 control-label">CVC</label>
+								    <div className="col-sm-3">
+								      	<Input type="text" className="form-control mobile-margin-bottom" placeholder="CVC" name="customer[city]" ref="cvc" />
 								    </div>
 							  	</div>
 
 
 							  	<div className="action clearfix">
-									<a href="#" className="btn btn-success">
+									<a href="#" className="btn btn-success" onClick={this.getStripeToken.bind(this)}>
 										Make payment
 									</a>
 								</div>
@@ -89,15 +95,16 @@ class Billing extends React.Component {
 		</div>
 	</div>
     )
-  }
-
-_handleValidSubmit(values) {
-	console.log("hello")
 }
 
-_handleInvalidSubmit(errors, values) {
-	console.log(errors)
-  }
+getStripeToken(event){
+	event.preventDefault();
+	const {myToken} = this.props;
+	const {updatePassword} = this.props;
+  	const {name, street, city, postal, country, province, card, month, year, cvc} = this.refs;
+  	myToken(card.getValue(), cvc.getValue(), month.getValue(), year.getValue());
+}
+
 
 }
 

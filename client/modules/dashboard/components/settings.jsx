@@ -16,7 +16,7 @@ class Settings extends React.Component {
         <div id='content'>
           <Sidebar />
             { this.props.getView() == 'profile' ? <Profile profile={this.props.profile} updateProfile={this.props.updateProfile} updatePassword={this.props.updatePassword} /> : null } 
-            { this.props.getView() == 'billing' ? <Billing /> : null } 
+            { this.props.getView() == 'billing' ? <Billing myToken={this.props.myToken} /> : null } 
             { this.props.getView() == 'password' ? <Password updatePassword={this.props.updatePassword}/> : null } 
             { this.props.getView() == 'support' ? <Support /> : null } 
         </div>

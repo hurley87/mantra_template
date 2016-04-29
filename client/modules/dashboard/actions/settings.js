@@ -22,6 +22,11 @@ export default {
 
   updatePassword({Meteor, LocalState}, first, second){
     Accounts.changePassword(first, second);
-  }
+  },
 
+  myToken({Meteor, LocalState}, card, cvc, month, year){
+    console.log(card)
+  }
+  
 }
+
