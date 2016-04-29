@@ -8,8 +8,8 @@ export const composer = ({context}, onData) => {
     const profile = Collections.Profiles.find({"user": userId}).fetch()[0];
     const points = profile.points;
     const complete = Collections.ArithmeticQuestions.find({'upperLimit': { $lt: points }}).fetch();
-    const locked = Collections.ArithmeticQuestions.find({'lowerLimit': { $gt: points }}).fetch();
-    const current = Collections.ArithmeticQuestions.find({ 'lowerLimit': { $lt: points}, 'upperLimit': { $gt: points}}).fetch();
+    const locked = Collections.ArithmeticQuestions.find({'lowerLimit': { $gte: points }}).fetch();
+    const current = Collections.ArithmeticQuestions.find({ 'lowerLimit': { $lt: points}, 'upperLimit': { $gte: points}}).fetch();
     onData(null, {complete, current, locked})
   }
 };

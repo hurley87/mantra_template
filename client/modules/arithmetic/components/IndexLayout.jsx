@@ -41,11 +41,15 @@ class IndexLayout extends React.Component {
     return this.props.profile.points > upperLimit;
   }
   startLevelBtn(type, question) {
-    return (
-      <a href={`/${type}/${question._id}`} className="button">
-        { this.levelFinished(question.upperLimit) ? <span>Replay</span> : <span>Start</span> }
-      </a>
-    );
+    if (this.levelFinished(question.upperLimit)) {
+      return null;
+    } else {
+      return (
+        <a href={`/${type}/${question._id}`} className="button">
+          <span>Start</span>
+        </a>
+      );
+    }
   }
 }
 
