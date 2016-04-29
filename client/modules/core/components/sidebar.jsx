@@ -31,7 +31,7 @@ const Sidebar = ({LocalState}) => (
           </li>
           <li onClick={LocalState.set('TOGGLE', false)}>
             <a href="/division" className={ location.pathname == '/division' ? 'active' : null }>
-              <i className="ion-more"></i> <span>Division</span>
+              <span className='division'>{'\u00F7'}</span> <span>Division</span>
             </a>
           </li>
         </ul>

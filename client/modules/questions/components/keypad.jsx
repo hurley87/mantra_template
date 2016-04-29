@@ -18,7 +18,7 @@ class Keypad extends React.Component {
   }
   keypad() {
     const list_items = [];
-    [0,1,2,3,4,5,6,7,8,'.',9].map( i => {
+    [7,8,9,4,5,6,1,2,3,0,'.'].map( i => {
       list_items.push(this.listInput(i));
     });
     return list_items;
