@@ -19,12 +19,24 @@ export default function () {
     'wrongAnswer'(userId, difficulty) {
       check(userId, String);
       check(difficulty, Number);
-      Profiles.update( { "user": userId }, {
-        $inc: {
-          wrong: 1,
-          points: -difficulty
-        }
-      });
+      const points = Profiles.find({ 'user': userId }).fetch()[0].points;
+      if(points >= difficulty) {
+        Profiles.update( { "user": userId }, {
+          $inc: {
+            wrong: 1,
+            points: -difficulty
+          }
+        });
+      } else {
+        Profiles.update( { "user": userId }, {
+          $set: {
+            points: 0
+          },
+          $inc: {
+            wrong: 1
+          }
+        });
+      }
     },
     'rightAnswer'(userId, difficulty) {
       check(userId, String);
