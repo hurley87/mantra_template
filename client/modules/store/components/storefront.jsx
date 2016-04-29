@@ -8,9 +8,7 @@ class StoreFront extends React.Component {
     return ( 
       <div className={ this.props.toggle ? 'show-menu' : 'hide-menu' }>
         <Header title='Store'/>
-          <div id='content'>
         <Products />
-        </div>
       </div>
      
     

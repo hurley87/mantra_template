@@ -199,7 +199,7 @@ export default function(injectDeps, {FlowRouter}) {
   FlowRouter.route('/store', {
     name: 'store.front',
     action() {
-      mount(DashboardLayoutCtx, {
+      mount(QuestionLayoutCtx, {
         content: () => (<StoreFront />)
       })
     }
