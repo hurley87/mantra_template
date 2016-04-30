@@ -13,7 +13,7 @@ class Products extends React.Component {
             <div className="content-wrapper clearfix">
               <div className="row project-list">
 
-                <div className="project">
+                <div className="project" onClick={this.props.textbookView}>
                   <div className="info">
                     <div className="name">Textbook</div>
                     <div className="category">$40</div>

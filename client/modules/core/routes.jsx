@@ -32,7 +32,7 @@ import ComingSoon from '../arithmetic/components/ComingSoon.jsx';
 
 
 // store
-import StoreFront from '../store/containers/storefront.js';
+import StoreFront from '../store/containers/store.js';
 
 export default function(injectDeps, {FlowRouter}) {
   const MainLayoutCtx = injectDeps(Layout);
