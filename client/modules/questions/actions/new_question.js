@@ -33,10 +33,13 @@ function add(num1, num2) {
 }
 function subtract(num1, num2) {
   if(num1 < num2) {
-    return num2 - num1
+    return num2 - num1;
   } else {
     return num1 - num2;
   }
+}
+function multiply(num1, num2) {
+  return num1*num2;
 }
 function submitAttempt(guess, answer) {
   return guess.toString().length == answer.toString().length;
@@ -53,6 +56,19 @@ function questionHandler(LocalState, questionId) {
     var answer = add(num1, num2);
   } else if(operator == '-') {
     var answer = subtract(num1, num2);
+  }
+  switch(operator) {
+    case '+':
+      var answer = add(num1, num2);
+      break;
+    case '-':
+      var answer = subtract(num1, num2);
+      break;
+    case 'x':
+      var answer = multiply(num1, num2);
+      break;
+    default: 
+      return null;
   }
   const question = {
     questionId: questionId,

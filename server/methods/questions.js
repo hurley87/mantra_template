@@ -19,7 +19,24 @@ export default function () {
     'wrongAnswer'(question, difficulty) {
       check(question, Object);
       check(difficulty, Number);
-      const points = Profiles.find({ 'user': question.userId }).fetch()[0].points;
+      const profile = Profiles.find({ 'user': question.userId }).fetch()[0];
+      let points = 0;
+      switch(question.operator) {
+        case '+':
+          points = profile.addPoints;
+          break;
+        case '-':
+          points = profile.subPoints;
+          break;  
+        case 'x':
+          points = profile.multiPoints;
+          break;
+        case '/':
+          points = profile.divPoints;
+          break;
+        default:
+          return null;
+      }
       if(points >= difficulty) {
         switch(question.operator) {
           case '+':

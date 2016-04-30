@@ -17,7 +17,7 @@ export const composer = ({context, type}, onData) => {
         points = profile.subPoints;
         break;
       case 'multiplication':
-        points = profile.mulitPoints;
+        points = profile.multiPoints;
         break;
       case 'division':
         points = profile.divPoints;

@@ -185,7 +185,7 @@ export default function(injectDeps, {FlowRouter}) {
     name: 'questions:MultiIndex',
     action() {
       mount(QuestionLayoutCtx, {
-        content: () => (<ComingSoon />)
+        content: () => (<MultiIndex />)
       })
     }
   });
