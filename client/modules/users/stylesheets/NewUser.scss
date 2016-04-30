@@ -1,4 +1,3 @@
-@import '../../marketing/stylesheets/fonts.scss';
 @import '../../marketing/stylesheets/mixins.scss';
 
 #signup {
@@ -22,7 +21,6 @@
       a {
         color: #fff;
         font-size: 31px;
-        font-family: $lato;
         text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
         @include transition(color .25s linear);
         
@@ -38,7 +36,6 @@
       text-align: center;
       font-size: 28px;
       font-weight: 400;
-      font-family: $myriad;
       margin-top: 45px;
       margin-bottom: 5px;
     }
