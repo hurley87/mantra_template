@@ -15,6 +15,9 @@ class Homepage extends React.Component {
         <div className={ this.props.toggle ? 'st-container nav-effect' : 'st-container' }>
           <nav className="nav-menu">
             <h3>Menu</h3>
+            <a href="/register" className="item">
+              Sign up
+            </a>
             <a href="/login" className="item">
               Login
             </a>
@@ -29,9 +32,6 @@ class Homepage extends React.Component {
             </a>
             <a href="/about" className="item">
               About us
-            </a>
-            <a href="portfolio.html" className="item">
-              Portfolio
             </a>
             <a href="/blog" className="item">
               Blog
