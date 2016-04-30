@@ -10,10 +10,7 @@ class NewUser extends React.Component {
         <Grid>
           <Row className='header'>
             <Col md={12}>
-              <h3 className="logo">
-                <a href="/">Pi Academy</a>
-              </h3>
-              <h4>Set up your new account today.</h4>
+              <h4>Create Your Account</h4>
             </Col>
           </Row>
           <Row>
@@ -27,6 +24,19 @@ class NewUser extends React.Component {
                           // submit attempts 
                           onValidSubmit={this._handleValidSubmit.bind(this)}
                           onInvalidSubmit={this._handleInvalidSubmit.bind(this)}>
+
+                          <RadioGroup name='type'
+                                      validate='required'
+                                      label='Student, teacher, or parent?'
+                                      errorHelp={{
+                                          required: 'Please specify if you are a parent, teacher or student.'
+                                      }}
+                                      labelClassName=''
+                                      wrapperClassName='userType'>
+                              <Radio value='student' label='student'/>
+                              <Radio value='teacher' label='teacher' />
+                              <Radio value='parent' label='parent' />
+                          </RadioGroup>
 
                           <ValidatedInput
                               type='text'
@@ -69,22 +79,9 @@ class NewUser extends React.Component {
                               errorHelp='Passwords do not match'
                           />
            
-                          <RadioGroup name='type'
-                                      label='Are you a student, parent or teacher?'
-                                      validate='required'
-                                      errorHelp={{
-                                          required: 'Please specify what type of user you are'
-                                      }}
-                                      labelClassName=''
-                                      wrapperClassName=''>
-                              <Radio value='student' label='student' checked='checked'/>
-                              <Radio value='teacher' label='teacher' />
-                              <Radio value='parent' label='parent' />
-                          </RadioGroup>
-           
                           <div className="checkbox">
                             <label>
-                                <Input type="checkbox" checked='checked' /> You have read & agree to the <a href="#">Terms of service</a>.
+                                <Input type="checkbox" defaultChecked='checked' /> You have read & agree to the <a href="#">Terms of service</a>.
                             </label>
                           </div>
            
@@ -101,7 +98,7 @@ class NewUser extends React.Component {
                 </div>
               </div>
               <div className="already-account">
-                Already have an account? <a href="/login">Sign in here</a>
+                Already have an account? <a href="/login">Login here</a>
               </div>
             </Col>
           </Row>

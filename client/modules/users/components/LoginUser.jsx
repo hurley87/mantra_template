@@ -10,10 +10,7 @@ class LoginUser extends React.Component {
         <Grid>
           <Row className='header'>
             <Col md={12}>
-              <h3 className="logo">
-                <a href="/">Pttrns</a>
-              </h3>
-              <h4>Continue Learning</h4>
+              <h4>Login</h4>
             </Col>
           </Row>
           <Row>
@@ -58,12 +55,16 @@ class LoginUser extends React.Component {
                             className='button text-center'
                           />
                       </Form>
+
+                        <div className="checkbox">
+                          <a href="/forgot">Forgot your password?</a>
+                        </div>
                     </div>
                   </div>            
                 </div>
               </div>
               <div className="already-account">
-                Forgot your password? <a href="/forgot">Send email</a>
+                Need an account? <a href="/register">Signup here</a>.
               </div>
             </Col>
           </Row>
