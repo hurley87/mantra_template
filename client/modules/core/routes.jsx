@@ -7,6 +7,7 @@ import InnerLayout from './components/InnerLayout.jsx';
 import DashboardLayout from './containers/dashboardlayout.js';
 import QuestionLayout from './containers/QuestionLayout.js';
 
+
 // marketing
 import Homepage from '../marketing/containers/Homepage.js';
 import About from '../marketing/components/about.jsx';
@@ -31,7 +32,7 @@ import ComingSoon from '../arithmetic/components/ComingSoon.jsx';
 
 
 // store
-import StoreFront from '../store/containers/storefront.js';
+import StoreFront from '../store/containers/store.js';
 
 export default function(injectDeps, {FlowRouter}) {
   const MainLayoutCtx = injectDeps(Layout);

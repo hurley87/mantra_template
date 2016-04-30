@@ -85,7 +85,6 @@ class ResetPassword extends React.Component {
  
   Accounts.onResetPasswordLink(function(token, done) {
     FlowRouter.go('/reset');
-    console.log("hello");
     Session.set('resetPasswordToken', token);
   })
 

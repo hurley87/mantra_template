@@ -66,6 +66,16 @@
       width: 100%;
     }
 
+    .userType {
+      label {
+        width: 30%;
+        display: block;
+        float: left;
+        position: relative;
+        bottom: 10px;
+      }
+    }
+
     .formy {
       margin-top: 22px;
       .form-group {

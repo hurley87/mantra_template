@@ -1,7 +1,7 @@
-import storefront from './storefront';
+import store from './store';
 
 const actions = {
-  storefront
+  store
 };
 
 export default actions;
