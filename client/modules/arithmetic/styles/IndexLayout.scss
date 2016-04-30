@@ -1,4 +1,3 @@
-@import '../../marketing/stylesheets/fonts.scss';
 @import '../../core/stylesheets/mixins.scss';
 
 #steps {
@@ -39,7 +38,6 @@
     background: #3C424C;
     box-shadow: inset 0px 1px #414852;
     -webkit-font-smoothing: antialiased;
-    font-family: $helvetica;
     color: #fff;
     font-size: 19px;
     letter-spacing: 1px;
