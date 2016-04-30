@@ -10,10 +10,7 @@ class Forgot extends React.Component {
         <Grid>
           <Row className='header'>
             <Col md={12}>
-              <h3 className="logo">
-                <a href="/">Pttrns</a>
-              </h3>
-              <h4>Forgot your password? Let us send you an email!</h4>
+              <h4>Forgot your password?</h4>
             </Col>
           </Row>
           <Row>
@@ -53,6 +50,7 @@ class Forgot extends React.Component {
                 </div>
               </div>
               <div className="already-account">
+                Have an account? <a href="/login">Login here</a>.
               </div>
             </Col>
           </Row>

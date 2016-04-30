@@ -9,7 +9,7 @@ export default function () {
         check(email, String);
         check(profession, String);
         check(age, String);
-        user = Meteor.userId();
+        const user = Meteor.userId();
         const profile = {
             user: user, 
             name: name, 
@@ -20,7 +20,10 @@ export default function () {
             wrong: 0,
             right: 0
         };
-        Profiles.insert(profile);
+        const exists = Profiles.findOne({'user': user});
+        if(!exists) {
+            Profiles.insert(profile);
+        }
     }
   });
 }
