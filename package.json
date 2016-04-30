@@ -24,14 +24,17 @@
     "npm": "^3.8.6",
     "react-addons-test-utils": "^0.14.6",
     "react-bootstrap-validation": "^0.1.11",
+    "react-komposer": "^1.8.0",
     "sinon": "^1.17.3",
-    "sinon-chai": "^2.8.0"
+    "sinon-chai": "^2.8.0",
+    "stripe": "^4.5.0"
   },
   "dependencies": {
     "domready": "^1.0.8",
+    "mantra-core": "^1.2.0",
+    "meteor-node-stubs": "^0.2.3",
     "react": "^0.14.6",
     "react-dom": "^0.14.6",
-    "mantra-core": "^1.2.0",
     "react-mounter": "^1.0.0"
   },
   "private": true

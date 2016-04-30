@@ -6,7 +6,7 @@ import Benefits from './_benefits.jsx'
 import Mobile from './_mobile.jsx'
 import Features from './_features.jsx'
 import Cta from './_cta.jsx'
-import Footer from './footer.jsx'
+import Footer from './footer.jsx';
 
 class Homepage extends React.Component {
   render() {
