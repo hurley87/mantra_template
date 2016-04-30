@@ -21,13 +21,38 @@ export const composer = ({context, questionId}, onData) => {
       const profile = Collections.Profiles.find({"user": userId}).fetch()[0];
       const lowerLimit = question.lowerLimit;
       const upperLimit = question.upperLimit;
-      const points = profile.points;
+      let points = 0;
+      switch(operator) {
+        case '+':
+          points = profile.addPoints;
+          header = 'Addition';
+          link = '/addition';
+          break;
+        case '-':
+          points = profile.subPoints;
+          header = 'Subtraction';
+          link = '/subtraction';
+          break;
+        case 'x':
+          points = profile.multiPoints;
+          header = 'Multiplication';
+          link = '/multiplication';
+          break;
+        case '/':
+          points = profile.divPoints;
+          header = 'Division';
+          link = '/division';
+          break;
+        default:
+          return null;
+      }
       const percentageCalc = (points - lowerLimit) / upperLimit * 100
       const percentage = percentageCalc.toString();
+      console.log(points)
       if(percentage <= 100 && percentage >= 0) {
-        onData(null, {nums, operator, profile, percentage});
+        onData(null, {nums, operator, profile, percentage, points, header});
       } else {
-        FlowRouter.go('/addition')
+        FlowRouter.go(link)
       }
     }
   }

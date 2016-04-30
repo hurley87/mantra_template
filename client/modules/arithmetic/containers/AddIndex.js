@@ -6,7 +6,7 @@ export const composer = ({context}, onData) => {
   const userId = Meteor.userId();
   if(userId && Meteor.subscribe('profiles.single', userId).ready() && Meteor.subscribe('addition_questions.index').ready()){
     const profile = Collections.Profiles.find({"user": userId}).fetch()[0];
-    const points = profile.points;
+    const points = profile.addPoints;
     const complete = Collections.ArithmeticQuestions.find({'upperLimit': { $lt: points }}).fetch();
     const locked = Collections.ArithmeticQuestions.find({'lowerLimit': { $gte: points }}).fetch();
     const current = Collections.ArithmeticQuestions.find({ 'lowerLimit': { $lt: points}, 'upperLimit': { $gte: points}}).fetch();

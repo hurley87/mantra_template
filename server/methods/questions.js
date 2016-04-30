@@ -10,43 +10,139 @@ export default function () {
       const answer = question.answer;
       const level = ArithmeticQuestions.findOne(question.questionId);
       if (guess == answer) {
-        Meteor.call('rightAnswer', question.userId, level.difficulty);
+        Meteor.call('rightAnswer', question, level.difficulty);
       } else {
-        Meteor.call('wrongAnswer', question.userId, level.difficulty);
+        Meteor.call('wrongAnswer', question, level.difficulty);
       }
       Questions.insert(question);
     },
-    'wrongAnswer'(userId, difficulty) {
-      check(userId, String);
+    'wrongAnswer'(question, difficulty) {
+      check(question, Object);
       check(difficulty, Number);
-      const points = Profiles.find({ 'user': userId }).fetch()[0].points;
+      const points = Profiles.find({ 'user': question.userId }).fetch()[0].points;
       if(points >= difficulty) {
-        Profiles.update( { "user": userId }, {
-          $inc: {
-            wrong: 1,
-            points: -difficulty
-          }
-        });
+        switch(question.operator) {
+          case '+':
+            Profiles.update( { "user": question.userId }, {
+              $inc: {
+                wrong: 1,
+                addPoints: -difficulty
+              }
+            });
+            break;
+          case '-':
+            Profiles.update( { "user": question.userId }, {
+              $inc: {
+                wrong: 1,
+                subPoints: -difficulty
+              }
+            });
+            break;
+          case 'x':
+            Profiles.update( { "user": question.userId }, {
+              $inc: {
+                wrong: 1,
+                multiPoints: -difficulty
+              }
+            });
+            break;
+          case '/':
+            Profiles.update( { "user": question.userId }, {
+              $inc: {
+                wrong: 1,
+                divPoints: -difficulty
+              }
+            });
+            break;
+          default:
+            return null;
+        }
       } else {
-        Profiles.update( { "user": userId }, {
-          $set: {
-            points: 0
-          },
-          $inc: {
-            wrong: 1
-          }
-        });
+        switch(question.operator) {
+          case '+':
+            Profiles.update( { "user": question.userId }, {
+              $set: {
+                addPoints: 0
+              },
+              $inc: {
+                wrong: 1
+              }
+            });
+            break;
+          case '-':
+            Profiles.update( { "user": question.userId }, {
+              $set: {
+                subPoints: 0
+              },
+              $inc: {
+                wrong: 1
+              }
+            });
+            break;
+          case 'x':
+            Profiles.update( { "user": question.userId }, {
+              $set: {
+                multiPoints: 0
+              },
+              $inc: {
+                wrong: 1
+              }
+            });
+            break;
+          case '/':
+            Profiles.update( { "user": question.userId }, {
+              $set: {
+                divPoints: 0
+              },
+              $inc: {
+                wrong: 1
+              }
+            });
+            break;
+          default:
+            return null;
+        }
       }
     },
-    'rightAnswer'(userId, difficulty) {
-      check(userId, String);
+    'rightAnswer'(question, difficulty) {
+      check(question, Object);
       check(difficulty, Number);
-      Profiles.update({ "user": userId }, {
-        $inc: {
-          right: 1,
-          points: difficulty
-        }
-      });
+      switch(question.operator) {
+        case '+':
+          Profiles.update( { "user": question.userId }, {
+            $inc: {
+              right: 1,
+              addPoints: difficulty
+            }
+          });
+          break;
+        case '-':
+          Profiles.update( { "user": question.userId }, {
+            $inc: {
+              right: 1,
+              subPoints: difficulty
+            }
+          });
+          break;
+        case 'x':
+          Profiles.update( { "user": question.userId }, {
+            $inc: {
+              right: 1,
+              multiPoints: difficulty
+            }
+          });
+          break;
+        case '/':
+          Profiles.update( { "user": question.userId }, {
+            $inc: {
+              right: 1,
+              divPoints: difficulty
+            }
+          });
+          break;
+        default:
+          return null;
+      }
     }
   });
 }

@@ -7,7 +7,7 @@ class QuestionHeader extends React.Component {
     return (
       <div className="header" style={{ textAlign: 'left' }}>
         <a href={this.props.back} className='text-left'><i className="fa fa-caret-left"></i> {this.props.header}</a>
-        <span className='pull-right'>{this.props.profile.points} <i className="fa fa-heart"></i></span>
+        <span className='pull-right'>{this.props.points} <i className="fa fa-heart"></i></span>
       </div>
     )
   }

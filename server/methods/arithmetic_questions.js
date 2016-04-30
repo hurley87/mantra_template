@@ -73,105 +73,105 @@ export default function () {
       max: '5',
       title: 'This is the first subtraction module.',
       operator: '-',
-      lowerLimit: 301,
-      upperLimit: 325,
-      difficulty: 8
+      lowerLimit: 0,
+      upperLimit: 5,
+      difficulty: 1
     });
     ArithmeticQuestions.insert({
       min: '2',
       max: '7',
       title: 'This is the second subtraction module.',
       operator: '-',
-      lowerLimit: 326,
-      upperLimit: 350,
-      difficulty: 9
+      lowerLimit: 6,
+      upperLimit: 15,
+      difficulty: 2
     });
     ArithmeticQuestions.insert({
       min: '3',
       max: '8',
       title: 'This is the third subtraction module.',
       operator: '-',
-      lowerLimit: 351,
-      upperLimit: 375,
-      difficulty: 10
+      lowerLimit: 16,
+      upperLimit: 30,
+      difficulty: 3
     });
     ArithmeticQuestions.insert({
       min: '4',
       max: '9',
       title: 'This is the fourth subtraction module.',
       operator: '-',
-      lowerLimit: 376,
-      upperLimit: 400,
-      difficulty: 11
+      lowerLimit: 31,
+      upperLimit: 40,
+      difficulty: 4
     });
     ArithmeticQuestions.insert({
       min: '5',
       max: '10',
       title: 'This is the fifth subtraction module.',
       operator: '-',
-      lowerLimit: 401,
-      upperLimit: 450,
-      difficulty: 12
+      lowerLimit: 41,
+      upperLimit: 70,
+      difficulty: 5
     });
     ArithmeticQuestions.insert({
       min: '6',
       max: '11',
       title: 'This is the sixth subtraction module.',
       operator: '-',
-      lowerLimit: 451,
-      upperLimit: 500,
-      difficulty: 13
+      lowerLimit: 71,
+      upperLimit: 100,
+      difficulty: 6
     });
     ArithmeticQuestions.insert({
       min: '7',
       max: '12',
       title: 'This is the sixth subtraction module.',
       operator: '-',
-      lowerLimit: 501,
-      upperLimit: 600,
-      difficulty: 14
+      lowerLimit: 101,
+      upperLimit: 150,
+      difficulty: 7
     });
     ArithmeticQuestions.insert({
       min: '0',
       max: '5',
       title: 'This is the first multiplication module.',
-      operator: '*'
+      operator: 'x'
     });
     ArithmeticQuestions.insert({
       min: '2',
       max: '7',
       title: 'This is the second multiplication module.',
-      operator: '*'
+      operator: 'x'
     });
     ArithmeticQuestions.insert({
       min: '3',
       max: '8',
       title: 'This is the third multiplication module.',
-      operator: '*'
+      operator: 'x'
     });
     ArithmeticQuestions.insert({
       min: '4',
       max: '9',
       title: 'This is the fourth multiplication module.',
-      operator: '*'
+      operator: 'x'
     });
     ArithmeticQuestions.insert({
       min: '5',
       max: '10',
       title: 'This is the fifth multiplication module.',
-      operator: '*'
+      operator: 'x'
     });
     ArithmeticQuestions.insert({
       min: '6',
       max: '11',
       title: 'This is the sixth multiplication module.',
-      operator: '*'
+      operator: 'x'
     });
     ArithmeticQuestions.insert({
       min: '7',
       max: '12',
       title: 'This is the sixth multiplication module.',
-      operator: '*'
+      operator: 'x'
     });
     ArithmeticQuestions.insert({
       min: '0',

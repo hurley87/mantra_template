@@ -9,7 +9,7 @@ class IndexLayout extends React.Component {
           <i className="ion-navicon"></i>
         </div>
         <div className="header">
-          {this.props.title} <span className='pull-right'>{this.props.profile.points} <i className="fa fa-heart"></i></span>
+          {this.props.title} <span className='pull-right'>{this.props.points} <i className="fa fa-heart"></i></span>
         </div>
         <div className="steps">
           { this.props.complete ? this.levelLayout(this.props.complete) : null }
@@ -25,20 +25,27 @@ class IndexLayout extends React.Component {
         <div key={question._id} className={ this.levelFinished(question.upperLimit) ? "step done" : "step"} >
           <div className="info">
             <span className="number">
-            { this.levelFinished(question.upperLimit) ? <i className="ion-checkmark-circled"></i> : question.difficulty }
+            { this.levelFinished(question.upperLimit) ? <i className="ion-checkmark-circled"></i> : null }
+            { this.levelLocked(question.lowerLimit) ? <i className="fa fa-lock"></i>  : null }
+            { !this.levelFinished(question.upperLimit) && !this.levelLocked(question.lowerLimit) ? this.hearts(question.difficulty)  : null }
             </span> 
             {question.title}
           </div>
-          { this.levelLocked(question.lowerLimit) ? <i className="fa fa-lock"></i>  : this.startLevelBtn(this.props.type, question)}
+          { this.levelLocked(question.lowerLimit) ? null  : this.startLevelBtn(this.props.type, question)}
         </div>
       ))
     );
   }
+  hearts(difficulty) {
+    return (
+      <span> {difficulty} <i className="fa fa-heart"></i></span>
+    );
+  }
   levelLocked(lowerLimit) {
-    return this.props.profile.points < lowerLimit;
+    return this.props.points < lowerLimit;
   }
   levelFinished(upperLimit) {
-    return this.props.profile.points > upperLimit;
+    return this.props.points > upperLimit;
   }
   startLevelBtn(type, question) {
     if (this.levelFinished(question.upperLimit)) {

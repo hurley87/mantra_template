@@ -18,7 +18,12 @@ export default function () {
             age: age,
             points: 0,
             wrong: 0,
-            right: 0
+            right: 0,
+            countPoints: 0,
+            subPoints: 0,
+            addPoints: 0,
+            multiPoints: 0,
+            divPoints: 0
         };
         const exists = Profiles.findOne({'user': user});
         if(!exists) {

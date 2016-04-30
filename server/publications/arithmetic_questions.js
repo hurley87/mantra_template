@@ -10,7 +10,7 @@ export default function () {
     return ArithmeticQuestions.find({ 'operator': '-'});
   });
   Meteor.publish('multiplication_questions.index', function () {
-    return ArithmeticQuestions.find({ 'operator': '*'});
+    return ArithmeticQuestions.find({ 'operator': 'x'});
   });
   Meteor.publish('division_questions.index', function () {
     return ArithmeticQuestions.find({ 'operator': '/'});
