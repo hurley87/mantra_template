@@ -33,7 +33,6 @@ import DivIndex from '../arithmetic/containers/DivIndex.js';
 import NewQuestion from '../questions/containers/new_question.js';
 import ComingSoon from '../arithmetic/components/ComingSoon.jsx';
 
-
 // store
 import StoreFront from '../store/containers/store.js';
 
@@ -71,7 +70,7 @@ export default function(injectDeps, {FlowRouter}) {
     }
   });
 
-        FlowRouter.route('/portfolio', {
+  FlowRouter.route('/exercises', {
     name: 'marketing.portfolio',
     action() {
       mount(InnerLayoutCtx, {
@@ -80,16 +79,7 @@ export default function(injectDeps, {FlowRouter}) {
     }
   });
 
-    FlowRouter.route('/header', {
-    name: 'marketing.header',
-    action() {
-      mount(InnerLayoutCtx, {
-        content: () => (<Header />)
-      })
-    }
-  });
-
-  FlowRouter.route('/features', {
+  FlowRouter.route('/lessons', {
     name: 'marketing.features',
     action() {
       mount(InnerLayoutCtx, {

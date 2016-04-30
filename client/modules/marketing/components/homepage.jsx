@@ -15,37 +15,25 @@ class Homepage extends React.Component {
         <div className={ this.props.toggle ? 'st-container nav-effect' : 'st-container' }>
           <nav className="nav-menu">
             <h3>Menu</h3>
-            <a href="index.html" className="item">
-              Home 1 (Static)
+            <a href="/login" className="item">
+              Login
             </a>
-            <a href="index2.html" className="item">
-              Home 2 (Slider)
+            <a href="/forgot" className="item">
+              Forgot Password?
             </a>
-            <a href="features.html" className="item">
-              Features
+            <a href="/support" className="item">
+              Support
             </a>
-            <a href="services.html" className="item">
-              Services
+            <a href="/contact" className="item">
+              Contact Us
             </a>
-            <a href="pricing.html" className="item">
-              Pricing Charts
-            </a>
-            <a href="charts.html" className="item">
-              Comparison tables
-            </a>
-            <a href="aboutus.html" className="item">
+            <a href="/about" className="item">
               About us
-            </a>
-            <a href="contactus.html" className="item">
-              Contact us
-            </a>
-            <a href="gallery.html" className="item">
-              Gallery
             </a>
             <a href="portfolio.html" className="item">
               Portfolio
             </a>
-            <a href="blog.html" className="item">
+            <a href="/blog" className="item">
               Blog
             </a>
             <div className="social">
@@ -54,12 +42,6 @@ class Homepage extends React.Component {
               </a>
               <a href="#">
                 <i className="fa fa-facebook"></i>
-              </a>
-              <a href="#">
-                <i className="fa fa-google-plus"></i>
-              </a>
-              <a href="#">
-                <i className="fa fa-youtube-play"></i>
               </a>
             </div>
           </nav>

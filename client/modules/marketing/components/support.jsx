@@ -13,16 +13,8 @@ const Support = ( { content = () => null }) => (
             How can we help?
           </h2>
           <p>
-            Please describe the problem you're having
+            Please use our online chat or give us a call at this number.
           </p>
-          <form>
-            <div className="input-group">
-                  <input type="text" className="form-control" placeholder="Can't find the source code of this page" />
-                  <span className="input-group-btn">
-                    <button className="btn btn-primary" type="button">Search</button>
-                  </span>
-              </div>
-          </form>
         </div>
       </div>
     </div>
@@ -31,13 +23,12 @@ const Support = ( { content = () => null }) => (
     <div className="container">
       <div className="row">
         <div className="col-md-12">
-          <h4>Browse by topic</h4>
+          <h4>Frequently Asked Questions</h4>
         </div>
       </div>
       <div className="row">
         <div className="col-sm-4 topic">
           <a href="#">
-            <span className="icon ion-clipboard"></span>
             <strong>Tasks and Projects</strong>
           </a>
           <p>
@@ -46,7 +37,6 @@ const Support = ( { content = () => null }) => (
         </div>
         <div className="col-sm-4 topic">
           <a href="#">
-            <span className="icon ion-gear-a"></span>
             <strong>Account settings</strong>
           </a>
           <p>
@@ -55,7 +45,6 @@ const Support = ( { content = () => null }) => (
         </div>
         <div className="col-sm-4 topic">
           <a href="#">
-            <span className="icon ion-card"></span>
             <strong>Billing information</strong>
           </a>
           <p>
@@ -66,7 +55,6 @@ const Support = ( { content = () => null }) => (
       <div className="row">
         <div className="col-sm-4 topic">
           <a href="#">
-            <span className="icon ion-person-stalker"></span>
             <strong>Users and coworkers</strong>
           </a>
           <p>
@@ -75,7 +63,6 @@ const Support = ( { content = () => null }) => (
         </div>
         <div className="col-sm-4 topic">
           <a href="#">
-            <span className="icon ion-upload"></span>
             <strong>Advanced options</strong>
           </a>
           <p>
@@ -84,7 +71,6 @@ const Support = ( { content = () => null }) => (
         </div>
         <div className="col-sm-4 topic">
           <a href="#">
-            <span className="icon ion-compose"></span>
             <strong>Customize this template</strong>
           </a>
           <p>
@@ -95,7 +81,6 @@ const Support = ( { content = () => null }) => (
       <div className="row">
         <div className="col-sm-4 topic">
           <a href="#">
-            <span className="icon ion-iphone"></span>
             <strong>Mobile</strong>
           </a>
           <p>
@@ -104,7 +89,6 @@ const Support = ( { content = () => null }) => (
         </div>
         <div className="col-sm-4 topic">
           <a href="#">
-            <span className="icon ion-search"></span>
             <strong>Search & Discussions</strong>
           </a>
           <p>
@@ -113,7 +97,6 @@ const Support = ( { content = () => null }) => (
         </div>
         <div className="col-sm-4 topic">
           <a href="#">
-            <span className="icon ion-stats-bars"></span>
             <strong>Reports & Clients</strong>
           </a>
           <p>
