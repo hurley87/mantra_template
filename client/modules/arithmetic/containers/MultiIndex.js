@@ -7,7 +7,6 @@ export const composer = ({context}, onData) => {
   if(userId && Meteor.subscribe('profiles.single', userId).ready() && Meteor.subscribe('multiplication_questions.index').ready()){
     const profile = Collections.Profiles.find({"user": userId}).fetch()[0];
     const points = profile.multiPoints;
-    console.log(points)
     const complete = Collections.ArithmeticQuestions.find({'upperLimit': { $lt: points }}).fetch();
     const locked = Collections.ArithmeticQuestions.find({'lowerLimit': { $gte: points }}).fetch();
     const current = Collections.ArithmeticQuestions.find({ 'lowerLimit': { $lt: points}, 'upperLimit': { $gte: points}}).fetch();

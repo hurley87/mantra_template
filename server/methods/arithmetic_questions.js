@@ -195,46 +195,67 @@ export default function () {
       difficulty: 7
     });
     ArithmeticQuestions.insert({
-      min: '0',
+      min: '1',
       max: '5',
       title: 'This is the first division module.',
-      operator: '/'
+      operator: '/',
+      lowerLimit: 0,
+      upperLimit: 5,
+      difficulty: 1
     });
     ArithmeticQuestions.insert({
       min: '2',
       max: '7',
       title: 'This is the second division module.',
-      operator: '/'
+      operator: '/',
+      lowerLimit: 6,
+      upperLimit: 15,
+      difficulty: 2
     });
     ArithmeticQuestions.insert({
       min: '3',
       max: '8',
       title: 'This is the third division module.',
-      operator: '/'
+      operator: '/',
+      lowerLimit: 16,
+      upperLimit: 30,
+      difficulty: 3
     });
     ArithmeticQuestions.insert({
       min: '4',
       max: '9',
       title: 'This is the fourth division module.',
-      operator: '/'
+      operator: '/',
+      lowerLimit: 31,
+      upperLimit: 40,
+      difficulty: 4
     });
     ArithmeticQuestions.insert({
       min: '5',
       max: '10',
       title: 'This is the fifth division module.',
-      operator: '/'
+      operator: '/',
+      lowerLimit: 41,
+      upperLimit: 70,
+      difficulty: 5
     });
     ArithmeticQuestions.insert({
       min: '6',
       max: '11',
       title: 'This is the sixth division module.',
-      operator: '/'
+      operator: '/',
+      lowerLimit: 71,
+      upperLimit: 100,
+      difficulty: 6
     });
     ArithmeticQuestions.insert({
       min: '7',
       max: '12',
       title: 'This is the sixth division module.',
-      operator: '/'
+      operator: '/',
+      lowerLimit: 101,
+      upperLimit: 150,
+      difficulty: 7
     });
   });
 }

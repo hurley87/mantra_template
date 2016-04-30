@@ -203,7 +203,7 @@ export default function(injectDeps, {FlowRouter}) {
     name: 'questions:DivIndex',
     action() {
       mount(QuestionLayoutCtx, {
-        content: () => (<ComingSoon />)
+        content: () => (<DivIndex />)
       })
     }
   });
