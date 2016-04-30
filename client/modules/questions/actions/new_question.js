@@ -1,9 +1,16 @@
 export default {
   question({LocalState, Meteor}) {
     const question = LocalState.get('QUESTION');
+    const operator = LocalState.get('OPERATOR');
     const num1 = question.num1;
     const num2 = question.num2;
-    if(num1 < num2) {
+    const product = multiply(num1, num2);
+    if (operator == '/') {
+      return {
+        num1: product,
+        num2: num2
+      }
+    } else if (num1 < num2) {
       return {
         num1: num2,
         num2: num1
@@ -44,19 +51,11 @@ function multiply(num1, num2) {
 function submitAttempt(guess, answer) {
   return guess.toString().length == answer.toString().length;
 }
-function checkAnswer(guess, answer) {
-  return guess == answer;
-}
 function questionHandler(LocalState, questionId) {
   const num1 = LocalState.get('QUESTION').num1;
   const num2 = LocalState.get('QUESTION').num2;
   guess = parseInt(LocalState.get('GUESS'));
   const operator = LocalState.get('OPERATOR');
-  if(operator == '+') {
-    var answer = add(num1, num2);
-  } else if(operator == '-') {
-    var answer = subtract(num1, num2);
-  }
   switch(operator) {
     case '+':
       var answer = add(num1, num2);
@@ -66,6 +65,9 @@ function questionHandler(LocalState, questionId) {
       break;
     case 'x':
       var answer = multiply(num1, num2);
+      break;
+    case '/':
+      var answer = num1;
       break;
     default: 
       return null;
