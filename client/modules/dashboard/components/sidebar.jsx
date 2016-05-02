@@ -10,10 +10,16 @@ class Sidebar extends React.Component {
         </div>
         <h3>My account</h3>
         <ul className="menu">
+          <li onClick={ this.props.showView.bind(this, 'dashboard') }>
+            <a className={ this.props.getView() == 'dashboard' ? 'active' : null}>
+              <i className="ion-stats-bars"></i>
+              Dashboard
+            </a>
+          </li>
           <li onClick={ this.props.showView.bind(this, 'profile') }>
             <a className={ this.props.getView() == 'profile' ? 'active' : null}>
               <i className="ion-ios7-person-outline"></i>
-              About Me
+              Settings
             </a>
           </li>
           <li onClick={ this.props.showView.bind(this, 'password') }>

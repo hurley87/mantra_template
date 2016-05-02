@@ -7,7 +7,7 @@ export default {
   getView({LocalState}) {
     const view = LocalState.get('SETTINGSVIEW');
     if(view == undefined) {
-      LocalState.set('SETTINGSVIEW', 'profile');
+      LocalState.set('SETTINGSVIEW', 'dashboard');
     }
     return LocalState.get('SETTINGSVIEW');
   },
