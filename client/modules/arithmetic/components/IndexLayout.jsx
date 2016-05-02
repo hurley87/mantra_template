@@ -1,5 +1,6 @@
 import React from 'react';
 import { Row, Col, Input, Grid } from 'react-bootstrap';
+import Progess from '../../questions/components/progress.jsx';
 
 class IndexLayout extends React.Component {
   render() {
@@ -11,6 +12,7 @@ class IndexLayout extends React.Component {
         <div className="header">
           {this.props.title} <span className='pull-right'>{this.props.points} <i className="fa fa-heart"></i></span>
         </div>
+        <Progess percentage={percentage}/>
         <div className="steps">
           { this.props.complete ? this.levelLayout(this.props.complete) : null }
           { this.props.current ? this.levelLayout(this.props.current) : null }

@@ -1,13 +1,13 @@
 import React from 'react';
 import{ Grid, Row, Col, PageHeader } from 'react-bootstrap';
 
-const Sidebar = ({LocalState}) => (
+const Sidebar = ({LocalState, profile}) => (
   <div>
     <div id="sidebar-dark" className="main-sidebar">
       <div className="current-user">
         <a href="/profile" className="name active">
           <span>
-            <i className='ion-person'></i> Username
+            {profile.name}
           </span>
         </a>
       </div>

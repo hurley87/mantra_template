@@ -19,6 +19,13 @@
     padding: 0px 20px;
     height: 65px;
     position: relative;
+    transition: 1s all ease;
+
+    &:hover {
+      background-color: #3C424C;
+      transition: 1s all ease;
+      box-shadow: 1px 1px #000;
+    }
 
     .name {
       position: relative;

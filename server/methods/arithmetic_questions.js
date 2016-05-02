@@ -46,7 +46,7 @@ export default function () {
       max: '10',
       title: 'This is the fifth addition module.',
       operator: '+',
-      lowerLimit: 78,
+      lowerLimit: 76,
       upperLimit: 125,
       difficulty: 5
     });
