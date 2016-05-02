@@ -10,6 +10,8 @@ export const composer = ({context}, onData) => {
 export const depsMapper = (context, actions) => ({
 	getView: actions.store.getView,
 	textbookView: actions.store.textbookView,
+	formView: actions.store.formView,
+	getCard: actions.store.getCard,
   	context: () => context
 });
 

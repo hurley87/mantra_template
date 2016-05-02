@@ -1,3 +1,5 @@
+import stripe from 'stripe';
+
 export default {
   
   getView({LocalState}) {
@@ -11,5 +13,36 @@ export default {
 
 	textbookView({LocalState}){
 		LocalState.set('STORE_VIEW', 'textbook')
-	}
+	},
+
+  getCard(){
+
+    var handler = StripeCheckout.configure({
+        key: Meteor.settings.public.stripe.testPublishableKey,
+        image: 'images/bg4.png',
+        locale: 'auto',
+        token: function(token) {
+          if(token){
+            Meteor.call('chargeCard', token.id);
+          }else{
+            console.log("nothing")
+          }
+        }
+    });
+
+    handler.open({
+      name: 'Demo Site',
+      description: '2 widgets',
+      currency: "cad",
+      amount: 2000
+    });
+
+    // if(response.error)
+    // Meteor.call('chargeCard', result.id, (err) => {
+    // //    if (err) {
+    // //      console.log(err)
+    // //    }
+    // // });
+  }
+
 }

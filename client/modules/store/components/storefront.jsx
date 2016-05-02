@@ -8,9 +8,8 @@ class StoreFront extends React.Component {
   render() {
     return ( 
       <div className={ this.props.toggle ? 'show-menu' : 'hide-menu' }>
-        <Header title='Store' />
         {this.props.getView() == 'products' ? <Products textbookView = {this.props.textbookView} /> : null}
-        {this.props.getView() == 'textbook' ? <Textbook /> : null}
+        {this.props.getView() == 'textbook' ? <Textbook getCard = {this.props.getCard} /> : null}
         {this.props.getView() == 'flashcards' ? <Flashcards /> : null}
       </div>
      

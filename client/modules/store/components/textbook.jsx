@@ -14,6 +14,7 @@ class Textbook extends React.Component {
               <div className="row project-list">
 
                 Here is a Textbook
+                <button onClick={this.props.getCard.bind(this)}>Buy Textbook</button>
 
               </div>
             </div>
