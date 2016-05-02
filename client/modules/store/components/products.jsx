@@ -7,6 +7,7 @@ class Products extends React.Component {
     return ( 
 
     <div>
+
       <div id="projects">
         <div id="wrapper">
           <div id="content">
