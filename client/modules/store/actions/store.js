@@ -40,7 +40,13 @@ export default {
       currency: "cad",
       amount: 2000
     });
-    
+
+    // if(response.error)
+    // Meteor.call('chargeCard', result.id, (err) => {
+    // //    if (err) {
+    // //      console.log(err)
+    // //    }
+    // // });
   }
 
 }

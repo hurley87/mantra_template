@@ -16,7 +16,14 @@ export default function () {
   			currency: "cad",
  			source: myToken, // obtained with Stripe.js
   			description: "Charge for test@example.com"
-      	})
+      	}).then(
+      		function(result){
+      			console.log(result)
+      		},
+      		function(error){
+      			console.log(error)
+      		}
+      	)
     }
     
   });
