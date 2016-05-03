@@ -23,9 +23,13 @@ export default {
         locale: 'auto',
         token: function(token) {
           if(token){
-            Meteor.call('chargeCard', token.id);
-          }else{
-            console.log("nothing")
+            Meteor.call('chargeCard', token.id, function(err, result){
+              if(err){
+                console.log("Your card has been declined")
+              }else{
+                FlowRouter.go('/thank_you')
+              }
+            });
           }
         }
     });
@@ -36,13 +40,7 @@ export default {
       currency: "cad",
       amount: 2000
     });
-
-    // if(response.error)
-    // Meteor.call('chargeCard', result.id, (err) => {
-    // //    if (err) {
-    // //      console.log(err)
-    // //    }
-    // // });
+    
   }
 
 }
