@@ -35,6 +35,10 @@ import ComingSoon from '../arithmetic/components/ComingSoon.jsx';
 
 // store
 import StoreFront from '../store/containers/store.js';
+import ThankYou from '../store/components/thank_you.jsx';
+
+// loading
+import Loading from '../store/components/loading.jsx';
 
 export default function(injectDeps, {FlowRouter}) {
   const MainLayoutCtx = injectDeps(Layout);
@@ -240,6 +244,24 @@ export default function(injectDeps, {FlowRouter}) {
     action() {
       mount(QuestionLayoutCtx, {
         content: () => (<ComingSoon />)
+      })
+    }
+  });
+
+    FlowRouter.route('/loading', {
+    name: 'loading',
+    action() {
+      mount(QuestionLayoutCtx, {
+        content: () => (<Loading />)
+      })
+    }
+  });
+
+    FlowRouter.route('/thank_you', {
+    name: 'loading',
+    action() {
+      mount(QuestionLayoutCtx, {
+        content: () => (<ThankYou />)
       })
     }
   });

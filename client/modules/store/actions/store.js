@@ -23,11 +23,14 @@ export default {
         locale: 'auto',
         token: function(token) {
           if(token){
-            Meteor.call('chargeCard', token.id, function(err, result){
-              if(err){
-                console.log("Your card has been declined")
-              }else{
+            FlowRouter.go('/loading');
+            Meteor.call('chargeCard', token.id, function(error, result){
+              if(error){
+                console.log(error)
+              }else if(result == "succeeded"){
                 FlowRouter.go('/thank_you')
+              }else{
+                console.log("sorry")
               }
             });
           }
