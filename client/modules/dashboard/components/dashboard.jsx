@@ -5,7 +5,6 @@ class Dashboard extends React.Component {
   render() {
     return (
       <div id='panel' className='dashboard'>
-        <h3>Dashboard</h3>
         <div className="metrics clearfix">
           <div className="metric">
             <span className="field">Points</span>

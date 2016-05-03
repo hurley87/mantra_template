@@ -8,13 +8,10 @@ class Billing extends React.Component {
       <div id='panel' className='billing'>
 
     <div id="billing-form">
-		<div id="wrapper">
-        	<h3>Billing</h3>
-        		<div id="content">
-
+			<div id="wrapper">
+       	<div id="content">
 					<div className="content-wrapper">
 						<div className="billing">
-							
 							<div className="secure clearfix">
 								<span className="lock pull-left">
 									<i className="fa fa-lock"></i>
@@ -25,8 +22,6 @@ class Billing extends React.Component {
 									<img src="images/credit_card_types.gif" />
 								</div>
 							</div>
-
-							
 							<form id="billing" className="form-horizontal" method="post" action="#" role="form">
 							  	<div className="form-group">
 								    <label className="col-sm-3 control-label">Name on Card</label>

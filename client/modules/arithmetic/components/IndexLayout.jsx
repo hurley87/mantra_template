@@ -55,7 +55,7 @@ class IndexLayout extends React.Component {
     } else {
       return (
         <a href={`/${type}/${question._id}`} className="button">
-          <span>Start</span>
+          Start
         </a>
       );
     }
