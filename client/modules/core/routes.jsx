@@ -65,10 +65,19 @@ export default function(injectDeps, {FlowRouter}) {
     }
   });
 
-    FlowRouter.route('/support', {
+  FlowRouter.route('/support', {
     name: 'marketing.support',
     action() {
       mount(InnerLayoutCtx, {
+        content: () => (<Support />)
+      })
+    }
+  });
+
+  FlowRouter.route('/help', {
+    name: 'marketing.support',
+    action() {
+      mount(QuestionLayoutCtx, {
         content: () => (<Support />)
       })
     }

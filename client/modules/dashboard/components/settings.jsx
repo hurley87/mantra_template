@@ -12,7 +12,7 @@ import Sidebar from '../containers/sidebar.js';
 class Settings extends React.Component {
   render() {
     return (
-      <div className={ this.props.toggle ? 'show-menu' : 'hide-menu' }>
+      <div className={ this.props.toggle ? 'show-menu settings-wrapper' : 'hide-menu settings-wrapper' }>
         <Header title='Profile'/>
         <div id='content'>
           <Sidebar />

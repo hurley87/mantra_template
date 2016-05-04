@@ -1,14 +1,14 @@
 .progress {
-  border: 1px solid #4589E3;
+  border: 1px solid #4DB2E7;
   width: 100%;
   border-radius: 0px;
-  height: 20px;
+  height: 32px;
   margin-bottom: 0px;
   position: relative;
   z-index: 9999;
   .bar {
     height: 100%;
-    background-color: #4589E3;
+    background-color: #4DB2E7;
     transition: 1s all ease;
   }
 }

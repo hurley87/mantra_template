@@ -52,8 +52,8 @@ const Sidebar = ({LocalState, profile}) => (
             </a>
           </li>
           <li onClick={LocalState.set('TOGGLE', false)}>
-            <a href="/lessons" className={ location.pathname == '/lessons' ? 'active' : null }>
-              <i className="ion-calendar"></i> <span>Private Lesson</span>
+            <a href="/help" className={ location.pathname == '/help' ? 'active' : null }>
+              <i className="ion-help"></i> <span>Help</span>
             </a>
           </li>
         </ul>

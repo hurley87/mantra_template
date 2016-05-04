@@ -2,49 +2,21 @@
 
 #content {
   padding: 0;
+  margin-left: 230px;
+
+  @media (max-width: $maxMedium) {
+    margin-left: 70px;
+  }
 
   #sidebar {
-    left: 238px;
-    top: 0px;
-    bottom: 0;
-    position: absolute;
-    width: 200px;
-    background: #fcfcfc;
-    border-right: 1px solid #E8ECF1;
-    padding-top: 15px;
-    min-height: 100vh;
-
-    @media (max-width: $maxMedium) {
-      width: 200px;
-      left: 100px;
-    }
+    width: 100%;
+    background-color: #4DB2E7;
+    height: 38px;
+    line-height: 38px;
+    position: relative;
 
     @media (max-width: $maxSmall) {
-      position: relative;
-      width: 100%;
-      z-index: 999;
-      left: 0px;
-      border-right: 1px solid #fff;
-      min-height: 100px;
-    }
-
-    .sidebar-toggler {
-      position: absolute;
-      top: 8px;
-      left: 32px;
-      font-size: 36px;
-      cursor: pointer;
-    }
-
-    h3 {
-      margin: 0;
-      text-align: center;
-      font-size: 19px;
-      padding: 22px 0;
-
-      @media (max-width: $maxSmall) {
-        padding: 22px 0 0;
-      }
+      margin-top: 60px;
     }
 
     .menu {
@@ -52,51 +24,18 @@
       padding: 0;
       margin: 0;
 
-      @media (max-width: $maxSmall) {
-        margin-top: 15px;
-        padding-bottom: 10px;
-      }
+      a {
+        display: inline;
+        padding: 13px 30px;
+        font-size: 15px;
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
 
-      li {
-        a {
-          display: block;
-          padding: 13px 30px;
-          font-size: 15px;
-          color: #555;
-          text-decoration: none;
-
-          &.active,
-          &:hover {
-            color: #6787DA;
-          }
-
-          i {
-            min-width: 30px;
-
-            &.ion-ios7-person-outline {
-              font-size: 30px;
-              position: relative;
-              top: 4px;
-            }
-
-            &.ion-ios7-email-outline {
-              font-size: 24px;
-              position: relative;
-              top: 4px;
-            }
-
-            &.ion-ios7-help-outline {
-              font-size: 24px;
-              position: relative;
-              top: 4px; 
-            }
-
-            &.ion-card {
-              font-size: 21px;
-              position: relative;
-              top: 3px;
-            }
-          }
+        &.active,
+        &:hover {
+          color: #6787DA;
         }
       }
     }

@@ -1,42 +1,56 @@
 import React from 'react';
-import { Row, Col, Input, Grid } from 'react-bootstrap';
+import { Col, Row, Grid, Input, ButtonInput} from 'react-bootstrap';
+import { Form, ValidatedInput, RadioGroup, Radio } from 'react-bootstrap-validation';
 
 class Notifications extends React.Component {
   render() {
     return (
       <div id='panel' className='password'>
-        <h3>
-          Account Password
-        </h3>
-
         <p className="intro">
           Change your password.
         </p>
-        <form>
-          <div className="form-group">
-            <label>Old password</label>
-            <Input type="password" ref="old_password" className="form-control" />
-          </div>
-          <div className="form-group">
-            <label>New password</label>
-            <Input type="password" ref="new_password" className="form-control" />
-          </div>
-          <div className="form-group action">
-            <Input type="submit" className="btn btn-success" value="Change password" onClick={this.changePassword.bind(this)} />
-          </div>
-        </form>
+        <Form
+            // Supply callbacks to both valid and invalid 
+            // submit attempts 
+            onValidSubmit={this._handleValidSubmit.bind(this)}
+            onInvalidSubmit={this._handleInvalidSubmit.bind(this)}>
 
+            <ValidatedInput
+                type='password'
+                name='old_password'
+                label='Old Password'
+                validate='required,isLength:6:30'
+                errorHelp={{
+                    required: 'Please specify a password',
+                    isLength: 'Password must be at least 6 characters'
+                }}
+            />
+
+            <ValidatedInput
+                type='password'
+                name='new_password'
+                label='New Password'
+            />
+
+            <ButtonInput
+              type='submit'
+              bsSize='large'
+              bsStyle='primary'
+              value='Update Password'
+              className='button text-center'
+            />
+        </Form>
       </div>
     )
   }
-
-  changePassword(event){
-  event.preventDefault();
-  const {updatePassword} = this.props;
-  const {old_password, new_password} = this.refs;
-  updatePassword(old_password.getValue(), new_password.getValue());
+  _handleValidSubmit(values) {
+    const {updatePassword} = this.props;
+    const {old_password, new_password} = this.refs;
+    updatePassword(values.old_password, values.new_password);
   }
-
+  _handleInvalidSubmit(errors, values) {
+    console.log(errors)
+  }
 }
 
 export default Notifications;

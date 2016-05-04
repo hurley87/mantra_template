@@ -2,8 +2,12 @@
 
 .settings-wrapper {
   position: absolute;
-  right: 0;
-  left: 230px;
+  right: 0px;
+  left: 0px;
+
+  @media (max-width: $maxSmall) {
+    top: 0px;
+  }
 }
 .show-menu {
   @include transition(all .3s ease-out);
