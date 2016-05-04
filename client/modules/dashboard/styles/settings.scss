@@ -1,11 +1,12 @@
 @import '../../core/stylesheets/mixins.scss';
 
 .settings-wrapper {
-  position: absolute;
+  position: absolute !important;
   right: 0px;
   left: 0px;
 
   @media (max-width: $maxSmall) {
+    position: absolute;
     top: 0px;
   }
 }

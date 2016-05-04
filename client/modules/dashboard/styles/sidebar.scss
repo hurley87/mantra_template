@@ -8,9 +8,14 @@
     margin-left: 70px;
   }
 
+  @media (max-width: $maxSmall) {
+    margin-left: 0px;
+    position: relative;
+    z-index: 9999;
+  }
+
   #sidebar {
     width: 100%;
-    background-color: #4DB2E7;
     height: 38px;
     line-height: 38px;
     position: relative;
@@ -24,18 +29,29 @@
       padding: 0;
       margin: 0;
 
+      .col-xs-4 {
+        padding: 0;
+      }
+
       a {
-        display: inline;
-        padding: 13px 30px;
+        display: block;
+        width: 100%;
+        height: 100%;
         font-size: 15px;
         color: #fff;
         text-align: center;
         text-decoration: none;
         cursor: pointer;
+        background-color: #fff;
+        color: #4DB2E7;
+        border: 1px solid #4DB2E7;
+        border-left: none;
+        transition: 0.5s all ease;
 
         &.active,
         &:hover {
-          color: #6787DA;
+          background-color: #4DB2E7;
+          color: #fff;
         }
       }
     }

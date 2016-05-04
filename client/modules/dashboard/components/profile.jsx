@@ -9,6 +9,9 @@ class Profile extends React.Component {
         <p className="intro">
           Change your account information.
         </p>
+        <Row>
+
+        </Row>
         <Form
             // Supply callbacks to both valid and invalid 
             // submit attempts 
@@ -33,7 +36,7 @@ class Profile extends React.Component {
                 type='text'
                 label='Full Name'
                 name='name'
-                value={this.props.profile.name}
+                placeholder={this.props.profile.name}
                 validate='required,isLength:4:30'
                 errorHelp={{
                     required: 'Please enter a username',
@@ -45,7 +48,7 @@ class Profile extends React.Component {
                 type='text'
                 label='Email'
                 name='email'
-                value={this.props.profile.email}
+                placeholder={this.props.profile.email}
                 validate='required,isEmail'
                 errorHelp={{
                     required: 'Please enter your email',

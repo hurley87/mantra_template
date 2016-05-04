@@ -5,9 +5,6 @@ class Sidebar extends React.Component {
   render() {
     return (
       <div id="sidebar">
-        <div className="sidebar-toggler visible-xs">
-          <i className="ion-navicon"></i>
-        </div>
         <div className='row menu'>
           <div className='col-xs-4 text-center' onClick={ this.props.showView.bind(this, 'dashboard') }>
             <a className={ this.props.getView() == 'dashboard' ? 'active' : null}>

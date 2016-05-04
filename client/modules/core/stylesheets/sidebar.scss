@@ -164,6 +164,20 @@
           position: relative;
           top: 3px;
           right: 2px;
+
+          @media (max-width: $maxMedium) {
+            display: block;
+            font-size: 34px;
+            position: relative;
+            left: 4px;
+            bottom: 0px;
+            height: 20px;
+          }
+
+          @media (max-width: $maxSmall) {
+            display: inline;
+          }
+
         }
 
         a {
