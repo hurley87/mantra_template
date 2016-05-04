@@ -14,7 +14,7 @@ class Homepage extends React.Component {
       <div id='home3'>
         <div className={ this.props.toggle ? 'st-container nav-effect' : 'st-container' }>
           <nav className="nav-menu">
-            <h3>Menu</h3>
+            <h3>ParenTeach</h3>
             <a href="/register" className="item">
               Sign up
             </a>
@@ -52,7 +52,7 @@ class Homepage extends React.Component {
               <header className="navbar navbar-inverse hero" role="banner">
                   <div className="container">
                     <div className="navbar-header">
-                        <a href="index.html" className="navbar-brand">React</a>
+                        <a href="index.html" className="navbar-brand">ParenTeach</a>
                     </div>
                     <div onClick={ this.props.showMenu.bind(this) } className="sidebar-toggle">
                       <div className="line"></div>
@@ -65,7 +65,7 @@ class Homepage extends React.Component {
               <div id="hero">
                 <div id="cover-image" className="animated fadeIn">
                   <div className="container">
-                    <h1 className="hero-text animated fadeIn">Learn single digit arithmetic.</h1>
+                    <h1 className="hero-text animated fadeIn">Math Fluency from Home</h1>
                     <div className="cta animated fadeIn">
                       <a href="/register" className="button">Sign up free</a>
                     </div>
@@ -80,16 +80,16 @@ class Homepage extends React.Component {
                 <div className="container">
                   <div className="row header">
                     <div className="col-md-12">
-                      <h2>Need an easy way to customize your site?</h2>
-                      <p>React is perfect for novice developers and experts alike.</p>
+                      <h2>Master single-digit arithemtic</h2>
+                      <p>Counting, Addition, Subtraction, Multiplication and Division</p>
                     </div>
                   </div>
                   <div className="row feature">
                     <div className="col-md-6 info">
-                      <h4>You don't need to have great technical experience to use your product.</h4>
+                      <h4>Prepare your child for success in the Digital Age</h4>
                       <p>
-                        Whether you want to fill this paragraph with some text like I'm doing right now, this place
-                        is perfect to describe some features or anything you want - React has a complete solution for you.
+                        Whether its a trade or a profession, number sense and fluency are crucial in today's world.
+                        Fluency in single-digit arithmetic will set your child up for success.
                       </p>
                     </div>
                     <div className="col-md-6 image">
@@ -99,13 +99,10 @@ class Homepage extends React.Component {
                   <div className="divider"></div>
                   <div className="row feature backwards">
                     <div className="col-md-6 info">
-                      <h4>A fully featured well design template that works.</h4>
+                      <h4>A digital tutoring solution from the comfort of your home</h4>
                       <p>
-                        You have complete control over the look & feel of your website, we offer the best quality so you take your site up and running in no time.
-                      </p>
-                      <p>
-                        Write some text here to explain the features of your site or application, it
-                        has lots of uses.
+                        The ParenTeach app provides a private, individualized program for your child. Using our enlightend timed tests,
+                        your child will work for just five minutes a day and become completely fluent in single-digit arithmetic.
                       </p>
                     </div>
                     <div className="col-md-6 image">
