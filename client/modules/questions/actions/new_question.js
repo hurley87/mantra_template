@@ -22,7 +22,7 @@ export default {
   guess({LocalState}) {
     return LocalState.get('GUESS');
   },
-  clickNumber({LocalState}, guess, operator, questionId) {
+  clickNumber({LocalState}, guess, questionId) {
     const guessValue = LocalState.get('GUESS');
     LocalState.set('GUESS', guessValue + guess);
     questionHandler(LocalState, questionId);

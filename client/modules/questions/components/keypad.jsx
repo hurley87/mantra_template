@@ -6,9 +6,6 @@ class Keypad extends React.Component {
   render() {
     return (
       <div>
-        <h3 className='text-center numbers'>
-          {this.props.question().num1} {this.props.operator} {this.props.question().num2} 
-        </h3>
         <ol>
           { this.keypad() }
           <li onClick={this.props.clearInput.bind(this)}>C</li>
@@ -24,7 +21,7 @@ class Keypad extends React.Component {
     return list_items;
   }
   listInput(num) {
-    return <li key={num} onClick={this.props.clickNumber.bind(this, num, this.props.operator, this.props.questionId)}> {num }</li>
+    return <li key={num} onClick={this.props.clickNumber.bind(this, num, this.props.questionId)}> { num }</li>
   }
 }
 

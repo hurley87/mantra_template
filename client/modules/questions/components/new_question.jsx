@@ -14,9 +14,10 @@ class NewQuestion extends React.Component {
         </div>
         <Row>
           <Col xs={12} sm={6} smOffset={3}>
+            <h3 className='text-center numbers'>
+              {this.props.question().num1} {this.props.operator} {this.props.question().num2} 
+            </h3>
             <Keypad 
-              question={this.props.question}
-              operator={this.props.operator}
               clearInput={this.props.clearInput}
               clickNumber={this.props.clickNumber}
               questionId={this.props.questionId}

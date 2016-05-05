@@ -1,6 +1,7 @@
 import React from 'react';
 import { Row, Col, Input, Grid } from 'react-bootstrap';
 import Progess from '../../questions/components/progress.jsx';
+import { _ } from 'lodash';
 
 class IndexLayout extends React.Component {
   render() {
@@ -12,14 +13,29 @@ class IndexLayout extends React.Component {
         <div className="header">
           {this.props.title} <span className='pull-right'>{this.props.points} <i className="fa fa-heart"></i></span>
         </div>
-        <Progess percentage={percentage}/>
+        <Progess percentage={this.props.points / 1.5}/>
         <div className="steps">
-          { this.props.complete ? this.levelLayout(this.props.complete) : null }
-          { this.props.current ? this.levelLayout(this.props.current) : null }
-          { this.props.locked ? this.levelLayout(this.props.locked) : null }
+          { this.completeLevels() ? this.levelLayout(this.completeLevels()) : null}
+          { this.currentLevel() ? this.levelLayout(this.currentLevel()) : null}
+          { this.lockedLevels() ? this.levelLayout(this.lockedLevels()) : null}
         </div>
       </div>
     )
+  }
+  completeLevels() {
+    const questions = this.props.questions;
+    const points = this.props.points;
+    return _.filter(questions, function(question) { return points > question.upperLimit; });
+  }
+  lockedLevels() {
+    const questions = this.props.questions;
+    const points = this.props.points;
+    return _.filter(questions, function(question) { return question.lowerLimit >= points});
+  }
+  currentLevel() {
+    const questions = this.props.questions;
+    const points = this.props.points;
+    return _.filter(questions, function(question) { return question.lowerLimit < points && question.upperLimit > points });
   }
   levelLayout(questions) {
     return (
