@@ -14,7 +14,11 @@ export const composer = ({context, type}, onData) => {
 
 export const depsMapper = (context, actions) => ({
   showMenu: actions.header.showMenu,
-  levelStats: actions.index_layout.levelStats,
+  completeLevels: actions.index_layout.completeLevels,
+  lockedLevels: actions.index_layout.lockedLevels,
+  currentLevel: actions.index_layout.currentLevel,
+  levelLocked: actions.index_layout.levelLocked,
+  levelFinished: actions.index_layout.levelFinished,
   context: () => context
 });
 
