@@ -42,7 +42,7 @@
     z-index: 1;
     width: 320px;
     height: 100%;
-    background: #2a313a;
+    background: #e05038;
     padding-top: 30px;
     -webkit-font-smoothing: antialiased;
 
@@ -72,7 +72,7 @@
       margin-bottom: 10px;
       text-decoration: none;
       color: #fff;
-      font-size: 17px;
+      font-size: 26px;
       font-weight: 300;
 
       @include transition(all 0.15s linear);
@@ -162,7 +162,7 @@
       background-position: center center;
       background-size: cover;
       @include animationDelay(0.15s);
-      background-image: url("../../images/bg4.png");
+      background-image: url("../../images/title.jpg");
 
       @media (max-width: 991px) {
         padding-top: 65px;
@@ -202,7 +202,7 @@
 
     h1.hero-text {
       text-align: center;
-      font-size: 35px;
+      font-size: 64px;
       font-weight: 300;
       color: #fff;
       margin-top: 40px;

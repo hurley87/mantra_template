@@ -6,43 +6,46 @@ const Pricing = ( { content = () => null }) => (
     <div className="container">
       <div className="row header">
         <div className="col-md-12">
-          <h3>Free trial. No contract. Cancel when you want.</h3>
-          <p>All plans include a 7-day free trial</p>
+          <h3>Start today and lead your child to math success!</h3>
+          <p>Plans are fully refundable if you aren't satisfied with your child's progress</p>
         </div>
       </div>
       <div className="row charts">
         <div className="col-md-4">
           <div className="chart first">
             <div className="quantity">
-              <span className="dollar">$</span>
-              <span className="price">29</span>
-              <span className="period">/month</span>
+              <span className="dollar"></span>
+              <span className="price">FREE</span>
+              <span className="period"></span>
             </div>
-            <div className="plan-name">Freelance</div>
+            <div className="plan-name">Starter</div>
             <div className="specs">
               <div className="spec">
-                <span className="variable">5</span>
-                team members
+                <span className="variable"></span>
+                <br></br>
               </div>
               <div className="spec">
-                <span className="variable">Digital</span>
-                recurring billing
+                <span className="variable"></span>
+                Counting
               </div>
               <div className="spec">
-                <span className="variable">Virtual</span>
-                online terminal
+                <span className="variable"></span>
+                Addition
               </div>
               <div className="spec">
-                <span className="variable">10</span>
-                total products
+                <span className="variable"></span>
+                Subtraction
               </div>
               <div className="spec">
-                <span className="variable">1.0%</span>
-                Transaction fee
+                <span className="variable"></span>
+              </div>
+              <div className="spec">
+                <span className="variable"></span>
+                <br></br>
               </div>
             </div>
-            <a className="btn-signup button-clear" href="signup.html">
-              <span>Start free trial</span>
+            <a className="btn-signup button-clear" href="/register">
+              <span>Start today</span>
             </a>
           </div>
         </div>
@@ -51,34 +54,41 @@ const Pricing = ( { content = () => null }) => (
             <div className="popular">Most popular</div>
             <div className="quantity">
               <span className="dollar">$</span>
-              <span className="price">79</span>
-              <span className="period">/month</span>
+              <span className="price">75</span>
             </div>
-            <div className="plan-name">Profesional</div>
+            <div className="plan-name">Premium</div>
             <div className="specs">
               <div className="spec">
-                <span className="variable">15</span>
-                team members
+                <span className="variable"></span>
+                ParenTeach textbook
               </div>
               <div className="spec">
-                <span className="variable">Digital</span>
-                recurring billing
+                <span className="variable"></span>
+                Counting
               </div>
               <div className="spec">
-                <span className="variable">Virtual</span>
-                online terminal
+                <span className="variable"></span>
+                Addition
               </div>
               <div className="spec">
-                <span className="variable">15</span>
-                total products
+                <span className="variable"></span>
+                Subtraction
               </div>
               <div className="spec">
-                <span className="variable">0.5%</span>
-                Transaction fee
+                <span className="variable"></span>
+                Division
+              </div>
+              <div className="spec">
+                <span className="variable"></span>
+                Multiplication
+              </div>
+              <div className="spec">
+                <span className="variable"></span>
+                Online support
               </div>
             </div>
-            <a className="btn-signup button-clear" href="signup.html">
-              <span>Start free trial</span>
+            <a className="btn-signup button-clear" href="/register">
+              <span>Start today</span>
             </a>
           </div>
         </div>
@@ -86,34 +96,33 @@ const Pricing = ( { content = () => null }) => (
           <div className="chart last">
             <div className="quantity">
               <span className="dollar">$</span>
-              <span className="price">119</span>
-              <span className="period">/month</span>
+              <span className="price">50</span>
             </div>
-            <div className="plan-name">Premium</div>
+            <div className="plan-name">Professional</div>
             <div className="specs">
               <div className="spec">
-                <span className="variable">Unlimited</span>
-                team members
+                <span className="variable"></span>
+                Counting
               </div>
               <div className="spec">
-                <span className="variable">Digital</span>
-                recurring billing
+                <span className="variable"></span>
+                Addition
               </div>
               <div className="spec">
-                <span className="variable">Virtual</span>
-                online terminal
+                <span className="variable"></span>
+                Subtraction
               </div>
               <div className="spec">
-                <span className="variable">25</span>
-                total products
+                <span className="variable"></span>
+                Division
               </div>
               <div className="spec">
-                <span className="variable">No</span>
-                Transaction fee
+                <span className="variable"></span>
+                Multiplication
               </div>
             </div>
-            <a className="btn-signup button-clear" href="signup.html">
-              <span>Start free trial</span>
+            <a className="btn-signup button-clear" href="/register">
+              <span>Start today</span>
             </a>
           </div>
         </div>
