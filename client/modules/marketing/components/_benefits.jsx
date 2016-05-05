@@ -5,9 +5,9 @@ const Benefits = ( { content = () => null }) => (
   <Grid id="benefits" className="container">
     <Row>
       <Col md={4} className='feature'>
-        <img src="images/circle-icons/one-color/creditcard.png" alt="creditcard" />
-        <strong>Act locally, work globally</strong>
-        <p>You can work with international customers right out of the box while you can keep staying in your country.</p>
+        <img src="images/circle-icons/full-color/barchart.png" alt="creditcard" />
+        <strong>Data Analytics</strong>
+        <p>ParenTeach uses a fully-encrypted payment method, ensuring your payment information remains safe.</p>
       </Col>
       <Col md={4} className='feature'>
         <img src="images/circle-icons/one-color/dev.png" alt="dev" />
@@ -22,19 +22,18 @@ const Benefits = ( { content = () => null }) => (
     </Row>
     <Row>
       <Col md={4} className='feature'>
-        <img src="images/circle-icons/one-color/support.png" alt="support" />
-        <strong>Act globally, work as usual</strong>
-        <p>We're always happy to offer support if you happen to have any doubts about anything, if you need
-          some new stuff contact us.</p>
+        <img src="images/circle-icons/full-color/creditcard.png" alt="creditcard" />
+        <strong>Fully-encrypted payment</strong>
+        <p>ParenTeach uses a fully-encrypted payment method, ensuring your payment information remains safe.</p>
       </Col>
       <Col md={4} className='feature'>
-        <img src="images/circle-icons/one-color/mail.png" alt="mail" />
-        <strong>Develop once, run everywhere</strong>
+        <img src="images/circle-icons/full-color/mail.png" alt="mail" />
+        <strong>Online Support</strong>
         <p>We'll be adding some new stuff to make it even more awesome, if you have any idea please let us know.</p>
       </Col>
       <Col md={4} className='feature'>
-        <img src="images/circle-icons/one-color/locked.png" alt="locked" />
-        <strong>Act locally, work globally</strong>
+        <img src="images/circle-icons/full-color/locked.png" alt="locked" />
+        <strong>Secure Login, Protected Accounts</strong>
         <p>This thing will work on any device, it has a very easy to understand documentation and is made with SASS.</p>
       </Col>
     </Row>

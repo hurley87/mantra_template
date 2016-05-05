@@ -14,7 +14,7 @@ class Homepage extends React.Component {
       <div id='home3'>
         <div className={ this.props.toggle ? 'st-container nav-effect' : 'st-container' }>
           <nav className="nav-menu">
-            <h3>ParenTeach</h3>
+            <h3>Pttrns</h3>
             <a href="/register" className="item">
               Sign up
             </a>
@@ -52,7 +52,7 @@ class Homepage extends React.Component {
               <header className="navbar navbar-inverse hero" role="banner">
                   <div className="container">
                     <div className="navbar-header">
-                        <a href="index.html" className="navbar-brand">ParenTeach</a>
+                        <a href="index.html" className="navbar-brand">Pttrns</a>
                     </div>
                     <div onClick={ this.props.showMenu.bind(this) } className="sidebar-toggle">
                       <div className="line"></div>
@@ -99,10 +99,11 @@ class Homepage extends React.Component {
                   <div className="divider"></div>
                   <div className="row feature backwards">
                     <div className="col-md-6 info">
-                      <h4>A digital tutoring solution from the comfort of your home</h4>
+                      <h4>Tutoring from the comfort of your home</h4>
                       <p>
                         The ParenTeach app provides a private, individualized program for your child. Using our enlightend timed tests,
-                        your child will work for just five minutes a day and become completely fluent in single-digit arithmetic.
+                        your child will work for just five minutes a day.  Your child's results are tracked and reported in real-time,
+                        providing you with the tools you need to make sure they're on track.
                       </p>
                     </div>
                     <div className="col-md-6 image">
