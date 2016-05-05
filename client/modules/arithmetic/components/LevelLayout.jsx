@@ -14,7 +14,7 @@ class LevelLayout extends React.Component {
           </span> 
           {this.props.question.title}
         </div>
-        { this.props.levelLocked ? null  : <a href={`/${this.props.type}/${this.props.question._id}`} className="button"> Start </a> }
+        { this.props.levelLocked || this.props.levelFinished ? null  : <a href={`/${this.props.type}/${this.props.question._id}`} className="button"> Start </a> }
       </div>
     );
   }
