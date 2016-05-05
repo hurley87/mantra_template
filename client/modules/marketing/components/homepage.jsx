@@ -65,9 +65,9 @@ class Homepage extends React.Component {
               <div id="hero">
                 <div id="cover-image" className="animated fadeIn">
                   <div className="container">
-                    <h1 className="hero-text animated fadeIn">Math Fluency from Home</h1>
+                    <h1 className="hero-text animated fadeIn">Math Fluency for the Future</h1>
                     <div className="cta animated fadeIn">
-                      <a href="/register" className="button">Sign up free</a>
+                      <a href="/register" className="button">Free Sign Up</a>
                     </div>
                     <div className="screenshot animated fadeInUp">
                       <img src="images/ss2.png" className="img-responsive" alt="screenshot" />
@@ -101,8 +101,8 @@ class Homepage extends React.Component {
                     <div className="col-md-6 info">
                       <h4>Tutoring from the comfort of your home</h4>
                       <p>
-                        The ParenTeach app provides a private, individualized program for your child. Using our enlightend timed tests,
-                        your child will work for just five minutes a day.  Your child's results are tracked and reported in real-time,
+                        Pttrns provides a private, individualized program for your child. Using our enlightend timed tests,
+                        your child will work for just five minutes a day.  Results are tracked and reported in real-time,
                         providing you with the tools you need to make sure they're on track.
                       </p>
                     </div>
