@@ -93,7 +93,7 @@ class Homepage extends React.Component {
                       </p>
                     </div>
                     <div className="col-md-6 image">
-                      <img src="images/feature1.png" className="img-responsive" alt="feature1" />
+                      <img src="images/digital_age.jpg" className="img-responsive" alt="feature1" />
                     </div>
                   </div>
                   <div className="divider"></div>
@@ -107,7 +107,7 @@ class Homepage extends React.Component {
                       </p>
                     </div>
                     <div className="col-md-6 image">
-                      <img src="images/feature2.png" className="img-responsive" alt="feature2" />
+                      <img src="images/homeschool.jpg" className="img-responsive" alt="feature2" />
                     </div>
                   </div>
                 </div>    
@@ -115,50 +115,6 @@ class Homepage extends React.Component {
               <Pricing />
               <Benefits />
               <Mobile />
-              <div id="testimonials">
-                <div className="container">
-                  <div className="row header">
-                    <div className="col-md-12">
-                      <h3>Trusted by a lot businesses around the world:</h3>
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="col-sm-6">
-                      <div className="testimonial pull-right">
-                        <div className="quote">
-                          I am just quoting some stuff but I am seriously happy about this product. Has a lot of powerful
-                          features and is so easy to set up, I could stay customizing it day and night, it's just so much fun!
-                          <div className="arrow-down">
-                                    <div className="arrow"></div>
-                                    <div className="arrow-border"></div>
-                                </div>
-                        </div>
-                        <div className="author">
-                          <img src="images/testimonials/testimonial3.jpg" className="pic" alt="testimonial3" />
-                          <div className="name">John McClane</div>
-                          <div className="company">Microsoft</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-sm-6">
-                      <div className="testimonial">
-                        <div className="quote">
-                          This thing is one of those tools that everybody should be using. I really like it and with this ease to use, you can kickstart your projects and apps and just focus on your business!
-                          <div className="arrow-down">
-                                    <div className="arrow"></div>
-                                    <div className="arrow-border"></div>
-                                </div>
-                        </div>
-                        <div className="author">
-                          <img src="images/testimonials/testimonial2.jpg" className="pic" alt="testimonial2" />
-                          <div className="name">Karen Jones</div>
-                          <div className="company">Pixar Co.</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
               
               <div id="clients">
                 <div className="container">
