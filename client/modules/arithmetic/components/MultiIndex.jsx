@@ -1,8 +1,8 @@
 import React from 'react';
 import IndexLayout from '../containers/IndexLayout.js';
 
-const MultiIndex = ({complete, current, locked}) => (
-  <IndexLayout locked={locked} current={current} complete={complete} title='Multiplication' type='multiplication'/>
+const MultiIndex = ({questions, points}) => (
+  <IndexLayout questions={questions} points={points} title='Multiplication' type='multiplication'/>
 );
 
 export default MultiIndex;

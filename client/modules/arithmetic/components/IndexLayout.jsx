@@ -1,6 +1,8 @@
 import React from 'react';
 import { Row, Col, Input, Grid } from 'react-bootstrap';
 import Progess from '../../questions/components/progress.jsx';
+import LevelLayout from './LevelLayout.jsx'
+import { _ } from 'lodash';
 
 class IndexLayout extends React.Component {
   render() {
@@ -12,53 +14,41 @@ class IndexLayout extends React.Component {
         <div className="header">
           {this.props.title} <span className='pull-right'>{this.props.points} <i className="fa fa-heart"></i></span>
         </div>
-        <Progess percentage={percentage}/>
+        {
+          /* 
+            Progress bar: I hard code 1.5 right now. You need around 150 points to complete each module. 
+            The percentage should be dynamic. TODO: Programmically find how many points a user needs to complete a module.
+          */
+        }
+        <Progess percentage={this.props.points / 1.5}/>
+        {
+          /* 
+            List out levels in this order: 
+            1. Levels the user has completed
+            2. The current level the user is on
+            3. The levels that are currently locked because the user does not have enough points
+          */
+        }
         <div className="steps">
-          { this.props.complete ? this.levelLayout(this.props.complete) : null }
-          { this.props.current ? this.levelLayout(this.props.current) : null }
-          { this.props.locked ? this.levelLayout(this.props.locked) : null }
+          { this.list(this.props.completeLevels(this.props.questions, this.props.points))}
+          { this.list(this.props.currentLevel(this.props.questions, this.props.points)) }
+          { this.list(this.props.lockedLevels(this.props.questions, this.props.points)) }
         </div>
       </div>
     )
   }
-  levelLayout(questions) {
+  list(questions) {
     return (
       questions.map((question) => (
-        <div key={question._id} className={ this.levelFinished(question.upperLimit) ? "step done" : "step"} >
-          <div className="info">
-            <span className="number">
-            { this.levelFinished(question.upperLimit) ? <i className="ion-checkmark-circled"></i> : null }
-            { this.levelLocked(question.lowerLimit) ? <i className="fa fa-lock"></i>  : null }
-            { !this.levelFinished(question.upperLimit) && !this.levelLocked(question.lowerLimit) ? this.hearts(question.difficulty)  : null }
-            </span> 
-            {question.title}
-          </div>
-          { this.levelLocked(question.lowerLimit) ? null  : this.startLevelBtn(this.props.type, question)}
-        </div>
+        <LevelLayout 
+          key={question._id}
+          question={question}
+          levelFinished={this.props.levelFinished(question.upperLimit, this.props.points)} 
+          levelLocked={this.props.levelLocked(question.lowerLimit, this.props.points)} 
+          type={this.props.type}
+          />
       ))
     );
-  }
-  hearts(difficulty) {
-    return (
-      <span> {difficulty} <i className="fa fa-heart"></i></span>
-    );
-  }
-  levelLocked(lowerLimit) {
-    return this.props.points < lowerLimit;
-  }
-  levelFinished(upperLimit) {
-    return this.props.points > upperLimit;
-  }
-  startLevelBtn(type, question) {
-    if (this.levelFinished(question.upperLimit)) {
-      return null;
-    } else {
-      return (
-        <a href={`/${type}/${question._id}`} className="button">
-          Start
-        </a>
-      );
-    }
   }
 }
 
