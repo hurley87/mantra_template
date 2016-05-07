@@ -28,6 +28,7 @@ import Forgot from '../users/containers/forgot.js';
 import AddIndex from '../arithmetic/containers/AddIndex.js';
 import SubIndex from '../arithmetic/containers/SubIndex.js';
 import MultiIndex from '../arithmetic/containers/MultiIndex.js';
+import CountingIndex from '../arithmetic/containers/CountingIndex.js';
 import DivIndex from '../arithmetic/containers/DivIndex.js';
 import NewQuestion from '../questions/containers/new_question.js';
 import ComingSoon from '../arithmetic/components/ComingSoon.jsx';
@@ -200,6 +201,15 @@ export default function(injectDeps, {FlowRouter}) {
     action({questionId}) {
       mount(MainLayoutCtx, {
         content: () => (<NewQuestion questionId={questionId}/>)
+      })
+    }
+  });
+
+  FlowRouter.route('/counting', {
+    name: 'questions:CountingIndex',
+    action() {
+      mount(QuestionLayoutCtx, {
+        content: () => (<CountingIndex />)
       })
     }
   });

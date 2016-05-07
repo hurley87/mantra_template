@@ -15,6 +15,11 @@ const Sidebar = ({LocalState, profile}) => (
         <h3>Exercises</h3>
         <ul>
           <li onClick={LocalState.set('TOGGLE', false)}>
+            <a href="/counting" className={ location.pathname == '/counting' ? 'active' : null }>
+              <i className="ion-pound"></i> <span>Counting</span>
+            </a>
+          </li>
+          <li onClick={LocalState.set('TOGGLE', false)}>
             <a href="/addition" className={ location.pathname == '/addition' ? 'active' : null }>
               <i className="ion-plus-round"></i> <span>Addition</span>
             </a>
