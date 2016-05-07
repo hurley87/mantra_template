@@ -1,5 +1,4 @@
 import {useDeps, composeAll, composeWithTracker, compose} from 'mantra-core';
-
 import NewQuestion from '../components/new_question.jsx';
 import { _ } from 'lodash';
 
@@ -30,7 +29,7 @@ export const composer = ({context, questionId}, onData) => {
           break;
         case '-':
           points = profile.subPoints;
-          header = 'Subtraction';
+          header = 'Subtraction'; 
           link = '/subtraction';
           break;
         case 'x':
