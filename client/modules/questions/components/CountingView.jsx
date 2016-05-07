@@ -4,7 +4,7 @@ import Progress from './progress.jsx';
 import QuestionHeader from './QuestionHeader.jsx';
 import Keypad from './keypad.jsx';
 
-class NewQuestion extends React.Component { 
+class CountingView extends React.Component { 
   render() {
     return (
       <div>
@@ -15,7 +15,7 @@ class NewQuestion extends React.Component {
         <Row>
           <Col xs={12} sm={6} smOffset={3}>
             <h3 className='text-center numbers'>
-              {this.props.getQuestion(this.props.question.operator).num1} {this.props.question.operator} {this.props.getQuestion(this.props.question.operator).num2} 
+              {this.props.getQuestion()}
             </h3>
             <Keypad 
               clearInput={this.props.clearInput}
@@ -30,4 +30,4 @@ class NewQuestion extends React.Component {
   }
 }
 
-export default NewQuestion;
+export default CountingView;

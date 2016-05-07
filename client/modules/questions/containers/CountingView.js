@@ -1,5 +1,5 @@
 import {useDeps, composeAll, composeWithTracker, compose} from 'mantra-core';
-import NewQuestion from '../components/new_question.jsx';
+import CountingView from '../components/CountingView.jsx';
 import { _ } from 'lodash';
 
 export const composer = ({context, questionId}, onData) => {
@@ -22,31 +22,9 @@ export const composer = ({context, questionId}, onData) => {
       const profile = Collections.Profiles.find({"user": userId}).fetch()[0];
       // for the QuestionHeader component we need user points (profile data), a header, 
       // and a link beack to the  quetions associated index page
-      let points = 0;
-      switch(question.operator) {
-        case '+':
-          points = profile.addPoints;
-          header = 'Addition';
-          link = '/addition';
-          break;
-        case '-':
-          points = profile.subPoints;
-          header = 'Subtraction'; 
-          link = '/subtraction';
-          break;
-        case 'x':
-          points = profile.multiPoints;
-          header = 'Multiplication';
-          link = '/multiplication';
-          break;
-        case '/':
-          points = profile.divPoints;
-          header = 'Division';
-          link = '/division';
-          break;
-        default:
-          return null;
-      }
+      const points = profile.countPoints;
+      const header = 'Counting';
+      const link = '/counting'
 
       // calculate the percentage for the Progress component
       // redirect page if the percentage is under 0% or over 100%
@@ -64,15 +42,14 @@ export const composer = ({context, questionId}, onData) => {
 };
 
 export const depsMapper = (context, actions) => ({
-  guess: actions.new_question.guess,
-  getQuestion: actions.new_question.getQuestion,
-  clickNumber: actions.new_question.clickNumber,
-  clearInput: actions.new_question.clearInput,
+  guess: actions.counting.guess,
+  getQuestion: actions.counting.getQuestion,
+  clickNumber: actions.counting.clickNumber,
+  clearInput: actions.counting.clearInput,
   context: () => context
 });
 
 export default composeAll(
   composeWithTracker(composer),
   useDeps(depsMapper)
-)(NewQuestion);
-
+)(CountingView);

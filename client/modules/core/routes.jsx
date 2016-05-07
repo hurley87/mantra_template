@@ -30,8 +30,10 @@ import Forgot from '../users/containers/forgot.js';
 import AddIndex from '../arithmetic/containers/AddIndex.js';
 import SubIndex from '../arithmetic/containers/SubIndex.js';
 import MultiIndex from '../arithmetic/containers/MultiIndex.js';
+import CountingIndex from '../arithmetic/containers/CountingIndex.js';
 import DivIndex from '../arithmetic/containers/DivIndex.js';
 import NewQuestion from '../questions/containers/new_question.js';
+import CountingView from '../questions/containers/CountingView.js';
 import ComingSoon from '../arithmetic/components/ComingSoon.jsx';
 
 // store
@@ -58,7 +60,13 @@ export default function(injectDeps, {FlowRouter}) {
     }
   });
 
-
+  FlowRouter.notFound = {
+    action: function() {
+      mount(MainLayoutCtx, {
+        content: () => (<NotFound />)
+      })
+    }
+  };
 
   FlowRouter.route('/exercises', {
     name: 'marketing.portfolio',
@@ -196,6 +204,24 @@ export default function(injectDeps, {FlowRouter}) {
     action({questionId}) {
       mount(MainLayoutCtx, {
         content: () => (<NewQuestion questionId={questionId}/>)
+      })
+    }
+  });
+
+  FlowRouter.route('/counting', {
+    name: 'questions:CountingIndex',
+    action() {
+      mount(QuestionLayoutCtx, {
+        content: () => (<CountingIndex />)
+      })
+    }
+  });
+
+  FlowRouter.route('/counting/:questionId', {
+    name: 'questions:new_question',
+    action({questionId}) {
+      mount(MainLayoutCtx, {
+        content: () => (<CountingView questionId={questionId}/>)
       })
     }
   });

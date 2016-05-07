@@ -21,7 +21,7 @@ class Keypad extends React.Component {
     return list_items;
   }
   listInput(num) {
-    return <li key={num} onClick={this.props.clickNumber.bind(this, num, this.props.questionId)}> { num }</li>
+    return <li key={num} onClick={this.props.clickNumber.bind(this, num, this.props.questionId, this.props.operator)}> { num }</li>
   }
 }
 

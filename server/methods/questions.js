@@ -40,36 +40,16 @@ export default function () {
       if(points >= difficulty) {
         switch(question.operator) {
           case '+':
-            Profiles.update( { "user": question.userId }, {
-              $inc: {
-                wrong: 1,
-                addPoints: -difficulty
-              }
-            });
+            Profiles.update( { "user": question.userId }, { $inc: { wrong: 1, addPoints: -difficulty }});
             break;
           case '-':
-            Profiles.update( { "user": question.userId }, {
-              $inc: {
-                wrong: 1,
-                subPoints: -difficulty
-              }
-            });
+            Profiles.update( { "user": question.userId }, {$inc: { wrong: 1, subPoints: -difficulty }});
             break;
           case 'x':
-            Profiles.update( { "user": question.userId }, {
-              $inc: {
-                wrong: 1,
-                multiPoints: -difficulty
-              }
-            });
+            Profiles.update( { "user": question.userId }, { $inc: { wrong: 1, multiPoints: -difficulty }});
             break;
           case '/':
-            Profiles.update( { "user": question.userId }, {
-              $inc: {
-                wrong: 1,
-                divPoints: -difficulty
-              }
-            });
+            Profiles.update( { "user": question.userId }, { $inc: { wrong: 1, divPoints: -difficulty }});
             break;
           default:
             return null;
@@ -77,44 +57,16 @@ export default function () {
       } else {
         switch(question.operator) {
           case '+':
-            Profiles.update( { "user": question.userId }, {
-              $set: {
-                addPoints: 0
-              },
-              $inc: {
-                wrong: 1
-              }
-            });
+            Profiles.update( { "user": question.userId }, { $set: { addPoints: 0 }, $inc: { wrong: 1 }});
             break;
           case '-':
-            Profiles.update( { "user": question.userId }, {
-              $set: {
-                subPoints: 0
-              },
-              $inc: {
-                wrong: 1
-              }
-            });
+            Profiles.update( { "user": question.userId }, { $set: { subPoints: 0 }, $inc: { wrong: 1 }});
             break;
           case 'x':
-            Profiles.update( { "user": question.userId }, {
-              $set: {
-                multiPoints: 0
-              },
-              $inc: {
-                wrong: 1
-              }
-            });
+            Profiles.update( { "user": question.userId }, { $set: { multiPoints: 0 }, $inc: { wrong: 1 }});
             break;
           case '/':
-            Profiles.update( { "user": question.userId }, {
-              $set: {
-                divPoints: 0
-              },
-              $inc: {
-                wrong: 1
-              }
-            });
+            Profiles.update( { "user": question.userId }, { $set: { divPoints: 0 }, $inc: { wrong: 1 }});
             break;
           default:
             return null;
@@ -126,36 +78,16 @@ export default function () {
       check(difficulty, Number);
       switch(question.operator) {
         case '+':
-          Profiles.update( { "user": question.userId }, {
-            $inc: {
-              right: 1,
-              addPoints: difficulty
-            }
-          });
+          Profiles.update( { "user": question.userId }, { $inc: { right: 1, addPoints: difficulty }});
           break;
         case '-':
-          Profiles.update( { "user": question.userId }, {
-            $inc: {
-              right: 1,
-              subPoints: difficulty
-            }
-          });
+          Profiles.update( { "user": question.userId }, { $inc: { right: 1, subPoints: difficulty }});
           break;
         case 'x':
-          Profiles.update( { "user": question.userId }, {
-            $inc: {
-              right: 1,
-              multiPoints: difficulty
-            }
-          });
+          Profiles.update( { "user": question.userId }, { $inc: { right: 1, multiPoints: difficulty }});
           break;
         case '/':
-          Profiles.update( { "user": question.userId }, {
-            $inc: {
-              right: 1,
-              divPoints: difficulty
-            }
-          });
+          Profiles.update( { "user": question.userId }, { $inc: { right: 1, divPoints: difficulty }});
           break;
         default:
           return null;

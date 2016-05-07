@@ -12,7 +12,7 @@ class IndexLayout extends React.Component {
           <i className="ion-navicon"></i>
         </div>
         <div className="header">
-          {this.props.title} <span className='pull-right'>{this.props.points} <i className="fa fa-heart"></i></span>
+          {this.props.title} <a href='/profile'><span className='pull-right'>{this.props.points} <i className="fa fa-heart"></i></span></a>
         </div>
         {
           /* 
