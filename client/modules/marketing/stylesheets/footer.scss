@@ -2,7 +2,7 @@
 @import './slider.scss';
 
 #footer-white {
-  background: #fff;
+  background: #5188bf;
   padding-top: 70px;
   padding-bottom: 30px;
   -webkit-font-smoothing: antialiased;
@@ -19,7 +19,7 @@
 
     h3 {
       margin-top: 0;
-      color: #888;
+      color: #fff;
       text-transform: uppercase;
       letter-spacing: 4px;
       font-size: 14px;
@@ -36,14 +36,14 @@
         margin-bottom: 9px;
 
         a {
-          color: #89A1C0;
+          color: #fff;
           display: inline-block;
           font-weight: 500;
           font-size: 13px;
           @include transition(all 0.2s linear);
 
           &:hover {
-            color: #000;
+            color: #89A1C0;
             text-decoration: none;
           }
 
@@ -166,7 +166,7 @@
       padding-top: 20px;
       font-size: 13px;
       text-align: center;
-      color: #A1AAB6;
+      color: #fff;
     }
   }
 }

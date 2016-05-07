@@ -41,7 +41,18 @@ const Footer = ( { content = () => null }) => (
 	        			</li>
 	      			</ul>
 				</div>
-				<div className="col-sm-2 menu">
+				<div className="col-sm-3 menu">
+					<h3>LEGAL</h3>
+					<ul>
+	      				<li>
+	          				<a href="features.html">Terms of Use</a>
+	        			</li>
+	        			<li>
+	        				<a href="services.html">Privacy Disclosure</a>
+	        			</li>
+	      			</ul>
+				</div>
+				<div className="col-sm-3 menu">
 					<h3>Social</h3>
 					<ul>
 	      				<li>
@@ -58,17 +69,7 @@ const Footer = ( { content = () => null }) => (
 	        			</li>
 	      			</ul>
 				</div>
-				<div className="col-sm-4 newsletter">
-					<div className="signup clearfix">
-						<p>
-							Stay up-to-date with the Pttrns newsletter.
-						</p>
-						<form>
-							<input type="text" name="email" className="form-control" placeholder="Your email address" />
-							<input type="submit" value="Sign up" />
-						</form>
-					</div>
-				</div>
+
 			</div>
 			<div className="row credits">
 				<div className="col-md-12">

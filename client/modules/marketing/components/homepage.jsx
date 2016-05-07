@@ -115,7 +115,6 @@ class Homepage extends React.Component {
               </div>
               <Pricing />
               <Benefits />
-              <Mobile />
               
               <div id="clients">
                 <div className="container">
