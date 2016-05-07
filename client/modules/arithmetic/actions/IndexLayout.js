@@ -12,7 +12,7 @@ export default {
   },
   // level is current when the user's points in between the upper and lower limit of a question
   currentLevel({}, questions, points) {
-    return _.filter(questions, function(question) { return question.lowerLimit < points && question.upperLimit > points });
+    return _.filter(questions, function(question) { return question.lowerLimit < points && question.upperLimit >= points });
   },
   // points: user points, lowerLimit: lower limit of the question
   levelLocked({}, lowerLimit, points) {

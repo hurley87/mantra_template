@@ -15,7 +15,7 @@ class NewQuestion extends React.Component {
         <Row>
           <Col xs={12} sm={6} smOffset={3}>
             <h3 className='text-center numbers'>
-              {this.props.getQuestion().num1} {this.props.question.operator} {this.props.getQuestion().num2} 
+              {this.props.getQuestion(this.props.question.operator).num1} {this.props.question.operator} {this.props.getQuestion(this.props.question.operator).num2} 
             </h3>
             <Keypad 
               clearInput={this.props.clearInput}

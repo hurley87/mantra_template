@@ -1,5 +1,5 @@
 export default {
-  getQuestion({LocalState, Meteor}) {
+  getQuestion({LocalState, Meteor}, operator) {
     const question = LocalState.get('QUESTION');
     const num1 = question.num1;
     const num2 = question.num2;
