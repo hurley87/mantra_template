@@ -60,7 +60,7 @@ const Pricing = ( { content = () => null }) => (
             <div className="specs">
               <div className="spec">
                 <span className="variable"></span>
-                ParenTeach textbook
+                Pttrns textbook
               </div>
               <div className="spec">
                 <span className="variable"></span>

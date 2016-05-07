@@ -6,17 +6,16 @@ import Layout from './components/MainLayout.jsx';
 import InnerLayout from './components/InnerLayout.jsx';
 import DashboardLayout from './containers/dashboardlayout.js';
 import QuestionLayout from './containers/QuestionLayout.js';
+import MarketingLayout from './containers/MarketingLayout.js';
 
 
 // marketing
 import Homepage from '../marketing/containers/Homepage.js';
-import About from '../marketing/components/about.jsx';
 import NotFound from '../marketing/components/notfound.jsx';
-import Contact from '../marketing/components/contact.jsx';
-import Features from '../marketing/components/features.jsx';
 import Header from '../marketing/components/header.jsx';
-import Support from '../marketing/components/support.jsx';
-import Portfolio from '../marketing/components/portfolio.jsx';
+import Research from '../marketing/components/research.jsx';
+import Philosophy from '../marketing/components/philosophy.jsx';
+import Contact from '../marketing/components/contact.jsx';
 
 // registration
 import NewUser from '../users/containers/NewUser.js';
@@ -45,6 +44,7 @@ export default function(injectDeps, {FlowRouter}) {
   const InnerLayoutCtx = injectDeps(InnerLayout);
   const DashboardLayoutCtx = injectDeps(DashboardLayout);
   const QuestionLayoutCtx = injectDeps(QuestionLayout);
+  const MarketingLayoutCtx = injectDeps(MarketingLayout);
 
   // marketing
   FlowRouter.route('/', {
@@ -56,32 +56,7 @@ export default function(injectDeps, {FlowRouter}) {
     }
   });
 
-  FlowRouter.route('/about', {
-    name: 'marketing.about',
-    action() {
-      mount(InnerLayoutCtx, {
-        content: () => (<About />)
-      })
-    }
-  });
 
-  FlowRouter.route('/support', {
-    name: 'marketing.support',
-    action() {
-      mount(InnerLayoutCtx, {
-        content: () => (<Support />)
-      })
-    }
-  });
-
-  FlowRouter.route('/help', {
-    name: 'marketing.support',
-    action() {
-      mount(QuestionLayoutCtx, {
-        content: () => (<Support />)
-      })
-    }
-  });
 
   FlowRouter.route('/exercises', {
     name: 'marketing.portfolio',
@@ -101,14 +76,7 @@ export default function(injectDeps, {FlowRouter}) {
     }
   });
 
-  FlowRouter.route('/contact', {
-    name: 'marketing.contact',
-    action() {
-      mount(InnerLayoutCtx, {
-        content: () => (<Contact />)
-      })
-    }
-  });
+
 
   FlowRouter.route('/register', {
     name: 'users.new',
@@ -271,6 +239,33 @@ export default function(injectDeps, {FlowRouter}) {
     action() {
       mount(QuestionLayoutCtx, {
         content: () => (<ThankYou />)
+      })
+    }
+  });
+
+    FlowRouter.route('/research', {
+    name: 'marketing.research',
+    action() {
+      mount(MarketingLayoutCtx, {
+        content: () => (<Research />)
+      })
+    }
+  });
+
+    FlowRouter.route('/philosophy', {
+    name: 'marketing.philosophy',
+    action() {
+      mount(MarketingLayoutCtx, {
+        content: () => (<Philosophy />)
+      })
+    }
+  });
+
+    FlowRouter.route('/contact', {
+    name: 'marketing.contact',
+    action() {
+      mount(MarketingLayoutCtx, {
+        content: () => (<Contact />)
       })
     }
   });
