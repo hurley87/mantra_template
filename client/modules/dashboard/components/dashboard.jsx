@@ -12,15 +12,45 @@ class Dashboard extends React.Component {
           </div>
           <div className="metric">
             <span className="field">Right</span>
-            <span className="data">{this.props.right}</span>
+            <span className="data">{this.props.profile.right}</span>
           </div>
           <div className="metric">
             <span className="field">Wrong</span>
-            <span className="data">{this.props.wrong}</span>
+            <span className="data">{this.props.profile.wrong}</span>
           </div>
           <div className="metric">
             <span className="field">Ratio</span>
             <span className="data">{this.props.ratio}</span>
+          </div>
+        </div>
+        <div className='steps'>
+          <div className='step'>
+            <div className='info'>
+              <span className='number'>{this.props.profile.addPoints} <i className="fa fa-heart"></i></span>
+              Addition
+            </div> 
+            <a href='/addition' className='button'> Start </a> 
+          </div>
+          <div className='step'>
+            <div className='info'>
+              <span className='number'>{this.props.profile.subPoints} <i className="fa fa-heart"></i></span>
+              Subtraction
+            </div>  
+            <a href='/subtraction' className='button'> Start </a> 
+          </div>
+          <div className='step'>
+            <div className='info'>
+              <span className='number'>{this.props.profile.multiPoints} <i className="fa fa-heart"></i></span>
+              Multiplication
+            </div> 
+            <a href='/multiplication' className='button'> Start </a> 
+          </div>
+          <div className='step'>
+            <div className='info'>
+              <span className='number'>{this.props.profile.divPoints} <i className="fa fa-heart"></i></span>
+              Division
+            </div> 
+            <a href='/division' className='button'> Start </a> 
           </div>
         </div>
       </div>

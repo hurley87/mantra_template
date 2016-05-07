@@ -1,0 +1,65 @@
+@import '../../core/stylesheets/mixins.scss';  
+.steps {
+  .step {
+    padding: 35px 75px;
+    border-bottom: 1px solid #eee;
+    background-color: #fff;
+    position: relative;
+    z-index: 9999;
+    height: 112px;
+
+    @media (max-width: $maxMedium) {
+      text-align: center;
+      padding-top: 30px !important;
+      height: 100%;
+    }
+
+    &.done {
+      background: #F8F8FA;
+
+      .info {
+        top: -6px;
+      }
+    }
+
+    .info {
+      float: left;
+      position: relative;
+
+      @media (max-width: $maxMedium) {
+        float: none;
+        margin-bottom: 15px;
+      }
+
+      .number {
+        font-size: 26px;
+        margin-right: 20px;
+        position: relative;
+        top: 2px;
+        color: #44B83F;
+
+        @media (max-width: $maxMedium) {
+          display: block;
+          margin: 0;
+          margin-bottom: 10px;
+        }
+
+        .ion-checkmark-circled {
+          font-size: 38px;
+          color: #44B83F;
+          position: relative;
+          top: 6px;
+          left: -6px;
+          margin-right: -8px;
+        }
+      }
+    }
+
+    .button {
+      float: right;
+      @media (max-width: $maxMedium) {
+        float: none;
+      }
+    }
+  }
+}
