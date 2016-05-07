@@ -132,7 +132,7 @@ export default function () {
       difficulty: 7
     });
     ArithmeticQuestions.insert({
-      min: '0',
+      min: '1',
       max: '5',
       title: 'This is the first multiplication module.',
       operator: 'x',
