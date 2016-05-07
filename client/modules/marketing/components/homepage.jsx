@@ -120,10 +120,12 @@ class Homepage extends React.Component {
                 <div className="container">
                   <div className="row">
                     <div className="col-md-12">
-                      <h3>We'd love to help!</h3>
-                      <p>
-                        Primary school math is our passion. We're here to help, so feel free to reach out.
-                      </p>
+                      <h3>Start learning with Pttrns!</h3>
+                      <div id="cta">
+                        <a href="/register">
+                          Sign up for free
+                         </a>
+                      </div>
                     </div>
                   </div>
                 </div>
