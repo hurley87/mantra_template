@@ -1,11 +1,9 @@
 import React from 'react';
 import { Row, Col, Input, Grid } from 'react-bootstrap';
-import Tabs from './_tabs.jsx'
+
 import Pricing from './_pricing.jsx'
 import Benefits from './_benefits.jsx'
 import Mobile from './_mobile.jsx'
-import Features from './_features.jsx'
-import Cta from './_cta.jsx'
 import Footer from './footer.jsx';
 
 class Homepage extends React.Component {
@@ -15,33 +13,36 @@ class Homepage extends React.Component {
         <div className={ this.props.toggle ? 'st-container nav-effect' : 'st-container' }>
           <nav className="nav-menu">
             <h3>Pttrns</h3>
-            <a href="/register" className="item">
-              Sign up
+            <a href="/support" className="item">
+              Pttrns Philosophy
+            </a>
+            <a href="/support" className="item">
+              How it Works
+            </a>
+            <a href="/research" className="item">
+              Research
+            </a>
+            <a href="/contact" className="item">
+              About
+            </a>
+            <a href="/blog" className="item">
+              Contact
             </a>
             <a href="/login" className="item">
               Login
             </a>
-            <a href="/forgot" className="item">
-              Forgot Password?
-            </a>
-            <a href="/support" className="item">
-              Support
-            </a>
-            <a href="/contact" className="item">
-              Contact Us
-            </a>
-            <a href="/about" className="item">
-              About us
-            </a>
-            <a href="/blog" className="item">
-              Blog
-            </a>
             <div className="social">
               <a href="#">
-                <i className="fa fa-twitter"></i>
+                <i className="fa"><img src="images/twitter24.png" /></i>
               </a>
               <a href="#">
-                <i className="fa fa-facebook"></i>
+                <i className="fa"><img src="images/facebook24.png" /></i>
+              </a>
+              <a href="#">
+                <i className="fa"><img src="images/instagram24.png" /></i>
+              </a>
+              <a href="#">
+                <i className="fa"><img src="images/youtube24.png" /></i>
               </a>
             </div>
           </nav>
@@ -99,7 +100,7 @@ class Homepage extends React.Component {
                   <div className="divider"></div>
                   <div className="row feature backwards">
                     <div className="col-md-6 info">
-                      <h4>Tutoring from the comfort of your home</h4>
+                      <h4>Math tutoring from the comfort of your home</h4>
                       <p>
                         Pttrns provides a private, individualized program for your child. Using our enlightend timed tests,
                         your child will work for just five minutes a day.  Results are tracked and reported in real-time,
@@ -120,9 +121,9 @@ class Homepage extends React.Component {
                 <div className="container">
                   <div className="row">
                     <div className="col-md-12">
-                      <h3>Our Customers</h3>
+                      <h3>We'd love to help!</h3>
                       <p>
-                        These are some of our customers who have helped us by using our product.
+                        Primary school math is our passion. We're here to help, so feel free to reach out.
                       </p>
                     </div>
                   </div>

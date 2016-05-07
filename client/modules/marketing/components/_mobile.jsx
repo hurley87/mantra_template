@@ -12,8 +12,8 @@ const Mobile = ( { content = () => null }) => (
           <div className="info">
             <h3>Coming soon to the Appstore</h3>
             <p>
-              The Pttrns team is happy to announce that we're coming to the App store! Soon our students will be able to work from anywhere
-              with your child's progress delivered to the palm of your hand.  We'll keep you posted!
+              The Pttrns team is happy to announce that we're coming to the App store! Soon you'll be able to work from anywhere and have
+              real-time anayltics in the palm of your hand.  We'll keep you posted!
             </p>
             <a className="app-store" href="#">
               <img src="images/apple.svg" alt="download on app-store" />
