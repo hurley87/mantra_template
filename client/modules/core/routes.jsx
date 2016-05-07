@@ -56,7 +56,13 @@ export default function(injectDeps, {FlowRouter}) {
     }
   });
 
-
+  FlowRouter.notFound = {
+    action: function() {
+      mount(MainLayoutCtx, {
+        content: () => (<NotFound />)
+      })
+    }
+  };
 
   FlowRouter.route('/exercises', {
     name: 'marketing.portfolio',
