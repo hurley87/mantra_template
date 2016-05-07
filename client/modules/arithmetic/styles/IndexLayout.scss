@@ -35,13 +35,11 @@
     position: relative;
     z-index: 9999;
     padding: 19px 75px;
-    background: #3C424C;
-    box-shadow: inset 0px 1px #414852;
+    background: #5188BF;
     -webkit-font-smoothing: antialiased;
     color: #fff;
     font-size: 19px;
     letter-spacing: 1px;
-    border-bottom: 1px solid #1A2331;
 
     a {
       color: #fff;
@@ -49,7 +47,7 @@
     }
 
     span.pull-right {
-      color: #44B83F;
+      color: #56D0B3;
     }
 
     @media (max-width: $maxMedium) {
