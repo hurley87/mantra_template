@@ -3,6 +3,10 @@ import { Row, Col, Input, Grid } from 'react-bootstrap';
 
 
 class QuestionHeader extends React.Component {
+  constructor(props) {
+    super(props);
+    console.log(props)
+  }
   render() {
     return (
       <div className="header" style={{ textAlign: 'left' }}>

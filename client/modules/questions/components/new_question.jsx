@@ -1,7 +1,7 @@
 import React from 'react';
 import { Col, Panel, Input, ButtonInput, Glyphicon, Grid, Row } from 'react-bootstrap';
 import Progress from './progress.jsx';
-import QuestionHeader from './header.jsx';
+import QuestionHeader from './QuestionHeader.jsx';
 import Keypad from './keypad.jsx';
 
 class NewQuestion extends React.Component { 
@@ -15,12 +15,13 @@ class NewQuestion extends React.Component {
         <Row>
           <Col xs={12} sm={6} smOffset={3}>
             <h3 className='text-center numbers'>
-              {this.props.question().num1} {this.props.operator} {this.props.question().num2} 
+              {this.props.getQuestion().num1} {this.props.question.operator} {this.props.getQuestion().num2} 
             </h3>
             <Keypad 
               clearInput={this.props.clearInput}
               clickNumber={this.props.clickNumber}
               questionId={this.props.questionId}
+              operator={this.props.question.operator}
             />
           </Col>
         </Row>

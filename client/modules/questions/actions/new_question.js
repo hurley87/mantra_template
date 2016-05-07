@@ -1,7 +1,6 @@
 export default {
-  question({LocalState, Meteor}) {
+  getQuestion({LocalState, Meteor}) {
     const question = LocalState.get('QUESTION');
-    const operator = LocalState.get('OPERATOR');
     const num1 = question.num1;
     const num2 = question.num2;
     const product = multiply(num1, num2);
@@ -22,10 +21,10 @@ export default {
   guess({LocalState}) {
     return LocalState.get('GUESS');
   },
-  clickNumber({LocalState}, guess, questionId) {
+  clickNumber({LocalState}, guess, questionId, operator) {
     const guessValue = LocalState.get('GUESS');
     LocalState.set('GUESS', guessValue + guess);
-    questionHandler(LocalState, questionId);
+    questionHandler(LocalState, questionId, operator);
   }, 
   clearInput({LocalState}) {
     LocalState.set('GUESS', '');
@@ -51,11 +50,10 @@ function multiply(num1, num2) {
 function submitAttempt(guess, answer) {
   return guess.toString().length == answer.toString().length;
 }
-function questionHandler(LocalState, questionId) {
+function questionHandler(LocalState, questionId, operator) {
   const num1 = LocalState.get('QUESTION').num1;
   const num2 = LocalState.get('QUESTION').num2;
   guess = parseInt(LocalState.get('GUESS'));
-  const operator = LocalState.get('OPERATOR');
   var answer = null;
   switch(operator) {
     case '+':
