@@ -44,14 +44,14 @@
         text-decoration: none;
         cursor: pointer;
         background-color: #fff;
-        color: #4DB2E7;
-        border: 1px solid #4DB2E7;
+        color: #56D0B3;
+        border: 1px solid #56D0B3;
         border-left: none;
         transition: 0.5s all ease;
 
         &.active,
         &:hover {
-          background-color: #4DB2E7;
+          background-color: #56D0B3;
           color: #fff;
         }
       }
