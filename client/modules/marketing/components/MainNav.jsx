@@ -16,7 +16,7 @@ class MainNav extends React.Component {
                     <span className="icon-bar"></span>
                     <span className="icon-bar"></span>
                   </button>
-                  <a href="index.html" className="navbar-brand">Pttrns</a>
+                  <a href="/" className="navbar-brand">Pttrns</a>
               
               </div>
               

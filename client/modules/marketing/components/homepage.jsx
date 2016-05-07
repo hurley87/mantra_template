@@ -13,19 +13,19 @@ class Homepage extends React.Component {
         <div className={ this.props.toggle ? 'st-container nav-effect' : 'st-container' }>
           <nav className="nav-menu">
             <h3>Pttrns</h3>
-            <a href="/support" className="item">
+            <a href="/philosophy" className="item">
               Pttrns Philosophy
             </a>
-            <a href="/support" className="item">
+            <a href="/how_it_works" className="item">
               How it Works
             </a>
             <a href="/research" className="item">
               Research
             </a>
-            <a href="/contact" className="item">
+            <a href="/about" className="item">
               About
             </a>
-            <a href="/blog" className="item">
+            <a href="/contact" className="item">
               Contact
             </a>
             <a href="/login" className="item">
