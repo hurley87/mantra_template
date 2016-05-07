@@ -3,6 +3,7 @@ import arithmetic_questions from './arithmetic_questions';
 import profiles from './profiles';
 import users from './users';
 import stripe from './stripe';
+import counting from './counting';
 
 export default function () {
   questions();
@@ -10,4 +11,5 @@ export default function () {
   profiles();
   users();
   stripe();
+  counting();
 }

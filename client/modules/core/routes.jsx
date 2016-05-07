@@ -31,6 +31,7 @@ import MultiIndex from '../arithmetic/containers/MultiIndex.js';
 import CountingIndex from '../arithmetic/containers/CountingIndex.js';
 import DivIndex from '../arithmetic/containers/DivIndex.js';
 import NewQuestion from '../questions/containers/new_question.js';
+import CountingView from '../questions/containers/CountingView.js';
 import ComingSoon from '../arithmetic/components/ComingSoon.jsx';
 
 // store
@@ -210,6 +211,15 @@ export default function(injectDeps, {FlowRouter}) {
     action() {
       mount(QuestionLayoutCtx, {
         content: () => (<CountingIndex />)
+      })
+    }
+  });
+
+  FlowRouter.route('/counting/:questionId', {
+    name: 'questions:new_question',
+    action({questionId}) {
+      mount(MainLayoutCtx, {
+        content: () => (<CountingView questionId={questionId}/>)
       })
     }
   });
