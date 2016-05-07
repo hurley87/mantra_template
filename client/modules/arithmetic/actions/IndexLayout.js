@@ -16,7 +16,6 @@ export default {
   },
   // points: user points, lowerLimit: lower limit of the question
   levelLocked({}, lowerLimit, points) {
-    console.log(points < lowerLimit)
     return points < lowerLimit;
   },
   // points: user points, upperLimit: upper limit of the question

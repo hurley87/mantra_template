@@ -9,7 +9,7 @@ class NewQuestion extends React.Component {
     return (
       <div>
         <div id='steps'>
-          <QuestionHeader points={this.props.points} profile={this.props.profile} back={this.props.link} header={this.props.header}/>
+          <QuestionHeader points={this.props.points} back={this.props.link} header={this.props.header}/>
           <Progress percentage={this.props.percentage} />
         </div>
         <Row>

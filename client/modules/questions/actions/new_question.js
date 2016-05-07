@@ -56,41 +56,47 @@ function questionHandler(LocalState, questionId) {
   const num2 = LocalState.get('QUESTION').num2;
   guess = parseInt(LocalState.get('GUESS'));
   const operator = LocalState.get('OPERATOR');
+  var answer = null;
   switch(operator) {
     case '+':
-      var answer = add(num1, num2);
+      answer = add(num1, num2);
       break;
     case '-':
-      var answer = subtract(num1, num2);
+      answer = subtract(num1, num2);
       break;
     case 'x':
-      var answer = multiply(num1, num2);
+      answer = multiply(num1, num2);
       break;
     case '/':
-      var answer = num1;
+      answer = num1;
       break;
     default: 
       return null;
   }
-  const question = {
-    questionId: questionId,
-    userId: Meteor.userId(),
-    guess: guess,
-    answer: answer,
-    num1: num1,
-    num2: num2,
-    operator: operator,
-    start_time: LocalState.get('START'),
-    end_time: new Date()
-  }
-  const isSubmitted = submitAttempt(guess, answer);
-  if(isSubmitted) {
-    Meteor.call('createQuestion', question, (err) => {
-       if (err) {
-         console.log(err)
-       }
-    });
-    resetQuestion(LocalState);
+  if(answer) {
+    const question = {
+      questionId: questionId,
+      userId: Meteor.userId(),
+      guess: guess,
+      answer: answer,
+      num1: num1,
+      num2: num2,
+      operator: operator,
+      start_time: LocalState.get('START'),
+      end_time: new Date()
+    }
+    const isSubmitted = submitAttempt(guess, answer);
+    if(isSubmitted) {
+      Meteor.call('createQuestion', question, (err) => {
+        if (err) {
+          console.log(err)
+        } else {
+          resetQuestion(LocalState);
+        }
+      });
+    }
+  } else {
+    return false;
   }
 }
 function resetQuestion(LocalState) {
