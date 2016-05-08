@@ -31,8 +31,8 @@ const Benefits = ( { content = () => null }) => (
     <Row>
       <Col md={4} className='feature'>
         <img src="images/circle-icons/full-color/creditcard.png" alt="creditcard" />
-        <strong>Fully-encrypted payment</strong>
-        <p>Pttrns uses a fully-encrypted payment method, ensuring your payment information remains safe.</p>
+        <strong>Pttrns Textbook</strong>
+        <p>Purchase a step by step guide on how to use enlighted tests to guarantee your child's success on their next math test.</p>
       </Col>
       <Col md={4} className='feature'>
         <img src="images/circle-icons/full-color/mail.png" alt="mail" />
@@ -41,8 +41,8 @@ const Benefits = ( { content = () => null }) => (
       </Col>
       <Col md={4} className='feature'>
         <img src="images/circle-icons/full-color/locked.png" alt="locked" />
-        <strong>Secure Login, Protected Accounts</strong>
-        <p>This thing will work on any device, it has a very easy to understand documentation and is made with SASS.</p>
+        <strong>Your data is secure</strong>
+        <p>Your child's privacy is very important to us. We secure your child's data and make sure it's only accessible to you.</p>
       </Col>
     </Row>
   </Grid>

@@ -14,6 +14,10 @@
       height: 100%;
     }
 
+    @media (max-width: $maxSmall) {
+      z-index: 9999;
+    }
+
     &.done {
       background: #F8F8FA;
 
