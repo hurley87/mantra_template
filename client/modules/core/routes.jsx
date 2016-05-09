@@ -20,6 +20,7 @@ import HowItWorks from '../marketing/components/howItWorks.jsx';
 import About from '../marketing/components/about.jsx';
 import Terms from '../marketing/components/terms.jsx';
 import Privacy from '../marketing/components/privacy.jsx';
+import Jobs from '../marketing/components/jobs.jsx';
 
 // registration
 import NewUser from '../users/containers/NewUser.js';
@@ -332,6 +333,15 @@ export default function(injectDeps, {FlowRouter}) {
     action() {
       mount(MarketingLayoutCtx, {
         content: () => (<Privacy />)
+      })
+    }
+  });
+
+    FlowRouter.route('/jobs', {
+    name: 'marketing.jobs',
+    action() {
+      mount(MarketingLayoutCtx, {
+        content: () => (<Jobs />)
       })
     }
   });
