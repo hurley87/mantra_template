@@ -4,46 +4,67 @@ import { Row, Col, Input, Grid } from 'react-bootstrap';
 class Research extends React.Component {
   render() {
     return (
-
-		<div id="gallery">
-			<div id="showcase">
+		<div id="blog">
+			<div id="posts">
 				<div className="container">
-					<div className="row header">
-						<div className="col-md-12">
-							<h3>Research</h3>
-							<p>
-								Research papers listed below.
-							</p>
-						</div>
-					</div>
-					<div class="col-md-12 filtering">
-					<ul id="filters">
-                    </ul>
-				</div>
-					<div className="row gallery_container">
-						<div className="col-md-4 devices interfaces web">
-							<a className="pic" href="images/gallery1.png" data-fluidbox>
-								<div className="layer">
-									<p><span className="brankic-eye"></span> Dr. Hurley</p>
+					<div className="row">
+						<div className="col-md-9">
+
+							<div className="post">
+								<div className="title">
+									<a href="blogpost.html">Primary School Mathematics: The Case for Enlightened Timed Testing to Achieve Fluency in Single-Digit Arithmetic</a>
 								</div>
-								<img src="images/turing.jpg" className="img-responsive" alt="gallery1" />
-							</a>
-						</div>
-						<div className="col-md-4 devices web">
-							<a className="pic" href="images/gallery2.png" data-fluidbox>
-								<div className="layer">
-									<p><span className="brankic-eye"></span> Dr. Milgram</p>
+								<div className="author">
+									<img src="images/dr_hurley.jpg" className="avatar" alt="author" />
+									Dr. William Hurley, May 2016
 								</div>
-								<img src="images/turing.jpg" className="img-responsive" alt="gallery2" />
-							</a>
-						</div>
-						<div className="col-md-4 web interfaces">
-							<a className="pic" href="images/gallery3.png" data-fluidbox>
-								<div className="layer">
-									<p><span className="brankic-eye"></span> Dr. Mighton</p>
+								<p className="intro">
+									Dr. Hurley provides a rationale for a new method of testing, designed to help primary school math students.
+								</p>
+								<a href="blogpost.html" className="continue-reading">Download Research Paper</a>
+							</div>
+
+							<div className="post">
+								<div className="title">
+									<a href="blogpost.html">What to Do About Canada's Declining Math Scores</a>
 								</div>
-								<img src="images/turing.jpg" className="img-responsive" alt="gallery3" />
-							</a>
+								<div className="author">
+									Dr. Anna Stokke, 2015
+								</div>
+								<p className="intro">
+									Dr. Stokke argues that students need a "strong foundation in mathematics to succeed in school and to contribute to 
+									society as numerate citizens".  Remarkably, she notes that from 2003 to 2012 every Canadian province saw a decline in 
+									math scores, with the exception of Quebec, which saw scores remain constant.
+								</p>
+								<a href="blogpost.html" className="continue-reading">Download Commentary</a>
+							</div>
+
+							<div className="post">
+								<div className="title">
+									<a href="blogpost.html">Basic Skills Versus Conceptual Understanding</a>
+								</div>
+								<div className="author">
+									Dr. Hung-Hsi Wu, 1999
+								</div>
+								<p className="intro">
+									Dr. Wu's paper suggests that a child fluent in arithmetic is in a much better position to do higher levels of mathematics.
+									"It has been said that had Einstein been born at the time of the Stone Age, his genius might have enabled
+									him to invent basic arithmetic but probably not much else. However, because he was born at the end of the
+									19th century—with all the techniques of advanced physics at his disposal—he created the theory of relativity."
+"
+								</p>
+								<a href="blogpost.html" className="continue-reading">Download Research Paper</a>
+							</div>
+
+						</div>
+						<div className="col-md-3 sidebar">
+							<div className="best-hits">
+								<strong>Check out some related websites:</strong>
+								<a href="http://www.edu.gov.on.ca/eng/curriculum/elementary/math.html">Ontario Math Curriculum</a>
+								<a href="http://www.eqao.com/en/assessments/primary-division">EQAO Testing</a>
+								<a href="https://cms.math.ca/Research/researchgroups">Canadian Math Society</a>
+								<a href="https://www.rmcc-cmrc.ca/en/mathematics-and-computer-science/wj-hurley-bsc-mba-phd-professor">Dr. Hurley CV</a>
+							</div>
 						</div>
 					</div>
 				</div>
