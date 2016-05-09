@@ -10,14 +10,11 @@ const Footer = ( { content = () => null }) => (
 				<div className="col-sm-3 menu">
 					<h3>MATH 101</h3>
 					<ul>
-	      				<li>
-	          				<a href="/how_it_works">How it works</a>
-	        			</li>
 	        			<li>
 	        				<a href="/research">Research</a>
 	        			</li>
 	        			<li>
-	          				<a href="/philosophy">Why Pttrns</a>
+	          				<a href="/philosophy">Pttrns Philosophy</a>
 	        			</li>
 	      			</ul>
 				</div>
@@ -25,14 +22,11 @@ const Footer = ( { content = () => null }) => (
 					<h3>ABOUT US</h3>
 					<ul>
 	      				<li>
-	          				<a href="features.html">Our Mission</a>
+	          				<a href="/about">About</a>
 	        			</li>
 	        			<li>
-	        				<a href="services.html">Dr. Hurley</a>
-	        			</li>
-	        			<li>
-	          				<a href="aboutus.html">Jobs</a>
-	          				<a href="aboutus.html" className="hiring">
+	          				<a href="/jobs">Jobs</a>
+	          				<a href="/jobs" className="hiring">
 	          					We're hiring!
 	          				</a>
 	        			</li>
@@ -45,10 +39,10 @@ const Footer = ( { content = () => null }) => (
 					<h3>LEGAL</h3>
 					<ul>
 	      				<li>
-	          				<a href="features.html">Terms of Use</a>
+	          				<a href="/terms">Terms of Use</a>
 	        			</li>
 	        			<li>
-	        				<a href="services.html">Privacy Disclosure</a>
+	        				<a href="/privacy">Privacy Disclosure</a>
 	        			</li>
 	      			</ul>
 				</div>

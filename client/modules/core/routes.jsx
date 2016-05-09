@@ -17,7 +17,8 @@ import Research from '../marketing/components/research.jsx';
 import Philosophy from '../marketing/components/philosophy.jsx';
 import Contact from '../marketing/components/contact.jsx';
 import HowItWorks from '../marketing/components/howItWorks.jsx';
-import About from '../marketing/components/about.jsx'
+import About from '../marketing/components/about.jsx';
+import Terms from '../marketing/components/terms.jsx';
 
 // registration
 import NewUser from '../users/containers/NewUser.js';
@@ -312,6 +313,15 @@ export default function(injectDeps, {FlowRouter}) {
     action() {
       mount(MarketingLayoutCtx, {
         content: () => (<About />)
+      })
+    }
+  });
+
+  FlowRouter.route('/terms', {
+    name: 'marketing.contact',
+    action() {
+      mount(MarketingLayoutCtx, {
+        content: () => (<Terms />)
       })
     }
   });
