@@ -5,94 +5,68 @@ class About extends React.Component {
   render() {
     return (
 
-		<div id="about-us">
-			<div id="slider">
-				<div className="container">
-					<div className="row header">
-						<div className="col-md-12">
-							<h3>About React Themes</h3>
-							<p>
-								You have to roll up your sleeves and be a stonecutter before you can become a sculptor – command of craft always precedes art.
-							</p>
-						</div>
-					</div>
-					<div className="row">
-						<div className="col-md-12">
-							<div className="flexslider">
-							  	<ul className="slides">
-								    <li>
-								      	<img src="images/office2.png" alt="office2" />
-								    </li>
-								    <li>
-								      	<img src="images/office1.png" alt="office1" />
-								    </li>
-								    <li>
-								      	<img src="images/office3.png" alt="office3" />
-								    </li>
-							  	</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+		<div id="blogpost">
 
-			<div id="info">
+			<div id="blogpost-wrapper">
 				<div className="container">
 					<div className="row">
 						<div className="col-md-12">
-							<h1>We care about our work</h1>
+							<div className="main-pic">
+								<img src="images/discover_math.jpg" className="img-responsive" alt="blogpost" />
+							</div>					
 						</div>
 					</div>
 					<div className="row">
-						<div className="col-md-6">					
-							<p>
-								Whether you want to fill this paragraph with some text like I'm doing right now, this place is perfect to describe some features or anything you want - React has a complete solution for you.
-							</p>
-							<p>
-								You have complete control over the look & feel of your website, we offer the best quality so you take your site up and running in no time.
-							</p>
-						</div>
-						<div className="col-md-6">
-							<p>
-								React is a simple, developer-friendly way to get your site. Full of features, cool documentation ease of use, lots of pages. We want to help bringing cool stuff to people so they can get their projects faster.
-							</p>
-							<a href="#" className="join-team button button-small">Join our team</a>
-						</div>
-					</div>
-					<div className="row stats">
-						<div className="col-sm-3">
-							<strong>13</strong>
-							employees
-						</div>
-						<div className="col-sm-3">
-							<strong>10k</strong>
-							customers
-						</div>
-						<div className="col-sm-3">
-							<strong>9</strong>
-							template pages
-						</div>
-						<div className="col-sm-3">
-							<strong>13k</strong>
-							products sold
-						</div>
-					</div>
-					<div className="row team">
-						<div className="col-md-12 team-row">
-							<img src="images/testimonials/testimonial7.jpg" data-toggle="tooltip" title="Eric Smith - CEO" alt="testimonial" />
-							<img src="images/testimonials/testimonial2.jpg" data-toggle="tooltip" title="Rachel Dawes - PM" alt="testimonial" />
-							<img src="images/testimonials/testimonial3.jpg" data-toggle="tooltip" title="Henry Hill - Developer" alt="testimonial" />
-							<img src="images/testimonials/testimonial4.jpg" data-toggle="tooltip" title="Ana Rich - Designer" alt="testimonial" />
-							<img src="images/testimonials/testimonial7.jpg" data-toggle="tooltip" title="Jessica Welch - Designer" alt="testimonial" />
-							<img src="images/testimonials/testimonial8.jpg" data-toggle="tooltip" title="Charly - iOS Developer" alt="testimonial" />
-						</div>
-						<div className="col-md-12 team-row">
-							<img src="images/testimonials/testimonial5.jpg" data-toggle="tooltip" title="Karen Stewart - PM" alt="testimonial" />
-							<img src="images/testimonials/testimonial4.jpg" data-toggle="tooltip" title="Charly - iOS Developer" alt="testimonial" />
-							<img src="images/testimonials/testimonial7.jpg" data-toggle="tooltip" title="Jessica Welch - Designer" alt="testimonial" />
-							<img src="images/testimonials/testimonial8.jpg" data-toggle="tooltip" title="John Raynolds - UI/UX" alt="testimonial" />
-							<img src="images/testimonials/testimonial3.jpg" data-toggle="tooltip" title="Henry Hill - Developer" alt="testimonial" />
-							<img src="images/testimonials/testimonial2.jpg" data-toggle="tooltip" title="Rachel Dawes - PM" alt="testimonial" />
+						<div className="col-md-10 post">
+							<div className="title">
+								The Pttrns Story
+							</div>
+							<div className="author">
+								<img src="images/dr_hurley.jpg" className="avatar" alt="author" />
+								By Dr. William Hurley, May 15, 2016
+							</div>
+							<div className="content">
+								<p>
+									I teach mathematics at RMC primarily to engineering and science students. Generally, they are not proficient at arithmetic and my colleagues would not disagree. That is not to say they are not bright. They are. And those at the top are exceptional. It’s just that some have an arithmetic deficiency and their corresponding number sense is poor. Some of my students can tell me what 4 × 8 is but they require a calculator to get 40% of 800. 
+								</p>
+								<p>
+									The news from our primary school system is not encouraging. The evidence on the performance of Canadian primary school students on recent international tests suggests that things are not getting better:
+									“67% of Grade 3 students met the standard in 2014 compared to 71% in 2010, indicating a four-percentage-point decrease.” Not surprisingly, this performance has been given considerable coverage in the popular media. These reports constituted my introduction to “the math wars,” the on-going debate about how best to teach children mathematics.
+								</p>
+								<p>
+									My focus has been on how children learn the basic arithmetic facts. There is general agreement that children should be “fluent,” that is, when con- fronted with, say, 8 × 7, a child should know that it’s 56 within a short period of time.4 The disagreement lies in how best to get children to fluency.
+								</p>
+								<blockquote>
+									<p>
+										“Genius is patience.”
+									</p>
+									<p className="quote-author">
+										Sir Isaac Newton
+									</p>
+								</blockquote>
+								<p>
+									We have a proven method to get children to fluency with a minimum of effort on your part. You will have to learn our method, but once that’s done, it’s a straightforward matter to teach your child. Ten minutes is a day is all it takes. If you work day-in, day-out for ten minutes a day, we guarantee that your child will become fluent, and probably more quickly than you think.
+								</p>
+								<p>
+									Our program follows the Ontario mathematics curriculum for Grades 1 to 4 closely. However we’ve only selected the particular learning objectives that apply to fluency simply because that’s our sole objective. In some cases, we’ve added learning objectives in order to facilitate fluency.
+								</p>
+
+								<p>
+									<img src="images/circle-icons/full-color/globe.png" className="img-responsive" alt="slide" />
+								</p>
+								<p>
+									I am a fan of the discovery pedagogy now dominating mathematics ed-ucation in our primary schools. Anything that gets children excited about mathematics is good. But I also think that skill development is important. Students need to be able to do arithmetic and algebraic manipulation.
+								</p>
+								<p>
+									In my experience with the primary school children I’ve taught, motivation is important. Children at this age do not appreciate the importance of becoming fluent. Hence a monitor should consider a series of incentives to encourage effort. Parents are in a good position to come up with effective incentives, teachers less so. But incentives are a must to get the proper effort and focus. One of the reasons for our insistence on short frequent work sessions is that children have difficulty focusing for periods any longer. What we require is the right set of incentives to encourage focus and effort for five minutes a day.
+								</p>
+								<p>
+									I believe that knowing the basics is crucially important to higher level skill development. You can learn fractions and higher level arithmetic without single-digit fluency but it’s more difficult. You can learn algebraic manipulation without single-digit fluency, but it’s more difficult. A well built house needs a good foundation and so does the study of just about any discipline and particulary mathematics. 
+								</p>
+								<p>
+									<img src="images/circle-icons/full-color/pencil.png" className="img-responsive" alt="slide" />
+								</p>		
+							</div>	
 						</div>
 					</div>
 				</div>
