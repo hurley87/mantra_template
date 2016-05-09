@@ -17,7 +17,7 @@ class Terms extends React.Component {
           <div className="row">
             <div className="col-md-10 post">
               <div className="title">
-                Pttrns Website Terms and Conditions of Use
+                Pttrns Terms and Conditions of Use
               </div>
               <div className="content">
 

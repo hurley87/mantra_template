@@ -21,7 +21,7 @@ class Research extends React.Component {
 								<p className="intro">
 									Dr. Hurley provides a rationale for a new method of testing, designed to help primary school math students.
 								</p>
-								<a href="blogpost.html" className="continue-reading">Download Research Paper</a>
+								<a href="research/The_Case_For_Enlightened_Timed_Testing.pdf" download="The Case for Enlightened Timed Tests" className="continue-reading">Download Research Paper</a>
 							</div>
 
 							<div className="post">
@@ -36,7 +36,7 @@ class Research extends React.Component {
 									society as numerate citizens".  Remarkably, she notes that from 2003 to 2012 every Canadian province saw a decline in 
 									math scores, with the exception of Quebec, which saw scores remain constant.
 								</p>
-								<a href="blogpost.html" className="continue-reading">Download Commentary</a>
+								<a href="research/What_To_Do_About_Canada's_Declining_Math_Scores.pdf" download="What To Do About Canada's Declining Math Scores" className="continue-reading">Download Commentary</a>
 							</div>
 
 							<div className="post">
@@ -53,7 +53,7 @@ class Research extends React.Component {
 									19th century—with all the techniques of advanced physics at his disposal—he created the theory of relativity."
 "
 								</p>
-								<a href="blogpost.html" className="continue-reading">Download Research Paper</a>
+								<a href="research/Basic_Skills_Versus_Conceptual_Understanding.pdf" download="Basic Skills Versus Conceptual Understanding" className="continue-reading">Download Research Paper</a>
 							</div>
 
 						</div>

@@ -19,6 +19,7 @@ import Contact from '../marketing/components/contact.jsx';
 import HowItWorks from '../marketing/components/howItWorks.jsx';
 import About from '../marketing/components/about.jsx';
 import Terms from '../marketing/components/terms.jsx';
+import Privacy from '../marketing/components/privacy.jsx';
 
 // registration
 import NewUser from '../users/containers/NewUser.js';
@@ -300,7 +301,7 @@ export default function(injectDeps, {FlowRouter}) {
   });
 
     FlowRouter.route('/how_it_works', {
-    name: 'marketing.contact',
+    name: 'marketing.works',
     action() {
       mount(MarketingLayoutCtx, {
         content: () => (<HowItWorks />)
@@ -309,7 +310,7 @@ export default function(injectDeps, {FlowRouter}) {
   });
 
     FlowRouter.route('/about', {
-    name: 'marketing.contact',
+    name: 'marketing.about',
     action() {
       mount(MarketingLayoutCtx, {
         content: () => (<About />)
@@ -318,10 +319,19 @@ export default function(injectDeps, {FlowRouter}) {
   });
 
   FlowRouter.route('/terms', {
-    name: 'marketing.contact',
+    name: 'marketing.terms',
     action() {
       mount(MarketingLayoutCtx, {
         content: () => (<Terms />)
+      })
+    }
+  });
+
+    FlowRouter.route('/privacy', {
+    name: 'marketing.privacy',
+    action() {
+      mount(MarketingLayoutCtx, {
+        content: () => (<Privacy />)
       })
     }
   });

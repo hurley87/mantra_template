@@ -49,17 +49,14 @@ const Footer = ( { content = () => null }) => (
 				<div className="col-sm-3 menu">
 					<h3>Social</h3>
 					<ul>
-	      				<li>
-	          				<a href="features.html">Youtube</a>
+	        			<li>
+	        				<a href="https://www.facebook.com/Pttrns-964465116994745/">Facebook</a>
 	        			</li>
 	        			<li>
-	        				<a href="services.html">Facebook</a>
+	          				<a href="https://twitter.com/pttrns_edu">Twitter</a>
 	        			</li>
 	        			<li>
-	          				<a href="pricing.html">Twitter</a>
-	        			</li>
-	        			<li>
-	          				<a href="pricing.html">Instagram</a> 
+	          				<a href="https://www.instagram.com/pttrns_edu/">Instagram</a> 
 	        			</li>
 	      			</ul>
 				</div>
