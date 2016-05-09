@@ -53,7 +53,7 @@ class Homepage extends React.Component {
               <header className="navbar navbar-inverse hero" role="banner">
                   <div className="container">
                     <div className="navbar-header">
-                        <a href="index.html" className="navbar-brand">Pttrns</a>
+                        <a href="/" className="navbar-brand">Pttrns</a>
                     </div>
                     <div onClick={ this.props.showMenu.bind(this) } className="sidebar-toggle">
                       <div className="line"></div>
@@ -67,11 +67,9 @@ class Homepage extends React.Component {
                 <div id="cover-image" className="animated fadeIn">
                   <div className="container">
                     <h1 className="hero-text animated fadeIn">Math Fluency for the Future</h1>
+                    <p className='hero-text'>A proven approach that makes teaching math fun and easy.</p>
                     <div className="cta animated fadeIn">
                       <a href="/register" className="button">Free Sign Up</a>
-                    </div>
-                    <div className="screenshot animated fadeInUp">
-                      <img src="images/ss2.png" className="img-responsive" alt="screenshot" />
                     </div>
                   </div>
                 </div>
@@ -81,8 +79,9 @@ class Homepage extends React.Component {
                 <div className="container">
                   <div className="row header">
                     <div className="col-md-12">
-                      <h2>Master single-digit arithemtic</h2>
-                      <p>Counting, Addition, Subtraction, Multiplication and Division</p>
+                      <h2>Help your child master single-digit arithemtic</h2>
+                      <p>Pttrns is a series of enlightend tests that train a student to quickly become fluent in arithemtic.
+                       </p>
                     </div>
                   </div>
                   <div className="row feature">
@@ -111,20 +110,18 @@ class Homepage extends React.Component {
                       <img src="images/homeschool.jpg" className="img-responsive" alt="feature2" />
                     </div>
                   </div>
+                  <div className="divider"></div>
+                  <Benefits />
                 </div>    
               </div>
-              <Pricing />
-              <Benefits />
               
               <div id="clients">
                 <div className="container">
                   <div className="row">
                     <div className="col-md-12">
-                      <h3>Start learning with Pttrns!</h3>
-                      <div id="cta">
-                        <a href="/register">
-                          Sign up for free
-                         </a>
+                      <h3>Start learning with Pttrns today!</h3>
+                      <div className="cta animated fadeIn">
+                        <a href="/register" className="button">Free Sign Up</a>
                       </div>
                     </div>
                   </div>

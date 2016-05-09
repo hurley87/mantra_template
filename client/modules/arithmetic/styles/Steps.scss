@@ -5,13 +5,17 @@
     border-bottom: 1px solid #eee;
     background-color: #fff;
     position: relative;
-    z-index: 9999;
+    z-index: 99;
     height: 112px;
 
     @media (max-width: $maxMedium) {
       text-align: center;
       padding-top: 30px !important;
       height: 100%;
+    }
+
+    @media (max-width: $maxSmall) {
+      z-index: 9999;
     }
 
     &.done {
@@ -25,6 +29,7 @@
     .info {
       float: left;
       position: relative;
+      font-size: 24px;
 
       @media (max-width: $maxMedium) {
         float: none;
@@ -32,7 +37,7 @@
       }
 
       .number {
-        font-size: 26px;
+        font-size: 36px;
         margin-right: 20px;
         position: relative;
         top: 2px;
@@ -42,6 +47,15 @@
           display: block;
           margin: 0;
           margin-bottom: 10px;
+        }
+
+
+        .questionDifficulty {
+          position: absolute;
+          color: #fff;
+          font-size: 20px;
+          top: 7px;          
+          left: 12px;
         }
 
         .ion-checkmark-circled {
