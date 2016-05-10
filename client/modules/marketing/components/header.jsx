@@ -8,9 +8,7 @@ const Header = ( { content = () => null }) => (
       <div className="container">
         <div className="navbar-header">
             <button className="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-              <span className="icon-bar"></span>
-              <span className="icon-bar"></span>
-              <span className="icon-bar"></span>
+              MENU
             </button>
             <a href="/" className="navbar-brand">Pttrns</a>
         </div>

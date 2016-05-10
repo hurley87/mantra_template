@@ -4,7 +4,6 @@ import { Row, Col, Input, Grid } from 'react-bootstrap';
 class Philosophy extends React.Component {
   render() {
     return (
-
 	<div id="portfolio">
 		<div id="showcase">
 			<div className="container">

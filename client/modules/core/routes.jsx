@@ -57,7 +57,7 @@ export default function(injectDeps, {FlowRouter}) {
   FlowRouter.route('/', {
     name: 'marketing.homgepage',
     action() {
-      mount(MainLayoutCtx, {
+      mount(MarketingLayoutCtx, {
         content: () => (<Homepage />)
       })
     }
@@ -65,7 +65,7 @@ export default function(injectDeps, {FlowRouter}) {
 
   FlowRouter.notFound = {
     action: function() {
-      mount(MainLayoutCtx, {
+      mount(MarketingLayoutCtx, {
         content: () => (<NotFound />)
       })
     }

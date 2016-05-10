@@ -5,60 +5,15 @@ import Pricing from './_pricing.jsx'
 import Benefits from './_benefits.jsx'
 import Mobile from './_mobile.jsx'
 import Footer from './footer.jsx';
+import MainNav from './MainNav.jsx';
 
 class Homepage extends React.Component {
   render() {
     return (
       <div id='home3'>
         <div className={ this.props.toggle ? 'st-container nav-effect' : 'st-container' }>
-          <nav className="nav-menu">
-            <h3>Pttrns</h3>
-            <a href="/philosophy" className="item">
-              Pttrns Philosophy
-            </a>
-            <a href="/how_it_works" className="item">
-              How it Works
-            </a>
-            <a href="/research" className="item">
-              Research
-            </a>
-            <a href="/about" className="item">
-              About
-            </a>
-            <a href="/contact" className="item">
-              Contact
-            </a>
-            <a href="/login" className="item">
-              Login
-            </a>
-            <div className="social">
-              <a href="https://twitter.com/pttrns_edu">
-                <i className="fa"><img src="images/twitter24.png" /></i>
-              </a>
-              <a href="https://www.facebook.com/Pttrns-964465116994745/">
-                <i className="fa"><img src="images/facebook24.png" /></i>
-              </a>
-              <a href="https://www.instagram.com/pttrns_edu/">
-                <i className="fa"><img src="images/instagram24.png" /></i>
-              </a>
-            </div>
-          </nav>
-
           <div className="st-pusher">
             <div className="st-content">
-
-              <header className="navbar navbar-inverse hero" role="banner">
-                  <div className="container">
-                    <div className="navbar-header">
-                        <a href="/" className="navbar-brand">Pttrns</a>
-                    </div>
-                    <div onClick={ this.props.showMenu.bind(this) } className="sidebar-toggle">
-                      <div className="line"></div>
-                      <div className="line"></div>
-                      <div className="line"></div>
-                    </div>
-                  </div>
-              </header>
 
               <div id="hero">
                 <div id="cover-image" className="animated fadeIn">
@@ -69,6 +24,7 @@ class Homepage extends React.Component {
                       <a href="/register" className="button">Free Sign Up</a>
                     </div>
                   </div>
+                  <div className='blue-background'></div>
                 </div>
               </div>
 
@@ -125,8 +81,6 @@ class Homepage extends React.Component {
                 </div>
               </div>
             </div>
-
-            <Footer />
           </div>
         </div>
       </div>
