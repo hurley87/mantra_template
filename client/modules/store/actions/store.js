@@ -17,8 +17,6 @@ export default {
 
   getCard(){
 
-    console.log(stripe)
-
     var handler = StripeCheckout.configure({
         key: Meteor.settings.public.stripe.testPublishableKey,
         image: 'images/bg4.png',

@@ -1,3 +1,5 @@
+import Amplitude from 'amplitude';
+
 export default {
   create({Meteor, LocalState },name, email, password, profession, age) {
     // handle errors if they exist
@@ -14,6 +16,19 @@ export default {
       email: email, 
       password: password
     }, function(err) {
+
+      var amplitude = new Amplitude(Meteor.settings.public.amplitude, { email: email });
+      var data = {
+        event_type: 'sign up',
+        event_properties: {
+          event1: 'prop1'
+        },
+        user_properties: {
+          userProp: 'prop1'
+        }
+      }
+      amplitude.track(data);
+
       Meteor.call('create.profile', name, email, profession, age, (err) => {
         if(err){
           console.log(err)
