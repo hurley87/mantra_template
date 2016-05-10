@@ -35,7 +35,8 @@
     "meteor-node-stubs": "^0.2.3",
     "react": "^0.14.6",
     "react-dom": "^0.14.6",
-    "react-mounter": "^1.0.0"
+    "react-mounter": "^1.0.0",
+    "stripe": "^4.6.0"
   },
   "private": true
 }
