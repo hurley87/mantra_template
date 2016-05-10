@@ -32,17 +32,14 @@ class Homepage extends React.Component {
               Login
             </a>
             <div className="social">
-              <a href="#">
+              <a href="https://twitter.com/pttrns_edu">
                 <i className="fa"><img src="images/twitter24.png" /></i>
               </a>
-              <a href="#">
+              <a href="https://www.facebook.com/Pttrns-964465116994745/">
                 <i className="fa"><img src="images/facebook24.png" /></i>
               </a>
-              <a href="#">
+              <a href="https://www.instagram.com/pttrns_edu/">
                 <i className="fa"><img src="images/instagram24.png" /></i>
-              </a>
-              <a href="#">
-                <i className="fa"><img src="images/youtube24.png" /></i>
               </a>
             </div>
           </nav>

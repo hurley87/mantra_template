@@ -41,7 +41,7 @@ class Philosophy extends React.Component {
 							</p>
 							<div className="divider"></div>
 							<div className="visit">
-								<a className="button" href="portfolio-item.html">
+								<a className="button" href="/register">
 									Free Sign Up
 								</a>
 							</div>
