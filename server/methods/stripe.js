@@ -14,10 +14,10 @@ export default function () {
         var stripeCreateChargeSync = Meteor.wrapAsync(Stripe.charges.create, Stripe.charges)
       	
         var result = stripeCreateChargeSync({
-      	amount: 4000,
-  			currency: "cad",
- 			  source: myToken, // obtained with Stripe.js
-  			description: "Pttrns Textbook"
+        	amount: 4000,
+    			currency: "cad",
+   			  source: myToken, // obtained with Stripe.js
+    			description: "Pttrns Textbook"
       	})
 
         return result.status;
