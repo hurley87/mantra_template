@@ -12,7 +12,7 @@ class Research extends React.Component {
 
 							<div className="post">
 								<div className="title">
-									<a href="blogpost.html">Enlightened Testing</a>
+									<a href="research/The_Case_For_Enlightened_Timed_Testing.pdf">Enlightened Testing</a>
 								</div>
 								<p className="intro">
 									Dr. Hurley provides a rationale for a new method of testing, designed to help primary school math students.
@@ -22,7 +22,7 @@ class Research extends React.Component {
 
 							<div className="post">
 								<div className="title">
-									<a href="blogpost.html">What to Do About Canada's Declining Math Scores</a>
+									<a href="research/What_To_Do_About_Canada's_Declining_Math_Scores.pdf">What to Do About Canada's Declining Math Scores</a>
 								</div>
 								<div className="author">
 									Dr. Anna Stokke, 2015
@@ -37,7 +37,7 @@ class Research extends React.Component {
 
 							<div className="post">
 								<div className="title">
-									<a href="blogpost.html">Basic Skills Versus Conceptual Understanding</a>
+									<a href="research/Basic_Skills_Versus_Conceptual_Understanding.pdf">Basic Skills Versus Conceptual Understanding</a>
 								</div>
 								<div className="author">
 									Dr. Hung-Hsi Wu, 1999

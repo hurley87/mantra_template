@@ -4,16 +4,18 @@ import { Row, Col, Input, Grid } from 'react-bootstrap';
 class Contact extends React.Component {
   render() {
     return (
+		<div id="blog">
+			<div id="posts">
+				<div className="container">
+					<div className="row">
+						<div className="col-md-8">
 
-		<div>
-			<div id="contact-us">
-				<div id="info">
-					<div className="container">
-						<div className="row">
-							<div className="col-md-8 message">
-								<h3>Get in touch!</h3>
-								<p>
-									The Pttrns team would love to hear from you. <br/> Send us a message and we'll be in touch within 1 business day.
+							<div className="post">
+								<div className="title">
+									Get in touch!
+								</div>
+								<p className="intro">
+									The Pttrns team would love to hear from you. Send us a message and we'll be in touch within 1 business day.
 								</p>
 								<form role="form" id="contact-form" method="post">
 									<div className="form-group">
@@ -37,21 +39,13 @@ class Contact extends React.Component {
 							  		</div>
 								</form>
 							</div>
-							<div className="col-md-4 contact">
-								<div className="address">
-									<h3>Our Address</h3>
-									<p>
-										1152 Seale Rd. <br />
-										Kingston ON <br />
-										K7P0A2
-									</p>
-								</div>
-								<div className="phone">
-									<h3>By Phone</h3>
-									<p>
-										647.648.6151
-									</p>
-								</div>
+
+						</div>
+						<div className="col-md-4 sidebar">
+							<div className="best-hits">
+								<strong>Email: </strong> hurley_w@rmc.ca
+								<br /><br />
+								<strong>Phone: </strong> 647-284-5023
 							</div>
 						</div>
 					</div>
