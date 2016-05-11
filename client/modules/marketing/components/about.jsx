@@ -10,13 +10,6 @@ class About extends React.Component {
 			<div id="blogpost-wrapper">
 				<div className="container">
 					<div className="row">
-						<div className="col-md-12">
-							<div className="main-pic">
-								<img src="images/discover_math.jpg" className="img-responsive" alt="blogpost" />
-							</div>					
-						</div>
-					</div>
-					<div className="row">
 						<div className="col-md-10 post">
 							<div className="title">
 								The Pttrns Story

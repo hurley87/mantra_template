@@ -12,11 +12,7 @@ class Research extends React.Component {
 
 							<div className="post">
 								<div className="title">
-									<a href="blogpost.html">Primary School Mathematics: The Case for Enlightened Timed Testing to Achieve Fluency in Single-Digit Arithmetic</a>
-								</div>
-								<div className="author">
-									<img src="images/dr_hurley.jpg" className="avatar" alt="author" />
-									Dr. William Hurley, May 2016
+									<a href="blogpost.html">Enlightened Testing</a>
 								</div>
 								<p className="intro">
 									Dr. Hurley provides a rationale for a new method of testing, designed to help primary school math students.

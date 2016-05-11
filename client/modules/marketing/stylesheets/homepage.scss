@@ -161,17 +161,12 @@
       left: 0;
       height: 100%;
       width: 100%;
-      background:
-      radial-gradient(#56D0B3 25%, transparent 16%) 0 0,
-      radial-gradient(#56D0B3 25%, transparent 16%) 8px 8px,
-      radial-gradient(rgba(255,255,255,.2) 15%, transparent 50%) 0 1px,
-      radial-gradient(rgba(255,255,255,.2) 15%, transparent 50%) 8px 9px;
-      background-color:#56D0B3;
-      background-size:24px 24px;
-      padding-top: 125px;
+      background-image: url('images/title.jpg');
+      background-size: cover;
+      padding-top: 150px;
 
       @media (max-width: 991px) {
-        padding-top: 65px;
+        padding-top: 125px;
       }
 
       .blue-background {
@@ -181,7 +176,7 @@
         top: 0;
         bottom: 0;
         background: #5188BF;
-        opacity: 0.3;
+        opacity: 0.8;
       }
     }
 
@@ -197,11 +192,12 @@
       font-weight: 300;
       color: #fff;
       margin-top: 40px;
+      font-weight: bold;
 
       @include animationDelay(0.6s);
 
       @media (max-width: 991px) {
-        font-size: 30px;
+        font-size: 45px;
       }
 
       @media (max-width: 767px) {
@@ -214,6 +210,8 @@
       text-align: center;
       font-size: 26px;
       padding-top: 10px;
+      font-weight: 300;
+      letter-spacing: 1px;
 
       @media (max-width: 991px) {
         font-size: 22px;
@@ -239,9 +237,10 @@
 
         &.button {
           border-radius: 5px;
-          padding: 12px 36px;
+          padding: 15px 50px;
           font-size: 18px;
-          box-shadow: rgba(0, 0, 0, 0.3) 0 1px 2px, inset rgba(255, 255, 255, 0.88) 0px 1px 3px -1px, rgba(0,0,0,0.3) 0 1px 2px, #69B1F3 0 1px 30px;
+          background-color: #56D0B3; 
+          font-weight: bold;
           @include transition(all 0.3s linear);         
 
           @media (max-width: 767px) {
@@ -279,8 +278,10 @@
   }
 
   #features {
+    padding: 30px 0px;
     @media(max-width: 991px) {
-      margin-top: 50px;
+      margin-top: 0px;
+      padding: 0px;
     }
 
     .header {
@@ -303,16 +304,21 @@
     .feature {
       margin-top: 55px;
       -webkit-font-smoothing: antialiased;
+      max-width: 700px;
+      margin: auto;
+      margin-top: 50px;
+      padding: 30px 0px;
 
       @media (min-width: 992px) {
+        padding: 15px;
         &.backwards {
           .info {
             float: right;
           }
           .image {
-            float: left;
             img {
               margin: 0 auto;
+
             }
           }
         }
@@ -328,7 +334,7 @@
           font-weight: normal;
           font-size: 19px;
           line-height: 25px;
-          margin-top: 35px;
+          margin-top: 0px;
 
           @media (max-width: 991px) {
             text-align: center;
@@ -339,7 +345,6 @@
           font-size: 14px;
           margin-top: 20px;
           line-height: 24px;
-          width: 83%;
           font-weight: normal;
 
           @media (max-width: 991px) {
@@ -350,10 +355,14 @@
         }
       }
       .image {
+        img {
+          height: 160px;
+        }
         @media (max-width: 991px) {
           img {
             margin: 0 auto !important;
             margin-top: 20px;
+            float: none;
           }
         }
       }
@@ -505,70 +514,6 @@
         text-decoration: none;
        
       }
-    }
-  }
-
-  #clients {
-    background:
-    radial-gradient(#56D0B3 25%, transparent 16%) 0 0,
-    radial-gradient(#56D0B3 25%, transparent 16%) 8px 8px,
-    radial-gradient(rgba(255,255,255,.2) 15%, transparent 50%) 0 1px,
-    radial-gradient(rgba(255,255,255,.2) 15%, transparent 50%) 8px 9px;
-    background-color:#56D0B3;
-    background-size: 20px 20px;
-    padding: 65px 0 80px;
-
-    text-align: center;
-
-    h3 {
-      color: #FFF;
-      margin-top: 0;
-      font-weight: 300;
-      font-size: 35px;
-      letter-spacing: .3px;
-      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-    }
-
-    .cta {
-      text-align: center;
-      margin-top: 40px;
-      
-      @include animationDelay(0.6s);
-
-      a {
-        margin: 0px 20px;
-
-        @media (max-width: 400px) {
-          display: block;
-        }
-
-        &.button {
-          border-radius: 5px;
-          padding: 12px 36px;
-          font-size: 18px;
-          box-shadow: rgba(0, 0, 0, 0.3) 0 1px 2px, inset rgba(255, 255, 255, 0.88) 0px 1px 3px -1px, rgba(0,0,0,0.3) 0 1px 2px, #69B1F3 0 1px 30px;
-          @include transition(all 0.3s linear);         
-
-          @media (max-width: 767px) {
-            font-size: 16px;
-          }
-
-          @media (max-width: 400px) {
-            width: 65%;
-            margin: 0 auto;
-            margin-bottom: 25px;
-          }
-        }
-      }
-    }
-
-    p {
-      font-size: 16px;
-      color: #f8f8f8;
-      margin-top: 17px;
-      font-weight: 300;
-      line-height: 25px;
-      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
     }
   }
 }

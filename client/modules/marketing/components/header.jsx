@@ -39,6 +39,11 @@ const Header = ( { content = () => null }) => (
                  Contact
               </a>
             </li>
+            <li className={ location.pathname == '/login' ? 'active' : null}>
+              <a href="/login">
+                 Login
+              </a>
+            </li>
           </ul>
             <ul className="nav navbar-nav navbar-right visible-md visible-lg">
               <li>

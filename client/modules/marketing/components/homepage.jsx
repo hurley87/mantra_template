@@ -38,47 +38,35 @@ class Homepage extends React.Component {
                     </div>
                   </div>
                   <div className="row feature">
-                    <div className="col-md-6 info">
+                    <div className="col-md-8 info">
                       <h4>Prepare your child for success in the Digital Age</h4>
                       <p>
                         Whether its a trade or a profession, number sense and fluency are crucial in today's world.
-                        Fluency in single-digit arithmetic will set your child up for success.
+                        Through enlightend tests we teach your child the fundamentals of mathematics. 
                       </p>
+                      <p><a href='how_it_works'>It only takes 5 minutes a day</a></p>
                     </div>
-                    <div className="col-md-6 image">
-                      <img src="images/digital_age.jpg" className="img-responsive" alt="feature1" />
+                    <div className="col-md-4 image">
+                      <img src="images/circle-icons/full-color/smartphone.png" className="img-responsive pull-right" alt="feature1" />
                     </div>
                   </div>
                   <div className="divider"></div>
                   <div className="row feature backwards">
-                    <div className="col-md-6 info">
+                    <div className="col-md-8 info">
                       <h4>Math tutoring from the comfort of your home</h4>
                       <p>
-                        Pttrns provides a private, individualized program for your child. Using our enlightend timed tests,
-                        your child will work for just five minutes a day.  Results are tracked and reported in real-time,
+                        Pttrns provides a private, individualized program for your child. Results are tracked and reported in real-time,
                         providing you with the tools you need to make sure they're on track.
                       </p>
+                      <p><a href='how_it_works'>See just how easy it is</a></p>
                     </div>
-                    <div className="col-md-6 image">
-                      <img src="images/homeschool.jpg" className="img-responsive" alt="feature2" />
-                    </div>
-                  </div>
-                  <div className="divider"></div>
-                  <Benefits />
-                </div>    
-              </div>
-              
-              <div id="clients">
-                <div className="container">
-                  <div className="row">
-                    <div className="col-md-12">
-                      <h3>Start learning with Pttrns today!</h3>
-                      <div className="cta animated fadeIn">
-                        <a href="/register" className="button">Free Sign Up</a>
-                      </div>
+                    <div className="col-md-4 image">
+                      <img src="images/circle-icons/full-color/barchart.png" className="img-responsive pull-left" alt="feature2" />
                     </div>
                   </div>
-                </div>
+                </div>  
+                <Mobile />
+                <Benefits />
               </div>
             </div>
           </div>

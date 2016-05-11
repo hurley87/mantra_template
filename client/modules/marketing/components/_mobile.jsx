@@ -15,10 +15,10 @@ const Mobile = ( { content = () => null }) => (
               The Pttrns team is happy to announce that we're coming to the App store! Soon you'll be able to work from anywhere and have
               real-time anayltics in the palm of your hand.  We'll keep you posted!
             </p>
-            <a className="app-store" href="#">
+            <a className="app-store" href="/register">
               <img src="images/apple.svg" alt="download on app-store" />
             </a>
-            <a className="app-store" href="#">
+            <a className="app-store" href="/register">
               <img src="images/google.svg" alt="download on app-store" />
             </a>
           </div>

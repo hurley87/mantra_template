@@ -5,6 +5,18 @@ import {Row, Col} from 'react-bootstrap';
 
 const Footer = ( { content = () => null }) => (
 	<div id="footer-white">
+       <div id="clients">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12">
+              <h3>Start teaching with Pttrns today.</h3>
+              <div className="cta animated fadeIn">
+                <a href="/register" className="button">Free Sign Up</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 		<div className="container">
 			<div className="row">
 				<div className="col-sm-3 menu">
