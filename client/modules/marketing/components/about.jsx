@@ -4,9 +4,7 @@ import { Row, Col, Input, Grid } from 'react-bootstrap';
 class About extends React.Component {
   render() {
     return (
-
 		<div id="blogpost">
-
 			<div id="blogpost-wrapper">
 				<div className="container">
 					<div className="row">

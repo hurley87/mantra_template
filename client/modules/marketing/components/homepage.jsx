@@ -5,7 +5,6 @@ import Pricing from './_pricing.jsx'
 import Benefits from './_benefits.jsx'
 import Mobile from './_mobile.jsx'
 import Footer from './footer.jsx';
-import MainNav from './MainNav.jsx';
 
 class Homepage extends React.Component {
   render() {
