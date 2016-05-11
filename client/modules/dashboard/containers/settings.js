@@ -11,7 +11,10 @@ export const composer = ({context}, onData) => {
   if(user && Meteor.subscribe('profiles.single', user).ready()){
     const profile = Collections.Profiles.findOne({user});
     const points = profile.countPoints + profile.addPoints + profile.subPoints + profile.multiPoints + profile.divPoints;
-    const ratio = (profile.wrong / profile.right).toFixed(2);
+    let ratio = (profile.wrong / profile.right).toFixed(2);
+    if(isNaN(ratio)) {
+      ratio = 0;
+    }
     onData(null, {view, toggle, profile, points, ratio})
   }
 
