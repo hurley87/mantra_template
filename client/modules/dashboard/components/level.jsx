@@ -4,7 +4,7 @@ import { Row, Col, Input, Grid } from 'react-bootstrap';
 class Level extends React.Component {
   render() {
     return (
-      <div className="project col-md-4">
+      <div className="project">
         <div className="info">
           <div className="name">{this.props.title}</div>
           <div className="last-update">

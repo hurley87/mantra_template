@@ -2,7 +2,7 @@
 
 #panel {
   background-color: #fff;
-  padding: 30px;
+  padding: 38px;
 
   @media (max-width: $maxMedium) {
     padding: 15px;
@@ -11,6 +11,11 @@
   @media (max-width: $maxSmall) {
     z-index: 999;
     min-height: 100vh;
+  }
+
+  .row {
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .intro {

@@ -54,7 +54,7 @@ function questionHandler(LocalState, questionId, operator) {
   const num1 = LocalState.get('QUESTION').num1;
   const num2 = LocalState.get('QUESTION').num2;
   guess = parseInt(LocalState.get('GUESS'));
-  var answer = null;
+  let answer = null;
   switch(operator) {
     case '+':
       answer = add(num1, num2);
@@ -71,7 +71,7 @@ function questionHandler(LocalState, questionId, operator) {
     default: 
       return null;
   }
-  if(answer) {
+  if(answer != null) {
     const question = {
       questionId: questionId,
       userId: Meteor.userId(),

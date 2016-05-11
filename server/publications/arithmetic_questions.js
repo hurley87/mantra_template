@@ -4,7 +4,7 @@ import {check} from 'meteor/check';
 
 export default function () { 
   Meteor.publish('addition_questions.index', function () {
-    return ArithmeticQuestions.find({ 'operator': '+'});
+    return ArithmeticQuestions.find({ 'operator': '+'}, { $sort: { 'difficulty': 1 }});
   });
   Meteor.publish('subtraction_questions.index', function () {
     return ArithmeticQuestions.find({ 'operator': '-'});
