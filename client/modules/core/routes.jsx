@@ -292,6 +292,15 @@ export default function(injectDeps, {FlowRouter}) {
     }
   });
 
+  FlowRouter.route('/help', {
+    name: 'dashboard.help',
+    action() {
+      mount(QuestionLayoutCtx, {
+        content: () => (<Contact />)
+      })
+    }
+  });
+
     FlowRouter.route('/contact', {
     name: 'marketing.contact',
     action() {

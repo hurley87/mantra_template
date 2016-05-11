@@ -8,64 +8,64 @@ export default function () {
     ArithmeticQuestions.insert({
       min: '0',
       max: '5',
-      title: 'This is the first addition module.',
+      title: 'This is the first ADD module.',
       operator: '+',
       lowerLimit: 0,
-      upperLimit: 10,
+      upperLimit: 5,
       difficulty: 1
     });
     ArithmeticQuestions.insert({
       min: '2',
       max: '7',
-      title: 'This is the second addition module.',
+      title: 'This is the second ADD module.',
       operator: '+',
-      lowerLimit: 11,
-      upperLimit: 25,
+      lowerLimit: 6,
+      upperLimit: 15,
       difficulty: 2
     });
     ArithmeticQuestions.insert({
       min: '3',
       max: '8',
-      title: 'This is the third addition module.',
+      title: 'This is the third ADD module.',
       operator: '+',
-      lowerLimit: 26,
-      upperLimit: 50,
+      lowerLimit: 16,
+      upperLimit: 30,
       difficulty: 3
     });
     ArithmeticQuestions.insert({
       min: '4',
       max: '9',
-      title: 'This is the fourth addition module.',
+      title: 'This is the fourth ADD module.',
       operator: '+',
-      lowerLimit: 51,
-      upperLimit: 75,
+      lowerLimit: 31,
+      upperLimit: 40,
       difficulty: 4
     });
     ArithmeticQuestions.insert({
       min: '5',
       max: '10',
-      title: 'This is the fifth addition module.',
+      title: 'This is the fifth ADD module.',
       operator: '+',
-      lowerLimit: 76,
-      upperLimit: 125,
+      lowerLimit: 41,
+      upperLimit: 70,
       difficulty: 5
     });
     ArithmeticQuestions.insert({
       min: '6',
       max: '11',
-      title: 'This is the sixth addition module.',
+      title: 'This is the sixth ADD module.',
       operator: '+',
-      lowerLimit: 126,
-      upperLimit: 200,
+      lowerLimit: 71,
+      upperLimit: 100,
       difficulty: 6
     });
     ArithmeticQuestions.insert({
       min: '7',
       max: '12',
-      title: 'This is the sixth addition module.',
+      title: 'This is the sixth ADD module.',
       operator: '+',
-      lowerLimit: 201,
-      upperLimit: 300,
+      lowerLimit: 101,
+      upperLimit: 150,
       difficulty: 7
     });
     ArithmeticQuestions.insert({
@@ -259,7 +259,7 @@ export default function () {
     });
     ArithmeticQuestions.insert({
       min: '1',
-      max: '5',
+      max: '3',
       title: 'This is the first counting module.',
       operator: 'c',
       lowerLimit: 0,
@@ -267,8 +267,8 @@ export default function () {
       difficulty: 1
     });
     ArithmeticQuestions.insert({
-      min: '2',
-      max: '7',
+      min: '1',
+      max: '4',
       title: 'This is the second counting module.',
       operator: 'c',
       lowerLimit: 6,
@@ -276,8 +276,8 @@ export default function () {
       difficulty: 2
     });
     ArithmeticQuestions.insert({
-      min: '3',
-      max: '8',
+      min: '1',
+      max: '5',
       title: 'This is the third counting module.',
       operator: 'c',
       lowerLimit: 16,
@@ -285,8 +285,8 @@ export default function () {
       difficulty: 3
     });
     ArithmeticQuestions.insert({
-      min: '4',
-      max: '9',
+      min: '2',
+      max: '5',
       title: 'This is the fourth counting module.',
       operator: 'c',
       lowerLimit: 31,
@@ -294,8 +294,8 @@ export default function () {
       difficulty: 4
     });
     ArithmeticQuestions.insert({
-      min: '5',
-      max: '10',
+      min: '3',
+      max: '6',
       title: 'This is the fifth counting module.',
       operator: 'c',
       lowerLimit: 41,
@@ -303,8 +303,8 @@ export default function () {
       difficulty: 5
     });
     ArithmeticQuestions.insert({
-      min: '6',
-      max: '11',
+      min: '3',
+      max: '7',
       title: 'This is the sixth counting module.',
       operator: 'c',
       lowerLimit: 71,
@@ -312,8 +312,8 @@ export default function () {
       difficulty: 6
     });
     ArithmeticQuestions.insert({
-      min: '7',
-      max: '12',
+      min: '4',
+      max: '8',
       title: 'This is the sixth counting module.',
       operator: 'c',
       lowerLimit: 101,
