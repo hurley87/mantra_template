@@ -4,6 +4,7 @@ import profiles from './profiles';
 import users from './users';
 import stripe from './stripe';
 import counting from './counting';
+import contact from './contact';
 
 export default function () {
   questions();
@@ -12,4 +13,5 @@ export default function () {
   users();
   stripe();
   counting();
+  contact();
 }

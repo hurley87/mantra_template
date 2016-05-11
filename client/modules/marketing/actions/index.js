@@ -1,7 +1,9 @@
 import homepage from './homepage';
+import contact from './contact';
 
 const actions = {
-  homepage
+  homepage,
+  contact
 };
 
 export default actions;

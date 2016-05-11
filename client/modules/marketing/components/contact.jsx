@@ -1,6 +1,6 @@
 import React from 'react';
 import { Row, Col, Input, Grid } from 'react-bootstrap';
-import ContactForm from './contactForm.jsx';
+import ContactForm from '../containers/Contact.js';
 
 class Contact extends React.Component {
   render() {

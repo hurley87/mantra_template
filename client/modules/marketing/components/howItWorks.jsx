@@ -49,7 +49,7 @@ class HowItWorks extends React.Component {
 							<div className="post">
 								<div className='row'>
 									<div className='col-md-2'>
-										<img src="images/circle-icons/full-color/flame.png" className="img-responsive" alt="slide" />
+										<img src="images/circle-icons/full-color/trophy.png" className="img-responsive" alt="slide" />
 									</div>
 									<div className='col-md-10'>
 										<div className="title">

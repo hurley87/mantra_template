@@ -1,33 +1,85 @@
 import React from 'react';
-import { Row, Col, Input, Grid } from 'react-bootstrap';
+import { Row, Col, Input, Grid, ButtonInput } from 'react-bootstrap';
+import { Form, ValidatedInput, RadioGroup, Radio } from 'react-bootstrap-validation';
 
 class ContactForm extends React.Component {
   render() {
     return (
-		<div>
-			<form role="form" id="contact-form" method="post">
-				<div className="form-group">
-		    		<label for="name">Your name</label>
-		    		<input type="text" name="name" className="form-control" id="name" />
-		  		</div>
-		  		<div className="form-group">
-		    		<label for="email">Email address</label>
-		    		<input type="email" name="email" className="form-control" id="email" />
-		  		</div>
-		  		<div className="form-group">
-		    		<label for="phone">Phone</label>
-		    		<input type="text" name="phone" className="form-control" id="phone" />
-		  		</div>
-		  		<div className="form-group">
-		    		<label for="message">Message</label>
-		    		<textarea name="message" className="form-control" id="message" rows="6"></textarea>
-		  		</div>
-		  		<div className="submit">
-		  			<input type="submit" className="button button-small" value="Email us" />
-		  		</div>
-			</form>
-		</div>
+		<div>			 
+			 <Form
+            // Supply callbacks to both valid and invalid 
+            // submit attempts 
+            onValidSubmit={this._handleValidSubmit.bind(this)}
+            onInvalidSubmit={this._handleInvalidSubmit.bind(this)}>
+
+            <ValidatedInput
+                type='text'
+                label='Your Name'
+                name='name'
+                ref="name"
+                placeholder='Name'
+                validate='required,isLength:3:30'
+                errorHelp={{
+                    required: 'Please enter a username',
+                    isLength: 'Name must be at least 3 characters'
+                }}
+            />
+
+            <ValidatedInput
+                type='text'
+                label='Email'
+                name='email'
+                placeholder='Email'
+                validate='required,isEmail'
+                errorHelp={{
+                    required: 'Please enter your email',
+                    isEmail: 'Email is invalid'
+                }}
+            />
+
+            <ValidatedInput
+                type='number'
+                label='Phone'
+                name='phone'
+                placeholder='Phone'
+                errorHelp={{
+                    required: 'Please enter your phone number',
+                    isPhone: 'Phone number is invalid'
+                }}
+            />
+
+            <ValidatedInput
+                type='textarea'
+                label='Message'
+                name='message'
+                placeholder='Message'
+                rows = '6'
+                errorHelp={{
+                    required: 'Please enter a message',
+                    isMessage: 'Message is invalid'
+                }}
+            />
+
+            <ButtonInput
+              type='submit'
+              bsSize='large'
+              bsStyle='primary'
+              value='Update'
+              className='button text-center'
+            />
+        </Form>
+	</div>
     )
+  }
+
+   _handleValidSubmit(values) {
+   	 const {name, email, phone, message} = this.refs;
+     const {sendMsg} = this.props;
+   	 sendMsg(values.name, values.email, values.phone, values.message);
+
+  }
+  _handleInvalidSubmit(errors, values) {
+    
   }
 }
 
