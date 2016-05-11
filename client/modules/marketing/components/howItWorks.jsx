@@ -4,7 +4,6 @@ import { Row, Col, Input, Grid } from 'react-bootstrap';
 class HowItWorks extends React.Component {
   render() {
     return (
-
 		<div id="blog">
 			<div id="posts">
 				<div className="container">
@@ -23,7 +22,7 @@ class HowItWorks extends React.Component {
 										<p className="intro">
 											You'll have secure access to everything you need to master single-digit arithmetic, including our learning strategies, textbook, and data analytics.
 										</p>
-										<a href="/register" download="What To Do About Canada's Declining Math Scores" className="continue-reading">Register for your free account</a>
+										<a href="/register" className="continue-reading">Register for your free account</a>
 									</div>
 								</div>
 							</div>
@@ -39,10 +38,10 @@ class HowItWorks extends React.Component {
 										</div>
 										<p className="intro">
 											We've dedicated our time to research so you don't have to. Each strategy is designed for simplicity, clarity and results. In a matter of minutes, Pttrns students move from understanding to internalization.
-											<br />
+											<br /><br />
 											Dedicate your time to what really matters. Mastering fluency for the future!
 										</p>
-										<a href="/register" download="What To Do About Canada's Declining Math Scores" className="continue-reading">Rely on our carefully researched, step-by-step guide</a>
+										<a href="/register" className="continue-reading">Rely on our carefully researched, step-by-step guide</a>
 									</div>
 								</div>
 							</div>
@@ -58,10 +57,10 @@ class HowItWorks extends React.Component {
 										</div>
 										<p className="intro">
 																				Once your child has internalized the strategy, the next step is five minutes of concentrated work/day. That's it. While your child works, our proprietary analytics software will work behind the scenes to analyze your child's performance.
-									<br />
+									<br /><br />
 									Motivation is critical to your child's success and general well-being. Prolonged effort can be suboptimal in primary mathematics. The Pttrns method limits the burden on your child and makes learning enjoyable.
 										</p>
-										<a href="/register" download="What To Do About Canada's Declining Math Scores" className="continue-reading">Spend only 5 minutes a day</a>
+										<a href="/register" className="continue-reading">Spend only 5 minutes a day</a>
 									</div>
 								</div>
 							</div>
