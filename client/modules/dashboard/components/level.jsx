@@ -4,11 +4,16 @@ import { Row, Col, Input, Grid } from 'react-bootstrap';
 class Level extends React.Component {
   render() {
     return (
-      <div className='step'>
-        <div className='info'>
-          {this.props.title}
-        </div> 
-        <a href={this.props.link} className='button'> Start </a> 
+      <div className="project col-md-4">
+        <div className="info">
+          <div className="name">{this.props.title}</div>
+          <div className="last-update">
+            This is an awesome description of the learning module.
+          </div>
+        </div>
+        <div className="members">
+          <a href={this.props.link} className='button text-center'> Start {this.props.title} </a> 
+        </div>
       </div>
     )
   }

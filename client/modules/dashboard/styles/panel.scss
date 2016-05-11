@@ -2,9 +2,10 @@
 
 #panel {
   background-color: #fff;
-  padding: 0px;
+  padding: 30px;
 
   @media (max-width: $maxMedium) {
+    padding: 15px;
   }
 
   @media (max-width: $maxSmall) {
@@ -22,6 +23,12 @@
     @media (max-width: $maxMedium) {
       width: 95%;
     }
+  }
+
+  #steps {
+    display: block;
+    margin: auto;
+    padding-top: 30px;
   }
 
   form {

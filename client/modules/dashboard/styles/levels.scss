@@ -1,0 +1,49 @@
+@import '../../core/stylesheets/mixins.scss';
+
+
+.project-list {
+	margin-top: 20px;
+}
+
+.project {
+	margin-bottom: 25px;
+	padding: 13px;
+	border: 1px solid #E4EAF1;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+	border-radius: 5px;
+	min-height: 227px;
+	position: relative;
+	
+	.info {
+		padding: 20px 0 30px;
+		text-align: center;
+
+		.name {
+			font-size: 20px;
+			color: #8C5DAC;
+			color: #5D93AC;
+			font-weight: 600;
+		}
+
+		.category {
+			font-weight: 600;
+			color: #444;
+		}
+
+		.last-update {
+			font-size: 13px;
+			color: #8C939E;
+			margin-top: 7px;
+		}
+	}
+
+	.members {
+		position: absolute;
+		bottom: 13px;
+		width: 91%;
+
+		a {
+			display: block;
+		}
+	}
+}

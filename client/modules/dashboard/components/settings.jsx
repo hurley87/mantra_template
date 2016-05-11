@@ -15,7 +15,6 @@ class Settings extends React.Component {
       <div className={ this.props.toggle ? 'show-menu settings-wrapper' : 'hide-menu settings-wrapper' }>
         <Header title='Profile'/>
         <div id='content'>
-          <Sidebar />
             { this.props.getView() == 'dashboard' ? <Dashboard points={this.props.points} profile={this.props.profile} ratio={this.props.ratio} /> : null } 
             { this.props.getView() == 'profile' ? <Profile profile={this.props.profile} updateProfile={this.props.updateProfile} /> : null } 
             { this.props.getView() == 'billing' ? <Billing getToken={this.props.getToken} /> : null } 

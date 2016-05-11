@@ -8,7 +8,7 @@ class Dashboard extends React.Component {
     return (
       <div id='panel' className='dashboard'>
         <Metrics points={this.props.points} profile={this.props.profile} ratio={this.props.ratio} />
-        <div className='steps'>
+        <div className='steps row'>
           <Level points={this.props.profile.countPoints} title='Counting' link='/counting' />
           <Level points={this.props.profile.addPoints} title='Addition' link='/addition' />
           <Level points={this.props.profile.subPoints} title='Subtraction' link='/subtraction' />
