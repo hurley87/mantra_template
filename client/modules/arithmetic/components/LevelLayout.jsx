@@ -10,7 +10,7 @@ class LevelLayout extends React.Component {
           <span className="number">
           { this.props.levelFinished ? <i className="ion-checkmark-circled"></i> : null }
           { this.props.levelLocked ? <i className="fa fa-lock"></i>  : null }
-          { !this.props.levelFinished && !this.props.levelLocked ? <span><span className='questionDifficulty'>{this.props.question.difficulty}</span><i className="fa fa-heart"></i></span>  : null }
+          { !this.props.levelFinished && !this.props.levelLocked ? <span><i className="fa fa-heart"></i></span>  : null }
           </span> 
           {this.props.question.title}
         </div>
