@@ -1,5 +1,6 @@
 import {useDeps, composeAll, composeWithTracker, compose} from 'mantra-core';
 import Settings from '../components/settings.jsx';
+import Loading from '../components/Loading.jsx';
 
 export const composer = ({context}, onData) => {
   const {LocalState, Meteor, Collections} = context();
@@ -31,6 +32,6 @@ export const depsMapper = (context, actions) => ({
 });
 
 export default composeAll(
-  composeWithTracker(composer),
+  composeWithTracker(composer, Loading),
   useDeps(depsMapper)
 )(Settings);

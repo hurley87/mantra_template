@@ -1,6 +1,7 @@
 import {useDeps, composeAll, composeWithTracker, compose} from 'mantra-core';
 import NewQuestion from '../components/new_question.jsx';
 import { _ } from 'lodash';
+import Loading from '../components/Loading.jsx';
 
 export const composer = ({context, questionId}, onData) => {
   const {LocalState, Collections, FlowRouter} = context();
@@ -72,7 +73,7 @@ export const depsMapper = (context, actions) => ({
 });
 
 export default composeAll(
-  composeWithTracker(composer),
+  composeWithTracker(composer, Loading),
   useDeps(depsMapper)
 )(NewQuestion);
 
