@@ -28,7 +28,11 @@
     background: #5188BF;
     color: #fff;
     z-index: 99;
-    padding: 19px 75px;
+    padding: 19px 52px;
+
+    @media (max-width: $maxMedium) {
+      padding: 19px 22px;
+    }
 
     @media (max-width: $maxSmall) {
       padding-left: 23px;
