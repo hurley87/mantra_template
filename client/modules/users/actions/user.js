@@ -18,11 +18,18 @@ export default {
         if(err){
           console.log(err)
         }
-        FlowRouter.go('/profile')
+        const userId = Meteor.userId();
+        if(userId) {
+          FlowRouter.go('/profile');
+        } else {
+          LocalState.set('CREATE_USER', 'Your email is already associated with an account.');
+          FlowRouter.go('/register');
+        } 
       });
     });
   },  
   clearErrors({LocalState}) {
+    console.log('hey')
     return LocalState.set('SAVING_ERROR', null)
   }
 }

@@ -1,30 +1,6 @@
 @import './mixins.scss';
 
 #home3 {
-  .st-container {
-    position: relative;
-    overflow: hidden;
-    font-family: helvetica;
-
-    &.nav-effect {
-      .nav-menu {
-        @include transform(translate3d(0, 0, 0));
-
-        a {
-          @include transform(translate3d(0, 0, 0));
-        }
-      }
-      .st-pusher {
-        @include transform(translate3d(-320px, 0, 0));
-        box-shadow: 5px 0px 20px 0px rgba(0, 0, 0, 0.5);
-
-        @media(max-width: 767px) {
-          @include transform(translate3d(-220px, 0, 0));
-        }
-      }
-    }
-  }
-
   .st-pusher {
     position: relative;
     left: 0;
@@ -247,9 +223,10 @@
           }
 
           @media (max-width: 400px) {
-            width: 65%;
+            width: 80%;
             margin: 0 auto;
             margin-bottom: 25px;
+            padding: 20px 30px;
           }
 
         }
@@ -325,6 +302,7 @@
 
       @media (max-width: 991px) {
         margin-top: 10px;
+        padding: 20px;
       }
 
       .info {
@@ -361,7 +339,7 @@
           img {
             margin: 0 auto !important;
             margin-top: 20px;
-            float: none;
+            float: none !important;
           }
         }
       }
