@@ -19,6 +19,7 @@ class Forgot extends React.Component {
                 <div className="formy">
                   <div className="row">
                     <div className="col-md-12">
+                      { this.props.error ? <p className='alert alert-danger'>{this.props.error}</p> : null }
                       <Form
                           // Supply callbacks to both valid and invalid 
                           // submit attempts 
