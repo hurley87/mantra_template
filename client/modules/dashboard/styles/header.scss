@@ -17,6 +17,8 @@
     padding-bottom: 0;
     padding-top: 0px;
     min-height: 0px;
+    position: relative;
+    z-index: 999999999;
   }
 
   .menubar {
