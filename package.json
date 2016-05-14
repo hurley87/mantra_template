@@ -39,5 +39,8 @@
     "react-mounter": "^1.0.0",
     "stripe": "^4.6.0"
   },
+  "scripts": {
+    "deploy": "DEPLOY_HOSTNAME=galaxy.meteor.com meteor deploy www.pttrns.ca --settings ./settings.json"
+  },
   "private": true
 }
