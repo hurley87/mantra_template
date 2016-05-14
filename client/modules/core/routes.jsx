@@ -39,6 +39,9 @@ import NewQuestion from '../questions/containers/new_question.js';
 import CountingView from '../questions/containers/CountingView.js';
 import ComingSoon from '../arithmetic/components/ComingSoon.jsx';
 
+//video
+import VideoLesson from '../arithmetic/containers/VideoLesson.js';
+
 // store
 import StoreFront from '../store/containers/store.js';
 import ThankYou from '../store/components/thank_you.jsx';
@@ -351,6 +354,15 @@ export default function(injectDeps, {FlowRouter}) {
     action() {
       mount(MarketingLayoutCtx, {
         content: () => (<Jobs />)
+      })
+    }
+  });
+
+    FlowRouter.route('/video', {
+    name: 'video.lesson',
+    action() {
+      mount(QuestionLayoutCtx, {
+        content: () => (<VideoLesson />)
       })
     }
   });

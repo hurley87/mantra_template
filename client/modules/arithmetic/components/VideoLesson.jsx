@@ -1,5 +1,6 @@
 import React from 'react';
 import { Row, Col, Input, Grid } from 'react-bootstrap';
+import Video from '../../dashboard/components/video.jsx';
 
 
 
@@ -15,13 +16,8 @@ class VideoLesson extends React.Component {
            		Video Lesson <a href='/profile'><span className='pull-right'> <i className="fa fa-heart"></i></span></a>
         	</div>
 
-        	<div id='panel' className='dashboard'>
-                <div className='steps row'>
-          			<div className='col-md-4'>
-            			<Level  />
-          			</div>
-        		</div>
-      		</div>
+            			<Video  />
+
       	</div>
     )
   }
