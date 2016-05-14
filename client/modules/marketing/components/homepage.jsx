@@ -31,7 +31,7 @@ class Homepage extends React.Component {
                 <div className="container">
                   <div className="row header">
                     <div className="col-md-12">
-                      <h2>Help your child master single-digit arithemtic</h2>
+                      <h2>Help your child master single-digit arithmetic</h2>
                       <p>Pttrns is a series of enlightend tests that train a student to quickly become fluent in arithemtic.
                        </p>
                     </div>
