@@ -13,7 +13,15 @@ class Video extends React.Component {
     </section>
 
     <section className="hero">
-      <img src="http://lorempixel.com/1000/500/abstract" />
+
+          <div className="wistia_responsive_padding">
+
+              <div className="wistia_responsive_wrapper">
+                  <div className="wistia_embed wistia_async_4swzw9d6yo videoFoam=true">&nbsp;
+                  </div>
+              </div>
+          </div>
+
     </section>
 
     <section className="details">

@@ -16,7 +16,7 @@ class VideoLesson extends React.Component {
            		Video Lesson <a href='/profile'><span className='pull-right'> <i className="fa fa-heart"></i></span></a>
         	</div>
 
-            			<Video  />
+          <Video  />
 
       	</div>
     )

@@ -24,3 +24,22 @@ section{
   font-weight: 100;
 }
 
+
+.wistia_responsive_padding{
+  padding:56.25% 0 0 0;
+  position:relative;
+}
+
+.wistia_responsive_wrapper{
+  height:100%;
+  left:0;
+  position:absolute;
+  top:0;
+  width:100%;
+}
+
+.wistia_embed 
+.wistia_async_4swzw9d6yo{
+  height: 100%;
+  width: 100%;
+}
