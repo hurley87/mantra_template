@@ -5,7 +5,8 @@ import { Form, ValidatedInput, RadioGroup, Radio } from 'react-bootstrap-validat
 class ContactForm extends React.Component {
   render() {
     return (
-		<div>			 
+		<div>		
+      { this.props.error ? <p className='alert alert-danger'>{this.props.error}</p> : null }	 
 			 <Form
             // Supply callbacks to both valid and invalid 
             // submit attempts 

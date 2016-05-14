@@ -49,22 +49,17 @@
           margin-bottom: 10px;
         }
 
-
-        .questionDifficulty {
-          position: absolute;
-          color: #fff;
-          font-size: 20px;
-          top: 7px;          
-          left: 12px;
-        }
-
         .ion-checkmark-circled {
-          font-size: 38px;
+          font-size: 34px;
           color: #56D0B3;
           position: relative;
           top: 6px;
           left: -6px;
           margin-right: -8px;
+        }
+
+        .fa-heart {
+          font-size: 24px;
         }
       }
     }

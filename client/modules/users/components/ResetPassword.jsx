@@ -10,10 +10,7 @@ class ResetPassword extends React.Component {
         <Grid>
           <Row className='header'>
             <Col md={12}>
-              <h3 className="logo">
-                <a href="/">Pi Academy</a>
-              </h3>
-              <h4>Set up your new account today.</h4>
+              <h4>Reset Your Password</h4>
             </Col>
           </Row>
           <Row>
@@ -27,11 +24,22 @@ class ResetPassword extends React.Component {
                           // submit attempts 
                           onValidSubmit={this._handleValidSubmit.bind(this)}
                           onInvalidSubmit={this._handleInvalidSubmit.bind(this)}>
+
+                          <ValidatedInput
+                              type='password'
+                              name='old_password'
+                              label='Old Password'
+                              validate='required,isLength:6:30'
+                              errorHelp={{
+                                  required: 'Please specify a password',
+                                  isLength: 'Password must be at least 6 characters'
+                              }}
+                          />
            
                           <ValidatedInput
                               type='password'
                               name='password'
-                              label='Password'
+                              label='New Password'
                               validate='required,isLength:6:30'
                               errorHelp={{
                                   required: 'Please specify a password',
@@ -42,7 +50,7 @@ class ResetPassword extends React.Component {
                           <ValidatedInput
                               type='password'
                               name='password-confirm'
-                              label='Confirm Password'
+                              label='Confirm New Password'
                               validate={(val, context) => val === context.password}
                               errorHelp='Passwords do not match'
                           />
@@ -70,9 +78,13 @@ class ResetPassword extends React.Component {
   }
 
   _handleValidSubmit(values) {
-    const reset_token = Session.get('resetPasswordToken')
-    Accounts.resetPassword(reset_token, values.password, function(){
-      FlowRouter.go('/login');
+    const reset_token = Session.get('resetPasswordToken');
+    Accounts.resetPassword(reset_token, values.password, function(err){
+      if(err) {
+        console.log(err)
+      } else {
+        FlowRouter.go('/login');
+      }
     });
   }
 
@@ -83,10 +95,10 @@ class ResetPassword extends React.Component {
 }
 
  
-  Accounts.onResetPasswordLink(function(token, done) {
-    FlowRouter.go('/reset');
-    Session.set('resetPasswordToken', token);
-  })
+Accounts.onResetPasswordLink(function(token, done) {
+  FlowRouter.go('/reset');
+  Session.set('resetPasswordToken', token);
+})
 
 
 export default ResetPassword;

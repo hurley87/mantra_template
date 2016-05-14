@@ -12,7 +12,7 @@ class Level extends React.Component {
           </div>
         </div>
         <div className="members">
-          <a href={this.props.link} className='button text-center'> Start {this.props.title} </a> 
+          <a href={this.props.link} className='button text-center'> Start </a> 
         </div>
       </div>
     )

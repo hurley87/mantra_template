@@ -1,5 +1,4 @@
 import {useDeps, composeAll, composeWithTracker, compose} from 'mantra-core';
-
 import IndexLayout from '../components/IndexLayout.jsx';
 
 export const composer = ({context, type}, onData) => {
