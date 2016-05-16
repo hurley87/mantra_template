@@ -15,11 +15,11 @@ export default {
 		LocalState.set('STORE_VIEW', 'textbook')
 	},
 
-  getCard(){
+  getCard({LocalState}, amount, name, description){
 
     var handler = StripeCheckout.configure({
         key: Meteor.settings.public.stripe.testPublishableKey,
-        image: 'images/bg4.png',
+        image: 'images/circle-icons/full-color/calculator.png',
         locale: 'auto',
         token: function(token) {
           if(token){
@@ -38,18 +38,11 @@ export default {
     });
 
     handler.open({
-      name: 'Demo Site',
-      description: '2 widgets',
+      name: name,
+      description: description,
       currency: "cad",
-      amount: 2000
+      amount: amount
     });
-
-    // if(response.error)
-    // Meteor.call('chargeCard', result.id, (err) => {
-    // //    if (err) {
-    // //      console.log(err)
-    // //    }
-    // // });
   }
 
 }

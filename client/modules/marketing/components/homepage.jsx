@@ -13,7 +13,6 @@ class Homepage extends React.Component {
         <div className={ this.props.toggle ? 'st-container nav-effect' : 'st-container' }>
           <div className="st-pusher">
             <div className="st-content">
-
               <div id="hero">
                 <div id="cover-image" className="animated fadeIn">
                   <div className="container">

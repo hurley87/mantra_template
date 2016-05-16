@@ -45,6 +45,7 @@ import VideoLesson from '../arithmetic/containers/VideoLesson.js';
 // store
 import StoreFront from '../store/containers/store.js';
 import ThankYou from '../store/components/thank_you.jsx';
+import Pricing from '../store/components/pricing.jsx';
 
 // loading
 import Loading from '../store/components/loading.jsx';
@@ -235,7 +236,7 @@ export default function(injectDeps, {FlowRouter}) {
   FlowRouter.route('/store', {
     name: 'store.front',
     action() {
-      mount(QuestionLayoutCtx, {
+      mount(DashboardLayoutCtx, {
         content: () => (<StoreFront />)
       })
     }
@@ -298,8 +299,8 @@ export default function(injectDeps, {FlowRouter}) {
   FlowRouter.route('/help', {
     name: 'dashboard.help',
     action() {
-      mount(QuestionLayoutCtx, {
-        content: () => (<Contact />)
+      mount(DashboardLayoutCtx, {
+        content: () => (<Pricing />)
       })
     }
   });

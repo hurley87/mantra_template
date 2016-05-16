@@ -1,5 +1,6 @@
 export default {
   showMenu({LocalState}) {
+    console.log('hey')
     const isToggle = LocalState.get('TOGGLE');
     if(isToggle) {
       return LocalState.set('TOGGLE', false)

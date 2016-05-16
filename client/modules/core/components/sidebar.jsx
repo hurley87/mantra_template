@@ -46,7 +46,7 @@ const Sidebar = ({LocalState, profile}) => (
         <ul>
           <li onClick={LocalState.set('TOGGLE', false)}>
             <a href="/store" className={ location.pathname == '/store' ? 'active' : null }>
-              <i className="ion-archive"></i> <span>Store</span>
+              <i className="ion-flash"></i> <span>Upgrade</span>
 
             </a>
           </li>
