@@ -1,14 +1,35 @@
 import React from 'react';
 import { Row, Col, Input, Grid } from 'react-bootstrap';
-import Header from './header.jsx';
+import Header from '../containers/header.js';
+import ContactForm from '../../marketing/containers/Contact.js';
 
 class Help extends React.Component {
   render() {
     return (
-      <div>
+      <div className={ this.props.toggle ? 'show-menu' : 'hide-menu' }>
         <Header title='Help' />
-        <div className={ this.props.toggle ? 'show-menu' : 'hide-menu' }>
-          
+        <div id="pricing-alt">
+	        <div id="first-option">
+	          <div className="row header">
+	            <div className="col-md-12">
+	              <h3>Different plans for everyone</h3>
+	              <p>Choose the pricing that fits your business needs</p>
+	            </div>
+	          </div>
+	          <br/><br/>
+	          <div className='row'>
+	          	<div className='col-md-2'>
+	          	&nbsp;
+	          	</div>
+	          	<div className='col-md-6'>
+	          		<ContactForm />
+	          	</div>
+	          	<div className='col-md-2'>
+	          		<p><strong>Email:</strong> hurley_w@rmc.ca</p>
+	          		<p><strong>Phone:</strong> 647-284-5023</p>
+	          	</div>
+	          </div>
+	        </div>
         </div>
       </div>
     )

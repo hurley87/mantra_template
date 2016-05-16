@@ -45,7 +45,7 @@ import VideoLesson from '../arithmetic/containers/VideoLesson.js';
 // store
 import StoreFront from '../store/containers/store.js';
 import ThankYou from '../store/components/thank_you.jsx';
-import Pricing from '../store/components/pricing.jsx';
+import Help from '../dashboard/containers/help.js';
 
 // loading
 import Loading from '../store/components/loading.jsx';
@@ -140,7 +140,6 @@ export default function(injectDeps, {FlowRouter}) {
       })
     }
   });
-
 
   // exercises
   FlowRouter.route('/addition', {
@@ -300,7 +299,7 @@ export default function(injectDeps, {FlowRouter}) {
     name: 'dashboard.help',
     action() {
       mount(DashboardLayoutCtx, {
-        content: () => (<Pricing />)
+        content: () => (<Help />)
       })
     }
   });

@@ -14,8 +14,6 @@ class StoreFront extends React.Component {
         {this.props.getView() == 'textbook' ? <Textbook getCard = {this.props.getCard} /> : null}
         {this.props.getView() == 'flashcards' ? <Flashcards /> : null}
       </div>
-     
-    
     )
   }
 }

@@ -13,7 +13,7 @@ export const depsMapper = (context, actions) => ({
 	textbookView: actions.store.textbookView,
 	formView: actions.store.formView,
 	getCard: actions.store.getCard,
-  	context: () => context
+  context: () => context
 });
 
 export default composeAll(
