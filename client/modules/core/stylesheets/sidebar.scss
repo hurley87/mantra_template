@@ -8,6 +8,8 @@
   width: 230px;
   z-index: 999;
   min-height: 100%;
+  overflow: scroll;
+  bottom: 0;
 
   @include transition(all .2s linear);
 

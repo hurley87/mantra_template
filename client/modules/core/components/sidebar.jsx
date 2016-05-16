@@ -1,7 +1,7 @@
 import React from 'react';
 import{ Grid, Row, Col, PageHeader } from 'react-bootstrap';
 
-const Sidebar = ({LocalState, profile}) => (
+const Sidebar = ({LocalState, Meteor, profile}) => (
   <div>
     <div id="sidebar-dark" className="main-sidebar">
       <div className="current-user">
@@ -42,7 +42,7 @@ const Sidebar = ({LocalState, profile}) => (
         </ul>
       </div>
       <div className="menu-section">
-        <h3>Learn More</h3>
+        <h3>More</h3>
         <ul>
           <li onClick={LocalState.set('TOGGLE', false)}>
             <a href="/store" className={ location.pathname == '/store' ? 'active' : null }>
@@ -59,6 +59,11 @@ const Sidebar = ({LocalState, profile}) => (
           <li onClick={LocalState.set('TOGGLE', false)}>
             <a href="/help" className={ location.pathname == '/help' ? 'active' : null }>
               <i className="ion-help"></i> <span>Help</span>
+            </a>
+          </li>
+          <li onClick={LocalState.set('TOGGLE', false)}>
+            <a href="#" onClick={Meteor.logout.bind(this)}>
+              <i className="ion-log-out"></i> <span>Logout</span>
             </a>
           </li>
         </ul>
