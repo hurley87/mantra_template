@@ -9,12 +9,6 @@ class Textbook extends React.Component {
       <Header title='Upgrade' />
       <div id="pricing-alt">
         <div id="first-option">
-          <div className="row header">
-            <div className="col-md-12">
-              <h3>Different plans for everyone</h3>
-              <p>Choose the pricing that fits your business needs</p>
-            </div>
-          </div>
           <div className="row charts">
             <div className="col-sm-4">
               <div className="chart first">

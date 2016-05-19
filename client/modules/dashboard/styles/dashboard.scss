@@ -1,6 +1,20 @@
 @import '../../core/stylesheets/mixins.scss';
 
 .dashboard {
+
+  .welcome {
+    padding-bottom: 30px;
+    h3 {
+      font-size: 20px;
+      color: #8C5DAC;
+      color: #5D93AC;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    p {
+      font-size: 13px;
+      color: #8C939E;    }
+  }
   .metrics {
     background: #5188BF;
     border-radius: 5px;

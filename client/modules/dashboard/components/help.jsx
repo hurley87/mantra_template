@@ -12,11 +12,9 @@ class Help extends React.Component {
 	        <div id="first-option">
 	          <div className="row header">
 	            <div className="col-md-12">
-	              <h3>Different plans for everyone</h3>
-	              <p>Choose the pricing that fits your business needs</p>
+	              <h3>&nbsp;</h3>
 	            </div>
 	          </div>
-	          <br/><br/>
 	          <div className='row'>
 	          	<div className='col-md-2'>
 	          	&nbsp;

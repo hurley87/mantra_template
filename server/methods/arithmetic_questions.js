@@ -11,7 +11,7 @@ export default function () {
       title: 'This is the first ADD module.',
       operator: '+',
       lowerLimit: 0,
-      upperLimit: 5,
+      upperLimit: 9,
       difficulty: 1
     });
     ArithmeticQuestions.insert({
@@ -19,306 +19,441 @@ export default function () {
       max: '7',
       title: 'This is the second ADD module.',
       operator: '+',
-      lowerLimit: 6,
-      upperLimit: 15,
-      difficulty: 2
+      lowerLimit: 10,
+      upperLimit: 19,
+      difficulty: 1
     });
     ArithmeticQuestions.insert({
       min: '3',
       max: '8',
       title: 'This is the third ADD module.',
       operator: '+',
-      lowerLimit: 16,
-      upperLimit: 30,
-      difficulty: 3
+      lowerLimit: 20,
+      upperLimit: 29,
+      difficulty: 1
     });
     ArithmeticQuestions.insert({
       min: '4',
       max: '9',
       title: 'This is the fourth ADD module.',
       operator: '+',
-      lowerLimit: 31,
-      upperLimit: 40,
-      difficulty: 4
+      lowerLimit: 30,
+      upperLimit: 39,
+      difficulty: 1
     });
     ArithmeticQuestions.insert({
       min: '5',
       max: '10',
       title: 'This is the fifth ADD module.',
       operator: '+',
-      lowerLimit: 41,
-      upperLimit: 70,
-      difficulty: 5
+      lowerLimit: 40,
+      upperLimit: 49,
+      difficulty: 1
     });
     ArithmeticQuestions.insert({
       min: '6',
       max: '11',
       title: 'This is the sixth ADD module.',
       operator: '+',
-      lowerLimit: 71,
-      upperLimit: 100,
-      difficulty: 6
+      lowerLimit: 50,
+      upperLimit: 59,
+      difficulty: 1
     });
     ArithmeticQuestions.insert({
       min: '7',
       max: '12',
       title: 'This is the sixth ADD module.',
       operator: '+',
-      lowerLimit: 101,
-      upperLimit: 150,
-      difficulty: 7
+      lowerLimit: 60,
+      upperLimit: 69,
+      difficulty: 1
+    });
+    ArithmeticQuestions.insert({
+      min: '8',
+      max: '13',
+      title: 'This is the first ADD module.',
+      operator: '+',
+      lowerLimit: 70,
+      upperLimit: 79,
+      difficulty: 1
+    });
+    ArithmeticQuestions.insert({
+      min: '9',
+      max: '14',
+      title: 'This is the second ADD module.',
+      operator: '+',
+      lowerLimit: 80,
+      upperLimit: 89,
+      difficulty: 1
+    });
+    ArithmeticQuestions.insert({
+      min: '10',
+      max: '15',
+      title: 'This is the second ADD module.',
+      operator: '+',
+      lowerLimit: 90,
+      upperLimit: 100,
+      difficulty: 1
     });
     ArithmeticQuestions.insert({
       min: '0',
       max: '5',
-      title: 'This is the first subtraction module.',
+      title: 'This is the first SUB module.',
       operator: '-',
       lowerLimit: 0,
-      upperLimit: 5,
+      upperLimit: 9,
       difficulty: 1
     });
     ArithmeticQuestions.insert({
       min: '2',
       max: '7',
-      title: 'This is the second subtraction module.',
+      title: 'This is the second SUB module.',
       operator: '-',
-      lowerLimit: 6,
-      upperLimit: 15,
-      difficulty: 2
+      lowerLimit: 10,
+      upperLimit: 19,
+      difficulty: 1
     });
     ArithmeticQuestions.insert({
       min: '3',
       max: '8',
-      title: 'This is the third subtraction module.',
+      title: 'This is the third SUB module.',
       operator: '-',
-      lowerLimit: 16,
-      upperLimit: 30,
-      difficulty: 3
+      lowerLimit: 20,
+      upperLimit: 29,
+      difficulty: 1
     });
     ArithmeticQuestions.insert({
       min: '4',
       max: '9',
-      title: 'This is the fourth subtraction module.',
+      title: 'This is the fourth SUB module.',
       operator: '-',
-      lowerLimit: 31,
-      upperLimit: 40,
-      difficulty: 4
+      lowerLimit: 30,
+      upperLimit: 39,
+      difficulty: 1
     });
     ArithmeticQuestions.insert({
       min: '5',
       max: '10',
-      title: 'This is the fifth subtraction module.',
+      title: 'This is the fifth SUB module.',
       operator: '-',
-      lowerLimit: 41,
-      upperLimit: 70,
-      difficulty: 5
+      lowerLimit: 40,
+      upperLimit: 49,
+      difficulty: 1
     });
     ArithmeticQuestions.insert({
       min: '6',
       max: '11',
-      title: 'This is the sixth subtraction module.',
+      title: 'This is the sixth SUB module.',
       operator: '-',
-      lowerLimit: 71,
-      upperLimit: 100,
-      difficulty: 6
+      lowerLimit: 50,
+      upperLimit: 59,
+      difficulty: 1
     });
     ArithmeticQuestions.insert({
       min: '7',
       max: '12',
-      title: 'This is the sixth subtraction module.',
+      title: 'This is the sixth SUB module.',
       operator: '-',
-      lowerLimit: 101,
-      upperLimit: 150,
-      difficulty: 7
+      lowerLimit: 60,
+      upperLimit: 69,
+      difficulty: 1
+    });
+    ArithmeticQuestions.insert({
+      min: '8',
+      max: '13',
+      title: 'This is the first SUB module.',
+      operator: '-',
+      lowerLimit: 70,
+      upperLimit: 79,
+      difficulty: 1
+    });
+    ArithmeticQuestions.insert({
+      min: '9',
+      max: '14',
+      title: 'This is the second SUB module.',
+      operator: '-',
+      lowerLimit: 80,
+      upperLimit: 89,
+      difficulty: 1
+    });
+    ArithmeticQuestions.insert({
+      min: '10',
+      max: '15',
+      title: 'This is the second ADD module.',
+      operator: '-',
+      lowerLimit: 90,
+      upperLimit: 100,
+      difficulty: 1
     });
     ArithmeticQuestions.insert({
       min: '1',
       max: '5',
-      title: 'This is the first multiplication module.',
+      title: 'This is the first SMULTImodule.',
       operator: 'x',
       lowerLimit: 0,
-      upperLimit: 5,
+      upperLimit: 9,
       difficulty: 1
     });
     ArithmeticQuestions.insert({
       min: '2',
       max: '7',
-      title: 'This is the second multiplication module.',
+      title: 'This is the second MULTI module.',
       operator: 'x',
-      lowerLimit: 6,
-      upperLimit: 15,
-      difficulty: 2
+      lowerLimit: 10,
+      upperLimit: 19,
+      difficulty: 1
     });
     ArithmeticQuestions.insert({
       min: '3',
       max: '8',
-      title: 'This is the third multiplication module.',
+      title: 'This is the third SMULTImodule.',
       operator: 'x',
-      lowerLimit: 16,
-      upperLimit: 30,
-      difficulty: 3
+      lowerLimit: 20,
+      upperLimit: 29,
+      difficulty: 1
     });
     ArithmeticQuestions.insert({
       min: '4',
       max: '9',
-      title: 'This is the fourth multiplication module.',
+      title: 'This is the fourth MULTI module.',
       operator: 'x',
-      lowerLimit: 31,
-      upperLimit: 40,
-      difficulty: 4
+      lowerLimit: 30,
+      upperLimit: 39,
+      difficulty: 1
     });
     ArithmeticQuestions.insert({
       min: '5',
       max: '10',
-      title: 'This is the fifth multiplication module.',
+      title: 'This is the fifth SMULTImodule.',
       operator: 'x',
-      lowerLimit: 41,
-      upperLimit: 70,
-      difficulty: 5
+      lowerLimit: 40,
+      upperLimit: 49,
+      difficulty: 1
     });
     ArithmeticQuestions.insert({
       min: '6',
       max: '11',
-      title: 'This is the sixth multiplication module.',
+      title: 'This is the sixth SMULTImodule.',
       operator: 'x',
-      lowerLimit: 71,
-      upperLimit: 100,
-      difficulty: 6
+      lowerLimit: 50,
+      upperLimit: 59,
+      difficulty: 1
     });
     ArithmeticQuestions.insert({
       min: '7',
       max: '12',
-      title: 'This is the sixth multiplication module.',
+      title: 'This is the sixth SMULTImodule.',
       operator: 'x',
-      lowerLimit: 101,
-      upperLimit: 150,
-      difficulty: 7
+      lowerLimit: 60,
+      upperLimit: 69,
+      difficulty: 1
+    });
+    ArithmeticQuestions.insert({
+      min: '8',
+      max: '13',
+      title: 'This is the first SMULTImodule.',
+      operator: 'x',
+      lowerLimit: 70,
+      upperLimit: 79,
+      difficulty: 1
+    });
+    ArithmeticQuestions.insert({
+      min: '9',
+      max: '14',
+      title: 'This is the second MULTI module.',
+      operator: 'x',
+      lowerLimit: 80,
+      upperLimit: 89,
+      difficulty: 1
+    });
+    ArithmeticQuestions.insert({
+      min: '10',
+      max: '15',
+      title: 'This is the second MULTI module.',
+      operator: 'x',
+      lowerLimit: 90,
+      upperLimit: 100,
+      difficulty: 1
     });
     ArithmeticQuestions.insert({
       min: '1',
       max: '5',
-      title: 'This is the first division module.',
+      title: 'This is the first SDIVmodule.',
       operator: '/',
       lowerLimit: 0,
-      upperLimit: 5,
+      upperLimit: 9,
       difficulty: 1
     });
     ArithmeticQuestions.insert({
       min: '2',
       max: '7',
-      title: 'This is the second division module.',
+      title: 'This is the second DIV module.',
       operator: '/',
-      lowerLimit: 6,
-      upperLimit: 15,
-      difficulty: 2
+      lowerLimit: 10,
+      upperLimit: 19,
+      difficulty: 1
     });
     ArithmeticQuestions.insert({
       min: '3',
       max: '8',
-      title: 'This is the third division module.',
+      title: 'This is the third SDIVmodule.',
       operator: '/',
-      lowerLimit: 16,
-      upperLimit: 30,
-      difficulty: 3
+      lowerLimit: 20,
+      upperLimit: 29,
+      difficulty: 1
     });
     ArithmeticQuestions.insert({
       min: '4',
       max: '9',
-      title: 'This is the fourth division module.',
+      title: 'This is the fourth DIV module.',
       operator: '/',
-      lowerLimit: 31,
-      upperLimit: 40,
-      difficulty: 4
+      lowerLimit: 30,
+      upperLimit: 39,
+      difficulty: 1
     });
     ArithmeticQuestions.insert({
       min: '5',
       max: '10',
-      title: 'This is the fifth division module.',
+      title: 'This is the fifth SDIVmodule.',
       operator: '/',
-      lowerLimit: 41,
-      upperLimit: 70,
-      difficulty: 5
+      lowerLimit: 40,
+      upperLimit: 49,
+      difficulty: 1
     });
     ArithmeticQuestions.insert({
       min: '6',
       max: '11',
-      title: 'This is the sixth division module.',
+      title: 'This is the sixth SDIVmodule.',
       operator: '/',
-      lowerLimit: 71,
-      upperLimit: 100,
-      difficulty: 6
+      lowerLimit: 50,
+      upperLimit: 59,
+      difficulty: 1
     });
     ArithmeticQuestions.insert({
       min: '7',
       max: '12',
-      title: 'This is the sixth division module.',
+      title: 'This is the sixth SDIVmodule.',
       operator: '/',
-      lowerLimit: 101,
-      upperLimit: 150,
-      difficulty: 7
+      lowerLimit: 60,
+      upperLimit: 69,
+      difficulty: 1
+    });
+    ArithmeticQuestions.insert({
+      min: '8',
+      max: '13',
+      title: 'This is the first SDIVmodule.',
+      operator: '/',
+      lowerLimit: 70,
+      upperLimit: 79,
+      difficulty: 1
+    });
+    ArithmeticQuestions.insert({
+      min: '9',
+      max: '14',
+      title: 'This is the second DIV module.',
+      operator: '/',
+      lowerLimit: 80,
+      upperLimit: 89,
+      difficulty: 1
+    });
+    ArithmeticQuestions.insert({
+      min: '10',
+      max: '15',
+      title: 'This is the second DIV module.',
+      operator: '/',
+      lowerLimit: 90,
+      upperLimit: 100,
+      difficulty: 1
     });
     ArithmeticQuestions.insert({
       min: '1',
       max: '3',
-      title: 'This is the first counting module.',
+      title: 'This is the first SCOUNTmodule.',
       operator: 'c',
       lowerLimit: 0,
-      upperLimit: 5,
+      upperLimit: 9,
       difficulty: 1
     });
     ArithmeticQuestions.insert({
       min: '1',
       max: '4',
-      title: 'This is the second counting module.',
+      title: 'This is the second COUNT module.',
       operator: 'c',
-      lowerLimit: 6,
-      upperLimit: 15,
-      difficulty: 2
+      lowerLimit: 10,
+      upperLimit: 19,
+      difficulty: 1
     });
     ArithmeticQuestions.insert({
       min: '1',
       max: '5',
-      title: 'This is the third counting module.',
+      title: 'This is the third SCOUNTmodule.',
       operator: 'c',
-      lowerLimit: 16,
-      upperLimit: 30,
-      difficulty: 3
+      lowerLimit: 20,
+      upperLimit: 29,
+      difficulty: 1
+    });
+    ArithmeticQuestions.insert({
+      min: '1',
+      max: '6',
+      title: 'This is the fourth COUNT module.',
+      operator: 'c',
+      lowerLimit: 30,
+      upperLimit: 39,
+      difficulty: 1
     });
     ArithmeticQuestions.insert({
       min: '2',
-      max: '5',
-      title: 'This is the fourth counting module.',
+      max: '6',
+      title: 'This is the fifth SCOUNTmodule.',
       operator: 'c',
-      lowerLimit: 31,
-      upperLimit: 40,
-      difficulty: 4
+      lowerLimit: 40,
+      upperLimit: 49,
+      difficulty: 1
     });
     ArithmeticQuestions.insert({
-      min: '3',
-      max: '6',
-      title: 'This is the fifth counting module.',
+      min: '2',
+      max: '7',
+      title: 'This is the sixth SCOUNTmodule.',
       operator: 'c',
-      lowerLimit: 41,
-      upperLimit: 70,
-      difficulty: 5
+      lowerLimit: 50,
+      upperLimit: 59,
+      difficulty: 1
+    });
+    ArithmeticQuestions.insert({
+      min: '2',
+      max: '7',
+      title: 'This is the sixth SCOUNTmodule.',
+      operator: 'c',
+      lowerLimit: 60,
+      upperLimit: 69,
+      difficulty: 1
     });
     ArithmeticQuestions.insert({
       min: '3',
       max: '7',
-      title: 'This is the sixth counting module.',
+      title: 'This is the first SCOUNTmodule.',
       operator: 'c',
-      lowerLimit: 71,
-      upperLimit: 100,
-      difficulty: 6
+      lowerLimit: 70,
+      upperLimit: 79,
+      difficulty: 1
+    });
+    ArithmeticQuestions.insert({
+      min: '3',
+      max: '7',
+      title: 'This is the second COUNT module.',
+      operator: 'c',
+      lowerLimit: 80,
+      upperLimit: 89,
+      difficulty: 1
     });
     ArithmeticQuestions.insert({
       min: '4',
-      max: '8',
-      title: 'This is the sixth counting module.',
+      max: '7',
+      title: 'This is the second COUNT module.',
       operator: 'c',
-      lowerLimit: 101,
-      upperLimit: 150,
-      difficulty: 7
+      lowerLimit: 90,
+      upperLimit: 100,
+      difficulty: 1
     });
   });
 }
