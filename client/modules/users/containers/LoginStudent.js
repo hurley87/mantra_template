@@ -1,22 +1,21 @@
-import NewUser from '../components/NewUser.jsx';
+import LoginStudent from '../components/LoginStudent.jsx';
 import {useDeps, composeWithTracker, composeAll} from 'mantra-core';
 
 export const composer = ({context, clearErrors}, onData) => {
  const {LocalState} = context();
- const error = LocalState.get('CREATE_USER');
+ const error = LocalState.get('LOGIN_USER');
  onData(null, {error});
  
  return clearErrors;
 };
 
 export const depsMapper = (context, actions) => ({
- createStudent: actions.users.createStudent,
- clearErrors: actions.users.clearErrors,
- createMentor: actions.users.createMentor,
+ studentlogin: actions.logins.studentlogin,
+ clearErrors: actions.logins.clearErrors,
  context: () => context
 });
 
 export default composeAll(
  composeWithTracker(composer),
  useDeps(depsMapper)
-)(NewUser);
+)(LoginStudent);

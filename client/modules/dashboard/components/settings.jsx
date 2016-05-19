@@ -12,7 +12,7 @@ import Sidebar from '../containers/sidebar.js';
 class Settings extends React.Component {
   render() {
     return (
-      <div className={ this.props.toggle ? 'show-menu settings-wrapper' : 'hide-menu settings-wrapper' } onMouseMove={this.stopDrag}>
+      <div className={ this.props.toggle ? 'show-menu settings-wrapper' : 'hide-menu settings-wrapper' }>
         <Header title='Profile'/>
         <div id='content'>
             { this.props.getView() == 'dashboard' ? <Dashboard points={this.props.points} profile={this.props.profile} ratio={this.props.ratio} /> : null } 
@@ -23,9 +23,6 @@ class Settings extends React.Component {
         </div>
       </div>
     )
-  }
-  stopDrag(evt) {
-    console.log(evt)
   }
 }
 

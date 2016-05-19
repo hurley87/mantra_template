@@ -4,6 +4,13 @@ import { Form, ValidatedInput, RadioGroup, Radio } from 'react-bootstrap-validat
 
 
 class NewUser extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      student: false
+    }
+  }
   render () {
     return (
       <div id='signup'>
@@ -32,6 +39,7 @@ class NewUser extends React.Component {
                                       errorHelp={{
                                           required: 'Please specify if you are a parent, teacher or student.'
                                       }}
+                                      onChange={this.changeType.bind(this)}
                                       labelClassName=''
                                       wrapperClassName='userType'>
                               <Radio value='student' label='student'/>
@@ -41,7 +49,7 @@ class NewUser extends React.Component {
 
                           <ValidatedInput
                               type='text'
-                              label='Full Name'
+                              label='Username'
                               name='name'
                               validate='required,isLength:4:30'
                               errorHelp={{
@@ -49,17 +57,19 @@ class NewUser extends React.Component {
                                   isLength: 'Username must be at least 4 characters'
                               }}
                           />
-           
+
+                          { !this.state.student ?
                           <ValidatedInput
                               type='text'
                               label='Email'
                               name='email'
-                              validate='required,isEmail'
+                              placeholder='Email'
+                              validate='isEmail'
                               errorHelp={{
-                                  required: 'Please enter your email',
-                                  isEmail: 'Email is invalid'
+                                  isEmail: 'Please enter your email'
                               }}
                           />
+                          : null }
            
                           <ValidatedInput
                               type='password'
@@ -76,13 +86,15 @@ class NewUser extends React.Component {
                               type='password'
                               name='password-confirm'
                               label='Confirm Password'
-                              validate={(val, context) => val === context.password}
+                              validate={(val, context) => 
+                                val === context.password
+                              }
                               errorHelp='Passwords do not match'
                           />
            
                           <div className="checkbox">
                             <label>
-                                <Input type="checkbox" defaultChecked='checked' /> You have read & agree to the <a href="#">Terms of service</a>.
+                                <Input type="checkbox" defaultChecked='checked' /> You have read & agree to the <a href="/terms">Terms of service</a>.
                             </label>
                           </div>
            
@@ -107,9 +119,11 @@ class NewUser extends React.Component {
       </div>
     )
   }
-  
+  changeType(evt) {
+    evt.target.value == 'student' ? this.setState({ student: true }) : this.setState({ student: false })
+  }
   _handleValidSubmit(values) {
-    this.props.create(values.name, values.email, values.password, values.type, '' )
+    this.state.student ? this.props.createStudent(values.name, values.password, values.type) : this.props.createMentor(values.name, values.email, values.password, values.type)
   }
   _handleInvalidSubmit(errors, values) {
     console.log(errors)

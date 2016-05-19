@@ -25,6 +25,7 @@ import Jobs from '../marketing/components/jobs.jsx';
 // registration
 import NewUser from '../users/containers/NewUser.js';
 import LoginUser from '../users/containers/Login.js';
+import LoginStudent from '../users/containers/LoginStudent.js';
 import Settings from '../dashboard/containers/settings.js';
 import ResetPassword from '../users/containers/ResetPassword.js';
 import Forgot from '../users/containers/forgot.js';
@@ -109,6 +110,15 @@ export default function(injectDeps, {FlowRouter}) {
     action() {
       mount(MainLayoutCtx, {
         content: () => (<LoginUser />)
+      });
+    }
+  });
+
+  FlowRouter.route('/student', {
+    name: 'users.new',
+    action() {
+      mount(MainLayoutCtx, {
+        content: () => (<LoginStudent />)
       });
     }
   });

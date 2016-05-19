@@ -47,7 +47,7 @@ class ContactForm extends React.Component {
                 value={this.state.email}
                 onChange={this.fieldChanged.bind(this, 'email')}
                 placeholder='Email'
-                validate='required,isEmail'
+                validate='required, isEmail'
                 errorHelp={{
                     required: 'Please enter your email',
                     isEmail: 'Email is invalid'

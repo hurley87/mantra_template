@@ -3,14 +3,14 @@ import { Col, Row, Grid, Input, ButtonInput} from 'react-bootstrap';
 import { Form, ValidatedInput } from 'react-bootstrap-validation';
 
 
-class LoginUser extends React.Component {
+class LoginStudent extends React.Component {
   render () {
     return (
       <div id='signup'>
         <Grid>
           <Row className='header'>
             <Col md={12}>
-              <h4>Login</h4>
+              <h4>Student Login</h4>
             </Col>
           </Row>
           <Row>
@@ -28,12 +28,12 @@ class LoginUser extends React.Component {
            
                           <ValidatedInput
                               type='text'
-                              label='Email'
-                              name='email'
-                              validate='required,isEmail'
+                              label='Username'
+                              name='username'
+                              validate='required,isLength:4:30'
                               errorHelp={{
-                                  required: 'Please enter your email',
-                                  isEmail: 'Email is invalid'
+                                  required: 'Please enter your username',
+                                  isLength: 'Password must be at least 4 characters'
                               }}
                           />
            
@@ -56,12 +56,9 @@ class LoginUser extends React.Component {
                             className='button text-center'
                           />
                       </Form>
-                      <div className="checkbox">
-                        <a href="/forgot">Forgot your password?</a>
-                      </div>
-                      <div className="checkbox">
-                        <a href="/student">Have a student account?</a>
-                      </div>
+                        <div className="checkbox">
+                          <a href="/login">Use your email to login.</a>
+                        </div>
                     </div>
                   </div>            
                 </div>
@@ -77,7 +74,7 @@ class LoginUser extends React.Component {
   }
   
   _handleValidSubmit(values) {
-    this.props.login(values.email, values.password)
+    this.props.studentlogin(values.username, values.password)
   }
 
   _handleInvalidSubmit(errors, values) {
@@ -85,4 +82,4 @@ class LoginUser extends React.Component {
   }
 }
 
-export default LoginUser;
+export default LoginStudent;
