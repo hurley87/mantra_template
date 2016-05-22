@@ -1,3 +1,26 @@
+.time-chart {
+    .chart-type {
+        border: 1px solid #5188BF;
+        color: #5188BF;
+        line-height: 40px;
+        text-align: center;
+        border-radius: 5px;
+        font-size: 15px;
+        cursor: pointer;
+        transition: 1s all ease;
+        margin-bottom: 20px;
+
+        &:hover {
+            background-color: #5188BF;
+            color: #fff;
+        }
+    }
+    .active {
+        background-color: #5188BF;
+        color: #fff;
+    }
+}
+
 .top{
     margin-bottom: 10px;
     background-color: #3f5175;
@@ -42,8 +65,8 @@
 
 .line {
     fill: none;
-    stroke: #7dc7f4;
-    stroke-width: 5px;
+    stroke: #5188BF;
+    stroke-width: 2px;
 
 }
 

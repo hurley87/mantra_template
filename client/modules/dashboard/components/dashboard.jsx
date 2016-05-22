@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, Col, Input, Grid } from 'react-bootstrap';
 import Metrics from './metrics';
 import Level from '../containers/Level';
-import TimeChart from './TimeChart';
+import TimeChart from '../containers/TimeChart';
 
 class Dashboard extends React.Component {
   welcomeMessage() {
@@ -28,10 +28,10 @@ class Dashboard extends React.Component {
   metricsMessage() {
     return(
       <div className='row'>
-        <div className='welcome col-xs-12'>
-          <h3>Overall Statistics</h3>
-          <p>Explain why overall statics are important.</p>
-        </div>
+      <div className='welcome col-xs-12'>
+        <h3>Overall Statistics</h3>
+        <p>Explain why overall statics are important.</p>
+      </div>
       </div>
     )
   }
@@ -77,8 +77,8 @@ class Dashboard extends React.Component {
   render() {
     return (
       <div id='panel' className='dashboard'>
-        { this.props.points > 0 ? this.statsMessage() : null }
-        { this.props.points > 0 ? <TimeChart /> : null }
+        { this.props.points > 10 ? this.statsMessage() : null }
+        { this.props.points > 10 ? <TimeChart /> : null }
         { this.props.points > 0 ? this.metrics() : this.welcomeMessage() } 
         { this.props.points > 0 ? this.lessonsMessage() : null } 
         { this.exercises() }

@@ -5,6 +5,7 @@ import Dots from './Dots';
 import Axis from './Axis';
 import Grid from './Grid';
 import Tooltip from './ToolTip';
+import { _ } from 'lodash';
 
 
 class TimeChart extends React.Component {
@@ -13,7 +14,8 @@ class TimeChart extends React.Component {
   	this.state = {
   		tooltip:{ display:false,data:{key:'',value:''}},
   		width: 800,
-  		height: 300
+  		height: 300,
+  		type: '#'
   	}
   }
   componentWillMount() {
@@ -39,14 +41,53 @@ class TimeChart extends React.Component {
     }
   }
   render() {
-    let data=[
-        {question:1,time:180},
-        {question:2,time:250},
-        {question:3,time:150},
-        {question:4,time:150}
-    ];
+    let data=[];
+    let counts = this.props.counting_questions;
+    let adds = _.filter(this.props.questions, { 'operator': '+'});
+    let subs = _.filter(this.props.questions, { 'operator': '-'});
+    let multis = _.filter(this.props.questions, { 'operator': 'x'});
+    let divs = _.filter(this.props.questions, { 'operator': '/'});
+    let times = [];
 
-    data.pop();
+    switch(this.state.type) {
+    	case '#':
+    		times = _.map(counts, function(d,i) {
+    			return (d.end_time - d.start_time)/1000
+    		});
+    		break;
+    	case '+': 
+    		times = _.map(adds, function(d,i) {
+    			return (d.end_time - d.start_time)/1000
+    		});
+    		break;
+    	case '-':
+    		times = _.map(subs, function(d,i) {
+    			return (d.end_time - d.start_time)/1000
+    		});
+    		break;
+    	case 'x':
+    		times = _.map(multis, function(d,i) {
+    			return (d.end_time - d.start_time)/1000
+    		});
+    		break;
+    	case "/":
+    		times = _.map(divs, function(d,i) {
+    			return (d.end_time - d.start_time)/1000
+    		});
+    		break;
+    	default:
+    		return null
+
+    }
+
+    for(var i = 1; i < times.length; i++) {
+    	data.push({ question: i, time: times[i] })
+    }
+    
+    if(data.length > 20) {
+    	data = data.slice(Math.max(data.length - 20, 1))
+    }
+    
 
     let margin = {top: 15, right: 50, bottom: 20, left: 50},
         w = this.state.width - (margin.left + margin.right),
@@ -96,23 +137,42 @@ class TimeChart extends React.Component {
 		   .tickFormat("");
 
     return (
-        <div>
+        <div className='time-chart'>
+        	<div className='row'>
+        		<div className={ counts.length <= 4 ? 'hide' : 'col-md-2 col-xs-4'}>
+        			<div onClick={this.changeChartType.bind(this, '#')} className={ this.state.type == '#' ? 'chart-type active' : 'chart-type'}>Counting</div>
+        		</div>
+        		<div className={ adds.length <= 4 ? 'hide' : 'col-md-2 col-xs-4'}>
+        			<div onClick={this.changeChartType.bind(this, '+')} className={ this.state.type == '+' ? 'chart-type active' : 'chart-type'}>Addition</div>
+        		</div>
+        		<div className={ subs.length <= 4 ? 'hide' : 'col-md-2 col-xs-4'}>
+        			<div onClick={this.changeChartType.bind(this, '-')} className={ this.state.type == '-' ? 'chart-type active' : 'chart-type'}>Subtraction</div>
+        		</div>
+        		<div className={ multis.length <= 4 ? 'hide' : 'col-md-2 col-xs-4'}>
+        			<div onClick={this.changeChartType.bind(this, 'x')} className={ this.state.type == 'x' ? 'chart-type active' : 'chart-type'}>Mulitplication</div>
+        		</div>
+        		<div className={ divs.length <= 4 ? 'hide' : 'col-md-2 col-xs-4'}>
+        			<div onClick={this.changeChartType.bind(this, '/')} className={ this.state.type == '/' ? 'chart-type active' : 'chart-type'}>Division</div>
+        		</div>
+        	</div>
           <svg id='awesome' width={this.state.width} height={this.state.height}>
             <g transform={transform}>
-              <path className="line shadow" d={line(data)} strokeLinecap="round"/>
-              <Dots data={data} x={x} y={y} showToolTip={this.showToolTip.bind(this)} hideToolTip={this.hideToolTip.bind(this)}/>
               <Grid h={h} grid={yGrid} gridType='y'/>
               <Axis h={h} axis={yAxis} axisType="y" />
               <Axis h={h} axis={xAxis} axisType="x"/>
               <Tooltip tooltip={this.state.tooltip}/>
+              <path className="line shadow" d={line(data)} strokeLinecap="round"/>
+              <Dots data={data} x={x} y={y} showToolTip={this.showToolTip.bind(this)} hideToolTip={this.hideToolTip.bind(this)}/>
             </g>
           </svg>
         </div>
     );
   }
+  changeChartType(type) {
+  	this.setState({ type: type });
+  }
   showToolTip(evt) {
-  	evt.target.setAttribute('fill', '#000');
-  	console.log(evt.target);
+  	evt.target.setAttribute('fill', '#5188BF');
     this.setState({tooltip:{
         display:true,
         data: {

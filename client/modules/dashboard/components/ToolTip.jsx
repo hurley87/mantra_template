@@ -8,11 +8,9 @@ class Tooltip extends React.Component {
 	    let transform="";
 	    let x=0;
 	    let y=0;
-	    let width=100,height=35;
+	    let width=100,height=40;
 	    let transformText='translate('+width/2+',0)';
 	    let transformArrow="";
-
-	    console.log(this.props.tooltip.data);
 
 	    if(this.props.tooltip.display==true){
 	        var position = this.props.tooltip.pos;
@@ -37,12 +35,11 @@ class Tooltip extends React.Component {
 
 	    return (
 	        <g transform={transform}>
-	            <rect class="shadow" is width={width} height={height} rx="5" ry="5" visibility={visibility} fill="#5188BF" opacity=".9"/>
+	            <rect class="shadow" is width={width} height={height} rx="5" ry="5" visibility={visibility} fill="#5188BF"/>
 	            <polygon class="shadow" is points="10,0  30,0  20,10" transform={transformArrow}
 	                     fill="#5188BF" opacity=".9" visibility={visibility}/>
 	            <text is visibility={visibility} transform={transformText}>
-	                <tspan is x="0" text-anchor="middle" font-size="14px" fill="#ffffff">{this.props.tooltip.data.key}</tspan>
-	                <tspan is x="0" text-anchor="middle" dy="25" font-size="14px" fill="#a9f3ff">{this.props.tooltip.data.value + " seconds"}</tspan>
+	                <tspan is x="0" text-anchor="middle" dy="25" font-0ze="14px" fill="#a9f3ff">{this.props.tooltip.data.value + " seconds"}</tspan>
 	            </text>
 	        </g>
 	    );
