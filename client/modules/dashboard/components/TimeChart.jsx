@@ -12,7 +12,7 @@ class TimeChart extends React.Component {
   constructor(props) {
   	super(props);
   	this.state = {
-  		tooltip:{ display:false,data:{key:'',value:''}},
+  		tooltip:{ display:false,data: {question: {} }},
   		width: 800,
   		height: 300,
   		type: '#'
@@ -47,41 +47,55 @@ class TimeChart extends React.Component {
     let subs = _.filter(this.props.questions, { 'operator': '-'});
     let multis = _.filter(this.props.questions, { 'operator': 'x'});
     let divs = _.filter(this.props.questions, { 'operator': '/'});
-    let times = [];
+    let d3Data = [];
+
+    function questionData(d, operator) {
+      return { 
+        time: (d.end_time - d.start_time)/1000, 
+        isRight: d.guess == d.answer, 
+        operator: operator,
+        guess: d.guess,
+        answer: d.answer,
+        num1: d.num1,
+        num2: d.num2,
+        num3: d.num3
+      }
+    }
 
     switch(this.state.type) {
     	case '#':
-    		times = _.map(counts, function(d,i) {
-    			return (d.end_time - d.start_time)/1000
-    		});
+    		d3Data = _.map(counts, function(d,i) { return questionData(d, 'c'); });
     		break;
     	case '+': 
-    		times = _.map(adds, function(d,i) {
-    			return (d.end_time - d.start_time)/1000
-    		});
+    		d3Data = _.map(adds, function(d,i) { return questionData(d, '+'); });
     		break;
     	case '-':
-    		times = _.map(subs, function(d,i) {
-    			return (d.end_time - d.start_time)/1000
-    		});
+    		d3Data = _.map(subs, function(d,i) { return questionData(d, '-'); });
     		break;
     	case 'x':
-    		times = _.map(multis, function(d,i) {
-    			return (d.end_time - d.start_time)/1000
-    		});
+    		d3Data = _.map(multis, function(d,i) { return questionData(d, 'x'); });
     		break;
     	case "/":
-    		times = _.map(divs, function(d,i) {
-    			return (d.end_time - d.start_time)/1000
-    		});
+    		d3Data = _.map(divs, function(d,i) { return questionData(d, '/'); });
     		break;
     	default:
     		return null
 
     }
 
-    for(var i = 1; i < times.length; i++) {
-    	data.push({ question: i, time: times[i] })
+    for(var i = 1; i < d3Data.length; i++) {
+      let doc = d3Data[i];
+    	data.push({ 
+        question: i, 
+        time: doc.time, 
+        isRight: doc.isRight,
+        guess: doc.guess,
+        answer: doc.answer,
+        num1: doc.num1,
+        num2: doc.num2,
+        num3: doc.num3,
+        operator: doc.operator
+      });
     }
     
     if(data.length > 20) {
@@ -160,9 +174,9 @@ class TimeChart extends React.Component {
               <Grid h={h} grid={yGrid} gridType='y'/>
               <Axis h={h} axis={yAxis} axisType="y" />
               <Axis h={h} axis={xAxis} axisType="x"/>
-              <Tooltip tooltip={this.state.tooltip}/>
               <path className="line shadow" d={line(data)} strokeLinecap="round"/>
               <Dots data={data} x={x} y={y} showToolTip={this.showToolTip.bind(this)} hideToolTip={this.hideToolTip.bind(this)}/>
+              <Tooltip tooltip={this.state.tooltip}/>
             </g>
           </svg>
         </div>
@@ -176,9 +190,16 @@ class TimeChart extends React.Component {
     this.setState({tooltip:{
         display:true,
         data: {
-            key:evt.target.getAttribute('data-key'),
-            value:evt.target.getAttribute('data-value')
-            },
+            question: {
+              time: evt.target.getAttribute('data-time'),
+              num1: evt.target.getAttribute('data-num1'),
+              num2: evt.target.getAttribute('data-num2'),
+              num3: evt.target.getAttribute('data-num3'),
+              operator: evt.target.getAttribute('data-operator'),
+              answer: evt.target.getAttribute('data-answer'),
+              guess: evt.target.getAttribute('data-guess')
+            }
+        },
         pos:{
             x:evt.target.getAttribute('cx'),
             y:evt.target.getAttribute('cy')
@@ -189,8 +210,14 @@ class TimeChart extends React.Component {
   }
   hideToolTip(evt) {
     evt.target.setAttribute('fill', '#7dc7f4');
-    this.setState( {tooltip:{ display:false,data:{key:'',value:''}}});
+    this.setState( { tooltip: { display:false, data:{question:{}} }});
   }
 }
 
 export default TimeChart;
+
+
+
+
+
+
