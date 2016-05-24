@@ -39,6 +39,7 @@ import DivIndex from '../arithmetic/containers/DivIndex.js';
 import NewQuestion from '../questions/containers/new_question.js';
 import CountingView from '../questions/containers/CountingView.js';
 import ComingSoon from '../arithmetic/components/ComingSoon.jsx';
+import ProfileList from '../dashboard/containers/ProfileList.js';
 
 //video
 import VideoLesson from '../arithmetic/containers/VideoLesson.js';
@@ -119,6 +120,15 @@ export default function(injectDeps, {FlowRouter}) {
     action() {
       mount(MainLayoutCtx, {
         content: () => (<LoginStudent />)
+      });
+    }
+  });
+
+  FlowRouter.route('/students', {
+    name: 'users.new',
+    action() {
+      mount(QuestionLayoutCtx, {
+        content: () => (<ProfileList />)
       });
     }
   });

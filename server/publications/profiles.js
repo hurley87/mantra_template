@@ -13,4 +13,22 @@ export default function () {
 		const selector = {user: user_id};
 		return Profiles.find(selector);
 	});
+
+	Meteor.publish("searchProfiles", function(searchValue) {
+	  check(searchValue, String);
+	  if (!searchValue) {
+	    return Profiles.find({});
+	  }
+	  return Profiles.find(
+	    { $text: {$search: searchValue} },
+	    {
+	      fields: {
+	        score: { $meta: "textScore" }
+	      },
+	      sort: {
+	        score: { $meta: "textScore" }
+	      }
+	    }
+	  );
+	});
 }

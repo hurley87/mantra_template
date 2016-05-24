@@ -18,6 +18,7 @@
     "enzyme": "1.x.x",
     "eslint": "1.10.x",
     "eslint-plugin-react": "3.15.x",
+    "griddle-react": "^0.5.1",
     "i": "^0.3.4",
     "meteor-auth": "^0.1.1",
     "mocha": "^2.4.5",
@@ -37,6 +38,7 @@
     "react": "^0.14.6",
     "react-dom": "^0.14.6",
     "react-mounter": "^1.0.0",
+    "react-search-input": "^0.8.1",
     "stripe": "^4.6.0"
   },
   "private": true
