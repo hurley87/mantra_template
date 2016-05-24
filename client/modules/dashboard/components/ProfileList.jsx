@@ -30,9 +30,9 @@ class ProfileList extends React.Component {
     e.preventDefault();
     let students = [];
     for (var ref in this.refs) {
-        if(this.refs[ref].checked) {
-          students.push(ref)
-        }
+      if(this.refs[ref].checked) {
+        students.push(ref)
+      }
     }
     this.props.addStudents(students);
   }

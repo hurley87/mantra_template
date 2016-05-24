@@ -40,6 +40,8 @@ import NewQuestion from '../questions/containers/new_question.js';
 import CountingView from '../questions/containers/CountingView.js';
 import ComingSoon from '../arithmetic/components/ComingSoon.jsx';
 import ProfileList from '../dashboard/containers/ProfileList.js';
+import MyStudents from '../dashboard/containers/MyStudents.js';
+import StudentView from '../dashboard/containers/StudentView.js'
 
 //video
 import VideoLesson from '../arithmetic/containers/VideoLesson.js';
@@ -124,11 +126,29 @@ export default function(injectDeps, {FlowRouter}) {
     }
   });
 
-  FlowRouter.route('/students', {
-    name: 'users.new',
+  FlowRouter.route('/search', {
+    name: 'search',
     action() {
       mount(QuestionLayoutCtx, {
         content: () => (<ProfileList />)
+      });
+    }
+  });
+
+  FlowRouter.route('/students', {
+    name: 'students',
+    action() {
+      mount(QuestionLayoutCtx, {
+        content: () => (<MyStudents />)
+      });
+    }
+  });
+
+  FlowRouter.route('/students/:userId', {
+    name: 'students.view',
+    action({userId}) {
+      mount(QuestionLayoutCtx, {
+        content: () => (<StudentView userId={userId} />)
       });
     }
   });
