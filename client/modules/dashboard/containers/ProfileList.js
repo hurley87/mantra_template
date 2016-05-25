@@ -15,7 +15,7 @@ export const composer = ({context, operator}, onData) => {
 export const depsMapper = (context, actions) => ({
   updateProfileList: actions.profilelist.updateProfileList,
   addStudents: actions.profilelist.addStudents,
-  getCard: actions.profilelist.getCard,
+  createCustomer: actions.profilelist.createCustomer,
   context: () => context
 });
 

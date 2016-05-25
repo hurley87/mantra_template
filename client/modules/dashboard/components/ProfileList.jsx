@@ -17,7 +17,7 @@ class ProfileList extends React.Component {
 
     return (
       <div className={ this.props.toggle ? 'dashboard show-menu' : 'dashboard hide-menu' }>
-        <Header title='Students'/>
+        <Header title='Search'/>
         <div id='panel' className='welcome row'>
           <div className='col-sm-12'>
             <h3>Track your student in 2 easy steps.</h3>
@@ -49,7 +49,7 @@ class ProfileList extends React.Component {
               <p>Mumblecore cred kitsch green juice synth. Semiotics lomo banh mi, polaroid humblebrag four loko 3 wolf moon pug flannel kale chips. You probably haven't heard of them chicharrones lumbersexual</p>
               <p>You are subscribed to {this.state.studentIds.length} students.</p>
               <p>You will have to pay ${this.state.studentIds.length * 9} per month. </p>
-              <button className='button' onClick={this.props.getCard.bind(this, this.state.studentIds.length * 900, 'Subscription Plan', 'Full acccess to Pttrns.', this.state.studentIds)}>Subscribe</button>
+              <button className='button' onClick={this.props.createCustomer.bind(this, this.state.studentIds.length * 900, 'Subscription Plan', 'Full acccess to Pttrns.', this.state.studentIds)}>Subscribe</button>
               <p>Secure server</p>
               {profiles.map(profile => {
                 return (

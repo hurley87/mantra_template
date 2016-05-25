@@ -15,9 +15,10 @@ export default {
   		}
   	});
   },
-  getCard({LocalState}, amount, name, description, students){
+  createCustomer({LocalState}, amount, name, description, students){
+    const userId = Meteor.userId()
     const theirStudents = {
-      teacherId: Meteor.userId(),
+      teacherId: userId,
       students: students
     }
     const handler = StripeCheckout.configure({
@@ -27,7 +28,7 @@ export default {
         token: function(token) {
           if(token){
             FlowRouter.go('/loading');
-            Meteor.call('chargeCard', token.id, function(error, result){
+            Meteor.call('createSubscriber', token.id, userId, function(error, result){
               if(error){
                 console.log(error)
               }else if(result == "succeeded"){
