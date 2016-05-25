@@ -7,7 +7,7 @@ export const composer = ({context, operator}, onData) => {
     const userId = Meteor.userId();
   if(Meteor.subscribe('students.list', userId).ready() && Meteor.subscribe('profiles.list').ready()) {
     const studentIds = Collections.Students.find({}).fetch()[0].students;
-    const profiles = Collections.Profiles.find({ "user": { $in: studentIds }}).fetch();
+    const profiles = Collections.Profiles.find({ "_id": { $in: studentIds }}).fetch();
     onData(null, {profiles});
   } else {
     onData(null, {});

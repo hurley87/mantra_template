@@ -1,14 +1,9 @@
 @import '../../core/stylesheets/mixins.scss';
 
 #header {
-    margin-left: 230px;
     padding: 30px;
     position: relative;
-
-  @media (max-width: $maxMedium) {
-    margin-left: 80px;
-  }
-
+    
   @media (max-width: $maxSmall) {
     margin-left: 0px;
     z-index: 9999;

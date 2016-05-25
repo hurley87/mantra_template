@@ -8,7 +8,7 @@ class Level extends React.Component {
   }
   render() {
     return (
-      <a className='project-link' href={this.props.link}>
+      <div>
         <Progress percentage={this.percentage()} />
         <div className="project">
           <div className="info">
@@ -26,7 +26,7 @@ class Level extends React.Component {
             </div>
           </div>
         </div>
-      </a> 
+      </div> 
     )
   }
 }

@@ -4,17 +4,18 @@ import { _ } from 'lodash';
 
 export const composer = ({context, operator}, onData) => {
   const {LocalState, Collections} = context();
-  const searchValue =  LocalState.get('SEARCH_VALUE')
-  if(searchValue == null) { LocalState.set('SEARCH_VALUE', ''); }
-  if(Meteor.subscribe('searchProfiles', searchValue).ready()){
+  const userId = Meteor.userId();
+  if(Meteor.subscribe('profiles.list').ready() && Meteor.subscribe('students.list', userId).ready()){
+    const studentIds = Collections.Students.find({}).fetch()[0].students;
   	const profiles = Collections.Profiles.find({ profession: 'student' }, { sort: { name: 1 }}).fetch();
-  	onData(null, {profiles})
+  	onData(null, {profiles, studentIds})
   }
 };
 
 export const depsMapper = (context, actions) => ({
   updateProfileList: actions.profilelist.updateProfileList,
   addStudents: actions.profilelist.addStudents,
+  getCard: actions.profilelist.getCard,
   context: () => context
 });
 
