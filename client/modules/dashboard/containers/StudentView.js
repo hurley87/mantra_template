@@ -4,8 +4,16 @@ import { _ } from 'lodash';
 
 export const composer = ({context, userId}, onData) => {
   const {LocalState, Collections} = context();
-  console.log(userId) // subsribe to a student's profile and their questions using their Id
-  onData(null, {});
+  if(userId && Meteor.subscribe('profiles.single', userId).ready()){
+    const profile = Collections.Profiles.find({ 'user': userId}).fetch()[0];
+    const points = profile.countPoints + profile.addPoints + profile.subPoints + profile.multiPoints + profile.divPoints;
+    let ratio = (profile.wrong / profile.right).toFixed(2);
+    if(isNaN(ratio)) {
+      ratio = 0;
+    }
+    onData(null, {profile, points, ratio})
+  }
+  
 };
 
 export const depsMapper = (context, actions) => ({

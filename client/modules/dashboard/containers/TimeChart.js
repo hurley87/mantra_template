@@ -2,9 +2,8 @@ import {useDeps, composeAll, composeWithTracker, compose} from 'mantra-core';
 import TimeChart from '../components/TimeChart.jsx';
 import { _ } from 'lodash';
 
-export const composer = ({context}, onData) => {
+export const composer = ({context, userId}, onData) => {
   const {LocalState, Collections} = context();
-  const userId = Meteor.userId();
 	if(Meteor.subscribe('counting_answers', userId).ready() && Meteor.subscribe('all_user_questions', userId).ready()){
 		const counting_questions = Collections.CountingAnswers.find({'userId': userId }).fetch();
 		const questions = Collections.Questions.find({}).fetch();

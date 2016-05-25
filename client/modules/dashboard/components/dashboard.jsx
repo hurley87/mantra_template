@@ -78,7 +78,7 @@ class Dashboard extends React.Component {
     return (
       <div id='panel' className='dashboard'>
         { this.props.points > 10 ? this.statsMessage() : null }
-        { this.props.points > 10 ? <TimeChart /> : null }
+        { this.props.points > 10 ? <TimeChart userId={this.props.profile.user}/> : null }
         { this.props.points > 0 ? this.metrics() : this.welcomeMessage() } 
         { this.props.points > 0 ? this.lessonsMessage() : null } 
         { this.exercises() }
