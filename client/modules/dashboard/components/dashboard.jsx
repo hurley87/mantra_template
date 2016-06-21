@@ -19,8 +19,8 @@ class Dashboard extends React.Component {
     return(
       <div className='row'>
         <div className='welcome col-xs-12'>
-          <h3>It's all a matter of time.</h3>
-          <p>Track your performance over time.</p>
+          <h3>Track your child's performance over time.</h3>
+          <p>We recommend your child spends 5 minutes a day working through our arithmetic exercises. Click on specific modules below to see your child's latest results.</p>
         </div>
       </div>
     )
@@ -56,9 +56,6 @@ class Dashboard extends React.Component {
   exercises() {
     return (
       <div className='steps row'>
-        <div className='col-sm-4'>
-          <Level points={this.props.profile.countPoints} title='Counting' link='/counting' operator='c'/>
-        </div>
         <div className='col-sm-4'>
           <Level points={this.props.profile.addPoints} title='Addition' link='/addition' operator='+' />
         </div>

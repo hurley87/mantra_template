@@ -33,23 +33,23 @@ class NewUser extends React.Component {
                           onValidSubmit={this._handleValidSubmit.bind(this)}
                           onInvalidSubmit={this._handleInvalidSubmit.bind(this)}>
 
-                          <RadioGroup name='type'
-                                      validate='required'
-                                      label='Student, teacher, or parent?'
-                                      errorHelp={{
-                                          required: 'Please specify if you are a parent, teacher or student.'
-                                      }}
-                                      onChange={this.changeType.bind(this)}
-                                      labelClassName=''
-                                      wrapperClassName='userType'>
-                              <Radio value='student' label='student'/>
-                              <Radio value='teacher' label='teacher' />
-                              <Radio value='parent' label='parent' />
-                          </RadioGroup>
-
+ { //                        <RadioGroup name='type'
+//                                       validate='required'
+//                                       label='Student, teacher, or parent?'
+//                                       errorHelp={{
+//                                           required: 'Please specify if you are a parent, teacher or student.'
+//                                       }}
+//                                       onChange={this.changeType.bind(this)}
+//                                       labelClassName=''
+//                                       wrapperClassName='userType'>
+//                               <Radio value='student' label='student'/>
+//                               <Radio value='teacher' label='teacher' />
+//                               <Radio value='parent' label='parent' />
+//                           </RadioGroup>
+}
                           <ValidatedInput
                               type='text'
-                              label='Username'
+                              label='Name'
                               name='name'
                               validate='required,isLength:4:30'
                               errorHelp={{
@@ -63,7 +63,6 @@ class NewUser extends React.Component {
                               type='text'
                               label='Email'
                               name='email'
-                              placeholder='Email'
                               validate='isEmail'
                               errorHelp={{
                                   isEmail: 'Please enter your email'
@@ -123,7 +122,7 @@ class NewUser extends React.Component {
     evt.target.value == 'student' ? this.setState({ student: true }) : this.setState({ student: false })
   }
   _handleValidSubmit(values) {
-    this.state.student ? this.props.createStudent(values.name, values.password, values.type) : this.props.createMentor(values.name, values.email, values.password, values.type)
+    this.props.createMentor(values.name, values.email, values.password, 'parent')
   }
   _handleInvalidSubmit(errors, values) {
     console.log(errors)

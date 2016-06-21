@@ -14,7 +14,7 @@ class TimeChart extends React.Component {
   	this.state = {
   		tooltip:{ display:false,data: {question: {} }},
   		width: 800,
-  		height: 300,
+  		height: 0,
   		type: '#'
   	}
   }
@@ -183,7 +183,7 @@ class TimeChart extends React.Component {
     );
   }
   changeChartType(type) {
-  	this.setState({ type: type });
+  	this.setState({ type: type, height: 300 });
   }
   showToolTip(evt) {
   	evt.target.setAttribute('fill', '#5188BF');
