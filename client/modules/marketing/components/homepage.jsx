@@ -8,6 +8,7 @@ import Footer from './footer.jsx';
 
 class Homepage extends React.Component {
   render() {
+    console.log(this.props.answers)
     return (
       <div id='home3'>
         <div className={ this.props.toggle ? 'st-container nav-effect' : 'st-container' }>

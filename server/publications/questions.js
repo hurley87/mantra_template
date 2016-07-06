@@ -1,4 +1,4 @@
-import {Questions} from '/lib/collections';
+import {Questions, Answers} from '/lib/collections';
 import {Meteor} from 'meteor/meteor';
 import {check} from 'meteor/check';
 
@@ -11,5 +11,8 @@ export default function () {
   Meteor.publish('all_user_questions', function (userId) {
     check(userId, String);
     return Questions.find({ 'userId': userId });
+  });
+  Meteor.publish('answers', function () {
+    return Answers.find({});
   });
 }
