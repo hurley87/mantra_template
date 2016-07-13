@@ -1,4 +1,4 @@
-import {Questions, Answers} from '/lib/collections';
+import {Questions, Answers, Usernames} from '/lib/collections';
 import {Meteor} from 'meteor/meteor';
 import {check} from 'meteor/check';
 
@@ -14,5 +14,8 @@ export default function () {
   });
   Meteor.publish('answers', function () {
     return Answers.find({});
+  });
+  Meteor.publish('usernames', function () {
+    return Usernames.find({});
   });
 }

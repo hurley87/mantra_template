@@ -59,9 +59,6 @@ class LoginUser extends React.Component {
                       <div className="checkbox">
                         <a href="/forgot">Forgot your password?</a>
                       </div>
-                      <div className="checkbox">
-                        <a href="/student">Have a student account?</a>
-                      </div>
                     </div>
                   </div>            
                 </div>

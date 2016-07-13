@@ -4,10 +4,7 @@ import {useDeps, composeWithTracker, composeAll} from 'mantra-core';
 export const composer = ({context}, onData) => {
  const {LocalState, Meteor, Collections} = context();
  const toggle = LocalState.get('TOGGLE');
-if(Meteor.subscribe('answers').ready()){
-	const answers = Collections.Answers.find({}).fetch();
-	onData(null, {toggle, answers});
-}
+ onData(null, {toggle});
 };
 
 export const depsMapper = (context, actions) => ({
