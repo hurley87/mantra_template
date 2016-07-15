@@ -1,5 +1,5 @@
 export default {
-  createStudent({Meteor, LocalState },name, password, type) {
+  createStudent({Meteor, LocalState },name, password) {
     Accounts.createUser({
       username: name,
       password: password
@@ -9,41 +9,37 @@ export default {
         LocalState.set('CREATE_USER', 'Username already exists!');
         FlowRouter.go('/register');
       } else {
-        createProfile(name, type);
+         FlowRouter.go('/signup');
       }
     });
   },  
-  createMentor({LocalState, Meteor}, name, email, password, type ) {
+  createMentor({LocalState, Meteor, FlowRouter}, name, email, password, type ) {
+    const userId = Meteor.userId();
+    const student = {
+      students: [userId],
+      email: email
+    }
     Accounts.createUser({
       email: email,
       password: password
     }, function(err) {
       if(err) {
         LocalState.set('CREATE_USER', 'There was a problem creating your account.');
-        FlowRouter.go('/register');
+        FlowRouter.go('/signup');
       } else {
-        createProfile(name, type);
+        Meteor.call('insert.student', student, function(err) {
+          if(err) {
+            LocalState.set('CREATE_USER', 'There was a problem creating your account.');
+            FlowRouter.go('/signup');
+          } else {
+            FlowRouter.go('/tracker');
+          }
+        })
+        
       }
     });
   },
   clearErrors({LocalState}) {
     return LocalState.set('CREATE_USER', null)
   }
-}
-
-function createProfile(name, type) {
-  Meteor.call('create.profile', name, type, (err) => {
-    if(err){
-      console.log(err)
-      LocalState.set('CREATE_USER', 'There was a problem creating your account.');
-      FlowRouter.go('/register');
-    } 
-    const userId = Meteor.userId();
-    if(userId) {
-      FlowRouter.go('/profile');
-    } else {
-      LocalState.set('CREATE_USER', 'Your email is already associated with an account.');
-      FlowRouter.go('/register');
-    } 
-  });
 }

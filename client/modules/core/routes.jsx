@@ -24,11 +24,13 @@ import Jobs from '../marketing/components/jobs.jsx';
 
 // registration
 import NewUser from '../users/containers/NewUser.js';
+import NewStudent from '../users/containers/NewStudent.js';
 import LoginUser from '../users/containers/Login.js';
 import LoginStudent from '../users/containers/LoginStudent.js';
 import Settings from '../dashboard/containers/settings.js';
 import ResetPassword from '../users/containers/ResetPassword.js';
 import Forgot from '../users/containers/forgot.js';
+import Tracker from '../users/containers/Tracker.js';
 
 // exercises
 import AddIndex from '../arithmetic/containers/AddIndex.js';
@@ -96,12 +98,20 @@ export default function(injectDeps, {FlowRouter}) {
   });
 
 
-
-  FlowRouter.route('/register', {
+  FlowRouter.route('/signup', {
     name: 'users.new',
     action() {
       mount(MainLayoutCtx, {
         content: () => (<NewUser />)
+      });
+    }
+  });
+
+  FlowRouter.route('/register', {
+    name: 'students.new',
+    action() {
+      mount(MainLayoutCtx, {
+        content: () => (<NewStudent />)
       });
     }
   });
@@ -114,6 +124,16 @@ export default function(injectDeps, {FlowRouter}) {
       });
     }
   });
+
+  FlowRouter.route('/tracker', {
+    name: 'tracker',
+    action() {
+      mount(MainLayoutCtx, {
+        content: () => (<Tracker />)
+      });
+    }
+  });
+
 
   FlowRouter.route('/student', {
     name: 'users.new',

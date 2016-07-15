@@ -3,6 +3,7 @@ import arithmetic_questions from './arithmetic_questions';
 import emails from './emails';
 import questions from './questions';
 import counting from './counting';
+import students from './students';
 
 export default function() {
 	profiles();
@@ -10,4 +11,5 @@ export default function() {
 	emails();
 	questions();
 	counting();
+	students();
 }
