@@ -31,6 +31,7 @@ import Settings from '../dashboard/containers/settings.js';
 import ResetPassword from '../users/containers/ResetPassword.js';
 import Forgot from '../users/containers/forgot.js';
 import Tracker from '../users/containers/Tracker.js';
+import AnswerView from '../users/containers/AnswerView.js';
 
 // exercises
 import AddIndex from '../arithmetic/containers/AddIndex.js';
@@ -130,6 +131,15 @@ export default function(injectDeps, {FlowRouter}) {
     action() {
       mount(MainLayoutCtx, {
         content: () => (<Tracker />)
+      });
+    }
+  });
+
+  FlowRouter.route('/tracker/:answerId', {
+    name: 'AnswerView',
+    action({answerId}) {
+      mount(MainLayoutCtx, {
+        content: () => (<AnswerView answerId={answerId} />)
       });
     }
   });

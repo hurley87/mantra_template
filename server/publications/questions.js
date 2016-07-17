@@ -13,7 +13,12 @@ export default function () {
     return Questions.find({ 'userId': userId });
   });
   Meteor.publish('answers', function (studentId) {
-    return Answers.find({'userId': studentId});
+    check(studentId, String);
+    return Answers.find({'userId': studentId}, { limit: 10 });
+  });
+  Meteor.publish('answer.view', function (answerId) {
+    check(answerId, String);
+    return Answers.find({'_id': answerId});
   });
   Meteor.publish('usernames', function () {
     return Usernames.find({});

@@ -11,7 +11,7 @@ export const composer = ({context, clearErrors}, onData) => {
     const studentId = profile.students[0];
     if(Meteor.subscribe('student', studentId).ready() && Meteor.subscribe('answers', studentId)) {
 	    const student = Meteor.users.findOne(studentId);
-	    const answers = Collections.Answers.find({ 'userId': studentId}).fetch()
+	    const answers = Collections.Answers.find({}).fetch()
 	    onData(null, {LocalState, Meteor, FlowRouter, profile, student, answers});
     }
   }
