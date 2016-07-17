@@ -44,6 +44,16 @@ class NewStudent extends React.Component {
                                   isLength: 'Username must be at least 4 characters'
                               }}
                           />
+
+                          <ValidatedInput
+                              type='text'
+                              label='Email'
+                              name='email'
+                              validate='isEmail'
+                              errorHelp={{
+                                  isEmail: 'Please enter your email'
+                              }}
+                          />
            
                           <ValidatedInput
                               type='password'
@@ -56,6 +66,22 @@ class NewStudent extends React.Component {
                               }}
                           />
            
+                          <ValidatedInput
+                              type='password'
+                              name='password-confirm'
+                              label='Confirm Password'
+                              validate={(val, context) => 
+                                val === context.password
+                              }
+                              errorHelp='Passwords do not match'
+                          />
+           
+                          <div className="checkbox">
+                            <label>
+                                <Input type="checkbox" defaultChecked='checked' /> You have read & agree to the <a href="/terms">Terms of service</a>.
+                            </label>
+                          </div>
+
                           <ButtonInput
                             type='submit'
                             bsSize='large'
@@ -78,7 +104,7 @@ class NewStudent extends React.Component {
     )
   }
   _handleValidSubmit(values) {
-    this.props.createStudent(values.username, values.password)
+    this.props.createStudent(values.username, values.email, values.password)
   }
   _handleInvalidSubmit(errors, values) {
     console.log(errors)

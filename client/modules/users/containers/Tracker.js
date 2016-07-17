@@ -8,7 +8,12 @@ export const composer = ({context, clearErrors}, onData) => {
   const email = user.emails[0].address;
   if(Meteor.subscribe('student.list', email).ready()) {
     const profile = Collections.Students.find({"email": email}).fetch()[0];
-    onData(null, {LocalState, Meteor, FlowRouter, profile});
+    const studentId = profile.students[0];
+    if(Meteor.subscribe('student', studentId).ready() && Meteor.subscribe('answers', studentId)) {
+	    const student = Meteor.users.findOne(studentId);
+	    const answers = Collections.Answers.find({ 'userId': studentId}).fetch()
+	    onData(null, {LocalState, Meteor, FlowRouter, profile, student, answers});
+    }
   }
 
   return clearErrors;

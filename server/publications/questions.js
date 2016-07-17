@@ -12,8 +12,8 @@ export default function () {
     check(userId, String);
     return Questions.find({ 'userId': userId });
   });
-  Meteor.publish('answers', function () {
-    return Answers.find({});
+  Meteor.publish('answers', function (studentId) {
+    return Answers.find({'userId': studentId});
   });
   Meteor.publish('usernames', function () {
     return Usernames.find({});
