@@ -7,6 +7,10 @@ export default function () {
     'insert.student'(student) {
     	check(student, Object);
     	Students.insert(student);
+    },
+    'remove.user'(studentId) {
+    	check(studentId, String);
+    	Meteor.users.remove({_id: studentId});
     }
   });
 }
