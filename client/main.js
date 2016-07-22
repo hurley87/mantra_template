@@ -9,6 +9,7 @@ import questionModule from './modules/questions';
 import dashboardModule from './modules/dashboard';
 import arithmeticModule from './modules/arithmetic';
 import storeModule from './modules/store';
+import challengesModule from './modules/challenges';
 
 // initilize context
 const context = initContext();
@@ -22,4 +23,5 @@ app.loadModule(questionModule);
 app.loadModule(dashboardModule);
 app.loadModule(arithmeticModule);
 app.loadModule(storeModule);
+app.loadModule(challengesModule);
 app.init();

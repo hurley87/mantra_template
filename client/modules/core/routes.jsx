@@ -47,6 +47,10 @@ import ProfileList from '../dashboard/containers/ProfileList.js';
 //video
 import VideoLesson from '../arithmetic/containers/VideoLesson.js';
 
+// challenges
+import Challenges from '../challenges/components/Challenges.jsx'
+import NewChallenge from '../challenges/containers/NewChallenge.js'
+
 // store
 import StoreFront from '../store/containers/store.js';
 import ThankYou from '../store/components/thank_you.jsx';
@@ -416,4 +420,24 @@ export default function(injectDeps, {FlowRouter}) {
       })
     }
   });
+
+// challenge shit
+  FlowRouter.route('/challenges', {
+    name: 'challenges.index',
+    action() {
+      mount(MainLayoutCtx, {
+        content: () => (<Challenges />)
+      })
+    }
+  });
+
+  FlowRouter.route('/new', {
+    name: 'challenges.new',
+    action() {
+      mount(MainLayoutCtx, {
+        content: () => (<NewChallenge />)
+      })
+    }
+  });
+
 }

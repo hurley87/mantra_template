@@ -6,6 +6,7 @@ import stripe from './stripe';
 import counting from './counting';
 import contact from './contact';
 import students from './students';
+import challenges from './challenges';
 
 export default function () {
   questions();
@@ -16,4 +17,5 @@ export default function () {
   counting();
   students();
   contact();
+  challenges();
 }
