@@ -9,11 +9,7 @@ export default {
         LocalState.set('CREATE_USER', 'Username already exists!');
         FlowRouter.go('/register');
       } else {
-        const userId = Meteor.userId();
-        const student = {
-          students: [userId],
-          email: email
-        }
+        const studentId = Meteor.userId();
         Accounts.createUser({
           email: email,
           password: password
@@ -30,6 +26,10 @@ export default {
               }
             });
           } else {
+            const student = {
+              students: [studentId],
+              parentId: Meteor.userId()
+            }
             Meteor.call('insert.student', student, function(err) {
               if(err) {
                 console.log(err)

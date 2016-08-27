@@ -4,12 +4,15 @@ import {check} from 'meteor/check';
 
 export default function () {
   Meteor.methods({
-    'new.challenge'(challenge, parentId){
+    'new.challenge'(challenge, parentId, studentId){
         check(challenge, Object);
         check(parentId, String)
+        check(studentId, String)
         Challenges.insert({
         	parentId: parentId,
-        	challenge: challenge
+            studentId: studentId,
+        	challenge: challenge,
+            complete: false
         });
     }
   });

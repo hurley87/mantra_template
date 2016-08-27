@@ -7,6 +7,10 @@ export default function () {
 		check(email, String)
 		return Students.find({ email: email})
 	});
+	Meteor.publish('studentId', function(parentId) {
+		check(parentId, String);
+		return Students.find({ parentId: parentId })
+	})
 	Meteor.publish('student', function (studentId) {
 		check(studentId, String)
 		return Meteor.users.find({_id: studentId})

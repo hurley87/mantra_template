@@ -74,14 +74,26 @@ class NewChallenge extends React.Component {
                               errorHelp='Please choose a number greater then your smallest number'
                           />
 
-						<RadioGroup name='operator'
-						            value='+'
-						            label='Choose an operator'>
-						    <Radio value='+' label='Addition' />
-						    <Radio value='-' label='Subtraction' />
-						    <Radio value='x' label='Multiplication' />
-						    <Radio value='\' label='Division' />
-						</RadioGroup>
+              						<RadioGroup name='operator'
+              						            value='+'
+              						            label='Choose an operator'>
+              						    <Radio value='+' label='Addition' />
+              						    <Radio value='-' label='Subtraction' />
+              						    <Radio value='x' label='Multiplication' />
+              						    <Radio value='\' label='Division' />
+              						</RadioGroup>
+
+                          <ValidatedInput
+                              type='text'
+                              label='Reward'
+                              name='reward'
+                              validate='required,isLength:4:30'
+                              errorHelp={{
+                                  required: 'Please enter a reward',
+                                  isLength: 'Reward must be at least 4 characters and max 30 characters.'
+                              }}
+                          />
+
            
                           <ButtonInput
                             type='submit'
@@ -102,7 +114,7 @@ class NewChallenge extends React.Component {
     )
   }
   _handleValidSubmit(values) {
-    this.props.create(values);
+    this.props.create(values, this.props.studentId);
   }
   _handleInvalidSubmit(errors, values) {
     console.log(errors)

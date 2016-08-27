@@ -4,6 +4,7 @@ import emails from './emails';
 import questions from './questions';
 import counting from './counting';
 import students from './students';
+import challenges from './challenges';
 
 export default function() {
 	profiles();
@@ -12,4 +13,5 @@ export default function() {
 	questions();
 	counting();
 	students();
+	challenges();
 }
