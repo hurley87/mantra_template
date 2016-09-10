@@ -1,14 +1,13 @@
 import {useDeps, composeAll, composeWithTracker, compose} from 'mantra-core';
-import NewChallenge from '../components/NewChallenge.jsx';
+import PastChallenges from '../components/PastChallenges.jsx';
 import { _ } from 'lodash';
 
 export const composer = ({context}, onData) => {
   const {LocalState, Collections, FlowRouter} = context();
-  var parentId = Meteor.userId()
-  console.log(parentId)
-  if(parentId && Meteor.subscribe('studentId', parentId).ready()) {
-  	const studentId = Collections.Students.find({"parentId": parentId}).fetch()[0].students[0];
-  	onData(null, {studentId});
+  const parentId = Meteor.userId();
+  if(Meteor.subscribe('challenges.list', parentId).ready()){
+  	const challenges = Collections.Challenges.find({ complete: true }).fetch();
+  	onData(null, {challenges});
   }
 };
 
@@ -20,4 +19,4 @@ export const depsMapper = (context, actions) => ({
 export default composeAll(
   composeWithTracker(composer),
   useDeps(depsMapper)
-)(NewChallenge);
+)(PastChallenges);

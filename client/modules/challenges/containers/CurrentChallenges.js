@@ -5,9 +5,8 @@ import { _ } from 'lodash';
 export const composer = ({context}, onData) => {
   const {LocalState, Collections, FlowRouter} = context();
   const parentId = Meteor.userId();
-  console.log(parentId)
   if(Meteor.subscribe('challenges.list', parentId).ready()){
-  	const challenges = Collections.Challenges.find({}).fetch();
+  	const challenges = Collections.Challenges.find({ complete: false }).fetch();
     console.log(challenges)
   	onData(null, {challenges});
   }

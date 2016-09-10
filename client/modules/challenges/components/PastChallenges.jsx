@@ -1,7 +1,7 @@
 import React from 'react';
 import { Col, Panel, Input, ButtonInput, Glyphicon, Grid, Row } from 'react-bootstrap';
 
-class CurrentChallenges extends React.Component { 
+class PastChallenges extends React.Component { 
   render() {
     const challenges = this.props.challenges;
     return (
@@ -24,4 +24,4 @@ class CurrentChallenges extends React.Component {
   }
 }
 
-export default CurrentChallenges;
+export default PastChallenges;
