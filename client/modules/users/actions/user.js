@@ -10,7 +10,6 @@ export default {
         FlowRouter.go('/register');
       } else {
         const studentId = Meteor.userId();
-        console.log(email)
         Accounts.createUser({
           email: email,
           password: password
