@@ -13,4 +13,9 @@ export default function (){
     const challenges = Challenges.find({'studentId': studentId });
     return challenges;
   });
+  Meteor.publish('challenges.single', function(id) {
+    check(id, String);
+    const challenges = Challenges.find({'_id': id });
+    return challenges;
+  });
 }

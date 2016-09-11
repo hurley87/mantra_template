@@ -50,6 +50,7 @@ import VideoLesson from '../arithmetic/containers/VideoLesson.js';
 // challenges
 import Challenges from '../challenges/components/Challenges.jsx'
 import NewChallenge from '../challenges/containers/NewChallenge.js'
+import ChallengeShow from '../challenges/containers/ChallengeShow.js'
 
 // store
 import StoreFront from '../store/containers/store.js';
@@ -428,6 +429,15 @@ export default function(injectDeps, {FlowRouter}) {
       mount(MainLayoutCtx, {
         content: () => (<Challenges />)
       })
+    }
+  });
+
+  FlowRouter.route('/challenges/:challengeId', {
+    name: 'challenge.show',
+    action({challengeId}) {
+      mount(MainLayoutCtx, {
+        content: () => (<ChallengeShow challengeId={challengeId} />)
+      });
     }
   });
 

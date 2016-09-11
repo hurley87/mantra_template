@@ -10,6 +10,7 @@ class NewChallenge extends React.Component {
           <Row className='header'>
             <Col md={12}>
               <h4>Create a Challenge</h4>
+              <p><a href="/challenges">back</a></p>
             </Col>
           </Row>
           <Row>
