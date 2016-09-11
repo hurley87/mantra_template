@@ -8,9 +8,6 @@ export default function () {
         check(challenge, Object);
         check(parentId, String)
         check(studentId, String)
-        console.log(challenge);
-        console.log(parentId);
-        console.log(studentId);
         Challenges.insert({
         	parentId: parentId,
             studentId: studentId,
