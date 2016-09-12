@@ -10,5 +10,14 @@ export default {
     		FlowRouter.go('/challenges')
     	}
     });
+  },
+  edit({LocalState, FlowRouter}, challenge) {
+    Meteor.call('edit.challenge', challenge, function(err) {
+      if(err) {
+        FlowRouter.go('/edit/' + challenge.challengeId)
+      } else {
+        FlowRouter.go('/challenges')
+      }
+    });
   }
 }

@@ -2,14 +2,66 @@ import React from 'react';
 import { Col, Row, Grid, Input, ButtonInput} from 'react-bootstrap';
 import { Form, ValidatedInput, RadioGroup, Radio } from 'react-bootstrap-validation';
 
-class NewChallenge extends React.Component { 
+const EditChallenge = React.createClass({
+  getInitialState() {
+  	const challenge = this.props.challenge.challenge;
+  	const challengeId = this.props.challenge._id;
+  	return {
+  		time: challenge.time,
+  		right: challenge.right,
+  		wrong: challenge.wrong,
+  		min: challenge.min,
+  		max: challenge.max,
+  		reward: challenge.reward
+  	}
+  },
+
+  updateTime(val) {
+    this.setState({
+      time: val.target.value
+    });
+  },
+
+  updateRight(val) {
+    this.setState({
+      right: val.target.value
+    });
+  },
+
+  updateWrong(val) {
+    this.setState({
+      wrong: val.target.value
+    });
+  },
+
+  updateMin(val) {
+    this.setState({
+      min: val.target.value
+    });
+  },
+
+  updateMax(val) {
+    this.setState({
+      max: val.target.value
+    });
+  },
+
+  updateReward(val) {
+    this.setState({
+      reward: val.target.value
+    });
+  },
+
   render () {
+  	const challenge = this.props.challenge.challenge;
+  	const challengeId = this.props.challenge._id;
+  	console.log(challengeId)
     return (
       <div id='signup'>
         <Grid>
           <Row className='header'>
             <Col md={12}>
-              <h4>Create a Challenge</h4>
+              <h4>Edit this Challenge</h4>
               <p><a href="/challenges">back</a></p>
             </Col>
           </Row>
@@ -22,13 +74,15 @@ class NewChallenge extends React.Component {
                       { this.props.error ? <p className='alert alert-danger'>{this.props.error}</p> : null }
                       <Form
 
-                          onValidSubmit={this._handleValidSubmit.bind(this)}
-                          onInvalidSubmit={this._handleInvalidSubmit.bind(this)}>
+                          onValidSubmit={this._handleValidSubmit}
+                          onInvalidSubmit={this._handleInvalidSubmit}>
 
                            <ValidatedInput
                               type='number'
                               label='How long (in seconds) will the challenge last?'
                               name='time'
+                              value={this.state.time}
+                              onChange={(val) => this.updateTime(val)}
                               validate={(val, context) => 
                                 val > 10
                               }
@@ -39,6 +93,8 @@ class NewChallenge extends React.Component {
                               type='number'
                               label='How many correct answers are required to win the challenge?'
                               name='right'
+                              value={this.state.right}
+                              onChange={(val) => this.updateRight(val)}
                               validate='required'
                               errorHelp={{
                                   required: 'Please choose a number'
@@ -49,6 +105,8 @@ class NewChallenge extends React.Component {
                               type='number'
                               label='How many wrong attempts are allowed?'
                               name='wrong'
+                              value={this.state.wrong}
+                              onChange={(val) => this.updateWrong(val)}
                               validate='required'
                               errorHelp={{
                                   required: 'Please choose a number'
@@ -59,16 +117,26 @@ class NewChallenge extends React.Component {
                               type='number'
                               label='Smallest number shown?'
                               name='min'
+                              value={this.state.min}
                               validate='required'
                               errorHelp={{
                                   required: 'Please choose a number'
                               }}
+                              onChange={(val) => this.updateMin(val)}
+                          />
+
+                          <ValidatedInput
+                              type='hidden'
+                              name='challengeId'
+                              value={challengeId}
                           />
 
                           <ValidatedInput
                               type='number'
                               label='Largest number shown?'
                               name='max'
+                              value={this.state.max}
+                              onChange={(val) => this.updateMax(val)}
                               validate={(val, context) => 
                                 val > parseInt(context.min)
                               }
@@ -88,6 +156,8 @@ class NewChallenge extends React.Component {
                               type='textarea'
                               label='Reward'
                               name='reward'
+                              value={this.state.reward}
+                              onChange={(val) => this.updateReward(val)}
                               validate='required,isLength:4:30'
                               errorHelp={{
                                   required: 'Please enter a reward',
@@ -113,13 +183,13 @@ class NewChallenge extends React.Component {
         </Grid>
       </div>
     )
-  }
+  },
   _handleValidSubmit(values) {
-    this.props.create(values, this.props.studentId);
-  }
+    this.props.edit(values);
+  },
   _handleInvalidSubmit(errors, values) {
     console.log(errors)
   }
-}
+})
 
-export default NewChallenge;
+export default EditChallenge;

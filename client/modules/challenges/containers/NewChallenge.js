@@ -5,7 +5,6 @@ import { _ } from 'lodash';
 export const composer = ({context}, onData) => {
   const {LocalState, Collections, FlowRouter} = context();
   var parentId = Meteor.userId()
-  console.log(parentId)
   if(parentId && Meteor.subscribe('studentId', parentId).ready()) {
   	const studentId = Collections.Students.find({"parentId": parentId}).fetch()[0].students[0];
   	onData(null, {studentId});

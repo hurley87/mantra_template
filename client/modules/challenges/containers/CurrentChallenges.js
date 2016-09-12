@@ -7,7 +7,6 @@ export const composer = ({context}, onData) => {
   const parentId = Meteor.userId();
   if(Meteor.subscribe('challenges.list', parentId).ready()){
   	const challenges = Collections.Challenges.find({ complete: false }).fetch();
-    console.log(challenges)
   	onData(null, {challenges});
   }
 };
