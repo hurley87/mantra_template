@@ -19,5 +19,15 @@ export default {
         FlowRouter.go('/challenges')
       }
     });
+  },
+  createStudent({LocalState, FlowRouter}, student) {
+    console.log(student)
+    Meteor.call('create.student', student, function(err){
+      if(err) {
+        FlowRouter.go('/students/new')
+      } else {
+        FlowRouter.go('/challenges')
+      }
+    });
   }
 }

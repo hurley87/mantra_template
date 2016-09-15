@@ -10,7 +10,6 @@ export const composer = ({context, challengeId}, onData) => {
   	if(Meteor.subscribe('student', studentId).ready() && Meteor.subscribe('answers.challenge', challengeId)) {
   		const student = Meteor.users.findOne(studentId);
       const answer = Collections.Answers.find({}).fetch()[0]
-      console.log(answer)
   		onData(null, {challenge, student, answer});
   	}
   }

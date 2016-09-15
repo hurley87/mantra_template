@@ -24,7 +24,7 @@ import Jobs from '../marketing/components/jobs.jsx';
 
 // registration
 import NewUser from '../users/containers/NewUser.js';
-import NewStudent from '../users/containers/NewStudent.js';
+// import NewStudent from '../users/containers/NewStudent.js';
 import LoginUser from '../users/containers/Login.js';
 import LoginStudent from '../users/containers/LoginStudent.js';
 import Settings from '../dashboard/containers/settings.js';
@@ -52,6 +52,7 @@ import Challenges from '../challenges/components/Challenges.jsx'
 import NewChallenge from '../challenges/containers/NewChallenge.js'
 import ChallengeShow from '../challenges/containers/ChallengeShow.js'
 import EditChallenge from '../challenges/containers/EditChallenge.js';
+import NewStudent from '../challenges/containers/NewStudent.js'
 
 // store
 import StoreFront from '../store/containers/store.js';
@@ -160,14 +161,14 @@ export default function(injectDeps, {FlowRouter}) {
     }
   });
 
-  FlowRouter.route('/students', {
-    name: 'users.new',
-    action() {
-      mount(QuestionLayoutCtx, {
-        content: () => (<ProfileList />)
-      });
-    }
-  });
+  // FlowRouter.route('/students', {
+  //   name: 'users.new',
+  //   action() {
+  //     mount(QuestionLayoutCtx, {
+  //       content: () => (<ProfileList />)
+  //     });
+  //   }
+  // });
 
   FlowRouter.route('/reset', {
     name: 'reset',
@@ -451,11 +452,22 @@ export default function(injectDeps, {FlowRouter}) {
     }
   });
 
+
+
   FlowRouter.route('/new', {
     name: 'challenges.new',
     action() {
       mount(MainLayoutCtx, {
         content: () => (<NewChallenge />)
+      })
+    }
+  });
+
+  FlowRouter.route('/students/new', {
+    name: 'students.new',
+    action() {
+      mount(MainLayoutCtx, {
+        content: () => (<NewStudent />)
       })
     }
   });

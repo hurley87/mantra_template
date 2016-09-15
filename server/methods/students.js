@@ -22,6 +22,10 @@ export default function () {
     'remove.user'(studentId) {
     	check(studentId, String);
     	Meteor.users.remove({_id: studentId});
+    },
+    'create.student'(student) {
+        check(student, Object);
+        console.log(student)
     }
   });
 }

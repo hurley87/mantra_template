@@ -1,5 +1,5 @@
 import {useDeps, composeAll, composeWithTracker, compose} from 'mantra-core';
-import NewChallenge from '../components/NewChallenge.jsx';
+import NewStudent from '../components/NewStudent.jsx';
 import { _ } from 'lodash';
 
 export const composer = ({context}, onData) => {
@@ -12,11 +12,11 @@ export const composer = ({context}, onData) => {
 };
 
 export const depsMapper = (context, actions) => ({
-  create: actions.challenges.create,
+  createStudent: actions.challenges.createStudent,
   context: () => context
 });
 
 export default composeAll(
   composeWithTracker(composer),
   useDeps(depsMapper)
-)(NewChallenge);
+)(NewStudent);
