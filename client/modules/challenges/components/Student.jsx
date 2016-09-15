@@ -4,7 +4,6 @@ import { Col, Panel, Input, ButtonInput, Glyphicon, Grid, Row } from 'react-boot
 class Student extends React.Component { 
   render() {
     const student = this.props.student;
-    console.log(student)
     return (
       <div>
         {student.username}

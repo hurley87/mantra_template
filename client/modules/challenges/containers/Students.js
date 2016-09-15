@@ -8,12 +8,7 @@ export const composer = ({context}, onData) => {
 
   if(Meteor.subscribe('studentId', parentId).ready()) {
   	const studentIds = Collections.Students.find({"parentId": parentId}).fetch()[0].students;
-  	const students = []
-  	if(Meteor.subscribe('student', studentIds[0]).ready()) {
-  		let user  = Meteor.users.find({ _id: studentIds[0] }).fetch()[0]
-  		students.push(user)
-	  	onData(null, {students});
-  	}
+  	onData(null, {studentIds});
   }
 };
 

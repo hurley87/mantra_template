@@ -2,7 +2,7 @@ import React from 'react';
 import { Col, Row, Grid, Input, ButtonInput} from 'react-bootstrap';
 import { Form, ValidatedInput, RadioGroup, Radio } from 'react-bootstrap-validation';
 
-class NewStudent extends React.Component {
+class CreateStudent extends React.Component {
   render () {
   	const parentId = Meteor.userId();
     return (
@@ -91,4 +91,4 @@ class NewStudent extends React.Component {
   }
 }
 
-export default NewStudent;
+export default CreateStudent;

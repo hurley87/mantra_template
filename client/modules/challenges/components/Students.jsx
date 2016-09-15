@@ -3,21 +3,20 @@ import { Col, Panel, Input, ButtonInput, Glyphicon, Grid, Row } from 'react-boot
 import Student from '../containers/Student';
 
 class Students extends React.Component { 
-  show(student) {
+  show(studentId) {
     return (
-      <div key={student._id}>{student.username}</div>
+      <Student studentId={studentId} />
     )
   }
   render() {
-    const students = this.props.students;
-    console.log(students)
+    const studentIds = this.props.studentIds;
     return (
       <div>
         <Row>
           <Col xs={12} sm={12}>
             {
-              students.map(student => {
-                return this.show(student)
+              studentIds.map(studentId => {
+                return this.show(studentId)
               })
             }
           </Col>
