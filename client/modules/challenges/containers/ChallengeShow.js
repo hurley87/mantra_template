@@ -7,9 +7,11 @@ export const composer = ({context, challengeId}, onData) => {
   if(Meteor.subscribe('challenges.single', challengeId).ready()){
   	const challenge = Collections.Challenges.find({ _id: challengeId }).fetch()[0];
   	const studentId = challenge.studentId;
-  	if(Meteor.subscribe('student', studentId).ready()) {
+  	if(Meteor.subscribe('student', studentId).ready() && Meteor.subscribe('answers.challenge', challengeId)) {
   		const student = Meteor.users.findOne(studentId);
-  		onData(null, {challenge, student});
+      const answer = Collections.Answers.find({}).fetch()[0]
+      console.log(answer)
+  		onData(null, {challenge, student, answer});
   	}
   }
 };

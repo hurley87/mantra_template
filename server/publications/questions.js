@@ -16,6 +16,11 @@ export default function () {
     check(studentId, String);
     return Answers.find({'userId': studentId}, { limit: 10 });
   });
+  Meteor.publish('answers.challenge', function (challengeId) {
+    check(challengeId, String);
+    console.log(challengeId)
+    return Answers.find({ 'challengeId': challengeId })
+  });
   Meteor.publish('answer.view', function (answerId) {
     check(answerId, String);
     return Answers.find({'_id': answerId});
