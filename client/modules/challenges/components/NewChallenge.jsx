@@ -3,20 +3,9 @@ import { Col, Row, Grid, Input, ButtonInput} from 'react-bootstrap';
 import { Form, ValidatedInput, RadioGroup, Radio } from 'react-bootstrap-validation';
 
 class NewChallenge extends React.Component { 
-  show(student) {
-    console.log(student)
-    // (
-    //                                 <ValidatedInput
-    //                                     type='checkbox'
-    //                                     name='agree'
-    //                                     label='I agree to the terms and conditions'
-    //                                     validate='isChecked'
-    //                                 />
-    //                               )
-  }
   render () {
     const students = this.props.students;
-    console.log(students)
+    console.log(this.props.studentId)
     return (
       <div id='signup'>
         <Grid>
@@ -127,7 +116,7 @@ class NewChallenge extends React.Component {
     )
   }
   _handleValidSubmit(values) {
-    this.props.create(values);
+    this.props.create(values, this.props.studentId);
   }
   _handleInvalidSubmit(errors, values) {
     console.log(errors)

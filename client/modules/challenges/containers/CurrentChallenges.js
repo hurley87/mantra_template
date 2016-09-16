@@ -2,11 +2,11 @@ import {useDeps, composeAll, composeWithTracker, compose} from 'mantra-core';
 import CurrentChallenges from '../components/CurrentChallenges.jsx';
 import { _ } from 'lodash';
 
-export const composer = ({context}, onData) => {
+export const composer = ({context, studentId}, onData) => {
   const {LocalState, Collections, FlowRouter} = context();
   const parentId = Meteor.userId();
   if(Meteor.subscribe('challenges.list', parentId).ready()){
-  	const challenges = Collections.Challenges.find({ complete: false }).fetch();
+  	const challenges = Collections.Challenges.find({ complete: false, studentId: studentId }).fetch();
   	onData(null, {challenges});
   }
 };

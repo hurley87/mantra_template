@@ -454,11 +454,11 @@ export default function(injectDeps, {FlowRouter}) {
 
 
 
-  FlowRouter.route('/new', {
+  FlowRouter.route('/new/:studentId', {
     name: 'challenges.new',
-    action() {
+    action({studentId}) {
       mount(MainLayoutCtx, {
-        content: () => (<NewChallenge />)
+        content: () => (<NewChallenge studentId={studentId} />)
       })
     }
   });

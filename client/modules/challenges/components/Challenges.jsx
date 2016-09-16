@@ -6,18 +6,17 @@ import Students from '../containers/Students';
 
 class Challenges extends React.Component { 
   render() {
-    console.log(this.props.username)
     return (
       <div>
         <h1>{this.props.username}</h1>
         <Row>
           <Col xs={12} sm={2}>
-            <p> <a href='/new'>New Challenge</a></p>
+            <p> <a href={'/new/' + this.props.username }>New Challenge</a></p>
             <Students />
           </Col>
           <Col xs={12} sm={5}>
             <h1>Current Challenges</h1>
-            <CurrentChallenges />
+            <CurrentChallenges studentId={this.props.username} />
           </Col>
           <Col xs={12} sm={5}>
             <h1>Past Challenges</h1>

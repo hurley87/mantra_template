@@ -2,6 +2,7 @@ export default {
   create({LocalState, FlowRouter}, challenge, studentId) {
   	FlowRouter.go('/');
   	const userId = Meteor.userId();
+    LocalState.set('STUDENT_USERNAME', studentId);
     Meteor.call('new.challenge', challenge, userId, studentId, function(err) {
     	if(err) {
     		console.log(err)
