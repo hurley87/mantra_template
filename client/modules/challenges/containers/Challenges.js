@@ -12,11 +12,6 @@ export const composer = ({context}, onData) => {
       const studentId = studentIds[0];
       LocalState.set('STUDENT_USERNAME', studentId)
       username = LocalState.get('STUDENT_USERNAME');
-      const student = Meteor.users.find({ _id: studentId }).fetch()[0];
-      if(student) {
-        username = student.username
-        onData(null, {studentIds, username});
-      }
     }
   	onData(null, {studentIds, username});
   }

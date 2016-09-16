@@ -3,12 +3,13 @@ import { Col, Panel, Input, ButtonInput, Glyphicon, Grid, Row } from 'react-boot
 import CurrentChallenges from '../containers/CurrentChallenges';
 import PastChallenges from '../containers/PastChallenges';
 import Students from '../containers/Students';
+import StudentName from '../containers/StudentName';
 
 class Challenges extends React.Component { 
   render() {
     return (
       <div>
-        <h1>{this.props.username}</h1>
+        <StudentName studentId={this.props.username} />
         <Row>
           <Col xs={12} sm={2}>
             <p> <a href={'/new/' + this.props.username }>New Challenge</a></p>
