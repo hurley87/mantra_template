@@ -48,7 +48,7 @@ import ProfileList from '../dashboard/containers/ProfileList.js';
 import VideoLesson from '../arithmetic/containers/VideoLesson.js';
 
 // challenges
-import Challenges from '../challenges/components/Challenges.jsx'
+import Challenges from '../challenges/containers/Challenges.js'
 import NewChallenge from '../challenges/containers/NewChallenge.js'
 import ChallengeShow from '../challenges/containers/ChallengeShow.js'
 import EditChallenge from '../challenges/containers/EditChallenge.js';

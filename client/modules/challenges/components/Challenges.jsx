@@ -6,8 +6,10 @@ import Students from '../containers/Students';
 
 class Challenges extends React.Component { 
   render() {
+    console.log(this.props.username)
     return (
       <div>
+        <h1>{this.props.username}</h1>
         <Row>
           <Col xs={12} sm={2}>
             <p> <a href='/new'>New Challenge</a></p>

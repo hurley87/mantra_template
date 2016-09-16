@@ -13,6 +13,7 @@ export const composer = ({context, studentId}, onData) => {
 
 export const depsMapper = (context, actions) => ({
   edit: actions.challenges.edit,
+  setStudent: actions.challenges.setStudent,
   context: () => context
 });
 

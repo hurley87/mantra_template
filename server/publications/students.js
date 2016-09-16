@@ -16,4 +16,8 @@ export default function () {
 		check(studentId, String)
 		return Meteor.users.find({_id: studentId})
 	});
+	Meteor.publish('student.usernames', function(studentIds) {
+		check(studentIds, Array);
+		return Meteor.users.find({ _id: { $in: studentIds }})
+	});
 }

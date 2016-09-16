@@ -6,8 +6,11 @@ export const composer = ({context}, onData) => {
   const {LocalState, Collections, FlowRouter} = context();
   var parentId = Meteor.userId()
   if(Meteor.subscribe('studentId', parentId).ready()) {
-  	const studentId = Collections.Students.find({"parentId": parentId}).fetch()[0].students[0];
-  	onData(null, {studentId});
+  	const students = Collections.Students.find({"parentId": parentId}).fetch()[0].students;
+    if(Meteor.subscribe('student.usernames', students).ready()) {
+      const students = Meteor.users.find({}).fetch()
+      onData(null, {students});
+    }	
   }
 };
 

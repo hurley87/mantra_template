@@ -3,7 +3,20 @@ import { Col, Row, Grid, Input, ButtonInput} from 'react-bootstrap';
 import { Form, ValidatedInput, RadioGroup, Radio } from 'react-bootstrap-validation';
 
 class NewChallenge extends React.Component { 
+  show(student) {
+    console.log(student)
+    // (
+    //                                 <ValidatedInput
+    //                                     type='checkbox'
+    //                                     name='agree'
+    //                                     label='I agree to the terms and conditions'
+    //                                     validate='isChecked'
+    //                                 />
+    //                               )
+  }
   render () {
+    const students = this.props.students;
+    console.log(students)
     return (
       <div id='signup'>
         <Grid>
@@ -94,7 +107,6 @@ class NewChallenge extends React.Component {
                                   isLength: 'Reward must be at least 4 characters and max 30 characters.'
                               }}
                           />
-
            
                           <ButtonInput
                             type='submit'
@@ -115,7 +127,7 @@ class NewChallenge extends React.Component {
     )
   }
   _handleValidSubmit(values) {
-    this.props.create(values, this.props.studentId);
+    this.props.create(values);
   }
   _handleInvalidSubmit(errors, values) {
     console.log(errors)

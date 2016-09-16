@@ -1,5 +1,5 @@
 import {useDeps, composeAll, composeWithTracker, compose} from 'mantra-core';
-import Students from '../components/Students.jsx';
+import Challenges from '../components/Challenges.jsx';
 import { _ } from 'lodash';
 
 export const composer = ({context}, onData) => {
@@ -10,12 +10,13 @@ export const composer = ({context}, onData) => {
   	const studentIds = Collections.Students.find({"parentId": parentId}).fetch()[0].students;
     if(username == undefined) {
       const studentId = studentIds[0];
+      LocalState.set('STUDENT_USERNAME', studentId)
+      username = LocalState.get('STUDENT_USERNAME');
       const student = Meteor.users.find({ _id: studentId }).fetch()[0];
       if(student) {
         username = student.username
         onData(null, {studentIds, username});
       }
-      
     }
   	onData(null, {studentIds, username});
   }
@@ -29,4 +30,4 @@ export const depsMapper = (context, actions) => ({
 export default composeAll(
   composeWithTracker(composer),
   useDeps(depsMapper)
-)(Students);
+)(Challenges);

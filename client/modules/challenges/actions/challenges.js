@@ -29,5 +29,8 @@ export default {
         FlowRouter.go('/challenges')
       }
     });
+  },
+  setStudent({LocalState}, username) {
+    LocalState.set('STUDENT_USERNAME', username);
   }
 }
