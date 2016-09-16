@@ -1,5 +1,5 @@
 export default {
-  createStudent({Meteor, LocalState, FlowRouter }, name, email, password) {
+  createStudent({Meteor, LocalState, FlowRouter }, name, email, password, reward1, reward2, reward3) {
     Accounts.createUser({
       username: name,
       password: password
@@ -28,7 +28,10 @@ export default {
           } else {
             const student = {
               students: [studentId],
-              parentId: Meteor.userId()
+              parentId: Meteor.userId(),
+              reward1: reward1,
+              reward2: reward2,
+              reward3: reward3
             }
             Meteor.call('insert.student', student, function(err) {
               if(err) {

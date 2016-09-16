@@ -36,6 +36,17 @@ class CreateStudent extends React.Component {
                                   isLength: 'Username must be at least 4 characters'
                               }}
                           />
+
+                          <ValidatedInput
+                              type='text'
+                              label='Reward'
+                              name='reward1'
+                              validate='required,isLength:4:30'
+                              errorHelp={{
+                                  required: 'Please enter a reward',
+                                  isLength: 'Reward must be at least 4 characters'
+                              }}
+                          />
            
                           <ValidatedInput
                               type='password'
@@ -51,7 +62,6 @@ class CreateStudent extends React.Component {
                           <ValidatedInput
                               type='hidden'
                               name='parentId'
-                              label='parentId'
                               value={parentId}
                           />
            
