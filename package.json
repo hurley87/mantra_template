@@ -5,7 +5,6 @@
     "deploy": "DEPLOY_HOSTNAME=galaxy.meteor.com meteor deploy www.pttrns.ca --settings ./settings.json"
   },
   "devDependencies": {
-    "amplitude": "^2.0.3",
     "babel-core": "6.x.x",
     "babel-plugin-react-require": "2.x.x",
     "babel-polyfill": "6.x.x",
@@ -13,33 +12,20 @@
     "babel-preset-react": "6.x.x",
     "babel-preset-stage-2": "6.x.x",
     "babel-root-slash-import": "1.x.x",
-    "chai": "^3.5.0",
-    "d3": "^3.5.17",
-    "enzyme": "1.x.x",
-    "eslint": "1.10.x",
-    "eslint-plugin-react": "3.15.x",
-    "griddle-react": "^0.5.1",
-    "i": "^0.3.4",
     "meteor-auth": "^0.1.1",
-    "mocha": "^2.4.5",
     "npm": "^3.8.6",
     "react-addons-test-utils": "^0.14.6",
     "react-bootstrap-validation": "^0.1.11",
-    "react-d3-components": "^0.6.4",
-    "react-komposer": "^1.8.0",
-    "sinon": "^1.17.3",
-    "sinon-chai": "^2.8.0",
-    "stripe": "^4.5.0"
+    "react-komposer": "^1.8.0"
   },
   "dependencies": {
     "domready": "^1.0.8",
+    "lodash": "^4.15.0",
     "mantra-core": "^1.2.0",
     "meteor-node-stubs": "^0.2.3",
     "react": "^0.14.6",
     "react-dom": "^0.14.6",
-    "react-mounter": "^1.0.0",
-    "react-search-input": "^0.8.1",
-    "stripe": "^4.6.0"
+    "react-mounter": "^1.0.0"
   },
   "private": true
 }
