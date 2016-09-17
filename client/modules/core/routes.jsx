@@ -8,7 +8,6 @@ import DashboardLayout from './containers/dashboardlayout.js';
 import QuestionLayout from './containers/QuestionLayout.js';
 import MarketingLayout from './containers/MarketingLayout.js';
 
-
 // marketing
 import Homepage from '../marketing/containers/Homepage.js';
 import NotFound from '../marketing/components/notfound.jsx';
@@ -27,25 +26,10 @@ import NewUser from '../users/containers/NewUser.js';
 import NewStudent from '../users/containers/NewStudent.js';
 import LoginUser from '../users/containers/Login.js';
 import LoginStudent from '../users/containers/LoginStudent.js';
-import Settings from '../dashboard/containers/settings.js';
 import ResetPassword from '../users/containers/ResetPassword.js';
 import Forgot from '../users/containers/forgot.js';
 import Tracker from '../users/containers/Tracker.js';
 import AnswerView from '../users/containers/AnswerView.js';
-
-// exercises
-import AddIndex from '../arithmetic/containers/AddIndex.js';
-import SubIndex from '../arithmetic/containers/SubIndex.js';
-import MultiIndex from '../arithmetic/containers/MultiIndex.js';
-import CountingIndex from '../arithmetic/containers/CountingIndex.js';
-import DivIndex from '../arithmetic/containers/DivIndex.js';
-import NewQuestion from '../questions/containers/new_question.js';
-import CountingView from '../questions/containers/CountingView.js';
-import ComingSoon from '../arithmetic/components/ComingSoon.jsx';
-import ProfileList from '../dashboard/containers/ProfileList.js';
-
-//video
-import VideoLesson from '../arithmetic/containers/VideoLesson.js';
 
 // challenges
 import Challenges from '../challenges/containers/Challenges.js'
@@ -54,13 +38,6 @@ import ChallengeShow from '../challenges/containers/ChallengeShow.js'
 import EditChallenge from '../challenges/containers/EditChallenge.js';
 import CreateStudent from '../challenges/containers/CreateStudent.js'
 
-// store
-import StoreFront from '../store/containers/store.js';
-import ThankYou from '../store/components/thank_you.jsx';
-import Help from '../dashboard/containers/help.js';
-
-// loading
-import Loading from '../store/components/loading.jsx';
 
 export default function(injectDeps, {FlowRouter}) {
   const MainLayoutCtx = injectDeps(Layout);
@@ -188,116 +165,6 @@ export default function(injectDeps, {FlowRouter}) {
     }
   });
 
-  // profile
-  FlowRouter.route('/profile', {
-    name: 'dashboard.settings',
-    action() {
-      mount(DashboardLayoutCtx, {
-        content: () => (<Settings />)
-      })
-    }
-  });
-
-  // exercises
-  FlowRouter.route('/addition', {
-    name: 'questions:AddIndex',
-    action() {
-      mount(QuestionLayoutCtx, {
-        content: () => (<AddIndex />)
-      })
-    }
-  });
-
-  FlowRouter.route('/addition/:questionId', {
-    name: 'questions:new_question',
-    action({questionId}) {
-      mount(MainLayoutCtx, {
-        content: () => (<NewQuestion back='/addition' header='Addition Exercises' questionId={questionId} />)
-      })
-    }
-  });
-
-  FlowRouter.route('/subtraction', {
-    name: 'questions:SubIndex',
-    action() {
-      mount(QuestionLayoutCtx, {
-        content: () => (<SubIndex />)
-      })
-    }
-  });
-
-  FlowRouter.route('/subtraction/:questionId', {
-    name: 'questions:new_question',
-    action({questionId}) {
-      mount(MainLayoutCtx, {
-        content: () => (<NewQuestion questionId={questionId}/>)
-      })
-    }
-  });
-
-  FlowRouter.route('/multiplication', {
-    name: 'questions:MultiIndex',
-    action() {
-      mount(QuestionLayoutCtx, {
-        content: () => (<MultiIndex />)
-      })
-    }
-  });
-
-  FlowRouter.route('/multiplication/:questionId', {
-    name: 'questions:new_question',
-    action({questionId}) {
-      mount(MainLayoutCtx, {
-        content: () => (<NewQuestion questionId={questionId}/>)
-      })
-    }
-  });
-
-  FlowRouter.route('/division', {
-    name: 'questions:DivIndex',
-    action() {
-      mount(QuestionLayoutCtx, {
-        content: () => (<DivIndex />)
-      })
-    }
-  });
-
-  FlowRouter.route('/division/:questionId', {
-    name: 'questions:new_question',
-    action({questionId}) {
-      mount(MainLayoutCtx, {
-        content: () => (<NewQuestion questionId={questionId}/>)
-      })
-    }
-  });
-
-  FlowRouter.route('/counting', {
-    name: 'questions:CountingIndex',
-    action() {
-      mount(QuestionLayoutCtx, {
-        content: () => (<CountingIndex />)
-      })
-    }
-  });
-
-  FlowRouter.route('/counting/:questionId', {
-    name: 'questions:new_question',
-    action({questionId}) {
-      mount(MainLayoutCtx, {
-        content: () => (<CountingView questionId={questionId}/>)
-      })
-    }
-  });
-
-  FlowRouter.route('/store', {
-    name: 'store.front',
-    action() {
-      mount(DashboardLayoutCtx, {
-        content: () => (<StoreFront />)
-      })
-    }
-  });
-
   FlowRouter.route('/blog', {
     name: 'marketing:blog',
     action() {
@@ -307,25 +174,7 @@ export default function(injectDeps, {FlowRouter}) {
     }
   });
 
-  FlowRouter.route('/lessons', {
-    name: 'marketing:lessons',
-    action() {
-      mount(QuestionLayoutCtx, {
-        content: () => (<ComingSoon />)
-      })
-    }
-  });
-
-    FlowRouter.route('/loading', {
-    name: 'loading',
-    action() {
-      mount(QuestionLayoutCtx, {
-        content: () => (<Loading />)
-      })
-    }
-  });
-
-    FlowRouter.route('/thank_you', {
+  FlowRouter.route('/thank_you', {
     name: 'loading',
     action() {
       mount(QuestionLayoutCtx, {
@@ -415,14 +264,6 @@ export default function(injectDeps, {FlowRouter}) {
     }
   });
 
-    FlowRouter.route('/video', {
-    name: 'video.lesson',
-    action() {
-      mount(QuestionLayoutCtx, {
-        content: () => (<VideoLesson />)
-      })
-    }
-  });
 
 // challenge shit
   FlowRouter.route('/challenges', {
