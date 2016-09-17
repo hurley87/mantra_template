@@ -45,17 +45,7 @@ class NewChallenge extends React.Component {
                               errorHelp={{
                                   required: 'Please choose a number'
                               }}
-                          />   
-
-                           <ValidatedInput
-                              type='number'
-                              label='How many wrong attempts are allowed?'
-                              name='wrong'
-                              validate='required'
-                              errorHelp={{
-                                  required: 'Please choose a number'
-                              }}
-                          />                                              
+                          />                                                
 
                           <ValidatedInput
                               type='number'

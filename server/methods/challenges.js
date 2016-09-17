@@ -17,14 +17,12 @@ export default function () {
     },
     'edit.challenge'(challenge){
         check(challenge, Object);
-        console.log(challenge)
         Challenges.update({ _id: challenge.challengeId}, {
             $set: {
                 'challenge.max': challenge.max,
                 'challenge.min': challenge.min,
                 'challenge.reward': challenge.reward,
                 'challenge.right': challenge.right,
-                'challenge.wrong': challenge.wrong,
                 'challenge.time': challenge.time,
                 'challenge.operator': challenge.operator
             }
