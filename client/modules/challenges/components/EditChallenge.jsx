@@ -99,19 +99,7 @@ const EditChallenge = React.createClass({
                               errorHelp={{
                                   required: 'Please choose a number'
                               }}
-                          />   
-
-                           <ValidatedInput
-                              type='number'
-                              label='How many wrong attempts are allowed?'
-                              name='wrong'
-                              value={this.state.wrong}
-                              onChange={(val) => this.updateWrong(val)}
-                              validate='required'
-                              errorHelp={{
-                                  required: 'Please choose a number'
-                              }}
-                          />                                              
+                          />                                               
 
                           <ValidatedInput
                               type='number'

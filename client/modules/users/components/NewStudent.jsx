@@ -46,30 +46,8 @@ class NewStudent extends React.Component {
 
                           <ValidatedInput
                               type='text'
-                              label="Reward 1"
-                              name='reward1'
-                              validate='required,isLength:4:30'
-                              errorHelp={{
-                                  required: 'Please enter a reward',
-                                  isLength: 'Reward must be at least 4 characters'
-                              }}
-                          />
-
-                          <ValidatedInput
-                              type='text'
-                              label="Reward 2"
-                              name='reward2'
-                              validate='required,isLength:4:30'
-                              errorHelp={{
-                                  required: 'Please enter a reward',
-                                  isLength: 'Reward must be at least 4 characters'
-                              }}
-                          />
-
-                          <ValidatedInput
-                              type='text'
-                              label="Reward 3"
-                              name='reward3'
+                              label="Reward"
+                              name='reward'
                               validate='required,isLength:4:30'
                               errorHelp={{
                                   required: 'Please enter a reward',
@@ -136,7 +114,7 @@ class NewStudent extends React.Component {
     )
   }
   _handleValidSubmit(values) {
-    this.props.createStudent(values.username, values.email, values.password, values.reward1, values.reward2, values.reward3)
+    this.props.createStudent(values.username, values.email, values.password, values.reward)
   }
   _handleInvalidSubmit(errors, values) {
     console.log(errors)

@@ -22,6 +22,7 @@ export default {
     });
   },
   createStudent({LocalState, FlowRouter}, student) {
+    console.log(student)
     Meteor.call('create.student', student, function(err){
       if(err) {
         LocalState.set('CREATE_STUDENT', 'That username is taken. Try another.');

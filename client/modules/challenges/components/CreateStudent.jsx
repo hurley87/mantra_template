@@ -40,7 +40,7 @@ class CreateStudent extends React.Component {
                           <ValidatedInput
                               type='text'
                               label='Reward'
-                              name='reward1'
+                              name='reward'
                               validate='required,isLength:4:30'
                               errorHelp={{
                                   required: 'Please enter a reward',
