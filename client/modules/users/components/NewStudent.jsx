@@ -86,12 +86,6 @@ class NewStudent extends React.Component {
                               errorHelp='Passwords do not match'
                           />
            
-                          <div className="checkbox">
-                            <label>
-                                <Input type="checkbox" defaultChecked='checked' /> You have read & agree to the <a href="/terms">Terms of service</a>.
-                            </label>
-                          </div>
-
                           <ButtonInput
                             type='submit'
                             bsSize='large'

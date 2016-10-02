@@ -64,7 +64,7 @@ class LoginStudent extends React.Component {
                 </div>
               </div>
               <div className="already-account">
-                Need an account? <a href="/register">Signup here</a>.
+                Need an account? <a href="/">Signup here</a>.
               </div>
             </Col>
           </Row>

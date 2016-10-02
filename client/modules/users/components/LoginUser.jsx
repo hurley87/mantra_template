@@ -56,15 +56,12 @@ class LoginUser extends React.Component {
                             className='button text-center'
                           />
                       </Form>
-                      <div className="checkbox">
-                        <a href="/forgot">Forgot your password?</a>
-                      </div>
                     </div>
                   </div>            
                 </div>
               </div>
               <div className="already-account">
-                Need an account? <a href="/register">Signup here</a>.
+                Need an account? <a href="/">Signup here</a>.
               </div>
             </Col>
           </Row>

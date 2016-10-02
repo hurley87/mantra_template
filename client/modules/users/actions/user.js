@@ -7,7 +7,7 @@ export default {
       if(err) {
         console.log(err)
         LocalState.set('CREATE_USER', 'Username already exists!');
-        FlowRouter.go('/register');
+        FlowRouter.go('/');
       } else {
         const studentId = Meteor.userId();
         Accounts.createUser({
@@ -22,7 +22,7 @@ export default {
                 console.log(err)
               } else {
                 LocalState.set('CREATE_USER', 'This email is already taken.');
-                FlowRouter.go('/register');
+                FlowRouter.go('/');
               }
             });
           } else {
@@ -35,7 +35,7 @@ export default {
               if(err) {
                 console.log(err)
                 LocalState.set('CREATE_USER', 'There was a problem creating your account.');
-                FlowRouter.go('/register');
+                FlowRouter.go('/');
               } else {
                 FlowRouter.go('/challenges');
               }
@@ -52,7 +52,7 @@ export default {
      }, function(err) {
        if(err) {
          LocalState.set('CREATE_USER', 'There was a problem creating your account.');
-         FlowRouter.go('/register');
+         FlowRouter.go('/');
        } else {
          createProfile(name, type);
        }
@@ -68,14 +68,14 @@ function createProfile(name, type) {
      if(err){
        console.log(err)
        LocalState.set('CREATE_USER', 'There was a problem creating your account.');
-       FlowRouter.go('/register');
+       FlowRouter.go('/');
      } 
      const userId = Meteor.userId();
      if(userId) {
        FlowRouter.go('/profile');
      } else {
        LocalState.set('CREATE_USER', 'Your email is already associated with an account.');
-       FlowRouter.go('/register');
+       FlowRouter.go('/');
      } 
   });
 
