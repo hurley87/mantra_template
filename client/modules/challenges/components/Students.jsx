@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Panel, Input, ButtonInput, Glyphicon, Grid, Row } from 'react-bootstrap';
+import { Col, Panel, Input, ButtonInput, Glyphicon, Grid, Row, ListGroup, ListGroupItem } from 'react-bootstrap';
 import Student from '../containers/Student';
 
 class Students extends React.Component { 
@@ -14,13 +14,15 @@ class Students extends React.Component {
       <div>
         <Row>
           <Col xs={12} sm={12}>
-            {
-              studentIds.map(studentId => {
-                return this.show(studentId)
-              })
-            }
+            <ListGroup>
+              {
+                studentIds.map(studentId => {
+                  return this.show(studentId)
+                })
+              }
+              <ListGroupItem><a href="/students/new">Add a student</a></ListGroupItem>
+            </ListGroup>
           </Col>
-          <p><a href="/students/new">Create new student</a></p>
         </Row>
       </div>
     )

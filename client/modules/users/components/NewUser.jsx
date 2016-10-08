@@ -13,7 +13,7 @@ class NewUser extends React.Component {
   }
   render () {
     return (
-      <div id='signup'>
+      <div>
         <Grid>
           <Row className='header'>
             <Col md={12}>

@@ -7,7 +7,7 @@ class NewChallenge extends React.Component {
     const students = this.props.students;
     console.log(this.props.studentId)
     return (
-      <div id='signup'>
+      <div>
         <Grid>
           <Row className='header'>
             <Col md={12}>
@@ -16,7 +16,7 @@ class NewChallenge extends React.Component {
             </Col>
           </Row>
           <Row>
-            <Col md={12}>
+            <Col md={8}>
               <div className="wrapper clearfix">
                 <div className="formy">
                   <div className="row">

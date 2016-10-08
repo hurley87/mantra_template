@@ -5,7 +5,7 @@ class StudentName extends React.Component {
   render() {
     return (
       <div>
-        {this.props.username}
+        <h1 style={{marginTop: '0px'}}>{this.props.username}</h1>
       </div>
     )
   }

@@ -8,20 +8,27 @@ import StudentName from '../containers/StudentName';
 class Challenges extends React.Component { 
   render() {
     return (
-      <div>
-        <StudentName studentId={this.props.username} />
+      <div className='container'> 
         <Row>
           <Col xs={12} sm={2}>
-            <p> <a href={'/new/' + this.props.username }>New Challenge</a></p>
             <Students />
           </Col>
-          <Col xs={12} sm={5}>
-            <h1>Current Challenges</h1>
+          <Col xs={12} sm={8}>
+            <div className='row'>
+              <div className='col-xs-6'>
+                <StudentName studentId={this.props.username} />
+              </div>
+              <div className='col-xs-6 text-right'>
+                <a href={'/new/' + this.props.username }><button className='btn btn-large btn-primary'> New Challenge</button></a>
+              </div>
+            </div>
             <CurrentChallenges studentId={this.props.username} />
-          </Col>
-          <Col xs={12} sm={5}>
-            <h1>Past Challenges</h1>
             <PastChallenges />
+          </Col>
+          <Col xs={12} sm={2}>
+            <Panel header="pttrn's annoucement">
+              The multiple content types can be easily combined to create the card you need. See below for an example.
+            </Panel>
           </Col>
         </Row>
       </div>

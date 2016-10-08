@@ -11,7 +11,6 @@ import LoginUser from '../users/containers/Login.js';
 import LoginStudent from '../users/containers/LoginStudent.js';
 import ResetPassword from '../users/containers/ResetPassword.js';
 import Forgot from '../users/containers/forgot.js';
-import AnswerView from '../users/containers/AnswerView.js';
 
 // challenges
 import Challenges from '../challenges/containers/Challenges.js'

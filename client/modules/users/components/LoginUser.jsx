@@ -6,7 +6,7 @@ import { Form, ValidatedInput } from 'react-bootstrap-validation';
 class LoginUser extends React.Component {
   render () {
     return (
-      <div id='signup'>
+      <div>
         <Grid>
           <Row className='header'>
             <Col md={12}>

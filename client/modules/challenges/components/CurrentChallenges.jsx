@@ -1,5 +1,6 @@
 import React from 'react';
 import { Col, Panel, Input, ButtonInput, Glyphicon, Grid, Row } from 'react-bootstrap';
+import ChallengeCard from './ChallengeCard'
 
 class CurrentChallenges extends React.Component { 
   render() {
@@ -10,11 +11,7 @@ class CurrentChallenges extends React.Component {
           <Col xs={12} sm={12}>
             {
               challenges.map( challenge => {
-                return (
-                  <div key={challenge._id}>
-                    <a href={"/challenges/" + challenge._id}>{challenge.challenge.reward}</a>
-                  </div>
-                )
+                return <ChallengeCard key={challenge._id} challenge={challenge} />
               })
             }
           </Col>

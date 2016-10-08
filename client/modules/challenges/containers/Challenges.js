@@ -10,7 +10,7 @@ export const composer = ({context}, onData) => {
   	const studentIds = Collections.Students.find({"parentId": parentId}).fetch()[0].students;
     if(username == undefined) {
       const studentId = studentIds[0];
-      LocalState.set('STUDENT_USERNAME', studentId)
+      LocalState.set('STUDENT_USERNAME', studentId);
       username = LocalState.get('STUDENT_USERNAME');
     }
   	onData(null, {studentIds, username});

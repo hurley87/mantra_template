@@ -2,7 +2,7 @@
   "name": "impossible",
   "version": "0.1.0",
   "scripts": {
-    "deploy": "DEPLOY_HOSTNAME=galaxy.meteor.com meteor deploy www.pttrns.ca --settings ./settings.json"
+    "deploy": "DEPLOY_HOSTNAME=galaxy.meteor.com meteor deploy app.pttrns.ca --settings ./settings.json"
   },
   "devDependencies": {
     "babel-core": "6.x.x",

@@ -57,7 +57,7 @@ const EditChallenge = React.createClass({
   	const challengeId = this.props.challenge._id;
   	console.log(challengeId)
     return (
-      <div id='signup'>
+      <div>
         <Grid>
           <Row className='header'>
             <Col md={12}>
@@ -66,7 +66,7 @@ const EditChallenge = React.createClass({
             </Col>
           </Row>
           <Row>
-            <Col md={12}>
+            <Col md={8}>
               <div className="wrapper clearfix">
                 <div className="formy">
                   <div className="row">
@@ -158,7 +158,7 @@ const EditChallenge = React.createClass({
                             type='submit'
                             bsSize='large'
                             bsStyle='primary'
-                            value='Create'
+                            value='Update'
                             className='button text-center'
                           />
                       </Form>

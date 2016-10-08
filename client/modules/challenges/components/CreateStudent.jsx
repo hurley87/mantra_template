@@ -6,7 +6,7 @@ class CreateStudent extends React.Component {
   render () {
   	const parentId = Meteor.userId();
     return (
-      <div id='signup'>
+      <div>
         <Grid>
           <Row className='header'>
             <Col md={12}>
@@ -15,7 +15,7 @@ class CreateStudent extends React.Component {
             </Col>
           </Row>
           <Row>
-            <Col md={12}>
+            <Col md={8}>
               <div className="wrapper clearfix">
                 <div className="formy">
                   <div className="row">

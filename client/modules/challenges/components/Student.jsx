@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Panel, Input, ButtonInput, Glyphicon, Grid, Row } from 'react-bootstrap';
+import { Col, Panel, Input, ButtonInput, Glyphicon, Grid, Row, ListGroupItem } from 'react-bootstrap';
 
 class Student extends React.Component { 
   changeStudent(student) {
@@ -8,9 +8,9 @@ class Student extends React.Component {
   render() {
     const student = this.props.student;
     return (
-      <div onClick={this.changeStudent.bind(this, student)}>
+      <ListGroupItem onClick={this.changeStudent.bind(this, student)}>
         {student.username}
-      </div>
+      </ListGroupItem>
     )
   }
 }
