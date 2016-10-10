@@ -6,7 +6,7 @@ const Layout = ({content}) => (
 	  <Navbar inverse>
 	    <Navbar.Header>
 	      <Navbar.Brand>
-	        <a href="#">pttrns</a>
+	        <a href="http://pttrns.ca">pttrns</a>
 	      </Navbar.Brand>
 	      <Navbar.Toggle />
 	    </Navbar.Header>
