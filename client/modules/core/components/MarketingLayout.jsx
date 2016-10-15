@@ -12,7 +12,7 @@ const Layout = ({content}) => (
 	    </Navbar.Header>
 	    <Navbar.Collapse>
 	      <Nav pullRight>
-	        <NavItem eventKey={1} href="#">Settings</NavItem>
+
 	      </Nav>
 	    </Navbar.Collapse>
 	  </Navbar>

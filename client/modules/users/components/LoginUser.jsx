@@ -9,12 +9,12 @@ class LoginUser extends React.Component {
       <div>
         <Grid>
           <Row className='header'>
-            <Col md={12}>
-              <h4>Login</h4>
+            <Col md={6}>
+              <h2>Login</h2>
             </Col>
           </Row>
           <Row>
-            <Col md={12}>
+            <Col md={6}>
               <div className="wrapper clearfix">
                 <div className="formy">
                   <div className="row">

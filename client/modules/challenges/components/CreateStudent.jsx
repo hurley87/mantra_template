@@ -15,7 +15,7 @@ class CreateStudent extends React.Component {
             </Col>
           </Row>
           <Row>
-            <Col md={8}>
+            <Col md={6}>
               <div className="wrapper clearfix">
                 <div className="formy">
                   <div className="row">
@@ -41,7 +41,7 @@ class CreateStudent extends React.Component {
                               type='text'
                               label='Reward'
                               name='reward'
-                              validate='required,isLength:4:30'
+                              validate='required,isLength:2:30'
                               errorHelp={{
                                   required: 'Please enter a reward',
                                   isLength: 'Reward must be at least 4 characters'

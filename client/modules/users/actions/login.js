@@ -1,5 +1,6 @@
 export default {
   login({Meteor, LocalState}, email, password ) {
+    FlowRouter.go('/loading');
     Meteor.loginWithPassword(email, password, function(error){
       if(error) {
         LocalState.set('LOGIN_USER', 'Incorrect login. Check your email and password.')
@@ -13,6 +14,7 @@ export default {
     });
   },
   studentlogin({Meteor, LocalState}, username, password) {
+    FlowRouter.go('/loading');
     Meteor.loginWithPassword(username, password, function(error){
         if(error) {
           LocalState.set('LOGIN_USER', 'Incorrect login. Check your username and password.')

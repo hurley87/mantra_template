@@ -1,5 +1,6 @@
 export default {
   createStudent({Meteor, LocalState, FlowRouter }, name, email, password, reward) {
+    FlowRouter.go('/loading');
     Accounts.createUser({
       username: name,
       password: password
@@ -46,6 +47,7 @@ export default {
     });
   },  
   createMentor({LocalState, Meteor, FlowRouter}, name, email, password, type ) {
+    FlowRouter.go('/loading');
       Accounts.createUser({
        email: email,
        password: password

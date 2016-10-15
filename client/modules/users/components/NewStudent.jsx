@@ -16,13 +16,13 @@ class NewStudent extends React.Component {
       <div>
         <Grid>
           <Row className='header'>
-            <Col md={12}>
+            <Col md={6}>
               <h4>Create a Student</h4>
               <p>All you need is their username and password.</p>
             </Col>
           </Row>
           <Row>
-            <Col md={12}>
+            <Col md={6}>
               <div className="wrapper clearfix">
                 <div className="formy">
                   <div className="row">
@@ -48,7 +48,7 @@ class NewStudent extends React.Component {
                               type='text'
                               label="Reward"
                               name='reward'
-                              validate='required,isLength:4:30'
+                              validate='required,isLength:2:30'
                               errorHelp={{
                                   required: 'Please enter a reward',
                                   isLength: 'Reward must be at least 4 characters'

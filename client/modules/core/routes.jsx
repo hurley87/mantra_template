@@ -3,12 +3,11 @@ import {mount} from 'react-mounter';
 
 // Layouts
 import MarketingLayout from './containers/MarketingLayout.js';
+import Loading from './components/Loading.jsx';
 
 // registration
-import NewUser from '../users/containers/NewUser.js';
 import NewStudent from '../users/containers/NewStudent.js';
 import LoginUser from '../users/containers/Login.js';
-import LoginStudent from '../users/containers/LoginStudent.js';
 import ResetPassword from '../users/containers/ResetPassword.js';
 import Forgot from '../users/containers/forgot.js';
 
@@ -32,15 +31,6 @@ export default function(injectDeps, {FlowRouter}) {
     }
   };
 
-  // FlowRouter.route('/signup', {
-  //   name: 'users.new',
-  //   action() {
-  //     mount(MarketingLayoutCtx, {
-  //       content: () => (<NewUser />)
-  //     });
-  //   }
-  // });
-
   FlowRouter.route('/', {
     name: 'students.new',
     action() {
@@ -50,6 +40,17 @@ export default function(injectDeps, {FlowRouter}) {
     }
   });
 
+
+  FlowRouter.route('/loading', {
+    name: 'loading',
+    action() {
+      mount(MarketingLayoutCtx, {
+        content: () => (<Loading />)
+      });
+    }
+  });
+
+
   FlowRouter.route('/login', {
     name: 'users.new',
     action() {
@@ -58,25 +59,6 @@ export default function(injectDeps, {FlowRouter}) {
       });
     }
   });
-
-
-  // FlowRouter.route('/student', {
-  //   name: 'users.new',
-  //   action() {
-  //     mount(MarketingLayoutCtx, {
-  //       content: () => (<LoginStudent />)
-  //     });
-  //   }
-  // });
-
-  // FlowRouter.route('/students', {
-  //   name: 'users.new',
-  //   action() {
-  //     mount(QuestionLayoutCtx, {
-  //       content: () => (<ProfileList />)
-  //     });
-  //   }
-  // });
 
   FlowRouter.route('/reset', {
     name: 'reset',
@@ -95,15 +77,6 @@ export default function(injectDeps, {FlowRouter}) {
       })
     }
   });
-
-  // FlowRouter.route('/thank_you', {
-  //   name: 'loading',
-  //   action() {
-  //     mount(QuestionLayoutCtx, {
-  //       content: () => (<ThankYou />)
-  //     })
-  //   }
-  // });
 
 // challenge shit
   FlowRouter.route('/challenges', {

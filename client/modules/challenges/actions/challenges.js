@@ -1,6 +1,6 @@
 export default {
   create({LocalState, FlowRouter}, challenge, studentId) {
-  	FlowRouter.go('/');
+  	FlowRouter.go('/loading');
   	const userId = Meteor.userId();
     LocalState.set('STUDENT_USERNAME', studentId);
     Meteor.call('new.challenge', challenge, userId, studentId, function(err) {
@@ -13,6 +13,7 @@ export default {
     });
   },
   edit({LocalState, FlowRouter}, challenge) {
+    FlowRouter.go('/loading');
     Meteor.call('edit.challenge', challenge, function(err) {
       if(err) {
         FlowRouter.go('/edit/' + challenge.challengeId)
@@ -22,7 +23,7 @@ export default {
     });
   },
   createStudent({LocalState, FlowRouter}, student) {
-    console.log(student)
+    FlowRouter.go('/loading');
     Meteor.call('create.student', student, function(err){
       if(err) {
         LocalState.set('CREATE_STUDENT', 'That username is taken. Try another.');
