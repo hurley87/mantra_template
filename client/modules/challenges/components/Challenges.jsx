@@ -10,10 +10,10 @@ class Challenges extends React.Component {
     return (
       <div className='container'> 
         <Row>
-          <Col xs={12} sm={2}>
+          <Col xs={12} sm={3}>
             <Students />
           </Col>
-          <Col xs={12} sm={8}>
+          <Col xs={12} sm={9}>
             <div className='row'>
               <div className='col-xs-6'>
                 <StudentName studentId={this.props.username} />
@@ -24,11 +24,6 @@ class Challenges extends React.Component {
             </div>
             <CurrentChallenges studentId={this.props.username} />
             <PastChallenges />
-          </Col>
-          <Col xs={12} sm={2}>
-            <Panel header="pttrn's annoucement">
-              The multiple content types can be easily combined to create the card you need. See below for an example.
-            </Panel>
           </Col>
         </Row>
       </div>

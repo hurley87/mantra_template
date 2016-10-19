@@ -12,7 +12,7 @@ const Layout = ({content}) => (
 	    </Navbar.Header>
 	    <Navbar.Collapse>
 	      <Nav pullRight>
-
+	      	{ Meteor.userId() ? <NavItem href="/logout">Logout</NavItem> : <NavItem href="/login">Login</NavItem>}
 	      </Nav>
 	    </Navbar.Collapse>
 	  </Navbar>
