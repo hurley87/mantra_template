@@ -6,7 +6,7 @@ export default {
         LocalState.set('LOGIN_USER', 'Incorrect login. Check your email and password.')
       } else {
         if(Meteor.userId()){
-          FlowRouter.go("/profile")
+          FlowRouter.go("/challenges")
         }else{
           LocalState.set('LOGIN_USER', 'Incorrect login. Check your email and password.')
         }
@@ -20,7 +20,7 @@ export default {
           LocalState.set('LOGIN_USER', 'Incorrect login. Check your username and password.')
         } else {
           if(Meteor.userId()){
-            FlowRouter.go("/profile")
+            FlowRouter.go("/challenges")
           }else{
             LocalState.set('LOGIN_USER', 'Incorrect login. Check your username and password.')
           }
