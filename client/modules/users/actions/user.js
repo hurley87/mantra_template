@@ -1,5 +1,6 @@
 export default {
   createStudent({Meteor, LocalState, FlowRouter }, name, email, password, reward) {
+    console.log(name, email, password, reward)
     FlowRouter.go('/loading');
     console.log(name)
     Accounts.createUser({
