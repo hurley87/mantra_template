@@ -35,7 +35,6 @@ export default {
             }
             Meteor.call('insert.student', student, function(err) {
               if(err) {
-                console.log(err)
                 LocalState.set('CREATE_USER', 'There was a problem creating your account.');
                 FlowRouter.go('/');
               } else {
