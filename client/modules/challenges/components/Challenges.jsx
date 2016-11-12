@@ -23,6 +23,8 @@ class Challenges extends React.Component {
               </div>
             </div>
             <CurrentChallenges studentId={this.props.username} />
+            <hr />
+            <br />
             <PastChallenges />
           </Col>
         </Row>

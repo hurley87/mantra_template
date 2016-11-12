@@ -7,9 +7,10 @@ class ChallengeCard extends React.Component {
     return (
     	<Well bsSize="large">
 		<div className="card card-block">
-		  <h4 className="card-title">{challenge.challenge.reward}</h4>
-		  <p className="card-text">Answer {challenge.challenge.right} questions in  {challenge.challenge.time} seconds.</p>
-		  <a className="card-link" href={"/challenges/" + challenge._id}>View Challenge</a>
+		  <h4 className="card-title">
+		  	{challenge.challenge.reward} <small> Answer {challenge.challenge.right} questions in  {challenge.challenge.time} seconds.</small> 
+		  	<small><a className="card-link pull-right" href={"/challenges/" + challenge._id}>View Challenge</a></small> 
+		  </h4>
 		</div>
 		</Well>
     )
