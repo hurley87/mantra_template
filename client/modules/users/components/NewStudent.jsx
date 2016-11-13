@@ -16,12 +16,12 @@ class NewStudent extends React.Component {
   chooseUsername() {
     const username = this.state.username;
 
-    if(username.length < 5) {
-      this.setState({ instructions: 'Please choose a username that has more then 4 characters.'})
+    if(username.length < 3) {
+      this.setState({ instructions: 'Please choose a username that has more then 3 characters.'})
     } else {
       this.setState({
         instructions: 'What movtivates your child? Please choose a reward that will incentivize your child to learn math.',
-        step: 'reward'
+        step: 'account'
       })
     }
   }
@@ -54,7 +54,7 @@ class NewStudent extends React.Component {
               type='text'
               label="Username"
               name='username'
-              validate='required,isLength:4:30'
+              validate='required,isLength:3:30'
               value={this.state.username}
               onChange={(val) => this.updateUsername(val)}
               errorHelp={{
@@ -171,7 +171,7 @@ class NewStudent extends React.Component {
     )
   }
   _handleValidSubmit(values) {
-    this.props.createStudent(this.state.username, values.email, values.password, this.state.reward)
+    this.props.createStudent(this.state.username, values.email, values.password, 'reward')
   }
   _handleInvalidSubmit(errors, values) {
     console.log(errors)
