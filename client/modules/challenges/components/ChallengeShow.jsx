@@ -33,7 +33,7 @@ class ChallengeShow extends React.Component {
           <p>Status: not complete</p>
           <p>Operator: {challenge.operator}</p>
           <p>Answer {challenge.right} questions in {challenge.time} seconds.</p>
-          <a target="_blank" href={"https://play.pttrns.ca?username=" + student.username}><button className='btn btn-large btn-primary'>Accept Challenge</button></a>
+          <a target="_blank" href={"http://play.pttrns.ca?username=" + student.username}><button className='btn btn-large btn-primary'>Accept Challenge</button></a>
           <hr/>
           <p><a href={'/edit/' + challengeId}>Edit challenge</a></p>
         </Panel>
