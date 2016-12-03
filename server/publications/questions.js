@@ -18,7 +18,6 @@ export default function () {
   });
   Meteor.publish('answers.challenge', function (challengeId) {
     check(challengeId, String);
-    console.log(challengeId)
     return Answers.find({ 'challengeId': challengeId })
   });
   Meteor.publish('answer.view', function (answerId) {

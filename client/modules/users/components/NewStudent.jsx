@@ -20,7 +20,7 @@ class NewStudent extends React.Component {
       this.setState({ instructions: 'Please choose a username that has more then 3 characters.'})
     } else {
       this.setState({
-        instructions: 'What movtivates your child? Please choose a reward that will incentivize your child to learn math.',
+        instructions: "Please create an account. Remember your password as you will use it to login to your child's account.",
         step: 'account'
       })
     }
@@ -32,7 +32,7 @@ class NewStudent extends React.Component {
       this.setState({ instructions: 'Please choose a reward that has more then 4 characters.'})
     } else {
       this.setState({
-        instructions: "Please create an account. Remember your password as you will use it to login to your child's account",
+        instructions: "Please create an account. Remember your password as you will use it to login to your child's account.",
         step: 'account'
       })
     }

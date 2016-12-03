@@ -39,17 +39,34 @@ class ChallengeShow extends React.Component {
         </Panel>
     )
   }
+  pastAttempts(answers, student, complete) {
+    if(complete) {
+      answers.pop();
+    }
+    return (
+      <div>
+        <h2>{answers.length} Attempts</h2>
+        <p>We recommend visiting <a target="_blank" href={"http://play.pttrns.ca?username=" + student.username}>http://play.pttrns.ca</a> and using the same password you used to sign up for your account.
+        From there you can accept the challenge and your attempts will appear here.</p>
+      </div>
+      
+    )
+  }
   render() {
     const challenge = this.props.challenge.challenge;
     const student = this.props.student;
     const complete = this.props.challenge.complete;
     const challengeId = this.props.challenge._id;
-    const answer = this.props.answer;
+    const answers = this.props.answer;
+    const answer = answers[answers.length - 1]
     return (
       <div className='container'>
         <Row>
-          <Col xs={12} sm={8}>
+          <Col xs={12} sm={6}>
             { complete ? this.complete(answer, student, challenge) : this.notComplete(challenge, student, challengeId) }
+          </Col>
+          <Col xs={12} sm={6}>
+            { this.pastAttempts(answers, student, complete) }
           </Col>
         </Row>
       </div>
