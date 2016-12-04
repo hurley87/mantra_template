@@ -5,7 +5,6 @@ import { Form, ValidatedInput, RadioGroup, Radio } from 'react-bootstrap-validat
 class NewChallenge extends React.Component { 
   render () {
     const students = this.props.students;
-    console.log(this.props.studentId)
     return (
       <div>
         <Grid>
