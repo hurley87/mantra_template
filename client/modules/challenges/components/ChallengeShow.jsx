@@ -77,12 +77,18 @@ const ChallengeShow = React.createClass({
   },
   intro(challenge, student){
     const stats = challenge.challenge;
+    const userId = Meteor.userId();
+    const userEmail = Meteor.users.findOne(userId).emails[0].address;
+    console.log(userEmail)
+    const to = userEmail;
+    const from = 'dave@planswell.ca';
+    const subject = `Answer ${stats.right} problems in ${stats.time} seconds`;
+    const text = `<div>This is a test</div><div><a target="_blank" href="http://play.pttrns.ca?username=${student.username}&gameId=${challenge._id}"><button className='btn btn-large btn-primary'>Accept Challenge</button></a></div>`;
     return (
       <div>
         <p>To pass this challenge {student.username} must answer {stats.right} problems in {stats.time} seconds.</p>
-        <p>We recommend visiting <a target="_blank" href={"http://play.pttrns.ca?username=" + student.username}>http://play.pttrns.ca</a> on your phone and using the same password you used to sign up for your account.
-        From there you can accept the challenge and your attempts will appear here.</p>
-        <a target="_blank" href={"http://play.pttrns.ca?username=" + student.username}><button className='btn btn-large btn-primary'>Accept Challenge</button></a>
+        <p>Change this copy to reflect the new UX of sending challenges to your phone.</p>
+        <button onClick={this.props.sendChallenge.bind(this, challenge, to, from, subject, text)} className='btn btn-large btn-primary'>Send challenge</button>
       </div>
     )
   },
@@ -107,7 +113,6 @@ const ChallengeShow = React.createClass({
       <div className='container'>
         <Row>
           <Col xs={12} sm={6}>
-            <p><a href="/challenges">back to challenges</a></p>
             <h2>{challenge.reward}</h2>
             { complete ? this.congrats(this.props.challenge, student) : this.intro(this.props.challenge, student)}
             { answers.length > 0 ? this.pastAttempts(answers, student, complete) : null }

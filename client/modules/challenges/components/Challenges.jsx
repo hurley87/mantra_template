@@ -18,13 +18,13 @@ class Challenges extends React.Component {
               <div className='col-xs-6'>
                 <StudentName studentId={this.props.username} />
               </div>
-              <div className='col-xs-6 text-right'>
-                <a href={'/new/' + this.props.username }><button className='btn btn-large btn-primary'> Create Challenge</button></a>
-              </div>
+              { 
+                  // <div className='col-xs-6 text-right'>
+                  //   <a href={'/new/' + this.props.username }><button className='btn btn-large btn-primary'> Create Challenge</button></a>
+                  // </div>
+              }
             </div>
             <CurrentChallenges studentId={this.props.username} />
-            <hr />
-            <h2>Completed Challenges</h2>
             <PastChallenges />
           </Col>
         </Row>

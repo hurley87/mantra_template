@@ -1,6 +1,7 @@
 import {Challenges} from '/lib/collections';
 import {Meteor} from 'meteor/meteor';
 import {check} from 'meteor/check';
+import { Email } from 'meteor/email'
 
 export default function () {
   Meteor.methods({
@@ -27,6 +28,19 @@ export default function () {
                 'challenge.operator': challenge.operator
             }
         })
+    },
+    'send.challenge'(challenge,to, from, subject, text){
+        check(challenge, Object);
+        check([to, from, subject, text], [String]);
+
+        this.unblock();
+
+        Email.send({
+          to: to,
+          from: from,
+          subject: subject,
+          html: text
+        });
     }
   });
 }

@@ -17,6 +17,7 @@ export const composer = ({context, challengeId}, onData) => {
 
 export const depsMapper = (context, actions) => ({
   create: actions.challenges.create,
+  sendChallenge: actions.challenges.sendChallenge,
   context: () => context
 });
 

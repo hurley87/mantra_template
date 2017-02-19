@@ -35,5 +35,16 @@ export default {
   },
   setStudent({LocalState}, username) {
     LocalState.set('STUDENT_USERNAME', username);
+  },
+  sendChallenge({LocalState}, challenge, to, from, subject, text) {
+    FlowRouter.go('/loading');
+    console.log(challenge)
+    Meteor.call('send.challenge', challenge, to, from, subject, text, function(err){
+      if(err) {
+        FlowRouter.go(`/challenges/${challenge._id}`)
+      } else {
+        FlowRouter.go(`/challenges/${challenge._id}`)
+      }
+    });
   }
 }
