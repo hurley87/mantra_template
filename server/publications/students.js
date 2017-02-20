@@ -9,7 +9,6 @@ export default function () {
 	});
 	Meteor.publish('studentId', function(parentId) {
 		check(parentId, String);
-		console.log(parentId)
 		return Students.find({ parentId: parentId })
 	})
 	Meteor.publish('student', function (studentId) {

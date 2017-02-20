@@ -13,7 +13,9 @@ export default function () {
         	parentId: parentId,
             studentId: studentId,
         	challenge: challenge,
-            complete: false
+            complete: false,
+            pending: false,
+            attempted: false
         });
     },
     'edit.challenge'(challenge){
@@ -32,6 +34,8 @@ export default function () {
     'send.challenge'(challenge,to, from, subject, text){
         check(challenge, Object);
         check([to, from, subject, text], [String]);
+        console.log(challenge._id)
+        Challenges.update({ _id: challenge._id }, { $set: { pending: true } });
 
         this.unblock();
 

@@ -33,21 +33,10 @@ const ChallengeShow = React.createClass({
       </div>
     )
   },
-  notComplete(challenge, student, challengeId) {
-    return (
-        <Panel collapsible defaultExpanded header={challenge.reward}>
-          <p><a href="/challenges">back</a></p>
-          <p>Status: not complete</p>
-          <p>Operator: {challenge.operator}</p>
-          <p>Answer {challenge.right} questions in {challenge.time} seconds.</p>
-          <a target="_blank" href={"http://play.pttrns.ca?username=" + student.username}><button className='btn btn-large btn-primary'>Accept Challenge</button></a>
-        </Panel>
-    )
-  },
-  pastAttempts(answers, student, complete) {
+  pastAttempts(answer, answers, student, complete) {
+    const submissions = answer ? answer.submissions : null
     return (
       <div>
-        <hr />
         {
           answers.map((answer, index) => {
             return <div onClick={this.changeAnswer.bind(this, index)} key={index}>Attempt #{index + 1}</div>
@@ -87,6 +76,7 @@ const ChallengeShow = React.createClass({
       <div>
         <p>To pass this challenge {student.username} must answer {stats.right} problems in {stats.time} seconds.</p>
         <p>Change this copy to reflect the new UX of sending challenges to your phone.</p>
+        <p>{challenge.pending ? 'yes': 'no'}</p>
         <button onClick={this.props.sendChallenge.bind(this, challenge, to, from, subject, text)} className='btn btn-large btn-primary'>Send challenge</button>
       </div>
     )
@@ -114,7 +104,7 @@ const ChallengeShow = React.createClass({
           <Col xs={12} sm={6}>
             <h2>{challenge.reward}</h2>
             { complete ? this.congrats(this.props.challenge, student) : this.intro(this.props.challenge, student)}
-            { answers.length > 0 ? this.pastAttempts(answers, student, complete) : null }
+            { this.pastAttempts(answer, answers, student, complete) }
           </Col>
           <Col xs={12} sm={6}>
             { submission ? this.viewSubmission(submission, answerIndex) : null }
