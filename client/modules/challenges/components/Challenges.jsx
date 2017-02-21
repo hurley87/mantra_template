@@ -10,21 +10,13 @@ class Challenges extends React.Component {
     return (
       <div className='container'> 
         <Row>
-          <Col xs={12} sm={3}>
-            <Students />
-          </Col>
           <Col xs={12} sm={9}>
             <div className='row'>
               <div className='col-xs-6'>
                 <StudentName studentId={this.props.username} />
               </div>
-              { 
-                  // <div className='col-xs-6 text-right'>
-                  //   <a href={'/new/' + this.props.username }><button className='btn btn-large btn-primary'> Create Challenge</button></a>
-                  // </div>
-              }
             </div>
-            <CurrentChallenges studentId={this.props.username} />
+            <CurrentChallenges studentId={this.props.username} operator={this.props.operator} />
             <PastChallenges />
           </Col>
         </Row>

@@ -17,6 +17,8 @@ import NewChallenge from '../challenges/containers/NewChallenge.js'
 import ChallengeShow from '../challenges/containers/ChallengeShow.js'
 import EditChallenge from '../challenges/containers/EditChallenge.js';
 import CreateStudent from '../challenges/containers/CreateStudent.js'
+import Students from '../challenges/containers/Students.js'
+import StudentsShow from '../challenges/containers/StudentsShow.js'
 
 
 export default function(injectDeps, {FlowRouter}) {
@@ -34,7 +36,7 @@ export default function(injectDeps, {FlowRouter}) {
   FlowRouter.route('/', {
     name: 'students.new',
     action() {
-      Meteor.userId() ? FlowRouter.go('/challenges') : mount(MarketingLayoutCtx, { content: () => (<NewStudent />) });
+      Meteor.userId() ? FlowRouter.go('/students') : mount(MarketingLayoutCtx, { content: () => (<NewStudent />) });
     }
   });
 
@@ -52,7 +54,7 @@ export default function(injectDeps, {FlowRouter}) {
   FlowRouter.route('/login', {
     name: 'users.new',
     action() {
-      Meteor.userId() ? FlowRouter.go('/challenges') : mount(MarketingLayoutCtx, {content: () => (<LoginUser />) });
+      Meteor.userId() ? FlowRouter.go('/students') : mount(MarketingLayoutCtx, {content: () => (<LoginUser />) });
     }
   });
 
@@ -136,4 +138,57 @@ export default function(injectDeps, {FlowRouter}) {
     }
   });
 
+  FlowRouter.route('/students', {
+    name: 'students.list',
+    action() {
+      mount(MarketingLayoutCtx, {
+        content: () => (<Students />)
+      })
+    }
+  });
+
+  FlowRouter.route('/students/:studentId', {
+    name: 'students.show',
+    action({studentId}) {
+      mount(MarketingLayoutCtx, {
+        content: () => (<StudentsShow studentId={studentId} />)
+      })
+    }
+  });
+
+  FlowRouter.route('/students/:studentId/addition', {
+    name: 'students.show.addition',
+    action({studentId}) {
+      mount(MarketingLayoutCtx, {
+        content: () => (<Challenges studentId={studentId} operator='+' />)
+      })
+    }
+  });
+
+  FlowRouter.route('/students/:studentId/subtraction', {
+    name: 'students.show.subtraction',
+    action({studentId}) {
+      mount(MarketingLayoutCtx, {
+        content: () => (<Challenges studentId={studentId} operator='-' />)
+      })
+    }
+  });
+
+  FlowRouter.route('/students/:studentId/multiplication', {
+    name: 'students.show.multiplication',
+    action({studentId}) {
+      mount(MarketingLayoutCtx, {
+        content: () => (<Challenges studentId={studentId} operator='x' />)
+      })
+    }
+  });
+
+  FlowRouter.route('/students/:studentId/division', {
+    name: 'students.show.division',
+    action({studentId}) {
+      mount(MarketingLayoutCtx, {
+        content: () => (<Challenges studentId={studentId} operator='/' />)
+      })
+    }
+  });
 }

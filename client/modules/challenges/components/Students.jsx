@@ -5,7 +5,7 @@ import Student from '../containers/Student';
 class Students extends React.Component { 
   show(studentId) {
     return (
-      <Student studentId={studentId} />
+      <Student key={studentId} studentId={studentId} />
     )
   }
   render() {
