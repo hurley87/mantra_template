@@ -19,6 +19,9 @@ class StudentsShow extends React.Component {
       	<div>
       		<a href={`/students/${student._id}/division`}>division</a> 
       	</div>
+        <div>
+          <a href={`/new/${student._id}`}>Create a Challenge</a> 
+        </div>
       </div>
     )
   }

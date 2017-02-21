@@ -11,7 +11,7 @@ class CreateStudent extends React.Component {
           <Row className='header'>
             <Col md={12}>
               <h4>Create a Student</h4>
-              <p><a href="/challenges">back</a></p>
+              <p><a href="/students">back</a></p>
             </Col>
           </Row>
           <Row>

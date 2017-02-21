@@ -37,7 +37,7 @@ export default {
                 LocalState.set('CREATE_USER', 'There was a problem creating your account.');
                 FlowRouter.go('/');
               } else {
-                FlowRouter.go('/challenges');
+                FlowRouter.go('/students');
               }
             })
           }

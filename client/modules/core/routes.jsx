@@ -119,7 +119,6 @@ export default function(injectDeps, {FlowRouter}) {
   });
 
 
-
   FlowRouter.route('/new/:studentId', {
     name: 'challenges.new',
     action({studentId}) {
