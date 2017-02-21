@@ -89,9 +89,7 @@ const ChallengeShow = React.createClass({
       </div>
     )
   },
-  goBack() {
-    history.back();
-  },
+
   render() {
     const challenge = this.props.challenge.challenge;
     const student = this.props.student;
@@ -101,11 +99,28 @@ const ChallengeShow = React.createClass({
     const answer = answers[answers.length - 1]
     const submission = answers[this.state.answer]
     const answerIndex = this.state.answer + 1;
+    let path = '';
+    switch(challenge.operator){
+      case '+':
+        path = 'addition';
+        break;
+      case '-':
+        path = 'subtraction';
+        break;
+      case 'x':
+        path = 'multipication';
+        break;
+      case '/':
+        path = 'division';
+        break;
+      default:
+        path = ''
+    }
     return (
       <div className='container'>
         <Row>
           <Col xs={12} sm={6}>
-            <a href='#' onClick={this.goBack}>back</a>
+            <a href={`/students/${student._id}/${path}`}>back</a>
             <h2>{challenge.reward}</h2>
             { complete ? this.congrats(this.props.challenge, student) : this.intro(this.props.challenge, student)}
             { this.pastAttempts(answer, answers, student, complete) }
