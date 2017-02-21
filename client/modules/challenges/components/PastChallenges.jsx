@@ -17,7 +17,6 @@ class PastChallenges extends React.Component {
       <div>
         <Row>
           <Col xs={12} sm={12}>
-            { challenges.length > 0 ? this.title() : null }
             {
               challenges.map( challenge => {
                 return <ChallengeCard key={challenge._id} challenge={challenge} />

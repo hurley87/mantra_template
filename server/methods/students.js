@@ -1,12 +1,14 @@
 import {CountingAnswers, Profiles, ArithmeticQuestions, Students, Challenges} from '/lib/collections';
 import {Meteor} from 'meteor/meteor';
 import {check} from 'meteor/check';
-import { Accounts } from 'meteor/accounts-base'
+import { Accounts } from 'meteor/accounts-base';
+import { Email } from 'meteor/email';
 
 export default function () {
   Meteor.methods({
-    'insert.student'(student) {
+    'insert.student'(student, userEmail) {
     	check(student, Object);
+        check(userEmail, String);
         const parentId = student.parentId;
         const studentId = student.students[0];
         const challenge1 = { time: "20", right: '12', wrong: '2',  min: "1", max: "5", operator: '+', reward: 'Add 1' };
@@ -42,6 +44,15 @@ export default function () {
         Meteor.call('new.challenge', challenge15, parentId, studentId);
         Meteor.call('new.challenge', challenge16, parentId, studentId);
     	Students.insert(student);
+
+        this.unblock();
+
+        Email.send({
+          to: userEmail,
+          from: 'dhurls99@gmail.com',
+          subject: 'Thanks for joining!',
+          html: 'Your the best. You can email me at any time.'
+        });
     },
     'remove.user'(studentId) {
     	check(studentId, String);

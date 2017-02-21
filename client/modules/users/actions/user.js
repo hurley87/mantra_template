@@ -1,7 +1,6 @@
 export default {
   createStudent({Meteor, LocalState, FlowRouter }, name, email, password, reward) {
     FlowRouter.go('/loading');
-    console.log(name)
     Accounts.createUser({
       username: name,
       password: password
@@ -33,7 +32,7 @@ export default {
               parentId: Meteor.userId(),
               reward: reward
             }
-            Meteor.call('insert.student', student, function(err) {
+            Meteor.call('insert.student', student, email, function(err) {
               if(err) {
                 LocalState.set('CREATE_USER', 'There was a problem creating your account.');
                 FlowRouter.go('/');

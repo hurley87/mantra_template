@@ -1,7 +1,7 @@
 import {Challenges} from '/lib/collections';
 import {Meteor} from 'meteor/meteor';
 import {check} from 'meteor/check';
-import { Email } from 'meteor/email'
+import { Email } from 'meteor/email';
 
 export default function () {
   Meteor.methods({
@@ -34,7 +34,7 @@ export default function () {
     'send.challenge'(challenge,to, from, subject, text){
         check(challenge, Object);
         check([to, from, subject, text], [String]);
-        console.log(challenge._id)
+
         Challenges.update({ _id: challenge._id }, { $set: { pending: true } });
 
         this.unblock();
