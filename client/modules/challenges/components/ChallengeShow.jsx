@@ -7,22 +7,6 @@ const ChallengeShow = React.createClass({
       answer: 0
     }
   },
-  complete(answer, student, challenge) {
-    const submissions = answer ? answer.submissions : null
-    return (
-      <Panel collapsible defaultExpanded header={challenge.reward}>
-        <p><a href="/challenges">back</a> </p>
-        {student.username} answered {answer ? answer.right : null} questions in {answer ? answer.finalTime : null} seconds.
-        Number were between {answer ? answer.max : null} and {answer ? answer.min : null}.
-        <p>There were {answer ? answer.wrong : null} wrong attempts.</p>
-        {
-          submissions ? submissions.map(submission =>{
-            return this.submission(submission)
-          }) : null
-        }
-      </Panel>
-    )
-  },
   submission(submission) {
     const style = {
       color: 'red'
@@ -64,10 +48,9 @@ const ChallengeShow = React.createClass({
       </div>
     )
   },
-  intro(challenge, student){
+  attempted(challenge, student){
     const stats = challenge.challenge;
-    const userId = Meteor.userId();
-    const userEmail = Meteor.users.findOne(userId).emails[0].address;
+    const userEmail = Meteor.users.findOne(Meteor.userId()).emails[0].address;
     const to = userEmail;
     const from = 'dave@planswell.ca';
     const subject = `Answer ${stats.right} problems in ${stats.time} seconds`;
@@ -76,12 +59,24 @@ const ChallengeShow = React.createClass({
       <div>
         <p>To pass this challenge {student.username} must answer {stats.right} problems in {stats.time} seconds.</p>
         <p>Change this copy to reflect the new UX of sending challenges to your phone.</p>
-        <p>{challenge.pending ? 'yes': 'no'}</p>
         <button onClick={this.props.sendChallenge.bind(this, challenge, to, from, subject, text)} className='btn btn-large btn-primary'>Send challenge</button>
       </div>
     )
   },
-  congrats(challenge, student){
+  pending(challenge, student){
+    const stats = challenge.challenge;
+    return (
+      <div>
+        <p>To pass this challenge {student.username} must answer {stats.right} problems in {stats.time} seconds.</p>
+        <p>For best results you should open this challenge on your phone.</p>
+        <a className='btn btn-large btn-primary' target="_blank" href={`http://play.pttrns.ca?username=${student.username}&gameId=${challenge._id}`}>Go to challenge</a>
+      </div>
+    )
+  },
+  notComplete(challenge, student){
+    return challenge.pending ? this.pending(challenge, student) : this.attempted(challenge, student)
+  },
+  complete(challenge, student){
     const stats = challenge.challenge;
     return(
       <div>
@@ -89,7 +84,6 @@ const ChallengeShow = React.createClass({
       </div>
     )
   },
-
   render() {
     const challenge = this.props.challenge.challenge;
     const student = this.props.student;
@@ -122,7 +116,7 @@ const ChallengeShow = React.createClass({
           <Col xs={12} sm={6}>
             <a href={`/students/${student._id}/${path}`}>back</a>
             <h2>{challenge.reward}</h2>
-            { complete ? this.congrats(this.props.challenge, student) : this.intro(this.props.challenge, student)}
+            { complete ? this.complete(this.props.challenge, student) : this.notComplete(this.props.challenge, student)}
             { this.pastAttempts(answer, answers, student, complete) }
           </Col>
           <Col xs={12} sm={6}>

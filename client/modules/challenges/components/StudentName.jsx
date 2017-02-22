@@ -5,7 +5,7 @@ class StudentName extends React.Component {
   render() {
     return (
       <div>
-       <a href={`/students/${this.props.studentId}`}><h1 style={{marginTop: '0px'}}>{this.props.username}</h1></a> 
+       <a href={`/students/${this.props.studentId}`}><p>back</p></a> 
       </div>
     )
   }

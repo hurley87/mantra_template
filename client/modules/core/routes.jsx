@@ -36,7 +36,7 @@ export default function(injectDeps, {FlowRouter}) {
   FlowRouter.route('/', {
     name: 'students.new',
     action() {
-      Meteor.userId() ? FlowRouter.go('/students') : mount(MarketingLayoutCtx, { content: () => (<NewStudent />) });
+      Meteor.userId() ? FlowRouter.go('/challenges') : mount(MarketingLayoutCtx, { content: () => (<NewStudent />) });
     }
   });
 
@@ -54,7 +54,7 @@ export default function(injectDeps, {FlowRouter}) {
   FlowRouter.route('/login', {
     name: 'users.new',
     action() {
-      Meteor.userId() ? FlowRouter.go('/students') : mount(MarketingLayoutCtx, {content: () => (<LoginUser />) });
+      Meteor.userId() ? FlowRouter.go('/challenges') : mount(MarketingLayoutCtx, {content: () => (<LoginUser />) });
     }
   });
 
@@ -95,7 +95,7 @@ export default function(injectDeps, {FlowRouter}) {
     name: 'challenges.index',
     action() {
       mount(MarketingLayoutCtx, {
-        content: () => (<Challenges />)
+        content: () => (<Students />)
       })
     }
   });
