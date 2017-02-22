@@ -4,7 +4,6 @@ import { Col, Panel, Input, ButtonInput, Glyphicon, Grid, Row, Well } from 'reac
 class ChallengeCard extends React.Component { 
   status(challenge){
   	let msg = 'New'
-    console.log(challenge)
   	if(challenge.complete) {
   		msg = 'Complete'
   	} else if(challenge.pending) {
@@ -21,14 +20,10 @@ class ChallengeCard extends React.Component {
   render() {
     const challenge = this.props.challenge;
     return (
-    	<a className="card-link" href={"/challenges/" + challenge._id}><Well bsSize="large">
-		<div className="card card-block">
-		  <h4 className="card-title">
-		  	{challenge.challenge.reward} <small> Answer {challenge.challenge.right} questions in  {challenge.challenge.time} seconds.</small> 
-		  	<small>{this.status(challenge)}</small> 
-		  </h4>
-		</div>
-		</Well></a>
+    	<a className="button" href={"/challenges/" + challenge._id}>
+        {challenge.challenge.reward}
+        <span className='pull-right'>{this.status(challenge)}</span>
+      </a>
     )
   }
 }

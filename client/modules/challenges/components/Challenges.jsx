@@ -6,20 +6,43 @@ import Students from '../containers/Students';
 import StudentName from '../containers/StudentName';
 
 class Challenges extends React.Component { 
+  title(operator){
+    switch(operator){
+      case '+':
+        return 'Addition';
+        break;
+      case '-':
+        return 'Subtraction';
+        break;
+      case 'x':
+        return 'Multiplication';
+        break;
+      case '/':
+        return 'Division';
+        break;
+      default: 
+        return 'Addition';
+    }
+  }
   render() {
     return (
-      <div className='container'> 
-        <Row>
-          <Col xs={12} sm={9}>
-            <div className='row'>
-              <div className='col-xs-6'>
-                <StudentName studentId={this.props.username} />
-              </div>
-            </div>
-            <CurrentChallenges studentId={this.props.username} operator={this.props.operator} />
-            <PastChallenges operator={this.props.operator} />
-          </Col>
-        </Row>
+      <div>
+        <Grid>
+          <Row className='header'>
+            <Col md={4} mdOffset={4}>
+              <h2>{this.title(this.props.operator)}</h2>
+              <br />
+            </Col>
+          </Row>
+          <Row>
+            <Col md={4} mdOffset={4}>
+              <CurrentChallenges studentId={this.props.username} operator={this.props.operator} />
+              <PastChallenges operator={this.props.operator} />
+              <br/>
+              <StudentName studentId={this.props.username} />
+            </Col>
+          </Row>
+        </Grid>
       </div>
     )
   }

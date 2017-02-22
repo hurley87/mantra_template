@@ -9,13 +9,13 @@ class NewChallenge extends React.Component {
       <div>
         <Grid>
           <Row className='header'>
-            <Col md={12}>
-              <h4>Create a Challenge</h4>
-              <p><a href={`/students/${this.props.studentId}`}>back</a></p>
+            <Col  md={4} mdOffset={4}>
+              <h2>Create a Challenge</h2>
+              <br />
             </Col>
           </Row>
           <Row>
-            <Col md={8}>
+            <Col md={4} mdOffset={4}>
               <div className="wrapper clearfix">
                 <div className="formy">
                   <div className="row">
@@ -94,6 +94,7 @@ class NewChallenge extends React.Component {
                             className='button text-center'
                           />
                       </Form>
+                      <p><a href={`/students/${this.props.studentId}`}>Go Back</a></p>
                     </div>
                   </div>            
                 </div>

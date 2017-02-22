@@ -23,7 +23,7 @@ const ChallengeShow = React.createClass({
       <div>
         {
           answers.map((answer, index) => {
-            return <div onClick={this.changeAnswer.bind(this, index)} key={index}>Attempt #{index + 1}</div>
+            return <button className='button' onClick={this.changeAnswer.bind(this, index)} key={index}>Attempt #{index + 1}</button>
           })
         }
       </div>
@@ -57,9 +57,10 @@ const ChallengeShow = React.createClass({
     const text = `<div>This is a test</div><div><a target="_blank" href="http://play.pttrns.ca?username=${student.username}&gameId=${challenge._id}">Accept Challenge</a></div>`;
     return (
       <div>
-        <p>To pass this challenge {student.username} must answer {stats.right} problems in {stats.time} seconds.</p>
-        <p>Change this copy to reflect the new UX of sending challenges to your phone.</p>
-        <button onClick={this.props.sendChallenge.bind(this, challenge, to, from, subject, text)} className='btn btn-large btn-primary'>Send challenge</button>
+        <br />
+        <p>To pass this challenge {student.username} must answer {stats.right} problems in {stats.time} seconds. You should email the challenge to your phone.</p>
+        <br />
+        {this.props.answer.length == 0 ? <button onClick={this.props.sendChallenge.bind(this, challenge, to, from, subject, text)} className='button text-center'>Email challenge to your phone</button> : null }
       </div>
     )
   },
@@ -67,9 +68,10 @@ const ChallengeShow = React.createClass({
     const stats = challenge.challenge;
     return (
       <div>
-        <p>To pass this challenge {student.username} must answer {stats.right} problems in {stats.time} seconds.</p>
-        <p>For best results you should open this challenge on your phone.</p>
-        <a className='btn btn-large btn-primary' target="_blank" href={`http://play.pttrns.ca?username=${student.username}&gameId=${challenge._id}`}>Go to challenge</a>
+        <br />
+        <p>To pass this challenge {student.username} must answer {stats.right} problems in {stats.time} seconds. For best results the student should attempt this challenge on your phone.</p>
+        <br />
+        { this.props.answer.length == 0 ? <a className='button text-center' target="_blank" href={`http://play.pttrns.ca?username=${student.username}&gameId=${challenge._id}`}>Go to challenge</a> : null}
       </div>
     )
   },
@@ -80,6 +82,7 @@ const ChallengeShow = React.createClass({
     const stats = challenge.challenge;
     return(
       <div>
+        <br />
         Challenge complete, {student.username} was able to answer {stats.right} problems in {stats.time} seconds!
       </div>
     )
@@ -102,7 +105,7 @@ const ChallengeShow = React.createClass({
         path = 'subtraction';
         break;
       case 'x':
-        path = 'multipication';
+        path = 'multiplication';
         break;
       case '/':
         path = 'division';
@@ -111,18 +114,26 @@ const ChallengeShow = React.createClass({
         path = ''
     }
     return (
-      <div className='container'>
-        <Row>
-          <Col xs={12} sm={6}>
-            <a href={`/students/${student._id}/${path}`}>back</a>
-            <h2>{challenge.reward}</h2>
-            { complete ? this.complete(this.props.challenge, student) : this.notComplete(this.props.challenge, student)}
-            { this.pastAttempts(answer, answers, student, complete) }
-          </Col>
-          <Col xs={12} sm={6}>
-            { submission ? this.viewSubmission(submission, answerIndex) : null }
-          </Col>
-        </Row>
+      <div>
+        <Grid>
+          <Row className='header'>
+            <Col md={4} mdOffset={4}>
+              <h2>{challenge.reward}</h2>
+            </Col>
+          </Row>
+          <Row>
+            <Col md={4} mdOffset={4}>
+              { complete ? this.complete(this.props.challenge, student) : this.notComplete(this.props.challenge, student)}
+              { this.pastAttempts(answer, answers, student, complete) }
+              <br/>
+              { submission ? this.viewSubmission(submission, answerIndex) : null }
+              <br />
+              <a href={`/students/${student._id}/${path}`}>Go back</a>
+              <br />
+              <br />
+            </Col>
+          </Row>
+        </Grid>
       </div>
     )
   }

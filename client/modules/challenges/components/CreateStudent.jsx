@@ -9,13 +9,13 @@ class CreateStudent extends React.Component {
       <div>
         <Grid>
           <Row className='header'>
-            <Col md={12}>
-              <h4>Create a Student</h4>
-              <p><a href="/students">back</a></p>
+            <Col md={4} mdOffset={4}>
+              <h2>Create a Student</h2>
+              <br />
             </Col>
           </Row>
           <Row>
-            <Col md={6}>
+            <Col md={4} mdOffset={4}>
               <div className="wrapper clearfix">
                 <div className="formy">
                   <div className="row">
@@ -34,17 +34,6 @@ class CreateStudent extends React.Component {
                               errorHelp={{
                                   required: 'Please enter a username',
                                   isLength: 'Username must be at least 4 characters'
-                              }}
-                          />
-
-                          <ValidatedInput
-                              type='text'
-                              label='Reward'
-                              name='reward'
-                              validate='required,isLength:2:30'
-                              errorHelp={{
-                                  required: 'Please enter a reward',
-                                  isLength: 'Reward must be at least 4 characters'
                               }}
                           />
            
@@ -83,6 +72,9 @@ class CreateStudent extends React.Component {
                             className='button text-center'
                           />
                       </Form>
+                      <div>
+                        <a href='/challenges'>Back</a> 
+                      </div>
                     </div>
                   </div>            
                 </div>

@@ -10,7 +10,7 @@ class NewStudent extends React.Component {
     this.state = {
       student: false,
       step: 'account',
-      instructions: 'Choose a username for your child. No spaces please.'
+      instructions: "Join pttrns"
     }
   }
   chooseUsername() {
@@ -136,12 +136,13 @@ class NewStudent extends React.Component {
       <div>
         <Grid>
           <Row className='header'>
-            <Col md={6}>
-              <p>{this.state.instructions}</p>
+            <Col md={4} mdOffset={4}>
+              <h2>{this.state.instructions}</h2>
+              <br />
             </Col>
           </Row>
           <Row>
-            <Col md={6}>
+            <Col md={4} mdOffset={4}>
               <div className="wrapper clearfix">
                 <div className="formy">
                   <div className="row">
@@ -162,9 +163,6 @@ class NewStudent extends React.Component {
                     </div>
                   </div>            
                 </div>
-              </div>
-              <div className="already-account">
-                Already have an account? <a href="/login">Login here</a>
               </div>
             </Col>
           </Row>

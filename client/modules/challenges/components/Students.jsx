@@ -12,16 +12,25 @@ class Students extends React.Component {
     const studentIds = this.props.studentIds;
     return (
       <div>
+        <Row className='header'>
+          <Col md={4} mdOffset={4}>
+            <h2>Choose a student</h2>
+            <br />
+          </Col>
+        </Row>
         <Row>
-          <Col xs={12} sm={12}>
-            <ListGroup>
+          <Col md={4} mdOffset={4}>
+            <div>
               {
                 studentIds.map(studentId => {
                   return this.show(studentId)
                 })
               }
-              <ListGroupItem><a href="/students/new">Add a student</a></ListGroupItem>
-            </ListGroup>
+            </div>
+            <br/>
+            <div>
+              <a href='/students/new'>Add a student</a> 
+            </div>
           </Col>
         </Row>
       </div>

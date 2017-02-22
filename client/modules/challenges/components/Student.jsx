@@ -6,7 +6,7 @@ class Student extends React.Component {
     const student = this.props.student;
     return (
       <div>
-        <a href={`/students/${student._id}`}>{student.username}</a>
+        <a className='button text-center' href={`/students/${student._id}`}>{student.username}</a>
       </div>
     )
   }

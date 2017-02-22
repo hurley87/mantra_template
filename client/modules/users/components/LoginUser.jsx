@@ -9,12 +9,13 @@ class LoginUser extends React.Component {
       <div>
         <Grid>
           <Row className='header'>
-            <Col md={6}>
+            <Col md={4} mdOffset={4}>
               <h2>Login</h2>
+              <br />
             </Col>
           </Row>
           <Row>
-            <Col md={6}>
+            <Col md={4} mdOffset={4}>
               <div className="wrapper clearfix">
                 <div className="formy">
                   <div className="row">
@@ -59,9 +60,6 @@ class LoginUser extends React.Component {
                     </div>
                   </div>            
                 </div>
-              </div>
-              <div className="already-account">
-                Need an account? <a href="/">Signup here</a>.
               </div>
             </Col>
           </Row>
