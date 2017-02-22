@@ -4,6 +4,7 @@ import { Col, Panel, Input, ButtonInput, Glyphicon, Grid, Row, Well } from 'reac
 class ChallengeCard extends React.Component { 
   status(challenge){
   	let msg = 'New'
+    console.log(challenge)
   	if(challenge.complete) {
   		msg = 'Complete'
   	} else if(challenge.pending) {

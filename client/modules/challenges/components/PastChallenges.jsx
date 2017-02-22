@@ -19,7 +19,7 @@ class PastChallenges extends React.Component {
           <Col xs={12} sm={12}>
             {
               challenges.map( challenge => {
-                return <ChallengeCard key={challenge._id} challenge={challenge} />
+                return challenge.challenge.operator == this.props.operator ? <ChallengeCard key={challenge._id} challenge={challenge} /> : null
               })
             }
           </Col>

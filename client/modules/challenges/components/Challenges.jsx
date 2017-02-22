@@ -17,7 +17,7 @@ class Challenges extends React.Component {
               </div>
             </div>
             <CurrentChallenges studentId={this.props.username} operator={this.props.operator} />
-            <PastChallenges />
+            <PastChallenges operator={this.props.operator} />
           </Col>
         </Row>
       </div>
