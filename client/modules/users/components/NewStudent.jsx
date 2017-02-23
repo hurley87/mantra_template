@@ -10,7 +10,7 @@ class NewStudent extends React.Component {
     this.state = {
       student: false,
       step: 'account',
-      instructions: "Join pttrns"
+      instructions: "Get Started"
     }
   }
   chooseUsername() {
@@ -125,7 +125,7 @@ class NewStudent extends React.Component {
           type='submit'
           bsSize='large'
           bsStyle='primary'
-          value='Register'
+          value='Get Started'
           className='button text-center'
         />
         </div>
