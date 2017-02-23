@@ -60,7 +60,7 @@ const ChallengeShow = React.createClass({
         <br />
         <p>To pass this challenge {student.username} must answer {stats.right} problems in {stats.time} seconds. You should email the challenge to your phone.</p>
         <br />
-        {this.props.answer.length == 0 ? <button onClick={this.props.sendChallenge.bind(this, challenge, to, from, subject, text)} className='button text-center'>Email challenge to your phone</button> : null }
+        {this.props.answer.length == 0 ? <button onClick={this.props.sendChallenge.bind(this, challenge, to, from, subject, text)} className='button text-center'>Email challenge</button> : null }
       </div>
     )
   },
@@ -82,8 +82,9 @@ const ChallengeShow = React.createClass({
     const stats = challenge.challenge;
     return(
       <div>
-        <br />
         Challenge complete, {student.username} was able to answer {stats.right} problems in {stats.time} seconds!
+        <br />
+        <br />
       </div>
     )
   },
@@ -125,7 +126,6 @@ const ChallengeShow = React.createClass({
             <Col md={4} mdOffset={4}>
               { complete ? this.complete(this.props.challenge, student) : this.notComplete(this.props.challenge, student)}
               { this.pastAttempts(answer, answers, student, complete) }
-              <br/>
               { submission ? this.viewSubmission(submission, answerIndex) : null }
               <br />
               <a href={`/students/${student._id}/${path}`}>Go back</a>
