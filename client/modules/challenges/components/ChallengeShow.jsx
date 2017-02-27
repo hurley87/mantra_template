@@ -21,10 +21,10 @@ const ChallengeShow = React.createClass({
     const submissions = answer ? answer.submissions : null
     return (
       <div>
-        {
+        { answers.length > 1 ?
           answers.map((answer, index) => {
             return <button className='button' onClick={this.changeAnswer.bind(this, index)} key={index}>Attempt #{index + 1}</button>
-          })
+          }) : null
         }
       </div>
     )

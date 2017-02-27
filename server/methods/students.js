@@ -27,6 +27,10 @@ export default function () {
         const challenge14 = { time: "30", right: '20', wrong: '2',  min: "1", max: "5", operator: '/', reward: 'Divide2' };
         const challenge15 = { time: "45", right: '30', wrong: '2',  min: "1", max: "9", operator: '/', reward: 'Divide3' };
         const challenge16 = { time: "60", right: '45', wrong: '2',  min: "1", max: "9", operator: '/', reward: 'Divide4' };
+        const challenge17 = { time: "60", right: '60', wrong: '2',  min: "1", max: "9", operator: '+', reward: 'Add5' };
+        const challenge18 = { time: "60", right: '60', wrong: '2',  min: "1", max: "9", operator: '-', reward: 'Subtract5' };
+        const challenge19 = { time: "60", right: '60', wrong: '2',  min: "1", max: "9", operator: 'x', reward: 'Multiply5' };
+        const challenge20 = { time: "60", right: '60', wrong: '2',  min: "1", max: "9", operator: '/', reward: 'Divide5' };
         Meteor.call('new.challenge', challenge1, parentId, studentId);
         Meteor.call('new.challenge', challenge2, parentId, studentId);
         Meteor.call('new.challenge', challenge3, parentId, studentId);
@@ -43,6 +47,10 @@ export default function () {
         Meteor.call('new.challenge', challenge14, parentId, studentId);
         Meteor.call('new.challenge', challenge15, parentId, studentId);
         Meteor.call('new.challenge', challenge16, parentId, studentId);
+        Meteor.call('new.challenge', challenge17, parentId, studentId);
+        Meteor.call('new.challenge', challenge18, parentId, studentId);
+        Meteor.call('new.challenge', challenge19, parentId, studentId);
+        Meteor.call('new.challenge', challenge20, parentId, studentId);
     	Students.insert(student);
 
         this.unblock();
@@ -78,6 +86,10 @@ export default function () {
         const challenge14 = { time: "40", right: '30', wrong: '2',  min: "1", max: "5", operator: '/', reward: 'Divide2' };
         const challenge15 = { time: "20", right: '12', wrong: '2',  min: "1", max: "9", operator: '/', reward: 'Divide3' };
         const challenge16 = { time: "40", right: '30', wrong: '2',  min: "1", max: "9", operator: '/', reward: 'Divide4' };
+        const challenge17 = { time: "60", right: '60', wrong: '2',  min: "1", max: "9", operator: '+', reward: 'Add5' };
+        const challenge18 = { time: "60", right: '60', wrong: '2',  min: "1", max: "9", operator: '-', reward: 'Subtract5' };
+        const challenge19 = { time: "60", right: '60', wrong: '2',  min: "1", max: "9", operator: 'x', reward: 'Multiply5' };
+        const challenge20 = { time: "60", right: '60', wrong: '2',  min: "1", max: "9", operator: '/', reward: 'Divide5' };
         Meteor.call('new.challenge', challenge1, parentId, studentId);
         Meteor.call('new.challenge', challenge2, parentId, studentId);
         Meteor.call('new.challenge', challenge3, parentId, studentId);
@@ -94,6 +106,10 @@ export default function () {
         Meteor.call('new.challenge', challenge14, parentId, studentId);
         Meteor.call('new.challenge', challenge15, parentId, studentId);
         Meteor.call('new.challenge', challenge16, parentId, studentId);
+        Meteor.call('new.challenge', challenge17, parentId, studentId);
+        Meteor.call('new.challenge', challenge18, parentId, studentId);
+        Meteor.call('new.challenge', challenge19, parentId, studentId);
+        Meteor.call('new.challenge', challenge20, parentId, studentId);
         Students.update({ parentId: parentId }, { $push: { students: studentId }})
     }
 
