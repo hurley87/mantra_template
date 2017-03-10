@@ -22,6 +22,7 @@ export default {
               if(err) {
                 console.log(err)
               } else {
+                Meteor.logout();
                 LocalState.set('CREATE_USER', 'This email is already taken.');
                 FlowRouter.go('/');
               }
