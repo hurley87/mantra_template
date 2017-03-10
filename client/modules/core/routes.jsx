@@ -36,7 +36,7 @@ export default function(injectDeps, {FlowRouter}) {
   FlowRouter.route('/', {
     name: 'students.new',
     action() {
-      Meteor.userId() ? FlowRouter.go('/challenges') : mount(MarketingLayoutCtx, { content: () => (<NewStudent />) });
+      mount(MarketingLayoutCtx, { content: () => (<NewStudent />) })
     }
   });
 
