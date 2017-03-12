@@ -52,6 +52,7 @@ const ChallengeShow = React.createClass({
     const stats = challenge.challenge;
     const userEmail = Meteor.users.findOne(Meteor.userId()).emails[0].address;
     const to = userEmail;
+    console.log(student)
     const from = 'dave@planswell.ca';
     const subject = `Answer ${stats.right} problems in ${stats.time} seconds`;
     const text = `<div>This is a test</div><div><a target="_blank" href="http://play.pttrns.ca?username=${student.username}&gameId=${student.profile.gameId}">Accept Challenge</a></div>`;
@@ -71,7 +72,7 @@ const ChallengeShow = React.createClass({
         <br />
         <p>To pass this challenge {student.username} must answer {stats.right} problems in {stats.time} seconds. For best results the student should attempt this challenge on your phone.</p>
         <br />
-        { this.props.answer.length == 0 ? <a className='button text-center' target="_blank" href={`http://play.pttrns.ca?username=${student.username}&gameId=${challenge._id}`}>Go to challenge</a> : null}
+        { this.props.answer.length == 0 ? <a className='button text-center' target="_blank" href={`http://play.pttrns.ca?username=${student.username}&gameId=${student.profile.gameId}`}>Go to challenge</a> : null}
       </div>
     )
   },
