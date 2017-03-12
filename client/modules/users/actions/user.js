@@ -3,7 +3,10 @@ export default {
     FlowRouter.go('/loading');
     Accounts.createUser({
       username: name,
-      password: password
+      password: password,
+      profile: {
+        gameId: password
+      }
     }, function(err) {
       if(err) {
         console.log(err)
