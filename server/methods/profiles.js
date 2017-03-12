@@ -18,6 +18,12 @@ export default function () {
             age: user_age
           }
       });
+    },
+    'updateEmail'(email, userId) {
+      check(email, String);
+      check(userId, String);
+      Meteor.users.update({ _id: userId },
+       { $set: { 'emails.0.address': email }});
     }
     
   });

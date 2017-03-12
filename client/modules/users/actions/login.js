@@ -33,5 +33,17 @@ export default {
   },
   clearErrors({LocalState}) {
     return LocalState.set('LOGIN_USER', null)
+  },
+  updateEmail({Meteor, LocalState}, email) {
+    FlowRouter.go('/loading');
+    const userId = Meteor.userId()
+    Meteor.call('updateEmail', email, userId, function(err){
+      if(err) {
+        LocalState.set('LOGIN_USER', 'Email already taken')
+        FlowRouter.go("/update")
+      } else {
+        FlowRouter.go("/challenges")
+      }
+    });
   }
 }

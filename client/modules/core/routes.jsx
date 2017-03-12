@@ -10,6 +10,7 @@ import NewStudent from '../users/containers/NewStudent.js';
 import LoginUser from '../users/containers/Login.js';
 import ResetPassword from '../users/containers/ResetPassword.js';
 import Forgot from '../users/containers/forgot.js';
+import UpdateEmail from '../users/containers/UpdateEmail.js';
 
 // challenges
 import Challenges from '../challenges/containers/Challenges.js'
@@ -81,7 +82,16 @@ export default function(injectDeps, {FlowRouter}) {
     }
   });
 
-    FlowRouter.route('/forgot', {
+  FlowRouter.route('/update', {
+    name: 'update',
+    action() {
+      mount(MarketingLayoutCtx, {
+        content: () => (<UpdateEmail />)
+      });
+    }
+  });
+
+  FlowRouter.route('/forgot', {
     name: 'forgot',
     action() {
       mount(MarketingLayoutCtx, {
