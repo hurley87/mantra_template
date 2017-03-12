@@ -9,11 +9,11 @@ const ChallengeShow = React.createClass({
   },
   submission(submission) {
     const style = {
-      color: 'red'
+      display: 'none'
     }
     return (
       <div>
-        <p style={ submission.answer == submission.guess ? null : style }>{submission.num1} {submission.operator} {submission.num2} = {submission.answer} { submission.answer == submission.guess ? null : '(guessed ' + submission.guess + ')' }</p>
+        <p style={ submission.answer != submission.guess ? null : style }>{submission.num1} {submission.operator} {submission.num2} = {submission.answer} { submission.answer == submission.guess ? null : '(guessed ' + submission.guess + ')' }</p>
       </div>
     )
   },
@@ -52,7 +52,7 @@ const ChallengeShow = React.createClass({
     const stats = challenge.challenge;
     const userEmail = Meteor.users.findOne(Meteor.userId()).emails[0].address;
     const to = userEmail;
-    console.log(student)
+
     const from = 'dave@planswell.ca';
     const subject = `Answer ${stats.right} problems in ${stats.time} seconds`;
     const text = `<div>This is a test</div><div><a target="_blank" href="http://play.pttrns.ca?username=${student.username}&gameId=${student.profile.gameId}">Accept Challenge</a></div>`;

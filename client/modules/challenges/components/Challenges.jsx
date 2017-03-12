@@ -36,7 +36,7 @@ class Challenges extends React.Component {
           </Row>
           <Row>
             <Col md={4} mdOffset={4}>
-              <CurrentChallenges studentId={this.props.username} operator={this.props.operator} />
+              <CurrentChallenges studentId={this.props.studentId} operator={this.props.operator} />
               <PastChallenges operator={this.props.operator} />
               <br/>
               <StudentName studentId={this.props.username} />
