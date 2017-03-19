@@ -9,7 +9,7 @@ class StudentsShow extends React.Component {
         <Grid>
           <Row className='header'>
             <Col md={4} mdOffset={4}>
-              <h2>{student.username}</h2>
+              <h2>Choose a challenge for {student.username}</h2>
               <br />
             </Col>
           </Row>

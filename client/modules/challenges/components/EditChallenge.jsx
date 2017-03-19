@@ -55,7 +55,7 @@ const EditChallenge = React.createClass({
   render () {
   	const challenge = this.props.challenge.challenge;
   	const challengeId = this.props.challenge._id;
-  	console.log(challengeId)
+
     return (
       <div>
         <Grid>

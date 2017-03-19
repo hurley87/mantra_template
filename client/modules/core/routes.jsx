@@ -4,6 +4,7 @@ import {mount} from 'react-mounter';
 // Layouts
 import MarketingLayout from './containers/MarketingLayout.js';
 import Loading from './components/Loading.jsx';
+import About from './components/About.jsx';
 
 // registration
 import NewStudent from '../users/containers/NewStudent.js';
@@ -47,6 +48,15 @@ export default function(injectDeps, {FlowRouter}) {
     action() {
       mount(MarketingLayoutCtx, {
         content: () => (<Loading />)
+      });
+    }
+  });
+
+  FlowRouter.route('/about', {
+    name: 'about',
+    action() {
+      mount(MarketingLayoutCtx, {
+        content: () => (<About />)
       });
     }
   });

@@ -9,8 +9,8 @@ class NewStudent extends React.Component {
 
     this.state = {
       student: false,
-      step: 'account',
-      instructions: "Get Started"
+      step: 'username',
+      instructions: "Who's playing?"
     }
   }
   chooseUsername() {
@@ -19,8 +19,9 @@ class NewStudent extends React.Component {
     if(username.length < 3) {
       this.setState({ instructions: 'Please choose a username that has more then 3 characters.'})
     } else {
+      this.props.clearErrors();
       this.setState({
-        instructions: "Please create an account. Remember your password as you will use it to login to your child's account.",
+        instructions: "Create your account. We will send results to your email.",
         step: 'account'
       })
     }
@@ -50,8 +51,19 @@ class NewStudent extends React.Component {
   username() {
     return (
         <div>
-
-          <span onClick={this.chooseUsername.bind(this)} className='button'>Next</span>
+          <ValidatedInput
+              type='text'
+              label="Child's Username"
+              name='username'
+              validate='required,isLength:3:30'
+              value={this.state.username}
+              onChange={(val) => this.updateUsername(val)}
+              errorHelp={{
+                  required: 'Please choose a username',
+                  isLength: 'Username must be at least 4 characters'
+              }}
+          />
+          <span onClick={this.chooseUsername.bind(this)} className='button text-center'>Next</span>
         </div>
     )
   }
@@ -77,18 +89,18 @@ class NewStudent extends React.Component {
   account() {
     return (
         <div>
-        <ValidatedInput
-            type='text'
-            label="Child's Username"
-            name='username'
-            validate='required,isLength:3:30'
-            value={this.state.username}
-            onChange={(val) => this.updateUsername(val)}
-            errorHelp={{
-                required: 'Please choose a username',
-                isLength: 'Username must be at least 4 characters'
-            }}
-        />
+          <ValidatedInput
+              type='text'
+              label="Child's Username"
+              name='username'
+              validate='required,isLength:3:30'
+              value={this.state.username}
+              onChange={(val) => this.updateUsername(val)}
+              errorHelp={{
+                  required: 'Please choose a username',
+                  isLength: 'Username must be at least 4 characters'
+              }}
+          />
 
         <ValidatedInput
             type='text'
@@ -109,16 +121,6 @@ class NewStudent extends React.Component {
                 required: 'Please specify a password',
                 isLength: 'Password must be at least 6 characters'
             }}
-        />
-
-        <ValidatedInput
-            type='password'
-            name='password-confirm'
-            label='Confirm Password'
-            validate={(val, context) => 
-              val === context.password
-            }
-            errorHelp='Passwords do not match'
         />
 
         <ButtonInput

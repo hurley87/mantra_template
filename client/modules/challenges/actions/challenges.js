@@ -45,5 +45,15 @@ export default {
         FlowRouter.go(`/challenges/${challenge._id}`)
       }
     });
+  }, 
+  textChallenge({LocalState}, challenge, number, text) {
+    FlowRouter.go('/loading');
+    Meteor.call('text.challenge', challenge, number, text, function(err){
+      if(err) {
+        FlowRouter.go(`/challenges/${challenge._id}`)
+      } else {
+        FlowRouter.go(`/challenges/${challenge._id}`)
+      }
+    });
   }
 }

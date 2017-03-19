@@ -1,10 +1,12 @@
 import React from 'react';
 import { Col, Panel, Input, ButtonInput, Glyphicon, Grid, Row, Tab, TabContainer, Nav, NavItem } from 'react-bootstrap';
+import { Form, ValidatedInput, RadioGroup, Radio } from 'react-bootstrap-validation';
 
 const ChallengeShow = React.createClass({ 
   getInitialState(){
     return {
-      answer: 0
+      answer: 0,
+      number: ''
     }
   },
   submission(submission) {
@@ -55,13 +57,42 @@ const ChallengeShow = React.createClass({
 
     const from = 'dave@planswell.ca';
     const subject = `Answer ${stats.right} problems in ${stats.time} seconds`;
-    const text = `<div>This is a test</div><div><a target="_blank" href="http://play.pttrns.ca?username=${student.username}&gameId=${student.profile.gameId}">Accept Challenge</a></div>`;
+    const text = `<div>Click the following link to accept the challenge: </div><div><a target="_blank" href="http://play.pttrns.ca?username=${student.username}&gameId=${student.profile.gameId}">Accept Challenge</a></div>`;
+    return (
+      <div>
+        <br />
+        <p>To pass this challenge {student.username} must answer {stats.right} problems in {stats.time} seconds. You can either text or email the challenge to your phone.</p>
+        <br />
+        {this.props.answer.length == 0 ? <button onClick={this.props.sendChallenge.bind(this, challenge, to, from, subject, text)} className='button text-center'>Email challenge</button> : null }
+      </div>
+    )
+  },
+  updateNumber(val){
+    this.setState({
+      number: val.target.value
+    });
+  },
+  sendText(challenge, student) {
+    const stats = challenge.challenge;
+    const text = `http://play.pttrns.ca?username=${student.username}&gameId=${student.profile.gameId}`;
     return (
       <div>
         <br />
         <p>To pass this challenge {student.username} must answer {stats.right} problems in {stats.time} seconds. You should email the challenge to your phone.</p>
-        <br />
-        {this.props.answer.length == 0 ? <button onClick={this.props.sendChallenge.bind(this, challenge, to, from, subject, text)} className='button text-center'>Email challenge</button> : null }
+        <Form>
+        <ValidatedInput
+            type='number'
+            label="What's your number?"
+            name='number'
+            value={this.state.number}
+            validate='required'
+            errorHelp={{
+                required: 'Please choose a number'
+            }}
+            onChange={(val) => this.updateNumber(val)}
+        />
+        </Form>
+        {this.props.answer.length == 0 ? <button onClick={this.props.textChallenge.bind(this, challenge, this.state.number, text)} className='button text-center'>Text challenge</button> : null }
       </div>
     )
   },
@@ -70,14 +101,14 @@ const ChallengeShow = React.createClass({
     return (
       <div>
         <br />
-        <p>To pass this challenge {student.username} must answer {stats.right} problems in {stats.time} seconds. For best results the student should attempt this challenge on your phone.</p>
+        <p>To pass this challenge {student.username} must answer {stats.right} problems in {stats.time} seconds. You can either text or email the challenge to your phone.</p>
         <br />
         { this.props.answer.length == 0 ? <a className='button text-center' target="_blank" href={`http://play.pttrns.ca?username=${student.username}&gameId=${student.profile.gameId}`}>Go to challenge</a> : null}
       </div>
     )
   },
   notComplete(challenge, student){
-    return challenge.pending ? this.pending(challenge, student) : this.attempted(challenge, student)
+    return challenge.pending ? this.attempted(challenge, student) : this.sendText(challenge, student)
   },
   complete(challenge, student){
     const stats = challenge.challenge;

@@ -10,7 +10,7 @@ export default {
     }, function(err) {
       if(err) {
         console.log(err)
-        LocalState.set('CREATE_USER', 'Username already exists!');
+        LocalState.set('CREATE_USER', 'Username already exists.');
         FlowRouter.go('/');
       } else {
         const studentId = Meteor.userId();
@@ -41,7 +41,7 @@ export default {
                 LocalState.set('CREATE_USER', 'There was a problem creating your account.');
                 FlowRouter.go('/');
               } else {
-                FlowRouter.go('/students');
+                FlowRouter.go('/students/' + studentId);
               }
             })
           }
