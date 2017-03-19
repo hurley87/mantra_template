@@ -12,11 +12,14 @@
     "babel-preset-react": "6.x.x",
     "babel-preset-stage-2": "6.x.x",
     "babel-root-slash-import": "1.x.x",
+    "bitly": "^4.1.1",
+    "install": "^0.8.7",
     "meteor-auth": "^0.1.1",
-    "npm": "^3.8.6",
+    "npm": "^3.10.10",
     "react-addons-test-utils": "^0.14.6",
     "react-bootstrap-validation": "^0.1.11",
-    "react-komposer": "^1.8.0"
+    "react-komposer": "^1.8.0",
+    "twilio": "^2.11.1"
   },
   "dependencies": {
     "domready": "^1.0.8",
