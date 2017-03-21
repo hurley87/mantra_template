@@ -3,7 +3,6 @@ import {Meteor} from 'meteor/meteor';
 import {check} from 'meteor/check';
 import { Email } from 'meteor/email';
 import twilio from 'twilio';
-import Bitly from 'bitly';
 import { HTTP } from 'meteor/http'
 
 export default function () {
