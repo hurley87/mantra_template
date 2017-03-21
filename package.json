@@ -23,6 +23,7 @@
     "twilio": "^2.11.1"
   },
   "dependencies": {
+    "bitly": "^4.1.1",
     "domready": "^1.0.8",
     "lodash": "^4.17.4",
     "mantra-core": "^1.2.0",
