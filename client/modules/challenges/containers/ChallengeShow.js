@@ -7,10 +7,12 @@ export const composer = ({context, challengeId}, onData) => {
   if(Meteor.subscribe('challenges.single', challengeId).ready()){
   	const challenge = Collections.Challenges.find({ _id: challengeId }).fetch()[0];
   	const studentId = challenge.studentId;
-  	if(Meteor.subscribe('student', studentId).ready() && Meteor.subscribe('answers.challenge', challengeId)) {
+    const parentId = Meteor.userId();
+  	if(Meteor.subscribe('student', studentId).ready() && Meteor.subscribe('student', parentId) && Meteor.subscribe('answers.challenge', challengeId)) {
   		const student = Meteor.users.findOne(studentId);
+      const parent = Meteor.users.findOne(parentId);
       const answer = Collections.Answers.find({}).fetch()
-  		onData(null, {challenge, student, answer});
+  		onData(null, {challenge, student, answer, parent});
   	}
   }
 };

@@ -48,11 +48,13 @@ export default function () {
           html: text
         });
     },
-    'text.challenge'(challenge, number, link) {
-        check([number, link], [String]);
+    'text.challenge'(challenge, number, link, userId) {
+        check([number, link, userId], [String]);
         check(challenge, Object);
 
         Challenges.update({ _id: challenge._id }, { $set: { pending: true } });
+
+        Meteor.users.update(userId, {$set: {profile: { number: number }}});
 
         this.unblock();
 
@@ -63,7 +65,7 @@ export default function () {
 
         client.sendMessage({
           to: userNumber,
-          from: '+1 437-800-0288 ',
+          from: '+1 437-800-0288',
           body: "Click the following link to accept the challenge: " + result.content
         });
 

@@ -10,6 +10,8 @@ class CreateStudent extends React.Component {
         <Grid>
           <Row className='header'>
             <Col md={4} mdOffset={4}>
+              <a href='/challenges'>Back</a> 
+              <br />
               <h2>Create a Student</h2>
               <br />
             </Col>
@@ -54,16 +56,6 @@ class CreateStudent extends React.Component {
                               value={parentId}
                           />
            
-                          <ValidatedInput
-                              type='password'
-                              name='password-confirm'
-                              label='Confirm Password'
-                              validate={(val, context) => 
-                                val === context.password
-                              }
-                              errorHelp='Passwords do not match'
-                          />
-           
                           <ButtonInput
                             type='submit'
                             bsSize='large'
@@ -72,9 +64,6 @@ class CreateStudent extends React.Component {
                             className='button text-center'
                           />
                       </Form>
-                      <div>
-                        <a href='/challenges'>Back</a> 
-                      </div>
                     </div>
                   </div>            
                 </div>

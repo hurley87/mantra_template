@@ -9,6 +9,8 @@ class StudentsShow extends React.Component {
         <Grid>
           <Row className='header'>
             <Col md={4} mdOffset={4}>
+              <a href={`/new/${student._id}`}>Create a challenge for {student.username}</a> 
+              <br />
               <h2>Choose a challenge for {student.username}</h2>
               <br />
             </Col>
@@ -28,9 +30,6 @@ class StudentsShow extends React.Component {
                 <a className='button text-center' href={`/students/${student._id}/division`}>Division</a> 
               </div>
               <br/>
-              <div>
-                <a href={`/new/${student._id}`}>Create a challenge for {student.username}</a> 
-              </div>
             </Col>
           </Row>
         </Grid>

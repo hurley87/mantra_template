@@ -15,6 +15,8 @@ class Students extends React.Component {
         <Grid>
           <Row className='header'>
             <Col md={4} mdOffset={4}>
+              <a href='/students/new'>Add a student</a> 
+              <br />
               <h2>Choose a student</h2>
               <br />
             </Col>
@@ -29,9 +31,6 @@ class Students extends React.Component {
                 }
               </div>
               <br/>
-              <div>
-                <a href='/students/new'>Add a student</a> 
-              </div>
             </Col>
           </Row>
         </Grid>

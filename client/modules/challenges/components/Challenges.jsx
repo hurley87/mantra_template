@@ -30,6 +30,7 @@ class Challenges extends React.Component {
         <Grid>
           <Row className='header'>
             <Col md={4} mdOffset={4}>
+              <StudentName studentId={this.props.username} />
               <h2>{this.title(this.props.operator)}</h2>
               <br />
             </Col>
@@ -38,8 +39,6 @@ class Challenges extends React.Component {
             <Col md={4} mdOffset={4}>
               <CurrentChallenges studentId={this.props.studentId} operator={this.props.operator} />
               <PastChallenges operator={this.props.operator} />
-              <br/>
-              <StudentName studentId={this.props.username} />
             </Col>
           </Row>
         </Grid>

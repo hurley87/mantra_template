@@ -9,8 +9,8 @@ class NewStudent extends React.Component {
 
     this.state = {
       student: false,
-      step: 'username',
-      instructions: "Who's playing?"
+      step: 'account',
+      instructions: "Get Started"
     }
   }
   chooseUsername() {
@@ -139,7 +139,7 @@ class NewStudent extends React.Component {
         <Grid>
           <Row className='header'>
             <Col md={4} mdOffset={4}>
-              <h2>{this.state.instructions}</h2>
+              <h2>{this.state.instructions} <br /> <small>This is another instruction.</small></h2>
               <br />
             </Col>
           </Row>

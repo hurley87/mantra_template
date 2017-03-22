@@ -4,9 +4,14 @@ import { Form, ValidatedInput, RadioGroup, Radio } from 'react-bootstrap-validat
 
 const ChallengeShow = React.createClass({ 
   getInitialState(){
+    const parent = this.props.parent;
+    let parentsNumber = '';
+    if(parent.profile) {
+      parentsNumber = parent.profile.number
+    }
     return {
       answer: 0,
-      number: ''
+      number: parentsNumber
     }
   },
   submission(submission) {
@@ -57,13 +62,18 @@ const ChallengeShow = React.createClass({
 
     const from = 'dave@planswell.ca';
     const subject = `Answer ${stats.right} problems in ${stats.time} seconds`;
-    const text = `<div>Click the following link to accept the challenge: </div><div><a target="_blank" href="http://play.pttrns.ca?username=${student.username}&gameId=${student.profile.gameId}">Accept Challenge</a></div>`;
+    const text2 = `<div>Click the following link to accept the challenge: </div><div><a target="_blank" href="http://play.pttrns.ca?username=${student.username}&gameId=${student.profile.gameId}">Accept Challenge</a></div>`;
+    const text = `http://play.pttrns.ca?username=${student.username}&gameId=${student.profile.gameId}`;
+    const userId = Meteor.userId()
     return (
       <div>
         <br />
-        <p>To pass this challenge {student.username} must answer {stats.right} problems in {stats.time} seconds. You can either text or email the challenge to your phone.</p>
+        <p>This challenge is pending.</p>
         <br />
-        {this.props.answer.length == 0 ? <button onClick={this.props.sendChallenge.bind(this, challenge, to, from, subject, text)} className='button text-center'>Email challenge</button> : null }
+        {
+          // this.props.answer.length == 0 ? <button onClick={this.props.sendChallenge.bind(this, challenge, to, from, subject, text)} className='button text-center'>Email challenge</button> : null 
+        }
+        {this.props.answer.length == 0 ? <button onClick={this.props.textChallenge.bind(this, challenge, this.state.number, text, userId)} className='button text-center'>Text challenge</button> : null }
       </div>
     )
   },
@@ -75,6 +85,7 @@ const ChallengeShow = React.createClass({
   sendText(challenge, student) {
     const stats = challenge.challenge;
     const text = `http://play.pttrns.ca?username=${student.username}&gameId=${student.profile.gameId}`;
+    const userId = Meteor.userId()
     return (
       <div>
         <br />
@@ -92,7 +103,7 @@ const ChallengeShow = React.createClass({
             onChange={(val) => this.updateNumber(val)}
         />
         </Form>
-        {this.props.answer.length == 0 ? <button onClick={this.props.textChallenge.bind(this, challenge, this.state.number, text)} className='button text-center'>Text challenge</button> : null }
+        {this.props.answer.length == 0 ? <button onClick={this.props.textChallenge.bind(this, challenge, this.state.number, text, userId)} className='button text-center'>Text challenge</button> : null }
       </div>
     )
   },
@@ -151,6 +162,8 @@ const ChallengeShow = React.createClass({
         <Grid>
           <Row className='header'>
             <Col md={4} mdOffset={4}>
+              <a href={`/students/${student._id}/${path}`}>Back to {path}</a>
+              <br />
               <h2>{challenge.reward}</h2>
             </Col>
           </Row>
@@ -159,8 +172,6 @@ const ChallengeShow = React.createClass({
               { complete ? this.complete(this.props.challenge, student) : this.notComplete(this.props.challenge, student)}
               { this.pastAttempts(answer, answers, student, complete) }
               { submission ? this.viewSubmission(submission, answerIndex) : null }
-              <br />
-              <a href={`/students/${student._id}/${path}`}>Go back</a>
               <br />
               <br />
             </Col>

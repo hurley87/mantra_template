@@ -10,6 +10,8 @@ class NewChallenge extends React.Component {
         <Grid>
           <Row className='header'>
             <Col  md={4} mdOffset={4}>
+              <a href={`/students/${this.props.studentId}`}>Back</a>
+              <br />
               <h2>Create a Challenge</h2>
               <br />
             </Col>
@@ -94,7 +96,6 @@ class NewChallenge extends React.Component {
                             className='button text-center'
                           />
                       </Form>
-                      <p><a href={`/students/${this.props.studentId}`}>Go Back</a></p>
                     </div>
                   </div>            
                 </div>
