@@ -70,10 +70,6 @@ const ChallengeShow = React.createClass({
         <br />
         <p>This challenge is pending.</p>
         <br />
-        {
-          // this.props.answer.length == 0 ? <button onClick={this.props.sendChallenge.bind(this, challenge, to, from, subject, text)} className='button text-center'>Email challenge</button> : null 
-        }
-        {this.props.answer.length == 0 ? <button onClick={this.props.textChallenge.bind(this, challenge, this.state.number, text, userId)} className='button text-center'>Text challenge</button> : null }
       </div>
     )
   },
@@ -86,7 +82,7 @@ const ChallengeShow = React.createClass({
     const stats = challenge.challenge;
     const text = `http://play.pttrns.ca?username=${student.username}&gameId=${student.profile.gameId}`;
     const userId = Meteor.userId()
-    return (
+    return this.props.answer.length == 0 ? (
       <div>
         <br />
         <p>To pass this challenge {student.username} must answer {stats.right} problems in {stats.time} seconds. You should email the challenge to your phone.</p>
@@ -105,7 +101,7 @@ const ChallengeShow = React.createClass({
         </Form>
         {this.props.answer.length == 0 ? <button onClick={this.props.textChallenge.bind(this, challenge, this.state.number, text, userId)} className='button text-center'>Text challenge</button> : null }
       </div>
-    )
+    ) : null
   },
   pending(challenge, student){
     const stats = challenge.challenge;
@@ -119,6 +115,7 @@ const ChallengeShow = React.createClass({
     )
   },
   notComplete(challenge, student){
+    console.log()
     return challenge.pending ? this.attempted(challenge, student) : this.sendText(challenge, student)
   },
   complete(challenge, student){
