@@ -62,8 +62,8 @@ const ChallengeShow = React.createClass({
 
     const from = 'dave@planswell.ca';
     const subject = `Answer ${stats.right} problems in ${stats.time} seconds`;
-    const text2 = `<div>Click the following link to accept the challenge: </div><div><a target="_blank" href="http://play.pttrns.ca?username=${student.username}&gameId=${student.profile.gameId}">Accept Challenge</a></div>`;
-    const text = `http://play.pttrns.ca?username=${student.username}&gameId=${student.profile.gameId}`;
+    const text2 = `<div>Click the following link to accept the challenge: </div><div><a target="_blank" href="https://play.pttrns.ca?username=${student.username}&gameId=${student.profile.gameId}&challengeId=${challenge._id}">Accept Challenge</a></div>`;
+    const text = `https://play.pttrns.ca?username=${student.username}&gameId=${student.profile.gameId}&challengeId=${challenge._id}"`;
     const userId = Meteor.userId()
     return (
       <div>
@@ -80,7 +80,7 @@ const ChallengeShow = React.createClass({
   },
   sendText(challenge, student) {
     const stats = challenge.challenge;
-    const text = `http://play.pttrns.ca?username=${student.username}&gameId=${student.profile.gameId}`;
+    const text = `https://play.pttrns.ca?username=${student.username}&gameId=${student.profile.gameId}&challengeId=${challenge._id}"`;
     const userId = Meteor.userId()
     return this.props.answer.length == 0 ? (
       <div>
@@ -110,7 +110,7 @@ const ChallengeShow = React.createClass({
         <br />
         <p>To pass this challenge {student.username} must answer {stats.right} problems in {stats.time} seconds. You can either text or email the challenge to your phone.</p>
         <br />
-        { this.props.answer.length == 0 ? <a className='button text-center' target="_blank" href={`http://play.pttrns.ca?username=${student.username}&gameId=${student.profile.gameId}`}>Go to challenge</a> : null}
+        { this.props.answer.length == 0 ? <a className='button text-center' target="_blank" href={`https://play.pttrns.ca?username=${student.username}&gameId=${student.profile.gameId}&challengeId=${challenge._id}`}>Go to challenge</a> : null}
       </div>
     )
   },
